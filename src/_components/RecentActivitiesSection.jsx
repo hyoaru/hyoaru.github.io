@@ -27,7 +27,10 @@ export default function RecentActivitiesSection() {
     <>
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-4 md:col-span-12">
-          <Skeleton isLoaded={!lastfmRecentlyListenedTrack.isLoading || !githubRecentPushEvent.isLoading} classNames={{base: 'w-full h-full', content: 'flex rounded-xl w-full h-full'}}>
+          <Skeleton
+            isLoaded={!lastfmRecentlyListenedTrack.isLoading || !githubRecentPushEvent.isLoading}
+            classNames={{ content: 'w-full h-full', base: 'flex rounded-xl w-full h-full' }}
+          >
             <div className="border rounded-xl w-full h-full dark:border-primary">
               <div className="py-4 px-2 flex flex-col items-center gap-2 justify-center w-full h-full md:flex-row ">
                 <Activity className='text-primary md:text-foreground dark:text-primary' />
