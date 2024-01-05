@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply transition-all ease-in-out duration-1000;
+}
+
+.pseudo-rounded {
+  @apply rounded-3xl rounded-bl-none rounded-tr-none;
+}
