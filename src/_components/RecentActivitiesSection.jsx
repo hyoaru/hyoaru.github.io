@@ -6,8 +6,8 @@ import { useQuery } from '@tanstack/react-query'
 // App imports
 import getLastFmRecentlyListenedTrack from '@services/getLastFmRecentlyListenedTrack'
 import RecentlyListenedTrackCard from '@components/RecentlyListenedTrackCard'
-import getGithubRecentPushEvent from '@services/getGithubRecentPushEvent'
-import GithubRecentPushEventCard from '@components/GithubRecentPushEventCard'
+import getGithubRecentCommit from '@/src/_services/getGithubRecentCommit'
+import GithubRecentCommitCard from '@components/GithubRecentCommitCard'
 
 
 export default function RecentActivitiesSection() {
@@ -17,9 +17,9 @@ export default function RecentActivitiesSection() {
     staleTime: 60 * 1000 * 3
   })
 
-  const githubRecentPushEvent = useQuery({
-    queryKey: ['githubRecentPushEvent'],
-    queryFn: getGithubRecentPushEvent,
+  const githubRecentCommit = useQuery({
+    queryKey: ['githubRecentCommit'],
+    queryFn: getGithubRecentCommit,
     staleTime: 60 * 1000 * 30
   })
 
@@ -28,7 +28,7 @@ export default function RecentActivitiesSection() {
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-4 md:col-span-12">
           <Skeleton
-            isLoaded={!lastfmRecentlyListenedTrack.isLoading || !githubRecentPushEvent.isLoading}
+            isLoaded={!lastfmRecentlyListenedTrack.isLoading || !githubRecentCommit.isLoading}
             classNames={{ content: 'w-full h-full', base: 'flex rounded-xl w-full h-full' }}
           >
             <div className="border rounded-xl w-full h-full dark:border-primary">
@@ -43,18 +43,10 @@ export default function RecentActivitiesSection() {
         </div>
 
         <div className="col-span-4 order-last md:col-span-12 md:order-none">
-          <RecentlyListenedTrackCard
-            recentTrack={lastfmRecentlyListenedTrack?.data || {}}
-            isLoading={lastfmRecentlyListenedTrack.isLoading}
-            isError={lastfmRecentlyListenedTrack.isError}
-          />
+          <RecentlyListenedTrackCard {...lastfmRecentlyListenedTrack} />
         </div>
         <div className="col-span-4 md:col-span-12">
-          <GithubRecentPushEventCard
-            recentPushEvent={githubRecentPushEvent?.data || {}}
-            isLoading={githubRecentPushEvent.isLoading}
-            isError={githubRecentPushEvent.isError}
-          />
+          <GithubRecentCommitCard {...githubRecentCommit} />
         </div>
 
       </div>
