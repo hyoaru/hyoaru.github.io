@@ -27,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <main>
             <App />
           </main>
-          <ReactQueryDevtools />
+          {/* <ReactQueryDevtools /> */}
         </QueryClientProvider>
       </ThemeProvider>
     </NextUIProvider>
