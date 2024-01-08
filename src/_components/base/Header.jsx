@@ -27,7 +27,7 @@ export default function Header() {
               <a
                 key={`NavigationExpanded-${index}`}
                 href={navigation.href}
-                className='text-xs border-b border-transparent transition-all ease-in-out duration-1000 hover:border-foreground lg:text-sm dark:font-semibold'
+                className='text-xs transition-all ease-in-out duration-1000 hover:text-primary lg:text-sm dark:font-semibold'
               >
                 {navigation.label}.
               </a>
