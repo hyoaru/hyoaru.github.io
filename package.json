@@ -21,6 +21,7 @@
     "i": "^0.3.7",
     "lucide-react": "^0.302.0",
     "react": "^18.2.0",
+    "react-activity-calendar": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
     "vite-jsconfig-paths": "^2.0.1"

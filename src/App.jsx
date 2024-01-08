@@ -1,23 +1,20 @@
 import React from 'react'
 
-import { ArrowDownToLine, Github, Activity } from 'lucide-react'
+import { ChevronDownCircle } from 'lucide-react'
 import { Chip, Button, Image } from '@nextui-org/react'
-import { useQuery } from '@tanstack/react-query'
-import getTechnologies from '@services/getTechnologies'
-import getTechnologyBadgeUrl from '@libraries/getTechnologyBadgeUrl'
-import { useThemeContext } from '@context/ThemeContext'
 import GithubStatisticsSection from '@components/GithubStatisticsSection'
 import RecentActivitiesSection from '@components/RecentActivitiesSection'
 import InterestsMarquee from '@components/InterestsMarquee'
 import { interests } from '@constants/home'
+import GithubCalendar from '@components/GithubCalendar'
+import TechnologiesSection from '@components/TechnologiesSection'
 
 export default function App() {
-  const technologies = useQuery({ queryKey: ['technologies'], queryFn: getTechnologies })
 
   return (
     <>
-      <div className="mx-6 lg:mx-16">
-        <div className="grid grid-cols-12 gap-4 lg:gap-8">
+      <div className="mx-6 lg:mx-16 mt-12">
+        <div id='MainSection' className="grid grid-cols-12 gap-4 lg:gap-8">
           <div className="col-span-12 flex gap-4 md:col-span-3 sm:gap-6 md:block md:gap-0">
             <div className="w-8/12 md:hidden">
               <Image isBlurred src='profile-image.jpg' className='w-max h-[300px] object-cover sm:h-[400px]' />
@@ -102,10 +99,30 @@ export default function App() {
             <div className="">
               <RecentActivitiesSection />
             </div>
-
           </div>
         </div>
+
+        <div className="w-4/12 mx-auto my-20 sm:w-3/12 lg:w-2/12">
+          <a href="#">
+            <Button variant='light' className='border w-full md:p-6'>
+              <div className="text-xs flex items-center justify-center gap-4 animate-pulse md:text-base">
+                <ChevronDownCircle strokeWidth={1} className='hidden md:block' />
+                <span className=''>Scroll down</span>
+              </div>
+            </Button>
+          </a>
+        </div>
+
+        <div className="">
+          <TechnologiesSection />
+        </div>
+
+        <div className="mt-12">
+          <GithubCalendar />
+        </div>
+
       </div>
+      <p className="text-center font-bold opacity-50 mt-20">{'[ in progress ]'}</p>
       <div className="h-[100rem]"></div>
     </>
   )
