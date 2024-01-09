@@ -6,7 +6,7 @@ import GithubStatisticsSection from '@components/GithubStatisticsSection'
 import RecentActivitiesSection from '@components/RecentActivitiesSection'
 import InterestsMarquee from '@components/InterestsMarquee'
 import { interests } from '@constants/home'
-import GithubCalendar from '@components/GithubCalendar'
+import GithubActivityCalendar from '@components/GithubActivityCalendar'
 import TechnologiesSection from '@components/TechnologiesSection'
 
 export default function App() {
@@ -117,8 +117,8 @@ export default function App() {
           <TechnologiesSection />
         </div>
 
-        <div className="mt-12">
-          <GithubCalendar />
+        <div className="mt-10">
+          <GithubActivityCalendar />
         </div>
 
       </div>
