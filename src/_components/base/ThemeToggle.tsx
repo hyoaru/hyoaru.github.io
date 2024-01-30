@@ -14,7 +14,7 @@ export default function ThemeToggle() {
           size='sm'
           radius='full'
           variant='light'
-          className={theme === 'light' ? 'bg-background' : ''}
+          className={'bg-background dark:bg-inherit'}
           onClick={() => setTheme('light')}
         >
           Light
@@ -24,7 +24,7 @@ export default function ThemeToggle() {
           value={'dark'}
           radius='full'
           variant='light'
-          className={theme === 'dark' ? 'bg-background' : ''}
+          className={'dark:bg-background'}
           onClick={() => setTheme('dark')}
         >
           Dark
