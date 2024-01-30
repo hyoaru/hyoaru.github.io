@@ -20,7 +20,7 @@ export default function TechnologiesCardGroup() {
     <>
       <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 xl:gap-12">
         <div className="col-span-12 md:col-span-4">
-          <div className="border rounded-xl p-4 flex items-center justify-center gap-4 h-full dark:border-transparent dark:bg-foreground dark:text-background">
+          <div className="rounded-xl p-4 flex items-center justify-center gap-4 h-full border dark:border-default">
             <Cpu className='' />
             <div className="">
               <p className='font-semibold text-xs md:text-base'>Languages & Technologies</p>
