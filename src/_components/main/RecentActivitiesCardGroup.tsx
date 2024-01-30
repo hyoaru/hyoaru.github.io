@@ -1,16 +1,15 @@
-import React from 'react'
 import { Skeleton } from '@nextui-org/react'
-import { Activity, Github } from 'lucide-react'
+import { Activity } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 
 // App imports
-import getLastFmRecentlyListenedTrack from '@services/getLastFmRecentlyListenedTrack'
-import RecentlyListenedTrackCard from '@components/RecentlyListenedTrackCard'
-import getGithubRecentCommit from '@/src/_services/getGithubRecentCommit'
-import GithubRecentCommitCard from '@components/GithubRecentCommitCard'
+import getLastFmRecentlyListenedTrack from '@services/main/getLastFmRecentlyListenedTrack'
+import RecentlyListenedTrackCard from '@components/main/RecentlyListenedTrackCard'
+import getGithubRecentCommit from '@services/main/getGithubRecentCommit'
+import GithubRecentCommitCard from '@components/main/GithubRecentCommitCard'
 
 
-export default function RecentActivitiesSection() {
+export default function RecentActivitiesCardGroup() {
   const lastfmRecentlyListenedTrack = useQuery({
     queryKey: ['lastfmRecentlyListenedTrack'],
     queryFn: getLastFmRecentlyListenedTrack,

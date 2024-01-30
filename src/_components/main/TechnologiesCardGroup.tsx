@@ -1,17 +1,20 @@
-import React from 'react'
 import { Cpu } from 'lucide-react'
 import { Skeleton } from '@nextui-org/react'
 import { useQuery } from '@tanstack/react-query'
 import Marquee from 'react-fast-marquee'
 
 // App imports
-import getTechnologies from '@services/getTechnologies'
-import TechnologyBadge from '@components/TechnologyBadge'
+import getTechnologies from '@services/main/getTechnologies'
+import TechnologyBadge from '@components/main/TechnologyBadge'
 import { useThemeContext } from '@context/ThemeContext'
 
-export default function TechnologiesSection() {
+export default function TechnologiesCardGroup() {
   const { theme } = useThemeContext()
-  const { data: technologies, isLoading } = useQuery({ queryKey: ['technologies'], queryFn: getTechnologies })
+
+  const { data: technologies, isLoading } = useQuery({
+    queryKey: ['technologies'],
+    queryFn: getTechnologies
+  })
 
   return (
     <>
@@ -29,10 +32,13 @@ export default function TechnologiesSection() {
           <Skeleton classNames={{ base: `w-full h-full ${isLoading ? 'rounded-xl' : ''}` }} isLoaded={!isLoading}>
             <div className="hidden md:flex flex-wrap gap-1">
               {technologies?.map((technology) => (
-                <TechnologyBadge key={`Technology-${technology.technologyName}`} technology={technology} />
+                <TechnologyBadge
+                  key={`Technology-${technology.technologyName}`}
+                  {...technology}
+                />
               ))}
             </div>
-            
+
             <div className="block md:hidden">
               <Marquee
                 className={'transition-all duration-1000 ease-in-out'}
@@ -44,8 +50,8 @@ export default function TechnologiesSection() {
                 pauseOnHover
               >
                 {technologies?.map((technology) => (
-                  <div className="mx-1">
-                    <TechnologyBadge key={`TechnologyMarquee-${technology.technologyName}`} technology={technology} />
+                  <div className="mx-1" key={`TechnologyMarquee-${technology.technologyName}`}>
+                    <TechnologyBadge {...technology} />
                   </div>
                 ))}
               </Marquee>

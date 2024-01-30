@@ -1,12 +1,11 @@
-import React from 'react'
 import Marquee from 'react-fast-marquee'
 import { Chip } from '@nextui-org/react'
 
 // App imports
-import { interests } from '@constants/home'
+import { interests } from '@constants/main/constants'
 import { useThemeContext } from '@context/ThemeContext'
 
-export default function InterestsMarquee(props) {
+export default function InterestsMarquee() {
   const { theme } = useThemeContext()
 
   return (

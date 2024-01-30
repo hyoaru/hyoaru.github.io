@@ -1,3 +1,5 @@
+import { LastFmRecentlyListenedTrackType, LastFmRecentlyListenedTracksType } from "@constants/main/types"
+
 export default async function getLastFmRecentlyListenedTrack() {
   const lastfmApiKey = import.meta.env.VITE_LAST_FM_API_KEY
   const apiUrl = 'https://ws.audioscrobbler.com/2.0'
@@ -6,11 +8,11 @@ export default async function getLastFmRecentlyListenedTrack() {
     method: "GET",
     headers: { 'user-agent': 'hyoaru' },
   })
-    .then((res) => res.json())
+    .then((res) => res.json() as Promise<LastFmRecentlyListenedTracksType>)
     .then((recentTracks) => recentTracks?.recenttracks.track?.[0])
     .then((recentTrack) => {
       const filteredImages = recentTrack.image?.filter((image) => ['small', 'medium', 'large'].includes(image?.size))
-      const data = {
+      const data: LastFmRecentlyListenedTrackType = {
         image_url: filteredImages?.[filteredImages.length - 1]?.['#text'],
         artist: recentTrack.artist?.['#text'],
         title: recentTrack.name

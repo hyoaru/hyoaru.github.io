@@ -1,10 +1,16 @@
 import dayjs from 'dayjs'
-import React from 'react'
 import { Skeleton } from '@nextui-org/react'
 import { Github } from 'lucide-react'
+import { GithubRecentCommitType } from '@constants/main/types'
 
-export default function GithubRecentCommitCard({ data, isLoading, isError }) {
-  const {repository_name: repositoryName, commit_message: commitMessage, created_at: createdAt} = data || {}
+type GithubRecentCommitCardProps = {
+  data: GithubRecentCommitType | undefined
+  isLoading: boolean
+  isError: boolean
+}
+
+export default function GithubRecentCommitCard({ data, isLoading, isError }: GithubRecentCommitCardProps) {
+  const { repository_name: repositoryName, commit_message: commitMessage, created_at: createdAt } = data || {}
   const dateCreatedFormatted = dayjs(createdAt).format('YYYY-MM-DD')
 
   if (isError) {
@@ -33,7 +39,7 @@ export default function GithubRecentCommitCard({ data, isLoading, isError }) {
           <p className='text-[8px] font-light'>{`Github ･ ${dateCreatedFormatted}`}</p>
           <p className='text-xs font-semibold'>{commitMessage}</p>
           <div className="">
-          <p className='text-[10px] break-words'>{repositoryName}</p>
+            <p className='text-[10px] break-words'>{repositoryName}</p>
 
           </div>
         </div>

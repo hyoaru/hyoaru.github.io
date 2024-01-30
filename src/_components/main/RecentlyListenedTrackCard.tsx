@@ -1,7 +1,13 @@
-import React from 'react'
 import { Skeleton } from '@nextui-org/react'
+import { LastFmRecentlyListenedTrackType } from '@constants/main/types'
 
-export default function RecentlyListenedTrackCard({ data, isLoading, isError }) {
+type RecentlyListenedTrackCardProps = {
+  data: LastFmRecentlyListenedTrackType | undefined
+  isLoading: boolean
+  isError: boolean
+}
+
+export default function RecentlyListenedTrackCard({ data, isLoading, isError } : RecentlyListenedTrackCardProps) {
   const { image_url: imageUrl, artist, title } = data || {}
 
   if (isError) {

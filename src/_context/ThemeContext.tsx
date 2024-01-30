@@ -1,9 +1,14 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
+import { Theme, ThemeContextType } from "@constants/base/types"
 
-export const ThemeContext = createContext()
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  setTheme: () => {},
+  toggleTheme: () => {}
+})
 
-export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light')
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark')

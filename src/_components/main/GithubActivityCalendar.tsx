@@ -1,12 +1,12 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import ActivityCalendar from 'react-activity-calendar'
-import { Tooltip, select } from '@nextui-org/react'
+import { Tooltip} from '@nextui-org/react'
 import { Skeleton } from '@nextui-org/react'
 import { useQuery } from '@tanstack/react-query'
 
 // App imports
 import { useThemeContext } from '@context/ThemeContext'
-import getGithubContributionStats from '@services/getGithubContributionStats'
+import getGithubContributionStats from '@services/main/getGithubContributionStats'
 
 export default function GithubActivityCalendar() {
   const { theme } = useThemeContext()
@@ -20,23 +20,20 @@ export default function GithubActivityCalendar() {
     return contributions
       ?.filter((contribution) => {
         const currentDate = new Date()
-        // const currentDateSubtractedOneYear = dayjs(new Date()).subtract(1, 'year')
         const startDate = new Date('2022-01-02')
         const contributionDate = new Date(contribution.date)
         return contributionDate >= startDate && contributionDate <= currentDate
       })
-      ?.sort((a, b) => new Date(a.date) - new Date(b.date))
+      ?.sort((a, b) => (new Date(a.date) as any) - (new Date(b.date) as any))
   }, [contributions])
 
 
   const customTheme = {
     light: ['hsl(0, 0%, 92%)', '#12181c'],
     dark: ['hsl(0, 0%, 8%)', '#0070f0'],
-    // light: ['#e5e7eb', '#595e61', '#595e61', '#595e61', '#595e61'],
-    // dark: ['#3f3f46', '#0070f0', '#0070f0', '#0070f0', '#0070f0'],
   }
 
-  function renderBlock(block, activity) {
+  function renderBlock(block: React.ReactNode, activity: any) {
     return (
       <Tooltip
         content={`${activity.count} activities on ${activity.date}`}
@@ -60,7 +57,7 @@ export default function GithubActivityCalendar() {
               data={filteredContributions}
               theme={customTheme}
               colorScheme={theme}
-              style={{position: 'relative'}}
+              style={{ position: 'relative' }}
               renderBlock={renderBlock}
               fontSize={10}
               blockSize={10}

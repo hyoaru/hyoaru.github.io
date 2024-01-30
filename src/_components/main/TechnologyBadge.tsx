@@ -1,12 +1,11 @@
-import React from 'react'
-
-// App imports
 import { useThemeContext } from '@context/ThemeContext'
 import getTechnologyBadgeUrl from '@libraries/getTechnologyBadgeUrl'
+import { TechnologyType } from '@constants/main/types'
 
-export default function TechnologyBadge({ technology }) {
+type TechnologyBadgeProps = Pick<TechnologyType, 'technologyName' | 'technologyLogo'>
+
+export default function TechnologyBadge({technologyName, technologyLogo }: TechnologyBadgeProps) {
   const { theme } = useThemeContext()
-  const { technologyName, technologyLogo } = technology || {}
   const url = getTechnologyBadgeUrl({
     name: technologyName,
     logo: technologyLogo,

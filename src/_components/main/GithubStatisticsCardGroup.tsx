@@ -1,14 +1,13 @@
-import React from 'react'
 import { Github } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from '@nextui-org/react'
 
 // App imports
-import getGithubContributionStats from '@services/getGithubContributionStats'
-import GithubStatisticsCard from '@components/GithubStatisticsCard'
-import getGithubBaseUserInformation from '@services/getGithubBaseUserInformation'
+import getGithubContributionStats from '@services/main/getGithubContributionStats'
+import GithubStatisticsCard from '@components/main/GithubStatisticsCard' 
+import getGithubBaseUserInformation from '@services/main/getGithubBaseUserInformation'
 
-export default function GithubStatisticsSection() {
+export default function GithubStatisticsCardGroup() {
   const githubContribution = useQuery({
     queryKey: ['githubContribution'],
     queryFn: getGithubContributionStats,
@@ -37,18 +36,16 @@ export default function GithubStatisticsSection() {
         </div>
         <div className="col-span-4 sm:col-span-3 md:col-span-6">
           <GithubStatisticsCard
-            value={githubContribution?.data?.totalContribution.toLocaleString()}
-            isLoading={githubContribution.isLoading}
-            isError={githubContribution.isError}
+            value={githubContribution.data?.totalContribution}
             label={"Contributions"}
+            {...githubContribution}
           />
         </div>
         <div className="col-span-4 sm:col-span-3 md:col-span-6">
           <GithubStatisticsCard
-            value={githubBaseUserInformation?.data?.public_repos.toLocaleString()}
-            isLoading={githubBaseUserInformation.isLoading}
-            isError={githubBaseUserInformation.isError}
+            value={githubBaseUserInformation.data?.public_repos}
             label={"Repositories"}
+            {...githubBaseUserInformation}
           />
         </div>
       </div>

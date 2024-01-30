@@ -1,5 +1,4 @@
-import React from 'react'
-import { ChevronRight, LucideMenu } from 'lucide-react'
+import { LucideMenu } from 'lucide-react'
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react"
 
 // App imports
@@ -16,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className='mx-6 lg:mx-16 my-5'>
+      <header className='my-5'>
         <div className="flex items-center">
           <a href='#' className='font-bold text-xl me-auto md:me-2 md:text-2xl'>
             {'Jj Cabrera'}

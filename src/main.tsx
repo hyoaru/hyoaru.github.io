@@ -5,10 +5,10 @@ import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 // App imports
-import { ThemeProvider } from '@context/ThemeContext'
-import Header from '@components/base/Header'
-import App from '@/src/App.jsx'
 import '@/src/index.css'
+import App from './App.tsx'
+import Header from '@components/base/Header.tsx'
+import { ThemeProvider } from '@context/ThemeContext.tsx'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,7 +18,7 @@ const queryClient = new QueryClient({
   }
 })
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <NextUIProvider>
       <ThemeProvider>
