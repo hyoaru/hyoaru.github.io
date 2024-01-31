@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, FolderGit2, Github, Globe, Settings2 } from 
 import getProjects from '@services/projects/getProjects'
 
 export default function ProjectsSection() {
-  const [selectedTab, setSelectedTab] = useState<any | undefined>('1');
+  const [selectedTab, setSelectedTab] = useState<any | undefined>('0');
   const { data: projects, isLoading} = useQuery({
     queryKey: ['projects'],
     queryFn: getProjects,
