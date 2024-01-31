@@ -6,7 +6,7 @@ export default function TechnologyBadge({technologyName, technologyLogo }: Techn
 
   return (
     <span className='text-[10px] flex items-center gap-1 border p-1 rounded-lg dark:border-default'>
-      <img width={14} height={14} src={`https://cdn.simpleicons.org/${technologyLogo}/000000/ffffff`} />
+      <img width={14} height={14} src={`https://cdn.simpleicons.org/${technologyLogo}/000000/0070f0`} />
       {technologyName}
     </span>
   )

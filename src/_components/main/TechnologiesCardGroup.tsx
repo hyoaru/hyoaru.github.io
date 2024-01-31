@@ -18,17 +18,17 @@ export default function TechnologiesCardGroup() {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 xl:gap-12">
-        <div className="col-span-12 md:col-span-4">
+      <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8">
+        <div className="col-span-12 md:col-span-3">
           <div className="rounded-xl p-4 flex items-center justify-center gap-4 h-full border dark:border-default">
-            <Cpu className='' />
+            <Cpu className='block md:hidden text-primary' />
             <div className="">
-              <p className='font-semibold text-xs md:text-base'>Languages & Technologies</p>
+              <p className='font-semibold text-xs md:text-sm dark:text-primary'>Languages & Technologies</p>
               <p className='text-[10px]'>Technologies I work and used to work with</p>
             </div>
           </div>
         </div>
-        <div className="col-span-12 md:col-span-8">
+        <div className="col-span-12 md:col-span-9">
           <Skeleton classNames={{ base: `w-full h-full ${isLoading ? 'rounded-xl' : ''}` }} isLoaded={!isLoading}>
             <div className="hidden md:flex flex-wrap gap-1">
               {technologies?.map((technology) => (
