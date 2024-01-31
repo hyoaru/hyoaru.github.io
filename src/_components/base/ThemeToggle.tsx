@@ -9,10 +9,10 @@ export default function ThemeToggle() {
 
   return (
     <>
-      <div className="hidden md:flex bg-default rounded-full p-[2px] ">
+      <div className="hidden md:flex bg-default rounded-large p-[2px] ">
         <Button
           size='sm'
-          radius='full'
+          radius='lg'
           variant='light'
           className={'bg-background dark:bg-inherit'}
           onClick={() => setTheme('light')}
@@ -22,7 +22,7 @@ export default function ThemeToggle() {
         <Button
           size='sm'
           value={'dark'}
-          radius='full'
+          radius='lg'
           variant='light'
           className={'dark:bg-background'}
           onClick={() => setTheme('dark')}
