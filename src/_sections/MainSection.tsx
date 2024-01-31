@@ -25,7 +25,7 @@ export default function MainSection() {
                 </span>
               </div>
               <div className="relative mt-4 z-[11] md:mt-6 md:absolute md:w-4/12 lg:mt-8">
-                <span className='leading-normal px-3 text-[3.65vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl xl:leading-10 xl:text-3xl dark:bg-primary dark:text-foreground'>
+                <span className='leading-normal px-3 text-[3.7vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl xl:leading-10 xl:text-3xl dark:bg-primary dark:text-foreground'>
                   A programmer, graphic designer, layout artist, and a data scientist in the making.
                 </span>
                 <div className="hidden md:flex flex-wrap gap-x-2 gap-y-1 mt-6">
@@ -58,7 +58,7 @@ export default function MainSection() {
                 </div>
               </div>
               <div className="col-span-8">
-                <div className="border rounded-lg px-4 py-2 h-full flex flex-col align-center justify-center">
+                <div className="border bg-background rounded-lg px-4 py-2 h-full flex flex-col align-center justify-center">
                   <p className='text-base font-bold'>Jenjade Cabrera</p>
                   <p className='text-xs'>
                     {' A third year washed up computer science student'}
