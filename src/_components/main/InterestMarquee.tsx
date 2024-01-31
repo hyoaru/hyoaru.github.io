@@ -16,6 +16,7 @@ export default function InterestsMarquee() {
         gradient={true}
         gradientColor={theme === 'light' ? 'white' : 'black'}
         gradientWidth={50}
+        direction='right'
         pauseOnHover
       >
         {interests.map((interest) => (
