@@ -67,7 +67,7 @@ export default function MainSection() {
               </div>
             </div>
           </div>
-          <div className="hidden col-span-12 md:block md:col-span-6">
+          <div className="hidden col-span-12 md:block md:col-span-6 justify-self-center">
             <Image
               isBlurred
               src="/profile-image.jpg"
