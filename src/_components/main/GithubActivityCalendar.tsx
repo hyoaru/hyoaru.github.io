@@ -51,7 +51,7 @@ export default function GithubActivityCalendar() {
   return (
     <>
       <Skeleton classNames={{ base: `w-full ${isLoading ? 'rounded-xl h-[140px] md:h-[180px]' : ''}` }} isLoaded={!isLoading}>
-        <div className={`md:border md:rounded-xl md:dark:border-primary md:p-6`}>
+        <div className={`md:border bg-background md:rounded-xl md:dark:border-primary md:p-6`}>
           {filteredContributions && <>
             <ActivityCalendar
               data={filteredContributions}

@@ -26,7 +26,7 @@ export default function GithubStatisticsCardGroup() {
             isLoaded={!githubContribution.isLoading || !githubBaseUserInformation.isLoading}
             classNames={{ content: 'w-full h-full', base: 'flex rounded-xl w-full h-full' }}
           >
-            <div className="border rounded-xl py-4 px-1 flex flex-col items-center gap-2 justify-center w-full h-full md:flex-row dark:bg-foreground dark:text-background">
+            <div className="border bg-background rounded-xl py-4 px-1 flex flex-col items-center gap-2 justify-center w-full h-full md:flex-row dark:bg-foreground dark:text-background">
               <Github className='text-primary dark:text-background' />
               <p className="text-center text-xs font-semibold lg:text-sm">
                 Github Stats

@@ -29,7 +29,7 @@ export default function GithubRecentCommitCard({ data, isLoading, isError }: Git
 
   return (
     <Skeleton isLoaded={!isLoading} classNames={{ content: 'h-full w-full', base: "rounded-xl flex h-full w-full" }}>
-      <div className={`rounded-xl px-4 py-6 flex items-center w-full h-full mx:px-4 xl:p-4 dark:border-primary border`}>
+      <div className={`rounded-xl bg-background px-4 py-6 flex items-center w-full h-full mx:px-4 xl:p-4 dark:border-primary border`}>
         <div className="hidden w-max xl:block">
           <div className="w-[60px] h-[60px] flex justify-center align-center bg-default rounded-xl">
             <Github className='w-1/2 h-1/2 my-auto text-primary' />

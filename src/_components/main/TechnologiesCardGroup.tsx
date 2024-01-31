@@ -20,7 +20,7 @@ export default function TechnologiesCardGroup() {
     <>
       <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8">
         <div className="col-span-12 md:col-span-3">
-          <div className="rounded-xl p-4 flex items-center justify-center gap-4 h-full border dark:border-default">
+          <div className="rounded-xl bg-background p-4 flex items-center justify-center gap-4 h-full border dark:border-default">
             <Cpu className='block md:hidden text-primary' />
             <div className="">
               <p className='font-semibold text-xs md:text-sm dark:text-primary'>Languages & Technologies</p>
@@ -33,7 +33,7 @@ export default function TechnologiesCardGroup() {
             <div className="hidden md:flex flex-wrap gap-1">
               {technologies?.map((technology) => (
                 <TechnologyBadge
-                  key={`Technology-${technology.technologyName}`}
+                  key={`Technology-${technology.technologyName}`} 
                   {...technology}
                 />
               ))}

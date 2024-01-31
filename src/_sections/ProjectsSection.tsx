@@ -28,11 +28,11 @@ export default function ProjectsSection() {
       <div className="grid grid-cols-12 gap-4 lg:gap-8">
         <div className="col-span-12 md:col-span-8">
           <Skeleton isLoaded={!isLoading} classNames={{ content: 'w-full h-full space-y-4 md:space-y-0', base: 'flex rounded-xl w-full h-full' }}>
-            <div className="border rounded-xl p-5 items-center gap-4 justify-center flex md:hidden dark:border-default">
+            <div className="border bg-background rounded-xl p-5 items-center gap-4 justify-center flex md:hidden dark:border-default">
               <FolderGit2 strokeWidth={2.5} className='text-primary' />
               <span className="font-semibold text-lg">Projects</span>
             </div>
-            <div className="border rounded-xl relative p-3 dark:text-primary dark:border-default">
+            <div className="border bg-background rounded-xl relative p-3 dark:text-primary dark:border-default">
               <div className="absolute left-5 h-full flex items-center z-20 text-5xl">
                 <ChevronLeft onClick={previousTab} className='w-[1em] h-[1em] cursor-pointer' />
               </div>
@@ -62,11 +62,11 @@ export default function ProjectsSection() {
         </div>
         <div className="col-span-12 md:col-span-4">
           <Skeleton isLoaded={!isLoading} classNames={{ content: 'w-full h-full space-y-4', base: 'flex rounded-xl w-full h-full' }}>
-            <div className="border rounded-xl p-5 items-center gap-4 justify-center hidden md:flex dark:border-default">
+            <div className="border bg-background rounded-xl p-5 items-center gap-4 justify-center hidden md:flex dark:border-default">
               <FolderGit2 strokeWidth={2.5} className='text-primary' />
               <span className="font-semibold text-lg">Projects</span>
             </div>
-            <div className="border rounded-xl p-5 dark:border-default">
+            <div className="border bg-background rounded-xl p-5 dark:border-default">
               <div className="flex w-full flex-col">
                 <Tabs
                   size='sm'
