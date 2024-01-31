@@ -25,7 +25,7 @@ export default function MainSection() {
                 </span>
               </div>
               <div className="relative mt-4 z-[11] md:mt-6 md:absolute md:w-4/12 lg:mt-8">
-                <span className='leading-normal px-3 text-[3.5vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl xl:leading-10 xl:text-3xl dark:bg-primary dark:text-foreground'>
+                <span className='leading-normal px-3 text-[3.65vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl xl:leading-10 xl:text-3xl dark:bg-primary dark:text-foreground'>
                   A programmer, graphic designer, layout artist, and a data scientist in the making.
                 </span>
                 <div className="hidden md:flex flex-wrap gap-x-2 gap-y-1 mt-6">
