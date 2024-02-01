@@ -1,4 +1,4 @@
-import { ProjectType } from "@constants/main/types"
+import { ProjectType } from "@constants/projects/types"
 
 export default async function getProjects() {
   const filePath = 'projects.json'

@@ -2,7 +2,7 @@ import { Image, Button } from "@nextui-org/react";
 import { Github, Globe, Settings2 } from 'lucide-react';
 
 // App imports
-import { ProjectType } from "@constants/main/types";
+import { ProjectType } from "@constants/projects/types";
 import AnimationSlideOnShow from "@animations/AnimationSlideOnShow";
 import { useState } from "react";
 

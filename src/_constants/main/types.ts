@@ -139,15 +139,6 @@ export type TechnologyType = {
   logoColor: string
 }
 
-export type ProjectType = {
-  title: string
-  image: string
-  description: string
-  repositoryURL: string
-  liveURL: string | null
-  processURL: string | null
-}
-
 export type FieldInterestType = {
   name: string
   bits: string
