@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Input, Textarea, Button } from '@nextui-org/react'
-import { MapPin, ArrowUpRight, ArrowDownLeft, ArrowUpLeft, ArrowDownRight } from 'lucide-react'
+import { MapPin, ArrowUpRight, ArrowDownLeft, ArrowDownRight } from 'lucide-react'
 
 // App imports
 import { Button as MovingBorder } from '@components/ui/MovingBorder'
