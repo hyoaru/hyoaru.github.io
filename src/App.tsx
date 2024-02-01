@@ -14,9 +14,6 @@ export default function App() {
         <CertificationSection />
         <ContactSection />
       </div>
-
-      <p className="text-center font-bold opacity-50 mt-20">{'[ in progress ]'}</p>
-      <div className="h-[100rem]"></div>
     </>
   )
 }
