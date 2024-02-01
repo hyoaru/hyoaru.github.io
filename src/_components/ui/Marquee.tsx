@@ -6,9 +6,10 @@ type MarqueeProps = {
   children: React.ReactNode
   direction?: 'left' | 'right' | 'up' | 'down'
   speed?: number
+  pauseOnHover?: boolean
 }
 
-export default function Marquee({ direction, speed, children }: MarqueeProps) {
+export default function Marquee({ direction, speed, children, pauseOnHover }: MarqueeProps) {
   const { theme } = useThemeContext()
   return (
     <>
@@ -19,7 +20,7 @@ export default function Marquee({ direction, speed, children }: MarqueeProps) {
         gradient={true}
         gradientColor={theme === 'light' ? 'white' : 'black'}
         gradientWidth={50}
-        pauseOnHover
+        pauseOnHover={pauseOnHover ?? true}
       >
         {children}
       </ReactFastMarquee>

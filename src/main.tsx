@@ -9,6 +9,7 @@ import '@/src/index.css'
 import App from './App.tsx'
 import Header from '@components/base/Header.tsx'
 import { ThemeProvider } from '@context/ThemeContext.tsx'
+import { Toaster } from 'sonner'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <main>
             <App />
           </main>
+          <Toaster />
           <ReactQueryDevtools />
         </QueryClientProvider>
       </ThemeProvider>

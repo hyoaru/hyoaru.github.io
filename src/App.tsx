@@ -1,6 +1,7 @@
 import MainSection from "@sections/MainSection"
 import ProjectsSection from "@sections/ProjectsSection"
 import AboutSection from "@sections/AboutSection"
+import CertificationSection from "@sections/CertificationSection"
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
         <MainSection />
         <ProjectsSection />
         <AboutSection />
+        <CertificationSection />
       </div>
 
       <p className="text-center font-bold opacity-50 mt-20">{'[ in progress ]'}</p>
