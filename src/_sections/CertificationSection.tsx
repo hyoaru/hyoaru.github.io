@@ -25,17 +25,17 @@ export default function CertificationSection() {
               className="bg-white w-full dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
               disabled
             >
-              <div className="p-4 flex items-center w-full gap-4 h-full">
-                <BookOpenCheck className='text-primary' />
+              <div className="p-5 flex items-center w-full gap-4 h-full">
+                <BookOpenCheck size={30} className='text-primary' />
                 <div className="text-start ">
                   <p className='font-semibold text-xs md:text-sm dark:text-primary'>Certifications</p>
-                  <p className='text-[10px]'>A list of my accomplishments for every field</p>
+                  <p className='text-xs'>A list of my accomplishments for every field</p>
                 </div>
               </div>
             </MovingBorder>
           </div>
           <div className="col-span-12 lg:col-span-4">
-            <div className="p-4 border rounded-xl w-full dark:border-default">
+            <div className="p-5 border rounded-xl w-full dark:border-default">
               <div className="flex items center">
                 <p className='text-start text-xs me-auto opacity-50'>Certification count</p>
                 <Parentheses size={18} />
@@ -46,11 +46,11 @@ export default function CertificationSection() {
             </div>
           </div>
           <div className="col-span-12 lg:col-span-4">
-            <div className="p-4 border rounded-xl w-full dark:border-default">
+            <div className="p-5 border rounded-xl w-full dark:border-default">
               <div className="flex items-center">
                 <div className="me-auto">
-                  <p className="font-semibold">List down certification</p>
-                  <p className="text-[10px] opacity">See listed in modal</p>
+                  <p className="font-semibold text-sm">List down certification</p>
+                  <p className="text-xs opacity">See listed in modal</p>
                 </div>
                 <Button color='primary' disabled={isLoading} onClick={onOpen}>Open</Button>
               </div>

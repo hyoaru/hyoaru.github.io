@@ -24,9 +24,9 @@ export default function AboutSection() {
     <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 space-y-4">
       <BentoBox className='dark:bg-foreground dark:text-background group '>
         <div className="flex items-center gap-4 ">
-          <Info size={35} className='group-hover:text-primary transition-all duration-300 ease-in-out' />
+          <Info size={30} className='group-hover:text-primary transition-all duration-300 ease-in-out' />
           <div className="">
-            <p className="text-sm md:text-base font-bold lg:text-lg">{"More about me"}</p>
+            <p className="text-sm md:text-base font-bold">{"More about me"}</p>
             <p className='text-xs md:text-sm'>{"Because why not?"}</p>
           </div>
         </div>
@@ -73,14 +73,13 @@ export default function AboutSection() {
         />
       ))}
 
-      <div className="flex flex-wrap gap-4">
-        {socials && socials.map((social, index) => (
-          <SocialCard
-            key={`SocialCard-${index}`}
-            {...social}
-          />
-        ))}
-      </div>
+      {socials && socials.map((social, index) => (
+        <SocialCard
+          key={`SocialCard-${index}`}
+          {...social}
+        />
+      ))}
+
     </div>
   )
 }

@@ -13,7 +13,12 @@ export default function FieldInterestCard({ former, bits, name }: FieldInterestT
             .replaceAll(']', '')
             .split(',')
             .map((bit) => (
-              <p className={`text-[10px] p-1 border rounded-lg transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-primary-foreground`}>{bit}</p>
+              <p
+                key={`Interest-${name}-${bit}`}
+                className={`text-[10px] p-1 border rounded-lg transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-primary-foreground`}
+              >
+                {bit}
+              </p>
             ))}
         </div>
       </BentoBox>

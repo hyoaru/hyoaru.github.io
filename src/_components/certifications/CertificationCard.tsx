@@ -25,7 +25,7 @@ export default function CertificationCard({ title, tags, imageShrinked, imageOri
   return (
     <>
       <div
-        className={`border rounded-xl overflow-hidden mx-2 transition-all duration-300 ease-in-out cursor-pointer hover:border-primary hover:opacity-20 ${className}`}
+        className={`border rounded-xl overflow-hidden mx-4 transition-all duration-300 ease-in-out cursor-pointer hover:border-primary hover:opacity-20 ${className}`}
         onClick={onOpen}
       >
         <Image
