@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Input, Textarea, Button } from '@nextui-org/react'
-import { MapPin } from 'lucide-react'
+import { MapPin, ArrowUpRight, ArrowDownLeft } from 'lucide-react'
 
 // App imports
 import { Button as MovingBorder } from '@components/ui/MovingBorder'
@@ -43,13 +43,19 @@ export default function ContactSection() {
       <div className="" id='ContactSection'>
         <div className="grid grid-cols-12 gap-4 lg:gap-8 mt-12">
           <div className="col-span-12 md:col-span-6 space-y-4 xl:col-span-5">
-            <div className="">
+            <div className="relative">
+              <div className="absolute z-20 bottom-[-10px] right-[-10px]">
+                <div className="bg-background text-primary border border-primary rounded-full">
+                  <ArrowUpRight size={40} className='hidden md:block' />
+                  <ArrowDownLeft size={40} className='block md:hidden' />
+                </div>
+              </div>
               <MovingBorder
                 borderRadius="0.75rem"
                 className="bg-white dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
                 disabled
               >
-                <div className="p-10 rounded-xl text-start">
+                <div className="p-10 rounded-xl text-start relative">
                   <TypewriterEffect words={typewriterEffectWords} cursorClassName='hidden' />
                   <p className="mt-4 text-xs md:text-sm">
                     Considering to be in contact with me regarding a project? Perhaps collaboration? Or just about anything?
@@ -74,7 +80,7 @@ export default function ContactSection() {
           <div className="col-span-12 md:col-span-6 xl:col-span-7">
             <form onSubmit={onSubmit} ref={formRef}>
               <div className="border p-10 rounded-xl space-y-4 bg-background dark:border-default">
-                <p className="font-bold text-xl text-default dark:text-primary">Send me a message!</p>
+                <p className="font-bold text-xl text-primary ">Send me a message!</p>
                 <Input
                   type='email'
                   label='Email'
