@@ -22,7 +22,7 @@ export default function CertificationSection() {
           <div className="col-span-12 lg:col-span-4">
             <MovingBorder
               borderRadius="0.75rem"
-              className="bg-white w-full dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
+              className="bg-background w-full dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
               disabled
             >
               <div className="p-5 flex items-center w-full gap-4 h-full">
@@ -35,7 +35,7 @@ export default function CertificationSection() {
             </MovingBorder>
           </div>
           <div className="col-span-12 lg:col-span-4">
-            <div className="p-5 border rounded-xl w-full dark:border-default">
+            <div className="p-5 bg-background border rounded-xl w-full dark:border-default">
               <div className="flex items center">
                 <p className='text-start text-xs me-auto opacity-50'>Certification count</p>
                 <Parentheses size={18} />
@@ -46,7 +46,7 @@ export default function CertificationSection() {
             </div>
           </div>
           <div className="col-span-12 lg:col-span-4">
-            <div className="p-5 border rounded-xl w-full dark:border-default">
+            <div className="p-5 bg-background border rounded-xl w-full dark:border-default">
               <div className="flex items-center">
                 <div className="me-auto">
                   <p className="font-semibold text-xs md:text-sm">List down certification</p>

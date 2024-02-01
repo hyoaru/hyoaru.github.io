@@ -40,7 +40,7 @@ export default function MainSection() {
                 </span>
               </div>
               <div className="relative mt-4 z-[11] md:mt-6 md:absolute md:w-4/12 lg:mt-8">
-                <span className='leading-normal px-3 text-[3.7vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl xl:leading-10 xl:text-3xl dark:bg-primary dark:text-foreground'>
+                <span className='leading-normal px-3 text-[3.7vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl min-[1100px]:leading-10 min-[1100px]:text-3xl dark:bg-primary dark:text-foreground'>
                   A programmer, graphic designer, layout artist, and a data scientist in the making.
                 </span>
                 <div className="hidden md:flex flex-wrap gap-x-2 gap-y-1 mt-6">
@@ -49,21 +49,28 @@ export default function MainSection() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="mt-56 md:mt-[17rem] min-[800px]:mt-[15rem] min-[850px]:mt-[14rem] lg:mt-[18.5rem] min-[1040px]:mt-[21rem] min-[1050px]:mt-[18rem] 2xl:mt-[16rem]">
+              <div className="mt-56 md:mt-[17rem] min-[800px]:mt-[15rem] min-[850px]:mt-[14rem] lg:mt-[18.5rem] min-[1040px]:mt-[19rem] min-[1050px]:mt-[17rem] min-[1100px]:mt-[21rem] min-[1128px]:mt-[19rem]">
                 <p className='text-xs min-[800px]:text-sm'>
                   <span className='font-bold'>Jenjade Cabrera.</span>
                   {' A third year washed up computer science student.'}
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-4">
-                <a href="#ContactSection">
-                  <Button color='primary' size='sm'>Get in touch</Button>
-                </a>
+              <div className="mt-6 flex items-center gap-2 lg:gap-4">
+                <Button
+                  color='primary'
+                  size='sm'
+                  className="text-[10px] p-2 lg:text-xs"
+                >
+                  <a href="#ContactSection">
+                    Get in touch
+                  </a>
+                </Button>
                 <Button
                   variant={'ghost'}
                   size='sm'
                   onClick={commitDownloadResume}
                   isLoading={isLoading}
+                  className="text-[10px] p-2 lg:text-xs"
                 >
                   Download
                 </Button>
@@ -78,7 +85,13 @@ export default function MainSection() {
               <div className="col-span-4">
                 <div className="flex flex-col gap-2">
                   <a href="#ContactSection">
-                    <Button color='primary' size='sm'>Get in touch</Button>
+                    <Button
+                      color='primary'
+                      size='sm'
+                      className="w-full"
+                    >
+                      Get in touch
+                    </Button>
                   </a>
                   <Button
                     variant={'ghost'}
@@ -117,7 +130,7 @@ export default function MainSection() {
           </div>
         </div>
         <div className="w-4/12 mx-auto my-20 sm:w-3/12 lg:w-2/12">
-          <a href="#">
+          <a href="#ProjectsSection">
             <Button variant='light' className='border w-full md:p-6'>
               <div className="text-xs flex items-center justify-center gap-4 animate-pulse md:text-base">
                 <ChevronDownCircle strokeWidth={1} className='hidden md:block' />

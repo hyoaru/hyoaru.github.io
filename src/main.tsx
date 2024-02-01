@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { NextUIProvider } from '@nextui-org/react'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'sonner'
 
 // App imports
@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           </main>
           <Footer />
           <Toaster />
-          <ReactQueryDevtools />
+          {/* <ReactQueryDevtools /> */}
         </QueryClientProvider>
       </ThemeProvider>
     </NextUIProvider>

@@ -49,7 +49,7 @@ export default function ProjectCard({
             </div>
             <div className="grid grid-cols-12">
               <div className="col-span-12 sm:col-span-6">
-                <div className="flex h-full w-full p-8">
+                <div className="flex h-full w-full p-5">
                   <div className="my-auto w-full">
                     <div className="space-y-1 md:space-y-2">
                       <p className="font-bold text-sm">{title}</p>
