@@ -7,10 +7,10 @@ import ThemeToggle from '@components/base/ThemeToggle'
 export default function Header() {
   const navigations = [
     { label: "Home", href: "#" },
-    { label: "Projects", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Certifications", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Projects", href: "#ProjectsSection" },
+    { label: "About", href: "#AboutSection" },
+    { label: "Certifications", href: "#CertificationSection" },
+    { label: "Contact", href: "#ContactSection" },
   ]
 
   return (

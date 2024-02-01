@@ -40,7 +40,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <div className="">
+      <div className="" id='ContactSection'>
         <div className="grid grid-cols-12 gap-4 lg:gap-8 mt-12">
           <div className="col-span-12 md:col-span-6 space-y-4 xl:col-span-5">
             <div className="">

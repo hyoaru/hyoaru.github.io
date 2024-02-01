@@ -7,7 +7,7 @@ import ProjectsFeed from '@components/projects/ProjectsFeed';
 export default function ProjectsSection() {
   return (
     <>
-      <div className="columns-1 space-y-4 lg:columns-2 lg:space-y-8">
+      <div className="columns-1 space-y-4 lg:columns-2 lg:space-y-8" id='ProjectsSection'>
         <div className="border rounded-xl break-inside-avoid-colum w-full overflow-hidden dark:border-primary">
           <EvervaultCard>
             <div className="flex items-center gap-4 p-10 text-foreground dark:text-primary">

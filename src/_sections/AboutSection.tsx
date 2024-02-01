@@ -21,7 +21,7 @@ export default function AboutSection() {
   })
 
   return (
-    <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 space-y-4">
+    <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 space-y-4" id='AboutSection'>
       <BentoBox className='dark:bg-foreground dark:text-background group '>
         <div className="flex items-center gap-4 ">
           <Info size={30} className='group-hover:text-primary transition-all duration-300 ease-in-out' />

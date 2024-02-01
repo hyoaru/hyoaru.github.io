@@ -17,7 +17,7 @@ export default function CertificationSection() {
 
   return (
     <>
-      <div className="">
+      <div className="" id='CertificationSection'>
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 lg:col-span-4">
             <MovingBorder
