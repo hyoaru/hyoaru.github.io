@@ -1,4 +1,4 @@
-import { SocialType } from "@constants/main/types"
+import { SocialType } from "@constants/about/types"
 
 export default async function getSocials() {
   const filePath = 'socials.json'

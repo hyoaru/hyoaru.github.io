@@ -1,5 +1,5 @@
 import BentoBox from '@components/about/BentoBox'
-import { FieldInterestType } from '@constants/main/types'
+import { FieldInterestType } from '@constants/about/types'
 
 export default function FieldInterestCard({ former, bits, name }: FieldInterestType) {
   return (

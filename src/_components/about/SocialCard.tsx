@@ -1,5 +1,5 @@
 import BentoBox from "@components/about/BentoBox"
-import { SocialType } from "@constants/main/types"
+import { SocialType } from "@constants/about/types"
 
 export default function SocialCard({ link, name, label, anchorClass }: SocialType) {
   return (

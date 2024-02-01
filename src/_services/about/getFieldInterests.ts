@@ -1,4 +1,4 @@
-import { FieldInterestType } from "@constants/main/types"
+import { FieldInterestType } from "@constants/about/types"
 
 export default async function getFieldInterests() {
   const filePath = 'interests.json'
