@@ -32,8 +32,8 @@ export default function AnimationSlideOnShow({ isFromRight, children }: Animatio
           initial="initial"
           animate={mainControls}
           transition={{ 
-            duration: 0.3, 
-            opacity: { duration: 0.3 },
+            duration: 0.2, 
+            opacity: { duration: 0.15 },
           }}
         >
           {children}

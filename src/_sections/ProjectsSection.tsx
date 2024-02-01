@@ -1,18 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
 import { FolderGit2 } from 'lucide-react';
-import { Skeleton } from '@nextui-org/react';
 
 // App imports
-import ProjectCard from '@components/projects/ProjectCard';
-import getProjects from '@services/projects/getProjects'
 import { EvervaultCard } from '@components/ui/EvervaultCard';
+import ProjectsFeed from '@components/projects/ProjectsFeed';
 
 export default function ProjectsSection() {
-  const { data: projects, isLoading } = useQuery({
-    queryKey: ['projects'],
-    queryFn: getProjects,
-  })
-
   return (
     <>
       <div className="columns-1 space-y-4 lg:columns-2">
@@ -28,24 +20,7 @@ export default function ProjectsSection() {
           </EvervaultCard>
         </div>
 
-        {isLoading && [...Array(10).keys()].map((index) => {
-          const randomHeightInPx = 200 + Math.floor(Math.random() * 100)
-          return (
-            <Skeleton
-              key={`Skeleton-${index}`}
-              style={{ width: '100%', height: `${randomHeightInPx}px` }}
-              className={`rounded-xl`}
-            />
-          )
-        })}
-
-        {projects && projects.map((project, index) => (
-          <ProjectCard
-            key={`ProjectCard-${project.repositoryURL}`}
-            isFromRight={index % 2 == 0}
-            {...project}
-          />
-        ))}
+        <ProjectsFeed />
       </div >
     </>
   )
