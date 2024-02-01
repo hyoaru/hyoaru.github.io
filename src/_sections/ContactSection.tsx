@@ -43,18 +43,20 @@ export default function ContactSection() {
       <div className="">
         <div className="grid grid-cols-12 gap-4 lg:gap-8 mt-12">
           <div className="col-span-12 md:col-span-6 space-y-4 xl:col-span-5">
-            <MovingBorder
-              borderRadius="0.75rem"
-              className="bg-white dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
-              disabled
-            >
-              <div className="p-10 rounded-xl text-start">
-                <TypewriterEffect words={typewriterEffectWords} cursorClassName='hidden' />
-                <p className="mt-4 text-xs md:text-sm">
-                  Considering to be in contact with me regarding a project? Perhaps collaboration? Or just about anything?
-                </p>
-              </div>
-            </MovingBorder>
+            <div className="">
+              <MovingBorder
+                borderRadius="0.75rem"
+                className="bg-white dark:bg-background text-black dark:text-white border-neutral-200 dark:border-slate-800"
+                disabled
+              >
+                <div className="p-10 rounded-xl text-start">
+                  <TypewriterEffect words={typewriterEffectWords} cursorClassName='hidden' />
+                  <p className="mt-4 text-xs md:text-sm">
+                    Considering to be in contact with me regarding a project? Perhaps collaboration? Or just about anything?
+                  </p>
+                </div>
+              </MovingBorder>
+            </div>
 
             <div className="border p-10 rounded-xl bg-background space-y-4 text-xs hidden md:block md:text-sm">
               <p className=''>
