@@ -58,7 +58,7 @@ export default function ContactSection() {
               </MovingBorder>
             </div>
 
-            <div className="border p-10 rounded-xl bg-background space-y-4 text-xs hidden md:block md:text-sm">
+            <div className="border p-10 rounded-xl bg-background space-y-4 text-xs hidden md:block md:text-sm dark:border-default">
               <p className=''>
                 I don't have any job experience yet
                 <span className='opacity-50'>─currently willing to get exploited just to get that experience jkjk, </span>
@@ -73,8 +73,8 @@ export default function ContactSection() {
           </div>
           <div className="col-span-12 md:col-span-6 xl:col-span-7">
             <form onSubmit={onSubmit} ref={formRef}>
-              <div className="border p-10 rounded-xl space-y-4 bg-background">
-                <p className="font-bold text-xl text-default">Send me a message!</p>
+              <div className="border p-10 rounded-xl space-y-4 bg-background dark:border-default">
+                <p className="font-bold text-xl text-default dark:text-primary">Send me a message!</p>
                 <Input
                   type='email'
                   label='Email'
@@ -108,7 +108,7 @@ export default function ContactSection() {
             </form>
           </div>
           <div className="col-span-12">
-            <div className="border p-10 rounded-xl bg-background space-y-4 text-xs block md:hidden">
+            <div className="border p-10 rounded-xl bg-background space-y-4 text-xs block md:hidden dark:border-default">
               <p className=''>
                 I don't have any job experience yet
                 <span className='opacity-50'>─currently willing to get exploited just to get that experience jkjk, </span>

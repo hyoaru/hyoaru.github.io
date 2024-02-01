@@ -31,9 +31,9 @@ export default function RecentActivitiesCardGroup() {
             classNames={{ content: 'w-full h-full', base: 'flex rounded-xl w-full h-full' }}
           >
             <div className="border bg-background rounded-xl w-full h-full dark:border-primary">
-              <div className="py-4 px-2 flex flex-col items-center gap-2 justify-center w-full h-full md:flex-row ">
+              <div className="py-4 flex flex-col items-center gap-2 justify-center w-max mx-auto h-full md:flex-row ">
                 <Activity className='text-primary md:text-foreground dark:text-primary' />
-                <p className="text-xs text-center font-semibold lg:text-sm">
+                <p className="text-xs text-start w-max font-semibold lg:text-sm">
                   Recent Activities
                 </p>
               </div>

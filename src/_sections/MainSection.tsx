@@ -96,7 +96,7 @@ export default function MainSection() {
         <div className="">
           <TechnologiesCardGroup />
         </div>
-        <div className="mt-4 lg:mt-8">
+        <div className="mt-8">
           <GithubActivityCalendar />
         </div>
       </div>

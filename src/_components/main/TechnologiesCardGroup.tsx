@@ -64,7 +64,7 @@ export default function TechnologiesCardGroup() {
 
             <div className="block md:hidden">
               <Skeleton classNames={{ base: `w-full h-full ${isLoading && 'rounded-xl'}`, content: `w-full ${isLoading && 'h-[25px]'}` }} isLoaded={!isLoading}>
-                <Marquee>
+                <Marquee direction='left'>
                   {technologies && technologies?.map((technology) => (
                     <div className="mx-1" key={`TechnologyMarquee-${technology.technologyName}`}>
                       <TechnologyBadge {...technology} />
