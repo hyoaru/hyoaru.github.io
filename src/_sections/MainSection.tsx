@@ -41,7 +41,9 @@ export default function MainSection() {
                 </p>
               </div>
               <div className="mt-6 flex items-center gap-4">
-                <Button color='primary' size='sm'>Get in touch</Button>
+                <a href="#ContactSection">
+                  <Button color='primary' size='sm'>Get in touch</Button>
+                </a>
                 <Button variant={'ghost'} size='sm'>Download</Button>
               </div>
             </div>
@@ -53,7 +55,9 @@ export default function MainSection() {
             <div className="grid grid-cols-12 gap-2">
               <div className="col-span-4">
                 <div className="flex flex-col gap-2">
-                  <Button color='primary' size='sm'>Get in touch</Button>
+                  <a href="#ContactSection">
+                    <Button color='primary' size='sm'>Get in touch</Button>
+                  </a>
                   <Button variant={'ghost'} size='sm'>Download</Button>
                 </div>
               </div>
