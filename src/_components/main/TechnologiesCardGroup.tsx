@@ -44,8 +44,8 @@ export default function TechnologiesCardGroup() {
             <div className="hidden md:flex h-full">
               <div className="my-auto w-full space-y-2">
                 {dividedTechnologies && dividedTechnologies?.map((technologyGroup, index) => (
-                  <Marquee 
-                    direction={index % 2 == 0 ? 'right' : 'left'} 
+                  <Marquee
+                    direction={index % 2 == 0 ? 'right' : 'left'}
                     key={`TechnologyGroup-${index}`}
                   >
                     {technologyGroup.map((technology) => (
@@ -59,13 +59,15 @@ export default function TechnologiesCardGroup() {
             </div>
 
             <div className="block md:hidden">
-              <Marquee>
-                {technologies && technologies?.map((technology) => (
-                  <div className="mx-1" key={`TechnologyMarquee-${technology.technologyName}`}>
-                    <TechnologyBadge {...technology} />
-                  </div>
-                ))}
-              </Marquee>
+              <Skeleton classNames={{ base: `w-full h-full ${isLoading && 'rounded-xl'}`, content: `w-full ${isLoading && 'h-[25px]'}` }} isLoaded={!isLoading}>
+                <Marquee>
+                  {technologies && technologies?.map((technology) => (
+                    <div className="mx-1" key={`TechnologyMarquee-${technology.technologyName}`}>
+                      <TechnologyBadge {...technology} />
+                    </div>
+                  ))}
+                </Marquee>
+              </Skeleton>
             </div>
 
           </Skeleton>
