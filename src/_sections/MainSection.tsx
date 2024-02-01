@@ -1,15 +1,30 @@
 import { Button, Image } from "@nextui-org/react"
+import { toast } from "sonner"
+import { ChevronDownCircle } from "lucide-react"
 
 // App imports
 import InterestChips from "@components/main/InterestChips"
 import InterestsMarquee from "@components/main/InterestMarquee"
 import GithubStatisticsCardGroup from "@components/main/GithubStatisticsCardGroup"
 import RecentActivitiesCardGroup from "@components/main/RecentActivitiesCardGroup"
-import { ChevronDownCircle } from "lucide-react"
 import TechnologiesCardGroup from "@components/main/TechnologiesCardGroup"
 import GithubActivityCalendar from "@components/main/GithubActivityCalendar"
+import useDownloadResume from "@hooks/main/useDownloadResume"
 
 export default function MainSection() {
+  const { downloadResume, isLoading } = useDownloadResume()
+
+  async function commitDownloadResume() {
+    await downloadResume()
+      .then(({ error }) => {
+        if (!error) {
+          toast.success('Resume will download shortly.')
+        } else {
+          toast.error('An error has occured.')
+        }
+      })
+  }
+
   return (
     <>
       <div className="">
@@ -44,7 +59,14 @@ export default function MainSection() {
                 <a href="#ContactSection">
                   <Button color='primary' size='sm'>Get in touch</Button>
                 </a>
-                <Button variant={'ghost'} size='sm'>Download</Button>
+                <Button
+                  variant={'ghost'}
+                  size='sm'
+                  onClick={commitDownloadResume}
+                  isLoading={isLoading}
+                >
+                  Download
+                </Button>
               </div>
             </div>
           </div>
@@ -58,7 +80,14 @@ export default function MainSection() {
                   <a href="#ContactSection">
                     <Button color='primary' size='sm'>Get in touch</Button>
                   </a>
-                  <Button variant={'ghost'} size='sm'>Download</Button>
+                  <Button
+                    variant={'ghost'}
+                    size='sm'
+                    onClick={commitDownloadResume}
+                    isLoading={isLoading}
+                  >
+                    Download
+                  </Button>
                 </div>
               </div>
               <div className="col-span-8">
