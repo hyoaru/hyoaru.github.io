@@ -34,7 +34,7 @@ export default function AboutSection() {
 
       <BentoBox className='dark:bg-foreground dark:text-background '>
         <div className="">
-          <p className='text-sm'>
+          <p className='text-xs md:text-sm'>
             Hailing from the Philippines, I am 21 years old and currently in my 3nd year of college studying under the program of Bachelor of Science in Computer Science.
             <span className='font-semibold'>{' Being someone with almost unsatiable curiosity, '}</span>
             I have quite the knack for studying topics that is subject even outside the field of computer science, such as society, linguistics, mathematics

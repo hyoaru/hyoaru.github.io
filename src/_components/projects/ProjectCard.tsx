@@ -51,9 +51,9 @@ export default function ProjectCard({
               <div className="col-span-12 sm:col-span-6">
                 <div className="flex h-full w-full p-8">
                   <div className="my-auto w-full">
-                    <div className="space-y-2">
-                      <p className="font-bold text-sm md:text-base">{title}</p>
-                      <p className="text-[10px] md:text-xs">{description}</p>
+                    <div className="space-y-1 md:space-y-2">
+                      <p className="font-bold text-sm">{title}</p>
+                      <p className="text-xs">{description}</p>
                     </div>
                     <div className="mt-8 flex gap-2 flex-wrap">
                       <a href={repositoryURL} target='_blank'>

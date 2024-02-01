@@ -49,8 +49,8 @@ export default function CertificationSection() {
             <div className="p-5 border rounded-xl w-full dark:border-default">
               <div className="flex items-center">
                 <div className="me-auto">
-                  <p className="font-semibold text-sm">List down certification</p>
-                  <p className="text-xs opacity">See listed in modal</p>
+                  <p className="font-semibold text-xs md:text-sm">List down certification</p>
+                  <p className="text-xs opacity-50">See listed in modal</p>
                 </div>
                 <Button color='primary' disabled={isLoading} onClick={onOpen}>Open</Button>
               </div>
