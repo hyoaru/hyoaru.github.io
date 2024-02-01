@@ -100,6 +100,7 @@ export default function ProjectCard({
                 onMouseEnter={showFullImage}
                 onMouseLeave={hideFullImage}
                 onTouchStart={showFullImage}
+                onTouchMove={hideFullImage}
               >
                 <Image
                   radius={'none'}
