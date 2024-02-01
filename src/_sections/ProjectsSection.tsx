@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { FolderGit2 } from 'lucide-react';
-import ProjectCard from '@components/projects/ProjectCard';
 import { Skeleton } from '@nextui-org/react';
 
 // App imports
+import ProjectCard from '@components/projects/ProjectCard';
 import getProjects from '@services/projects/getProjects'
+import { EvervaultCard } from '@components/ui/EvervaultCard';
 
 export default function ProjectsSection() {
   const { data: projects, isLoading } = useQuery({
@@ -15,14 +16,16 @@ export default function ProjectsSection() {
   return (
     <>
       <div className="columns-1 space-y-4 lg:columns-2">
-        <div className="border p-10 rounded-xl bg-background break-inside-avoid-column w-full">
-          <div className="flex items-center gap-4">
-            <FolderGit2 size={35} />
-            <div className="">
-              <p className="text-lg font-bold">{"Projects I have worked on"}</p>
-              <p className='text-sm'>{"Solo projects I've done along with some collaborative ones"}</p>
+        <div className="border rounded-xl break-inside-avoid-colum w-full overflow-hidden dark:border-primary">
+          <EvervaultCard>
+            <div className="flex items-center gap-4 p-10 text-foreground dark:text-primary">
+              <FolderGit2 size={35} className='' />
+              <div className="">
+                <p className="text-sm font-bold md:text-lg">{"Projects I have worked on"}</p>
+                <p className='text-xs md:text-sm'>{"Solo projects I've done along with some collaborative ones"}</p>
+              </div>
             </div>
-          </div>
+          </EvervaultCard>
         </div>
 
         {isLoading && [...Array(10).keys()].map((index) => {

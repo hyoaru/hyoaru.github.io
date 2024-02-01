@@ -33,17 +33,17 @@ export default function ProjectCard({
     <>
       <div className="break-inside-avoid-column">
         <AnimationSlideOnShow isFromRight={isFromRight}>
-          <div className="border rounded-xl bg-background w-full overflow-hidden relative">
+          <div className="border rounded-xl bg-background w-full overflow-hidden relative hover:border-primary transition-all duration-500 ease-in-out">
             <div
-              className={`absolute z-20 bg-center bg-cover w-full h-full opacity-0 pointer-events-none transition-all ease-in-out duration-1000  ${isFullImageShown && 'opacity-100'}`}
+              className={`absolute z-20 rounded-xl bg-center bg-cover w-full h-full opacity-0 pointer-events-none transition-all ease-in-out duration-1000  ${isFullImageShown && 'opacity-100'}`}
               style={{ backgroundImage: `url(${image})` }}
             >
               <Image
                 radius={'none'}
                 src={image}
                 classNames={{
-                  wrapper: 'object-scale-down h-full mx-auto backdrop-blur-[12px]',
-                  img: 'object-scale-down h-full mx-auto backdrop-blur-[12px]'
+                  wrapper: 'object-scale-down h-full mx-auto rounded-xl backdrop-blur-[12px]',
+                  img: 'object-scale-down h-full mx-auto rounded-xl backdrop-blur-[12px]'
                 }}
               />
             </div>
@@ -104,6 +104,7 @@ export default function ProjectCard({
                 <Image
                   radius={'none'}
                   src={image}
+                  isBlurred 
                   classNames={{
                     wrapper: 'object-cover h-full',
                     img: 'h-full object-cover'
