@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Cpu } from 'lucide-react'
 import { Skeleton } from '@nextui-org/react'
 import { useQuery } from '@tanstack/react-query'
@@ -7,6 +8,7 @@ import Marquee from '@components/ui/Marquee'
 import getTechnologies from '@services/main/getTechnologies'
 import TechnologyBadge from '@components/main/TechnologyBadge'
 import { Button as MovingBorder } from '@components/ui/MovingBorder'
+import divideArrayToSubArray from '@libraries/divideArrayToSubarray'
 
 export default function TechnologiesCardGroup() {
 
@@ -15,11 +17,13 @@ export default function TechnologiesCardGroup() {
     queryFn: getTechnologies
   })
 
-  const dividedTechnologies = (() => {
+  const dividedTechnologies = useMemo(() => {
     if (!technologies) return
-    const midIndex = Math.ceil(technologies?.length / 2)
-    return [technologies.slice(0, midIndex), technologies.slice(midIndex, technologies.length - 1)]
-  })()
+    return divideArrayToSubArray({
+      array: technologies,
+      subArrayCount: 2
+    })
+  }, [technologies])
 
   return (
     <>
