@@ -1,14 +1,15 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import ActivityCalendar from 'react-activity-calendar'
-import { Tooltip} from '@nextui-org/react'
+import { Tooltip } from '@nextui-org/react'
 import { Skeleton } from '@nextui-org/react'
 import { useQuery } from '@tanstack/react-query'
+import { memo } from 'react';
 
 // App imports
 import { useThemeContext } from '@context/ThemeContext'
 import getGithubContributionStats from '@services/main/getGithubContributionStats'
 
-export default function GithubActivityCalendar() {
+const GithubActivityCalendar = memo(function _GithubActivityCalendar() {
   const { theme } = useThemeContext()
 
   const { data: { contributions } = {}, isLoading } = useQuery({
@@ -69,4 +70,6 @@ export default function GithubActivityCalendar() {
       </Skeleton>
     </>
   )
-}
+});
+
+export default GithubActivityCalendar;
