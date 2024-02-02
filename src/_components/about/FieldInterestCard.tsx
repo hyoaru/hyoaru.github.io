@@ -8,18 +8,14 @@ export default function FieldInterestCard({ former, bits, name }: FieldInterestT
         <p className={`text-xs opacity-50`}>Interest</p>
         <p className={`font-bold text-sm ${former ? 'line-through' : ''}`}>{name}</p>
         <div className="flex items-center flex-wrap gap-1 mt-2">
-          {bits
-            .replaceAll('[', '')
-            .replaceAll(']', '')
-            .split(',')
-            .map((bit) => (
-              <p
-                key={`Interest-${name}-${bit}`}
-                className={`text-[10px] p-1 border rounded-lg transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-primary-foreground`}
-              >
-                {bit}
-              </p>
-            ))}
+          {bits.map((bit, index) => (
+            <p
+              key={`Interest-${name}-${bit}-${index}`}
+              className={`text-[10px] p-1 border rounded-lg transition-all duration-300 ease-in-out hover:border-transparent hover:bg-primary hover:text-primary-foreground`}
+            >
+              {bit}
+            </p>
+          ))}
         </div>
       </BentoBox>
     </>

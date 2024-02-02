@@ -133,8 +133,6 @@ export type LastFmRecentlyListenedTrackType = {
 }
 
 export type TechnologyType = {
-  technologyName: string
-  technologyLogo: string
-  bgColor: string
-  logoColor: string
+  name: string
+  logo: string
 }
