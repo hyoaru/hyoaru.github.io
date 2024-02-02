@@ -48,8 +48,6 @@ export default function CertificationCard({ title, tags, imageShrinked, imageOri
                 <Image
                   src={imageOriginal}
                   isBlurred
-                  height={'300px'}
-                  width={'full'}
                   classNames={{
                     img: 'w-full object-cover',
                     wrapper: 'w-full object-cover',
