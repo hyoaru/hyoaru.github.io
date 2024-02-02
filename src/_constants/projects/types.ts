@@ -5,4 +5,5 @@ export type ProjectType = {
   repositoryURL: string
   liveURL: string | null
   processURL: string | null
+  tags: string[]
 }

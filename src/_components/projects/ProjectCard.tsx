@@ -17,6 +17,7 @@ export default function ProjectCard({
   liveURL,
   processURL,
   image,
+  tags,
   isFromRight
 }: ProjectCardProps) {
   const [isFullImageShown, setIsFullImageShown] = useState(false)
@@ -51,11 +52,18 @@ export default function ProjectCard({
               <div className="col-span-12 sm:col-span-6">
                 <div className="flex h-full w-full p-5">
                   <div className="my-auto w-full">
-                    <div className="space-y-1 md:space-y-2">
+                    <div className="space-y-2 md:space-y-2">
                       <p className="font-bold text-sm">{title}</p>
                       <p className="text-xs">{description}</p>
                     </div>
-                    <div className="mt-8 flex gap-2 flex-wrap">
+                    <div className="mt-4 flex gap-1 flex-wrap items-center">
+                      {tags.map((tag) => (
+                        <div className="border rounded-lg p-1" key={`ProjectTag-${title}-${tag}`}>
+                          <p className="text-[10px]">{tag}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-6 md:mt-8 flex gap-2 flex-wrap">
                       <a href={repositoryURL} target='_blank'>
                         <Button
                           size='sm'
