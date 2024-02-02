@@ -2,8 +2,6 @@ import BentoBox from "@components/about/BentoBox"
 import { SocialType } from "@constants/about/types"
 
 export default function SocialCard({ link, name, label }: SocialType) {
-  console.log(link)
-
   return (
     <BentoBox className='!p-5'>
       <a href={link} target='_blank' className={`flex flex-grow items-center gap-4 break-inside-avoid-column ${!link && 'pointer-events-none'}`}>
