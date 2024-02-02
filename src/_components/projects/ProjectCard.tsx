@@ -115,8 +115,8 @@ export default function ProjectCard({
                   src={image}
                   isBlurred 
                   classNames={{
-                    wrapper: 'object-cover h-full',
-                    img: 'h-full object-cover'
+                    wrapper: 'object-cover w-full sm:h-full sm:w-fit',
+                    img: 'w-full sm:h-full sm:w-fit object-cover'
                   }}
                 />
               </div>
