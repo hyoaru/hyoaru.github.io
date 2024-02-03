@@ -18,6 +18,7 @@ export default function ProjectCard({
   processURL,
   image,
   tags,
+  year,
   isFromRight
 }: ProjectCardProps) {
   const [isFullImageShown, setIsFullImageShown] = useState(false)
@@ -53,7 +54,7 @@ export default function ProjectCard({
                 <div className="flex h-full w-full p-5">
                   <div className="my-auto w-full">
                     <div className="space-y-2 md:space-y-2">
-                      <p className="font-bold text-sm">{title}</p>
+                      <p className="font-bold text-sm">{title} {'･'} {year}</p>
                       <p className="text-xs">{description}</p>
                     </div>
                     <div className="mt-4 flex gap-1 flex-wrap items-center">

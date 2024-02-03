@@ -6,4 +6,5 @@ export type ProjectType = {
   liveURL: string | null
   processURL: string | null
   tags: string[]
+  year: number
 }
