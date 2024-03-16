@@ -39,8 +39,8 @@ export default function MainSection() {
                   An idiot sandwich from the Philippines.
                 </span>
               </div>
-              <div className="relative mt-4 z-[11] md:mt-6 md:absolute md:w-4/12 lg:mt-8">
-                <span className='leading-normal px-3 text-[3.7vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl min-[1100px]:leading-10 min-[1100px]:text-3xl dark:bg-primary dark:text-foreground'>
+              <div className="relative mt-4 z-[11] md:mt-6 md:absolute md:w-4/12 lg:max-w-[460px] lg:mt-8">
+                <span className='leading-normal px-3 text-[3.7vw] box-decoration-clone border py-[5px] bg-background text-primary rounded-xl md:text-lg lg:leading-9 lg:text-2xl min-[1100px]:leading-10 min-[1100px]:text-3xl xl:text-xl dark:bg-primary dark:text-foreground'>
                   A programmer, graphic designer, layout artist, and a data scientist in the making.
                 </span>
                 <div className="hidden md:flex flex-wrap gap-x-2 gap-y-1 mt-6">
