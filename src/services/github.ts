@@ -1,6 +1,7 @@
 import {
   GithubBaseUserInformation,
   GithubContributionStats,
+  GithubRecentCommit,
 } from "@/types/github";
 
 import axios from "axios";
@@ -25,5 +26,24 @@ export const githubService = {
     return await axios
       .get<GithubBaseUserInformation>(url)
       .then((response) => response.data);
+  },
+
+  getRecentCommit: async (): Promise<GithubRecentCommit> => {
+    const url = "https://api.github.com/users/hyoaru/events";
+    return await axios
+      .get<GithubRecentCommit>(url)
+      .then((response) => response.data)
+      .then(
+        (events) => events.filter((event) => event.type === "PushEvent")?.[0],
+      )
+      .then((recentPushEvent) => {
+        const commits = recentPushEvent.payload.commits;
+        const data: GithubRecentCommit = {
+          repository_name: recentPushEvent.repo.name,
+          commit_message: commits?.[commits.length - 1]?.message,
+          created_at: recentPushEvent.created_at,
+        };
+        return data;
+      });
   },
 };

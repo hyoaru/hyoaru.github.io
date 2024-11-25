@@ -14,8 +14,15 @@ export default function useGithub() {
       queryKey: ["github_base_user_information"],
     });
 
+  const getRecentCommit = () =>
+    useQuery({
+      queryFn: githubService.getRecentCommit,
+      queryKey: ["github_recent_commit"],
+    });
+
   return {
     getContributionStats,
     getBaseUserInformation,
+    getRecentCommit,
   };
 }
