@@ -1,4 +1,5 @@
 import GithubRecentCommitTile from "@/components/github/GithubRecentCommitTile";
+import LastFmRecentTrackTitle from "@/components/last-fm/LastFmRecentTrackTile";
 import usePhilippineTime from "@/hooks/usePhilippineTime";
 import { core } from "@/services/core";
 import { Image } from "@nextui-org/image";
@@ -30,9 +31,12 @@ export default function Main() {
             </div>
             <p>{phTime}</p>
           </div>
-          <div className="grid grid-rows-2 items-start gap-2 mt-auto">
+          <div className="grid grid-rows-2 gap-[3px] mt-auto">
             <div className="">
               <GithubRecentCommitTile />
+            </div>
+            <div className="">
+              <LastFmRecentTrackTitle />
             </div>
           </div>
         </div>

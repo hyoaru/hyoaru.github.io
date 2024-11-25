@@ -23,12 +23,12 @@ export default function GithubRecentCommitTile() {
     );
 
   return (
-    <div className="w-full h-full p-3 rounded-lg bg-custom-secondary flex items-center justify-center">
-      <div className="grid grid-cols-12 gap-4 w-full">
-        <div className="col-span-3 flex items-center justify-center bg-primary/5 border border-primary text-primary rounded-lg">
+    <div className="w-full h-full p-[3px] rounded-lg bg-custom-secondary flex items-center justify-center">
+      <div className="grid grid-cols-12 gap-4 w-full h-full">
+        <div className="col-span-3 flex items-center justify-center bg-primary/5 border border-primary text-primary rounded-lg h-full w-full">
           <Github className="" size={40} />
         </div>
-        <div className="col-span-9">
+        <div className="col-span-9 flex flex-col justify-center">
           <p className="text-xs truncate">
             {formatDate({ date: data!.created_at })}
           </p>
