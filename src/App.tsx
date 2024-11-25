@@ -1,19 +1,42 @@
-import MainSection from "@sections/MainSection"
-import ProjectsSection from "@sections/ProjectsSection"
-import AboutSection from "@sections/AboutSection"
-import CertificationSection from "@sections/CertificationSection"
-import ContactSection from "@sections/ContactSection"
+import { RouterProvider } from "@tanstack/react-router";
+import { useState } from "react";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// App imports
+import "@/globals.css";
+import createRouter from "@/router";
+import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider } from "./context/ThemeContext";
+
+const router = createRouter();
+
+// Register the router instance for type safety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 export default function App() {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60 * 1000 * 60,
+            refetchOnWindowFocus: true,
+          },
+        },
+      })
+  );
   return (
-    <>
-      <div className="space-y-44 mt-8">
-        <MainSection />
-        <ProjectsSection />
-        <AboutSection />
-        <CertificationSection />
-        <ContactSection />
-      </div>
-    </>
-  )
+    <ThemeProvider>
+      <NextUIProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} context={{ queryClient }} />
+        </QueryClientProvider>
+      </NextUIProvider>
+
+    </ThemeProvider>
+  );
 }
