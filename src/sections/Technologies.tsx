@@ -11,17 +11,34 @@ import { TechnologyBadge } from "@/components/shared/TechnologyBadge";
 import useCore from "@/hooks/useCore";
 import { Forward } from "lucide-react";
 import Marquee from "react-fast-marquee";
+import LoadingTile from "@/components/shared/LoadingTile";
+import ErrorTile from "@/components/shared/ErrorTile";
 
 export default function Technologies() {
   const { getTechnologies } = useCore();
-  const { data } = getTechnologies();
+  const { data, isLoading, error } = getTechnologies();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  if (isLoading)
+    return (
+      <div className="h-14 bg-background p-[3px] rounded-xl">
+        <LoadingTile />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="h-14 bg-background p-[3px] rounded-xl">
+        <ErrorTile />
+      </div>
+    );
 
   return (
     <>
       <div className="relative">
         <div className="absolute z-[5] right-[-6px] top-[-6px]">
-          <button onClick={onOpen}>
+          <button onClick={onOpen} className="relative">
+            <div className=" rounded-full border border-primary absolute w-full h-full animate-ping"></div>
             <Forward className="bg-primary p-1 rounded-full text-primary-foreground" />
           </button>
         </div>
