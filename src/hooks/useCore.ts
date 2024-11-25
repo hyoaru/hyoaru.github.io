@@ -2,6 +2,13 @@ import { core } from "@/services/core";
 import { useQuery } from "@tanstack/react-query";
 
 export default function useCore() {
+  const getTechnologies = () => (
+    useQuery({
+      queryFn: core.getTechnologies,
+      queryKey: ["technologies"],
+    })
+  )
+
   const getProjects = () => (
     useQuery({
       queryFn: core.getProjects,
@@ -17,7 +24,8 @@ export default function useCore() {
   )
 
   return {
+    getTechnologies,
     getProjects,
-    getCertifications
+    getCertifications,
   }
 }

@@ -1,5 +1,6 @@
 import Header from "@/components/partials/Header";
 import Main from "@/sections/Main";
+import Technologies from "@/sections/Technologies";
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -15,6 +16,7 @@ function Index() {
           <div className="flex flex-col gap-4">
             <Header />
             <Main />
+            <Technologies />
           </div>
           <div className="">
           </div>

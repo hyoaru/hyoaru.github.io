@@ -1,4 +1,4 @@
-import { Certification, Project } from "@/types/core";
+import { Certification, Project, Technology } from "@/types/core";
 import axios from "axios";
 
 const CORE_API_URL = import.meta.env.VITE_PORTFOLIO_RESOURCES_BASE_URL;
@@ -8,6 +8,13 @@ export const axiosInstance = axios.create({
 });
 
 export const core = {
+  getTechnologies: async (): Promise<Technology[]> => {
+    const endPoint = '/technologies.json'
+    return await axiosInstance
+      .get<Technology[]>(endPoint)
+      .then((response) => response.data)
+  },
+
   getProjects: async (): Promise<Project[]> => {
     const endPoint = '/projects.json'
     return await axiosInstance
