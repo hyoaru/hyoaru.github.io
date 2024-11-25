@@ -1,4 +1,5 @@
 import Header from "@/components/partials/Header";
+import GithubActivityCalendar from "@/sections/GithubActivityCalendar";
 import GithubStats from "@/sections/GithubStats";
 import Main from "@/sections/Main";
 import Technologies from "@/sections/Technologies";
@@ -18,6 +19,7 @@ function Index() {
             <Main />
             <Technologies />
             <GithubStats />
+            <GithubActivityCalendar />
           </div>
           <div className=""></div>
         </div>
