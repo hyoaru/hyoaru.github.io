@@ -12,7 +12,7 @@
 
 @layer base {
   :root {
-    --custom-background: 0 0% 85%;
+    --custom-background: 0 0% 90%;
     --custom-foreground: 0 0% 0%;
     --custom-secondary: 0 0% 95%;
     --custom-secondary-foreground: 0 0% 0%;

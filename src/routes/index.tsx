@@ -12,23 +12,27 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="bg-custom-background container-2xl">
-      <div className="grid grid-cols-12 h-screen p-4 gap-2">
-        <div className="col-span-4">
-          <div className="flex flex-col gap-2 h-full ">
+    <>
+      <div className="flex items-center justify-center absolute bg-grid inset-0">
+        <div className="flex h-full w-full rounded-xl max-h-[1080px] max-w-[1920px] bg-custom-background p-4 gap-4">
+          <div className="w-4/12 overflow-y-auto overflow-x-clip space-y-2 rounded-xl scroll-smooth">
             <Header />
             <Main />
-            <div className="bg-background grow rounded-xl"></div>
             <Technologies />
             <GithubStats />
             <GithubActivityCalendar />
             <Footer />
           </div>
-        </div>
-        <div className="col-span-8">
-          <div className="h-full bg-background"></div>
+          <div className="w-8/12 overflow-y-auto rounded-xl overflow-x-clip scroll-smooth">
+            <div className="h-full bg-background rounded-xl">
+              {/* <div className="h-[400px] bg-black"></div> */}
+              {/* <div className="h-[400px] bg-red-900"></div> */}
+              {/* <div className="h-[400px] bg-green-900"></div> */}
+              {/* <div className="h-[400px] bg-black"></div> */}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

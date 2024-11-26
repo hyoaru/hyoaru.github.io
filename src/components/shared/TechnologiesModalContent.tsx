@@ -42,7 +42,7 @@ export default function TechnologiesModalContent() {
           </ModalHeader>
           <ModalBody>
             <div className="relative">
-              <div className="h-[413px] overflow-y-scroll ">
+              <div className="max-h-[400px] overflow-y-scroll ">
                 <div className="flex gap-2 flex-wrap">
                   {data?.map((technology) => (
                     <TechnologyBadge
