@@ -1,5 +1,6 @@
 import Footer from "@/components/partials/Footer";
 import Header from "@/components/partials/Header";
+import Content from "@/sections/Content";
 import GithubActivityCalendar from "@/sections/GithubActivityCalendar";
 import GithubStats from "@/sections/GithubStats";
 import Main from "@/sections/Main";
@@ -24,11 +25,8 @@ function Index() {
             <Footer />
           </div>
           <div className="w-8/12 overflow-y-auto rounded-xl overflow-x-clip scroll-smooth">
-            <div className="h-full bg-background rounded-xl">
-              {/* <div className="h-[400px] bg-black"></div> */}
-              {/* <div className="h-[400px] bg-red-900"></div> */}
-              {/* <div className="h-[400px] bg-green-900"></div> */}
-              {/* <div className="h-[400px] bg-black"></div> */}
+            <div className="h-full rounded-xl">
+              <Content />
             </div>
           </div>
         </div>

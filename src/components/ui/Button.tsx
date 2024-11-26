@@ -28,8 +28,9 @@ const ButtonIcon = ({ children, className }: ButtonIconProps) => {
     className: cn(
       children.props.className,
       className,
-      "bg-transparent p-1 border border-foreground rounded-full",
+      "bg-transparent p-[4px] border border-foreground rounded-full",
     ),
+    strokeWidth: 4,
   });
 };
 
