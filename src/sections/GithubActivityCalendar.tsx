@@ -49,21 +49,23 @@ const GithubActivityCalendar = memo(function _GithubActivityCalendar() {
 
   if (isLoading)
     return (
-      <div className="h-40 bg-background p-[3px] rounded-xl">
+      <div className="h-[10.8rem] bg-background p-[3px] rounded-xl">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-40 bg-background p-[3px] rounded-xl">
+      <div className="h-[10.8rem] bg-background p-[3px] rounded-xl">
         <ErrorTile />
       </div>
     );
 
   return (
     <>
-      <div className={`rounded-xl bg-background p-4`}>
+      <div
+        className={`rounded-xl bg-background p-4 h-[11rem] overflow-x-scroll overflow-y-hidden flex items-center`}
+      >
         <div className="relative">
           {filteredContributions && (
             <>

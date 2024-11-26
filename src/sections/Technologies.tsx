@@ -14,14 +14,14 @@ export default function Technologies() {
 
   if (isLoading)
     return (
-      <div className="h-14 bg-background p-[3px] rounded-xl">
+      <div className="h-[3rem] bg-background p-[3px] rounded-xl">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-14 bg-background p-[3px] rounded-xl">
+      <div className="h-[3rem] bg-background p-[3px] rounded-xl">
         <ErrorTile />
       </div>
     );
@@ -35,11 +35,11 @@ export default function Technologies() {
             <Forward className="bg-primary p-1 rounded-full text-primary-foreground" />
           </button>
         </div>
-        <div className="bg-background rounded-xl p-[3px]">
+        <div className="bg-background rounded-xl p-[3px] h-max">
           <Marquee>
             {data?.map((technology) => (
               <TechnologyBadge
-                className="mx-[3px]"
+                className="mx-[3px] h-[2.6rem]"
                 key={`TechnologyBadge-${technology.name}`}
               >
                 <TechnologyBadge.Logo logo={technology.logo} />

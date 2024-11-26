@@ -41,7 +41,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="mt-auto">
         <p className="text-base">
           A Philippines based 22 year old
           <span className="font-bold text-primary">

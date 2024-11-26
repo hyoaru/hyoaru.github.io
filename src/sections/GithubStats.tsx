@@ -6,7 +6,7 @@ import { Github, Hash } from "lucide-react";
 
 export default function GithubStats() {
   return (
-    <div className="bg-background rounded-xl p-[3px] grid grid-cols-12 h-24">
+    <div className="bg-background rounded-xl p-[3px] grid grid-cols-12">
       <div className="col-span-2 items-center flex justify-center ">
         <Github className="" />
       </div>
@@ -24,9 +24,9 @@ function Repositories() {
   const { getBaseUserInformation } = useGithub();
   const { data, isLoading, error } = getBaseUserInformation();
 
-  if (isLoading) return <LoadingTile />;
+  if (isLoading) return <LoadingComponent />;
 
-  if (error) return <ErrorTile />;
+  if (error) return <ErrorComponent />;
 
   return (
     <MetricCard>
@@ -47,9 +47,9 @@ function Contributions() {
   const { getContributionStats } = useGithub();
   const { data, isLoading, error } = getContributionStats();
 
-  if (isLoading) return <LoadingTile />;
+  if (isLoading) return <LoadingComponent />;
 
-  if (error) return <ErrorTile />;
+  if (error) return <ErrorComponent />;
 
   return (
     <MetricCard>
@@ -64,4 +64,11 @@ function Contributions() {
       </MetricCard.Value>
     </MetricCard>
   );
+}
+
+function ErrorComponent() {
+  return <ErrorTile className="h-[5.5rem]" />;
+}
+function LoadingComponent() {
+  return <LoadingTile className="h-[5.5rem]" />;
 }

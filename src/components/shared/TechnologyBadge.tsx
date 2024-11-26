@@ -15,7 +15,7 @@ export const TechnologyBadge = ({
 }: TechnologyBadgeProps) => (
   <div
     className={cn(
-      "rounded-lg bg-custom-secondary px-4 py-2 font-bold flex items-center gap-2",
+      "rounded-lg bg-custom-secondary px-4 font-bold h-full flex items-center gap-2",
       className,
     )}
   >

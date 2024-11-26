@@ -28,7 +28,7 @@ type MetricCardLabelProps = {
 export const MetricCard = ({ children, className }: MetricCardProps) => (
   <div
     className={cn(
-      "rounded-lg bg-custom-secondary p-4 px-6 flex flex-col justify-center",
+      "rounded-lg h-[5.5rem] bg-custom-secondary p-4 px-6 flex flex-col justify-center",
       className,
     )}
   >
