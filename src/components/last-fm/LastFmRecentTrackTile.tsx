@@ -1,8 +1,7 @@
-import { formatDate } from "@/lib/utils";
 import ErrorTile from "../shared/ErrorTile";
 import LoadingTile from "../shared/LoadingTile";
-import { Github } from "lucide-react";
 import useLastFm from "@/hooks/useLastFm";
+import { ActivityTile } from "../ui/ActivityTile";
 
 export default function LastFmRecentTrackTitle() {
   const { getRecentTrack } = useLastFm();
@@ -23,25 +22,27 @@ export default function LastFmRecentTrackTitle() {
     );
 
   return (
-    <div
-      className="w-full h-full p-[3px] rounded-lg bg-custom-secondary flex items-center justify-center bg-center bg-cover relative overflow-hidden"
-      style={{ backgroundImage: `url(${data?.image_url})` }}
-    >
-      <div className="absolute w-full h-full backdrop-blur-[12px] opacity-90"></div>
-      <div className="grid grid-cols-12 gap-4 w-full h-full">
-        <div className="col-span-3 flex items-center justify-center bg-primary/5 border border-primary text-primary rounded-lg overflow-hidden h-full w-full">
-          <img
-            src={data?.image_url}
-            className="object-fit object-center z-[1]"
-            alt=""
-          />
-        </div>
-        <div className="col-span-9 z-[2] flex flex-col justify-center text-background">
-          <p className="text-xs truncate">{"Last.fm ･ listened to"}</p>
-          <p className="text-xs truncate font-bold">{data?.title}</p>
-          <p className="text-xs truncate">{data?.artist}</p>
-        </div>
-      </div>
-    </div>
+    <>
+      <ActivityTile
+        className={`bg-center bg-cover relative overflow-hidden`}
+        style={{ backgroundImage: `url(${data?.image_url})` }}
+      >
+        <div className="absolute w-full h-full backdrop-blur-[12px] opacity-90"></div>
+        <ActivityTile.Body>
+          <ActivityTile.Icon className="rounded-lg overflow-hidden h-full w-full">
+            <img
+              src={data?.image_url}
+              className="object-fit object-center z-[1]"
+              alt=""
+            />
+          </ActivityTile.Icon>
+          <ActivityTile.Content className="text-background z-[2]">
+            <p className="text-xs truncate">{"Last.fm ･ listened to"}</p>
+            <p className="text-xs truncate font-bold">{data?.title}</p>
+            <p className="text-xs truncate">{data?.artist}</p>
+          </ActivityTile.Content>
+        </ActivityTile.Body>
+      </ActivityTile>
+    </>
   );
 }
