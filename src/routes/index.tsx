@@ -1,3 +1,4 @@
+import Footer from "@/components/partials/Footer";
 import Header from "@/components/partials/Header";
 import GithubActivityCalendar from "@/sections/GithubActivityCalendar";
 import GithubStats from "@/sections/GithubStats";
@@ -20,6 +21,7 @@ function Index() {
             <Technologies />
             <GithubStats />
             <GithubActivityCalendar />
+            <Footer />
           </div>
           <div className=""></div>
         </div>

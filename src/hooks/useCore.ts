@@ -1,31 +1,35 @@
-import { core } from "@/services/core";
+import { coreService } from "@/services/core";
 import { useQuery } from "@tanstack/react-query";
 
 export default function useCore() {
-  const getTechnologies = () => (
+  const getTechnologies = () =>
     useQuery({
-      queryFn: core.getTechnologies,
+      queryFn: coreService.getTechnologies,
       queryKey: ["technologies"],
-    })
-  )
+    });
 
-  const getProjects = () => (
+  const getProjects = () =>
     useQuery({
-      queryFn: core.getProjects,
+      queryFn: coreService.getProjects,
       queryKey: ["projects"],
-    })
-  )
+    });
 
-  const getCertifications = () => (
+  const getCertifications = () =>
     useQuery({
-      queryFn: core.getCertifications,
-      queryKey: ["certifications"]
-    })
-  )
+      queryFn: coreService.getCertifications,
+      queryKey: ["certifications"],
+    });
+
+  const getSocials = () =>
+    useQuery({
+      queryFn: coreService.getSocials,
+      queryKey: ["socials"],
+    });
 
   return {
     getTechnologies,
     getProjects,
     getCertifications,
-  }
+    getSocials,
+  };
 }

@@ -1,12 +1,12 @@
 import GithubRecentCommitTile from "@/components/github/GithubRecentCommitTile";
 import LastFmRecentTrackTitle from "@/components/last-fm/LastFmRecentTrackTile";
 import usePhilippineTime from "@/hooks/usePhilippineTime";
-import { core } from "@/services/core";
+import { coreService } from "@/services/core";
 import { Image } from "@nextui-org/image";
 import { FileImage } from "lucide-react";
 
 export default function Main() {
-  const mainImageUrl = core.getMainImageUrl();
+  const mainImageUrl = coreService.getMainImageUrl();
   const phTime = usePhilippineTime();
 
   return (
