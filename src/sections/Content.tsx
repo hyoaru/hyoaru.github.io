@@ -1,6 +1,7 @@
-import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+import { Tab, Tabs } from "@nextui-org/react";
 import { ChevronRight } from "lucide-react";
 import React from "react";
+import Projects from "./Projects";
 
 export default function Content() {
   return (
@@ -9,23 +10,18 @@ export default function Content() {
         <Tabs
           aria-label="Options"
           classNames={{
-            tabList: " w-max",
-            base: "w-full bg-background border-0 rounded-xl m-0 p-0",
+            tabList: " w-max sticky",
+            base: "w-full bg-custom-secondary border-0 rounded-xl m-0 p-0",
             tab: "bg-background rounded-lg opacity-100 px-3 h-8",
             tabContent:
               "group-data-[selected=true]:text-primary-foreground text-base text-foreground font-bold",
             cursor: "bg-primary",
-            panel: "m-0 p-0 h-full",
+            panel: "m-0 p-0 h-full overflow-y-hidden",
           }}
         >
           <Tab key="projects" title={<TabTitle title="Projects" />}>
             <TabContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                quibusdam maiores, repellendus optio illum, expedita quia
-                aperiam quo quaerat possimus aliquid esse vel labore.
-                Accusantium labore ipsa omnis illo consequuntur.
-              </p>
+              <Projects />
             </TabContent>
           </Tab>
           <Tab key="certifications" title={<TabTitle title="Certifications" />}>
@@ -68,6 +64,10 @@ function TabTitle({ title }: { title: string }) {
 
 function TabContent({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full bg-custom-secondary rounded-xl p-4">{children}</div>
+    <div className="h-full bg-custom-secondary rounded-xl p-2 overflow-y-scroll">
+      <div className="bg-background rounded-lg p-2 overflow-y-clip">
+        {children}
+      </div>
+    </div>
   );
 }
