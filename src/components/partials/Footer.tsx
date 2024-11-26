@@ -1,12 +1,9 @@
-import useCore from "@/hooks/useCore";
 import { useDisclosure, Modal } from "@nextui-org/react";
 import { Clipboard } from "lucide-react";
 import SocialsModalContent from "../shared/SocialsModalContent";
 
 export default function Footer() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const { getSocials } = useCore();
-  const { data, isLoading, error } = getSocials();
 
   return (
     <>
