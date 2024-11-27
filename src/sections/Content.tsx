@@ -2,6 +2,7 @@ import { Tab, Tabs } from "@nextui-org/react";
 import { ChevronRight } from "lucide-react";
 import React from "react";
 import Projects from "./Projects";
+import Certifications from "./Certifications";
 
 export default function Content() {
   return (
@@ -26,12 +27,7 @@ export default function Content() {
           </Tab>
           <Tab key="certifications" title={<TabTitle title="Certifications" />}>
             <TabContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                quibusdam maiores, repellendus optio illum, expedita quia
-                aperiam quo quaerat possimus aliquid esse vel labore.
-                Accusantium labore ipsa omnis illo consequuntur.
-              </p>
+              <Certifications />
             </TabContent>
           </Tab>
           <Tab key="contact" title={<TabTitle title="Contact" />}>

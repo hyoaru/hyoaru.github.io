@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="lg:bg-grid lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
+      <div className="bg-grid lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
         <div className="block h-full w-full space-y-2 bg-custom-background p-2 sm:p-4 lg:flex lg:max-h-[1010px] lg:max-w-[1920px] lg:gap-4 lg:space-y-0 lg:rounded-xl">
           <div className="space-y-2 scroll-smooth rounded-xl lg:w-5/12 lg:overflow-y-auto lg:overflow-x-clip 2xl:w-4/12">
             <Header />
