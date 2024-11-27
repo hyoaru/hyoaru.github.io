@@ -18,6 +18,7 @@ export default function useGithub() {
     useQuery({
       queryFn: githubService.getRecentCommit,
       queryKey: ["github_recent_commit"],
+      staleTime: 60 * 1000 * 30,
     });
 
   return {
