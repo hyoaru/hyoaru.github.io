@@ -6,10 +6,6 @@ type MetricCardProps = {
   className?: string;
 };
 
-type MetricCardIconProps = {
-  children: React.ReactNode;
-};
-
 type MetricCardHeaderProps = {
   children: React.ReactNode;
   className?: string;
@@ -28,7 +24,7 @@ type MetricCardLabelProps = {
 export const MetricCard = ({ children, className }: MetricCardProps) => (
   <div
     className={cn(
-      "rounded-lg h-[5.5rem] bg-custom-secondary p-4 px-6 flex flex-col justify-center",
+      "flex h-[5.5rem] flex-col justify-center rounded-lg bg-custom-secondary p-2 px-6",
       className,
     )}
   >
@@ -41,15 +37,22 @@ const MetricCardHeader = ({ children, className }: MetricCardHeaderProps) => (
 );
 
 const MetricCardLabel = ({ children, className }: MetricCardLabelProps) => (
-  <p className={cn("uppercase font-mono", className)}>{children}</p>
+  <div className="flex w-full items-center justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
+    <p className={cn("font-mono uppercase", className)}>{children}</p>
+    <Hash className="size-4 sm:size-5 lg:size-4 2xl:size-5" />
+  </div>
 );
 const MetricCardValue = ({ children, className }: MetricCardValueProps) => (
-  <p className={cn("font-bold text-primary text-xl", className)}>{children}</p>
+  <p
+    className={cn(
+      "text-lg font-bold text-primary sm:text-xl lg:text-lg 2xl:text-xl",
+      className,
+    )}
+  >
+    {children}
+  </p>
 );
-
-const MetricCardIcon = ({ children }: MetricCardIconProps) => <>{children}</>;
 
 MetricCard.Header = MetricCardHeader;
 MetricCard.Label = MetricCardLabel;
 MetricCard.Value = MetricCardValue;
-MetricCard.Icon = MetricCardIcon;

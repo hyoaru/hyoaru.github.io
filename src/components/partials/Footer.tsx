@@ -15,20 +15,20 @@ export default function Footer() {
 
   return (
     <>
-      <div className="rounded-xl bg-white p-3 flex justify-between">
+      <div className="flex justify-between rounded-xl bg-white p-[3px] text-sm">
         <button
           onClick={onCopy}
-          className="flex gap-1 items-center px-3 py-1 rounded-lg border bg-primary/5 text-sm border-primary"
+          className="flex size-8 w-max items-center gap-1 rounded-lg border border-primary bg-primary/5 px-3 py-1"
         >
           <p className="">{emailAddress}</p>
           <Clipboard className="h-[1rem] w-[1rem]" />
         </button>
         <button
           onClick={onOpen}
-          className="flex gap-2 items-center bg-custom-secondary px-3 py-1 rounded-lg border hover:bg-custom-secondary/40 transition-all duration-200 ease-in-out"
+          className="flex size-8 w-max items-center gap-2 rounded-lg border bg-custom-secondary px-3 py-1 transition-all duration-200 ease-in-out hover:bg-custom-secondary/40"
         >
-          <p className="text-sm">Connect with me</p>
-          <div className="size-3 bg-success rounded-full animate-pulse"></div>
+          <p className="">Connect with me</p>
+          <div className="size-3 animate-pulse rounded-full bg-success"></div>
         </button>
       </div>
 

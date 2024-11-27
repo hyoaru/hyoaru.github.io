@@ -229,7 +229,7 @@ const ProjectCardTitle = ({
   year,
   className,
 }: ProjectCardTitleProps) => (
-  <p className={cn("font-bold mb-2", className)}>
+  <p className={cn("font-bold text-sm 2xl:text-base mb-2", className)}>
     {title} {"･"} {year}
   </p>
 );
@@ -240,7 +240,7 @@ const ProjectCardDescription = ({
 }: ProjectCardDescriptionProps) => (
   <div
     className={cn(
-      "h-full overflow-y-scroll max-h-[79px]",
+      "h-full overflow-y-scroll max-h-[79px] text-xs 2xl:text-base",
       classNames?.container,
     )}
   >

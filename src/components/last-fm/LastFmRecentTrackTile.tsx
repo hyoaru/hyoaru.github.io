@@ -9,14 +9,14 @@ export default function LastFmRecentTrackTitle() {
 
   if (isLoading)
     return (
-      <div className="h-full bg-background p-[3px] rounded-xl">
+      <div className="h-full rounded-xl bg-background p-[3px]">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-8 bg-background p-[3px] rounded-xl">
+      <div className="h-8 rounded-xl bg-background p-[3px]">
         <ErrorTile />
       </div>
     );
@@ -24,22 +24,26 @@ export default function LastFmRecentTrackTitle() {
   return (
     <>
       <ActivityTile
-        className={`bg-center bg-cover relative overflow-hidden`}
+        className={`relative bg-cover bg-center`}
         style={{ backgroundImage: `url(${data?.image_url})` }}
       >
-        <div className="absolute w-full h-full backdrop-blur-[12px] opacity-90"></div>
+        <div className="absolute h-full w-full opacity-90 backdrop-blur-[12px]"></div>
         <ActivityTile.Body>
-          <ActivityTile.Icon className="rounded-lg overflow-hidden h-full w-full">
+          <ActivityTile.Icon className="z-[10] h-full overflow-hidden border-transparent object-cover">
             <img
               src={data?.image_url}
-              className="object-fit object-center z-[1]"
+              className="h-full w-full object-cover object-center"
               alt=""
             />
           </ActivityTile.Icon>
-          <ActivityTile.Content className="text-background z-[2]">
-            <p className="text-xs truncate">{"Last.fm ･ listened to"}</p>
-            <p className="text-xs truncate font-bold">{data?.title}</p>
-            <p className="text-xs truncate">{data?.artist}</p>
+          <ActivityTile.Content className="z-[2] text-background">
+            <ActivityTile.ContentHeader>
+              {"Last.fm ･ listened to"}
+            </ActivityTile.ContentHeader>
+            <ActivityTile.ContentBody>{data?.title}</ActivityTile.ContentBody>
+            <ActivityTile.ContentFooter>
+              {data?.artist}
+            </ActivityTile.ContentFooter>
           </ActivityTile.Content>
         </ActivityTile.Body>
       </ActivityTile>

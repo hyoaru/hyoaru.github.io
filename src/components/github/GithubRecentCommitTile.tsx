@@ -11,31 +11,36 @@ export default function GithubRecentCommitTile() {
 
   if (isLoading)
     return (
-      <div className="h-full bg-background p-[3px] rounded-xl">
+      <div className="h-full rounded-xl bg-background p-[3px]">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-8 bg-background p-[3px] rounded-xl">
+      <div className="h-8 rounded-xl bg-background p-[3px]">
         <ErrorTile />
       </div>
     );
 
   return (
     <>
-      <ActivityTile>
+      <ActivityTile className="border border-primary">
         <ActivityTile.Body>
           <ActivityTile.Icon>
-            <Github className="" size={40} />
+            <Github className="size-10 lg:size-6 xl:size-8" />
           </ActivityTile.Icon>
           <ActivityTile.Content>
-            <p className="text-xs truncate">
+            <ActivityTile.ContentHeader>
+              {"Github ･ "}
               {formatDate({ date: data!.created_at })}
-            </p>
-            <p className="text-xs truncate font-bold">{data?.commit_message}</p>
-            <p className="text-xs truncate">{data?.repository_name}</p>
+            </ActivityTile.ContentHeader>
+            <ActivityTile.ContentBody>
+              {data?.commit_message}
+            </ActivityTile.ContentBody>
+            <ActivityTile.ContentFooter>
+              {data?.repository_name}
+            </ActivityTile.ContentFooter>
           </ActivityTile.Content>
         </ActivityTile.Body>
       </ActivityTile>

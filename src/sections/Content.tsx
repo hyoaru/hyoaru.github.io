@@ -14,7 +14,7 @@ export default function Content() {
             base: "w-full bg-custom-secondary border-0 rounded-xl m-0 p-0",
             tab: "bg-background rounded-lg opacity-100 px-3 h-8",
             tabContent:
-              "group-data-[selected=true]:text-primary-foreground text-base text-foreground font-bold",
+              "group-data-[selected=true]:text-primary-foreground text-sm 2xl:text-base text-foreground font-bold",
             cursor: "bg-primary",
             panel: "m-0 p-0 h-full overflow-y-hidden",
           }}

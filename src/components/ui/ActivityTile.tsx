@@ -21,6 +21,19 @@ type ActivityTileContentProps = {
   className?: string;
 };
 
+type ActivityTileContentHeaderProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+type ActivityTileContentBodyProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+type ActivityTileContentFooterProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
 export const ActivityTile = ({
   children,
   className,
@@ -28,7 +41,7 @@ export const ActivityTile = ({
 }: ActivityTileProps) => (
   <div
     className={cn(
-      "w-full h-full p-[3px] rounded-lg bg-custom-secondary flex items-center justify-center",
+      "flex h-full w-full items-center justify-center overflow-hidden rounded-lg border border-transparent bg-custom-secondary p-[3px]",
       className,
     )}
     style={style}
@@ -38,7 +51,12 @@ export const ActivityTile = ({
 );
 
 const ActivityTileBody = ({ children, className }: ActivityTileBodyProps) => (
-  <div className={cn("grid grid-cols-12 gap-4 w-full h-full", className)}>
+  <div
+    className={cn(
+      "grid h-full w-full grid-cols-12 sm:gap-6 lg:gap-3",
+      className,
+    )}
+  >
     {children}
   </div>
 );
@@ -46,7 +64,7 @@ const ActivityTileBody = ({ children, className }: ActivityTileBodyProps) => (
 const ActivityTileIcon = ({ children, className }: ActivityTileIconProps) => (
   <div
     className={cn(
-      "col-span-3 flex items-center justify-center bg-primary/5 border border-primary text-primary rounded-lg h-full w-full",
+      "hidden h-full w-full items-center justify-center rounded-lg border border-primary bg-primary/5 text-primary sm:col-span-4 sm:flex lg:col-span-4 lg:hidden xl:flex",
       className,
     )}
   >
@@ -58,11 +76,46 @@ const ActivityTileContent = ({
   children,
   className,
 }: ActivityTileContentProps) => (
-  <div className={cn("col-span-9 flex flex-col justify-center", className)}>
+  <div
+    className={cn(
+      "col-span-12 my-auto h-max w-full text-center sm:col-span-8 sm:text-start lg:col-span-full lg:text-center xl:col-span-8 xl:text-start",
+      className,
+    )}
+  >
     {children}
   </div>
+);
+
+const ActivityTileContentHeader = ({
+  children,
+  className,
+}: ActivityTileContentHeaderProps) => (
+  <p className={cn("truncate text-xs lg:text-[10px] xl:text-xs", className)}>
+    {children}
+  </p>
+);
+
+const ActivityTileContentBody = ({
+  children,
+  className,
+}: ActivityTileContentBodyProps) => (
+  <p className={cn("truncate text-xs font-bold lg:text-xs", className)}>
+    {children}
+  </p>
+);
+
+const ActivityTileContentFooter = ({
+  children,
+  className,
+}: ActivityTileContentFooterProps) => (
+  <p className={cn("truncate text-xs lg:text-[10px] xl:text-xs", className)}>
+    {children}
+  </p>
 );
 
 ActivityTile.Body = ActivityTileBody;
 ActivityTile.Icon = ActivityTileIcon;
 ActivityTile.Content = ActivityTileContent;
+ActivityTile.ContentHeader = ActivityTileContentHeader;
+ActivityTile.ContentBody = ActivityTileContentBody;
+ActivityTile.ContentFooter = ActivityTileContentFooter;

@@ -1,3 +1,5 @@
+import GithubRecentCommitTile from "@/components/github/GithubRecentCommitTile";
+import LastFmRecentTrackTile from "@/components/last-fm/LastFmRecentTrackTile";
 import Footer from "@/components/partials/Footer";
 import Header from "@/components/partials/Header";
 import Content from "@/sections/Content";
@@ -14,19 +16,28 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      <div className="flex items-center justify-center absolute bg-grid inset-0">
-        <div className="flex h-full w-full rounded-xl max-h-[1080px] max-w-[1920px] bg-custom-background p-4 gap-4">
-          <div className="w-4/12 overflow-y-auto overflow-x-clip space-y-2 rounded-xl scroll-smooth">
+      <div className="bg-grid absolute inset-0 flex items-center justify-center">
+        <div className="block h-full w-full gap-4 rounded-xl bg-custom-background p-4 lg:flex lg:max-h-[1010px] lg:max-w-[1920px]">
+          <div className="space-y-2 overflow-y-auto overflow-x-clip scroll-smooth rounded-xl lg:w-5/12 2xl:w-4/12">
             <Header />
             <Main />
             <Technologies />
+            <div className="grid h-[5rem] grid-cols-2 gap-1 rounded-xl bg-background p-[3px] sm:hidden lg:grid xl:hidden">
+              <GithubRecentCommitTile />
+              <LastFmRecentTrackTile />
+            </div>
             <GithubStats />
             <GithubActivityCalendar />
-            <Footer />
+            <div className="hidden sm:block">
+              <Footer />
+            </div>
           </div>
-          <div className="w-8/12 overflow-y-auto rounded-xl overflow-x-clip scroll-smooth">
+          <div className="overflow-y-auto overflow-x-clip scroll-smooth rounded-xl lg:w-7/12 2xl:w-8/12">
             <div className="h-full rounded-xl">
               <Content />
+              <div className="block sm:hidden">
+                <Footer />
+              </div>
             </div>
           </div>
         </div>

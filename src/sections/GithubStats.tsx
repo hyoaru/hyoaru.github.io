@@ -6,12 +6,12 @@ import { Github, Hash } from "lucide-react";
 
 export default function GithubStats() {
   return (
-    <div className="bg-background rounded-xl p-[3px] grid grid-cols-12">
-      <div className="col-span-2 items-center flex justify-center ">
-        <Github className="" />
+    <div className="grid grid-cols-12 rounded-xl bg-background p-[3px]">
+      <div className="col-span-2 hidden items-center justify-center sm:col-span-2 sm:flex lg:hidden 2xl:flex">
+        <Github className="size-8" />
       </div>
-      <div className="col-span-10 ">
-        <div className="grid grid-cols-2 h-full gap-1">
+      <div className="col-span-full sm:col-span-10 lg:col-span-full 2xl:col-span-10">
+        <div className="grid h-full grid-cols-2 gap-1">
           <Repositories />
           <Contributions />
         </div>
@@ -32,9 +32,6 @@ function Repositories() {
     <MetricCard>
       <MetricCard.Header>
         <MetricCard.Label>Repositories</MetricCard.Label>
-        <MetricCard.Icon>
-          <Hash />
-        </MetricCard.Icon>
       </MetricCard.Header>
       <MetricCard.Value>
         {data?.public_repos?.toLocaleString()}
@@ -55,9 +52,6 @@ function Contributions() {
     <MetricCard>
       <MetricCard.Header>
         <MetricCard.Label>Contributions</MetricCard.Label>
-        <MetricCard.Icon>
-          <Hash />
-        </MetricCard.Icon>
       </MetricCard.Header>
       <MetricCard.Value>
         {data?.totalContribution?.toLocaleString()}

@@ -10,39 +10,44 @@ export default function Main() {
   const phTime = usePhilippineTime();
 
   return (
-    <div className="bg-background p-6 rounded-xl flex flex-col gap-16">
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-5">
-          <div className="relative">
-            <div className="absolute z-[11] inset-0 flex items-end p-4 opacity-40">
-              <div className="flex gap-2 text-background text-xs items-end font-mono">
-                <FileImage className="" size={20} />
+    <div className="flex flex-col gap-12 rounded-xl bg-background p-6 lg:p-4 xl:gap-16 2xl:p-6">
+      <div className="grid grid-cols-12 gap-6 lg:gap-4 2xl:gap-6">
+        <div className="order-last col-span-full sm:order-first sm:col-span-5 xl:col-span-5">
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 z-[11] flex items-end p-6 opacity-40 lg:p-4">
+              <div className="flex items-center gap-2 font-mono text-xs text-background lg:items-end lg:text-[10px] xl:text-xs">
+                <FileImage className="size-6 lg:size-4 xl:size-6" />
                 <p>{"IMG_JIJI.PNG"}</p>
               </div>
             </div>
-            <Image width={460} src={mainImageUrl} />
+            <Image
+              width={600}
+              src={mainImageUrl}
+              classNames={{
+                wrapper: "h-full w-full object-cover",
+                img: "h-full w-full object-cover",
+              }}
+            />
           </div>
         </div>
-        <div className="col-span-7 flex flex-col">
-          <div className="flex justify-between w-full rows-span-2">
-            <div className="flex gap-4">
+        <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 xl:col-span-7">
+          <div className="rows-span-2 flex w-full justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
+            <div className="flex gap-2 2xl:gap-4">
               <p className="font-bold underline">EN</p>
               <p>FIL</p>
             </div>
             <p>{phTime}</p>
           </div>
-          <div className="grid grid-rows-2 gap-[3px] mt-auto">
-            <div className="">
+          <div className="mt-auto hidden h-[60%] sm:block lg:hidden lg:h-[74%] xl:block">
+            <div className="grid h-full grid-rows-2 gap-1">
               <GithubRecentCommitTile />
-            </div>
-            <div className="">
               <LastFmRecentTrackTitle />
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-auto">
-        <p className="text-base">
+      <div className="mt-auto text-sm sm:text-base lg:text-sm 2xl:text-base">
+        <p className="">
           A Philippines based 22 year old
           <span className="font-bold text-primary">
             {" multi-disciplinary creative and a data scientist in the making."}{" "}

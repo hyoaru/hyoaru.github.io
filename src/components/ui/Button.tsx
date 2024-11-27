@@ -15,7 +15,7 @@ type ButtonIconProps = {
 export const Button = ({ children, className }: ButtonProps) => (
   <NextButton
     className={cn(
-      "px-3 h-8 flex font-bold bg-custom-secondary text-base gap-4",
+      "flex h-8 gap-2 rounded-lg bg-custom-secondary px-3 text-sm font-bold sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
       className,
     )}
   >
@@ -30,7 +30,7 @@ const ButtonIcon = ({ children, className }: ButtonIconProps) => {
       className,
       "bg-transparent p-[4px] border border-foreground rounded-full",
     ),
-    strokeWidth: 4,
+    strokeWidth: 3,
   });
 };
 
