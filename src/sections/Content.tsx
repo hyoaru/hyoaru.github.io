@@ -6,7 +6,7 @@ import Projects from "./Projects";
 export default function Content() {
   return (
     <>
-      <div className="flex flex-col space-y-2 h-full">
+      <div className="flex h-full flex-col space-y-2">
         <Tabs
           aria-label="Options"
           classNames={{
@@ -56,7 +56,7 @@ function TabTitle({ title }: { title: string }) {
       <p>{title}</p>
       <ChevronRight
         strokeWidth={4}
-        className="border p-[2px] rounded-full font-bold"
+        className="rounded-full border p-[2px] font-bold"
       />
     </div>
   );
@@ -64,8 +64,8 @@ function TabTitle({ title }: { title: string }) {
 
 function TabContent({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full bg-custom-secondary rounded-xl p-2 overflow-y-scroll">
-      <div className="bg-background rounded-lg p-2 overflow-y-clip">
+    <div className="h-full overflow-y-scroll rounded-xl sm:bg-custom-secondary sm:p-2">
+      <div className="overflow-y-clip rounded-lg sm:bg-background sm:p-2">
         {children}
       </div>
     </div>

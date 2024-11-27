@@ -1,7 +1,7 @@
 import { Modal, useDisclosure } from "@nextui-org/react";
 import { TechnologyBadge } from "@/components/shared/TechnologyBadge";
 import useCore from "@/hooks/useCore";
-import { Forward } from "lucide-react";
+import { CornerLeftUp, Forward } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import LoadingTile from "@/components/shared/LoadingTile";
 import ErrorTile from "@/components/shared/ErrorTile";
@@ -14,14 +14,14 @@ export default function Technologies() {
 
   if (isLoading)
     return (
-      <div className="h-[3rem] bg-background p-[3px] rounded-xl">
+      <div className="h-[3rem] rounded-xl bg-background p-[3px]">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-[3rem] bg-background p-[3px] rounded-xl">
+      <div className="h-[3rem] rounded-xl bg-background p-[3px]">
         <ErrorTile />
       </div>
     );
@@ -29,13 +29,14 @@ export default function Technologies() {
   return (
     <>
       <div className="relative overflow-x-hidden rounded-xl">
-        <div className="absolute z-[5] flex items-center h-full right-0 px-6 bg-gradient-to-r from-transparent to-white">
+        <div className="absolute right-0 z-[5] flex h-full items-center bg-gradient-to-r from-transparent to-white px-6">
           <button onClick={onOpen} className="relative">
-            <div className=" rounded-full border border-primary absolute w-full h-full animate-ping bg-transparent backdrop-blur-xl z-[-5]"></div>
-            <Forward className="bg-primary p-1 rounded-full text-primary-foreground z-[3]" />
+            <div className="absolute z-[-5] h-full w-full animate-ping rounded-full border border-primary bg-transparent backdrop-blur-xl"></div>
+            <Forward className="z-[3] hidden rounded-full bg-primary p-1 text-primary-foreground lg:block" />
+            <CornerLeftUp className="z-[3] block rounded-full bg-primary p-1 text-primary-foreground lg:hidden" />
           </button>
         </div>
-        <div className="bg-background rounded-xl p-[3px] h-max">
+        <div className="h-max rounded-xl bg-background p-[3px]">
           <Marquee>
             {data?.map((technology) => (
               <TechnologyBadge

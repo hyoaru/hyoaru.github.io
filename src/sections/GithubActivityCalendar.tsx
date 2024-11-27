@@ -49,14 +49,14 @@ const GithubActivityCalendar = memo(function _GithubActivityCalendar() {
 
   if (isLoading)
     return (
-      <div className="h-[10.8rem] bg-background p-[3px] rounded-xl">
+      <div className="h-[10.8rem] rounded-xl bg-background p-[3px]">
         <LoadingTile />
       </div>
     );
 
   if (error)
     return (
-      <div className="h-[10.8rem] bg-background p-[3px] rounded-xl">
+      <div className="h-[10.8rem] rounded-xl bg-background p-[3px]">
         <ErrorTile />
       </div>
     );
@@ -64,7 +64,7 @@ const GithubActivityCalendar = memo(function _GithubActivityCalendar() {
   return (
     <>
       <div
-        className={`rounded-xl bg-background p-4 h-[11rem] overflow-x-scroll overflow-y-hidden flex items-center`}
+        className={`flex h-[11rem] items-center overflow-y-hidden overflow-x-scroll rounded-xl bg-background p-4`}
       >
         <div className="relative">
           {filteredContributions && (
@@ -78,7 +78,7 @@ const GithubActivityCalendar = memo(function _GithubActivityCalendar() {
                 blockSize={10}
                 hideTotalCount
               />
-              <div className="absolute bottom-0 text-[10px] hidden sm:block md:bottom-0">
+              <div className="absolute bottom-0 block text-[10px] md:bottom-0">
                 Github contributions from 2022-01-01 - Present
               </div>
             </>

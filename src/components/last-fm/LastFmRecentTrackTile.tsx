@@ -24,7 +24,7 @@ export default function LastFmRecentTrackTitle() {
   return (
     <>
       <ActivityTile
-        className={`relative bg-cover bg-center`}
+        className={`relative border border-white bg-cover bg-center`}
         style={{ backgroundImage: `url(${data?.image_url})` }}
       >
         <div className="absolute h-full w-full opacity-90 backdrop-blur-[12px]"></div>

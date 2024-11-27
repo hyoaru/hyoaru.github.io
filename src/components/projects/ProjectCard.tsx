@@ -71,7 +71,7 @@ type ProjectCardDescriptionProps = {
 export const ProjectCard = ({ children, className }: ProjectCardProps) => (
   <div
     className={cn(
-      "border rounded-xl bg-background transition-all duration-200 ease-in-out hover:bg-primary/5 hover:border-primary group relative overflow-hidden",
+      "group relative overflow-hidden rounded-xl border bg-background transition-all duration-200 ease-in-out hover:border-primary hover:bg-primary/5",
       className,
     )}
   >
@@ -85,7 +85,7 @@ const ProjectCardImageView = ({
 }: ProjectCardImageViewProps) => (
   <div
     className={cn(
-      `absolute z-[5] rounded-xl bg-center bg-cover w-full h-full opacity-0 pointer-events-none transition-all ease-in-out duration-300`,
+      `pointer-events-none absolute z-[5] h-full w-full rounded-xl bg-cover bg-center opacity-0 transition-all duration-300 ease-in-out`,
       className,
     )}
     style={{ backgroundImage: `url(${imageUrl})` }}
@@ -112,7 +112,7 @@ const ProjectCardContent = ({
 }: ProjectCardContentProps) => (
   <div
     className={cn(
-      "col-span-12 sm:col-span-6 h-full w-full p-6 flex flex-col",
+      "col-span-12 flex h-full w-full flex-col p-6 sm:col-span-6",
       className,
     )}
   >
@@ -131,10 +131,10 @@ const ProjectCardContentTags = ({
   tags,
   className,
 }: ProjectCardContentTagsProps) => (
-  <div className={cn("flex gap-1 flex-wrap items-center", className)}>
+  <div className={cn("flex flex-wrap items-center gap-1", className)}>
     {tags.map((tag, index) => (
       <div
-        className="border rounded-lg px-2 py-1"
+        className="rounded-lg border px-2 py-1"
         key={`ProjectTag-${tag}-${index}`}
       >
         <p className="text-xs">{tag}</p>
@@ -147,7 +147,7 @@ const ProjectCardContentFooter = ({
   children,
   className,
 }: ProjectCardContentFooterProps) => (
-  <div className={cn(" flex gap-2 flex-wrap mt-auto", className)}>
+  <div className={cn("mt-auto flex flex-wrap gap-2", className)}>
     {children}
   </div>
 );
@@ -210,8 +210,8 @@ const ProjectCardLiveButton = ({
 };
 
 const ProjectCardImage = ({ imageUrl }: ProjectCardImageProps) => (
-  <div className={cn("col-span-12 sm:col-span-6 relative")}>
-    <div className="absolute inset-0 flex group-hover:bg-primary/5 transition-all duration-300 ease-in-out z-[15]"></div>
+  <div className={cn("relative col-span-12 sm:col-span-6")}>
+    <div className="absolute inset-0 z-[15] flex transition-all duration-300 ease-in-out group-hover:bg-primary/5"></div>
     <Image
       radius={"none"}
       src={imageUrl}
@@ -229,7 +229,7 @@ const ProjectCardTitle = ({
   year,
   className,
 }: ProjectCardTitleProps) => (
-  <p className={cn("font-bold text-sm 2xl:text-base mb-2", className)}>
+  <p className={cn("mb-2 text-sm font-bold 2xl:text-base", className)}>
     {title} {"･"} {year}
   </p>
 );
@@ -240,7 +240,7 @@ const ProjectCardDescription = ({
 }: ProjectCardDescriptionProps) => (
   <div
     className={cn(
-      "h-full overflow-y-scroll max-h-[79px] text-xs 2xl:text-base",
+      "h-full overflow-y-scroll text-xs lg:max-h-[79px] 2xl:text-base",
       classNames?.container,
     )}
   >

@@ -39,7 +39,7 @@ const MetricCardHeader = ({ children, className }: MetricCardHeaderProps) => (
 const MetricCardLabel = ({ children, className }: MetricCardLabelProps) => (
   <div className="flex w-full items-center justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
     <p className={cn("font-mono uppercase", className)}>{children}</p>
-    <Hash className="size-4 sm:size-5 lg:size-4 2xl:size-5" />
+    <Hash className="hidden size-4 sm:size-5 lg:size-4 2xl:size-5" />
   </div>
 );
 const MetricCardValue = ({ children, className }: MetricCardValueProps) => (
