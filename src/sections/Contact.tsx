@@ -45,7 +45,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="relative space-y-2 rounded-xl border p-6 px-8 dark:border-default">
-                <p className="text-4xl font-bold">Get in touch.</p>
+                <p className="text-5xl font-bold">Get in touch.</p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
                   Considering to be in contact with me regarding a project?
                   Perhaps collaboration? Or just about anything?
