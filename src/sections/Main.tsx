@@ -38,7 +38,7 @@ export default function Main() {
             </div>
             <p>{phTime}</p>
           </div>
-          <div className="mt-auto hidden h-[68%] sm:block lg:hidden lg:h-[74%] xl:block">
+          <div className="mt-auto hidden h-[68%] sm:block lg:hidden lg:h-[68%] xl:block">
             <div className="grid h-full grid-rows-2 gap-1">
               <GithubRecentCommitTile />
               <LastFmRecentTrackTitle />

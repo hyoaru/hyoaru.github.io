@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import React from "react";
 import Projects from "./Projects";
 import Certifications from "./Certifications";
+import Contact from "./Contact";
 
 export default function Content() {
   return (
@@ -32,12 +33,7 @@ export default function Content() {
           </Tab>
           <Tab key="contact" title={<TabTitle title="Contact" />}>
             <TabContent>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                quibusdam maiores, repellendus optio illum, expedita quia
-                aperiam quo quaerat possimus aliquid esse vel labore.
-                Accusantium labore ipsa omnis illo consequuntur.
-              </p>
+              <Contact />
             </TabContent>
           </Tab>
         </Tabs>{" "}
