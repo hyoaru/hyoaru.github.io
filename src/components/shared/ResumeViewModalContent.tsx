@@ -36,7 +36,11 @@ export default function ResumeViewModalContent() {
             <p className="text-base font-normal">{""}</p>
           </ModalHeader>
           <ModalBody>
-            <ScrollShadow size={40} hideScrollBar className="h-[70vh]">
+            <ScrollShadow
+              size={40}
+              hideScrollBar
+              className="h-[70vh] rounded-xl"
+            >
               <div className="h-full">
                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                   <Viewer fileUrl={pdfUrl} />
