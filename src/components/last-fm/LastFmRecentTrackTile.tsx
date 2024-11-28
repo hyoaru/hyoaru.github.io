@@ -36,7 +36,7 @@ export default function LastFmRecentTrackTitle() {
               alt=""
             />
           </ActivityTile.Icon>
-          <ActivityTile.Content className="z-[2] text-background">
+          <ActivityTile.Content className="z-[2] text-background dark:text-foreground">
             <ActivityTile.ContentHeader>
               {"Last.fm ･ listened to"}
             </ActivityTile.ContentHeader>

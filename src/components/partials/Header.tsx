@@ -1,6 +1,6 @@
 import { useThemeContext } from "@/context/ThemeContext";
 import { Button, cn } from "@nextui-org/react";
-import { PersonStanding, Moon, FileUser } from "lucide-react";
+import { PersonStanding, Moon, FileUser, Sun } from "lucide-react";
 
 export default function Header() {
   const { toggleTheme, theme } = useThemeContext();
@@ -23,25 +23,19 @@ export default function Header() {
         </Button>
         <Button
           className={cn(
-            "hidden h-8 rounded-lg text-sm font-bold sm:flex sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
-            theme === "light"
-              ? "bg-custom-secondary"
-              : "bg-primary text-primary-foreground",
+            "hidden h-8 rounded-lg bg-custom-secondary text-sm font-bold sm:flex sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
           )}
         >
-          View Resume
+          View resume
         </Button>
         <Button
           onPress={toggleTheme}
           isIconOnly
           className={cn(
-            "flex h-8 rounded-lg text-sm font-bold sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
-            theme === "light"
-              ? "bg-custom-secondary"
-              : "bg-primary text-primary-foreground",
+            "flex h-8 rounded-lg bg-custom-secondary text-sm font-bold text-primary sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
           )}
         >
-          <Moon className="" />
+          {theme === "light" ? <Sun /> : <Moon className="" />}
         </Button>
       </div>
     </div>

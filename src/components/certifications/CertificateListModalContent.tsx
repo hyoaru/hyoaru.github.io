@@ -6,14 +6,13 @@ import {
   Button,
   ScrollShadow,
 } from "@nextui-org/react";
-import { TechnologyBadge } from "./TechnologyBadge";
 import useCore from "@/hooks/useCore";
-import ErrorTile from "./ErrorTile";
-import LoadingTile from "./LoadingTile";
+import ErrorTile from "../shared/ErrorTile";
+import LoadingTile from "../shared/LoadingTile";
 
-export default function TechnologiesModalContent() {
-  const { getTechnologies } = useCore();
-  const { data, isLoading, error } = getTechnologies();
+export default function CertificateListModalContent() {
+  const { getCertifications } = useCore();
+  const { data, isLoading, error } = getCertifications();
 
   if (isLoading)
     return (
@@ -34,26 +33,22 @@ export default function TechnologiesModalContent() {
       {(onClose) => (
         <>
           <ModalHeader className="flex flex-col gap-1">
-            <p>Technologies</p>
+            <p>Certifications</p>
             <p className="text-base font-normal">
               {
-                "A list of languages and tecnologies that I work and used to work with"
+                "A list of my certifications for every field over the course of my lifetime"
               }
             </p>
           </ModalHeader>
           <ModalBody>
             <ScrollShadow size={40} className="max-h-[400px]">
-              <div className="flex flex-wrap gap-2">
-                {data?.map((technology) => (
-                  <TechnologyBadge
-                    className="text-sm"
-                    key={`TechnologyBadgeModal-${technology.name}`}
-                  >
-                    <TechnologyBadge.Logo logo={technology.logo} />
-                    {technology.name}
-                  </TechnologyBadge>
+              <ol className="list-inside list-decimal">
+                {data?.map((certification) => (
+                  <li key={`Certification-${certification.title}`}>
+                    {certification.title}
+                  </li>
                 ))}
-              </div>
+              </ol>
             </ScrollShadow>
           </ModalBody>
           <ModalFooter>

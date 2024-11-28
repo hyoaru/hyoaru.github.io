@@ -7,6 +7,7 @@ import GithubActivityCalendar from "@/sections/GithubActivityCalendar";
 import GithubStats from "@/sections/GithubStats";
 import Main from "@/sections/Main";
 import Technologies from "@/sections/Technologies";
+import { ScrollShadow } from "@nextui-org/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -18,7 +19,11 @@ function Index() {
     <>
       <div className="bg-grid lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
         <div className="block h-full w-full space-y-2 bg-custom-background p-2 sm:p-4 lg:flex lg:max-h-[1010px] lg:max-w-[1920px] lg:gap-4 lg:space-y-0 lg:rounded-xl">
-          <div className="space-y-2 scroll-smooth rounded-xl lg:w-5/12 lg:overflow-y-auto lg:overflow-x-clip 2xl:w-4/12">
+          <ScrollShadow
+            hideScrollBar
+            size={100}
+            className="space-y-2 scroll-smooth rounded-xl lg:w-5/12 lg:overflow-y-auto lg:overflow-x-clip 2xl:w-4/12"
+          >
             <Header />
             <Main />
             <Technologies />
@@ -31,7 +36,8 @@ function Index() {
             <div className="hidden lg:block">
               <Footer />
             </div>
-          </div>
+          </ScrollShadow>
+
           <div className="scroll-smooth rounded-xl lg:w-7/12 lg:overflow-y-auto lg:overflow-x-clip 2xl:w-8/12">
             <div className="h-full space-y-2 rounded-xl lg:space-y-0">
               <Content />

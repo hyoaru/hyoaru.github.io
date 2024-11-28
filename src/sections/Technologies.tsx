@@ -29,9 +29,10 @@ export default function Technologies() {
   return (
     <>
       <div className="relative overflow-x-hidden rounded-xl">
-        <div className="absolute right-0 z-[5] flex h-full items-center bg-gradient-to-r from-transparent to-white px-6">
+        <div className="absolute left-0 z-[5] flex h-full items-center bg-gradient-to-r from-background to-transparent px-6"></div>
+        <div className="absolute right-0 z-[5] flex h-full items-center bg-gradient-to-r from-transparent to-background px-6">
           <button onClick={onOpen} className="relative">
-            <div className="absolute z-[-5] h-full w-full animate-ping rounded-full border border-primary bg-transparent backdrop-blur-xl"></div>
+            <div className="absolute z-[-5] h-full w-full animate-ping rounded-full border border-primary bg-transparent backdrop-blur-xl dark:border-foreground"></div>
             <Forward className="z-[3] hidden rounded-full bg-primary p-1 text-primary-foreground lg:block" />
             <CornerLeftUp className="z-[3] block rounded-full bg-primary p-1 text-primary-foreground lg:hidden" />
           </button>

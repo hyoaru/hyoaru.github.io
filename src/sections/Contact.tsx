@@ -38,13 +38,13 @@ export default function Contact() {
             <div className="relative p-[3px] sm:p-0">
               <div className="absolute bottom-[-10px] left-2 z-20">
                 <div className="relative">
-                  <div className="absolute inset-0 flex h-full w-full animate-ping rounded-full border border-primary"></div>
+                  <div className="absolute inset-0 flex h-full w-full animate-ping rounded-full border border-primary dark:border-foreground"></div>
                   <div className="rounded-full border border-primary bg-background text-primary">
                     <ArrowDownRight size={30} className="" />
                   </div>
                 </div>
               </div>
-              <div className="relative space-y-2 rounded-xl border p-6 px-8">
+              <div className="relative space-y-2 rounded-xl border p-6 px-8 dark:border-default">
                 <p className="text-4xl font-bold">Get in touch.</p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
                   Considering to be in contact with me regarding a project?
@@ -57,7 +57,7 @@ export default function Contact() {
           <div className="relative rounded-xl bg-background p-[3px] sm:p-0">
             <div className="absolute bottom-[-10px] right-2 z-20">
               <div className="relative">
-                <div className="absolute inset-0 flex h-full w-full animate-ping rounded-full border border-primary"></div>
+                <div className="absolute inset-0 flex h-full w-full animate-ping rounded-full border border-primary dark:border-foreground"></div>
                 <div className="rounded-full border border-primary bg-background text-primary">
                   <ArrowDownLeft size={30} className="" />
                 </div>
@@ -87,7 +87,7 @@ export default function Contact() {
           <div className="rounded-xl bg-background p-[3px] sm:p-0">
             <form onSubmit={onSubmit} ref={formRef}>
               <div className="space-y-4 rounded-xl border bg-background p-6 px-8 dark:border-default">
-                <p className="text-2xl font-bold text-primary">
+                <p className="text-2xl font-bold text-primary dark:text-foreground">
                   Send me a message!
                 </p>
                 <Input

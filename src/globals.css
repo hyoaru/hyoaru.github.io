@@ -19,9 +19,9 @@
   }
 
   .dark {
-    --custom-background: 240 3.7% 15.9%;
+    --custom-background: 240 5% 15.9%;
     --custom-foreground: 0 0% 98%;
-    --custom-secondary: 0 0% 95%;
+    --custom-secondary: 240 6% 10%;
     --custom-secondary-foreground: 0 0% 0%;
   }
 }

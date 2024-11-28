@@ -35,13 +35,13 @@ export default function SocialsModalContent() {
             <p>Connect with me on my socials</p>
           </ModalHeader>
           <ModalBody>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-wrap gap-2">
               {data?.map((social, index) => (
                 <a
                   href={social.link}
                   target="_blank"
                   key={`SocialTile-${social.link}-${index}`}
-                  className="rounded-xl bg-custom-secondary px-3 py-2 flex items-center gap-3 grow transition-all duration-300 ease-in-out hover:bg-primary/5 hover:border-primary border border-transparent"
+                  className="flex grow items-center gap-3 rounded-xl border border-transparent bg-custom-secondary px-3 py-2 transition-all duration-300 ease-in-out hover:border-primary hover:bg-primary/5 dark:border-default dark:hover:border-primary"
                 >
                   <img
                     src={`https://cdn.simpleicons.org/${social.name}/000000/ffffff`}

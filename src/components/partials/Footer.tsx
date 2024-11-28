@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="flex justify-between rounded-xl bg-white p-[3px] text-xs sm:text-sm">
+      <div className="flex justify-between rounded-xl bg-background p-[3px] text-xs sm:text-sm">
         <button
           onClick={onCopy}
           className="flex size-8 w-max items-center gap-1 rounded-lg border border-primary bg-primary/5 px-3 py-1"
@@ -25,7 +25,7 @@ export default function Footer() {
         </button>
         <button
           onClick={onOpen}
-          className="flex size-8 w-max items-center gap-2 rounded-lg border bg-custom-secondary px-3 py-1 transition-all duration-200 ease-in-out hover:bg-custom-secondary/40"
+          className="flex size-8 w-max items-center gap-2 rounded-lg border bg-custom-secondary px-3 py-1 transition-all duration-200 ease-in-out hover:bg-custom-secondary/40 dark:border-default"
         >
           <p className="hidden sm:block">Connect with me</p>
           <p className="block sm:hidden">Connect</p>

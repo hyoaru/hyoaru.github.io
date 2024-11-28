@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "@nextui-org/react";
+import { ScrollShadow, Tab, Tabs } from "@nextui-org/react";
 import { ChevronRight } from "lucide-react";
 import React from "react";
 import Projects from "./Projects";
@@ -12,12 +12,12 @@ export default function Content() {
         <Tabs
           aria-label="Options"
           classNames={{
-            tabList: " w-max",
-            base: "w-full bg-custom-secondary border-0 rounded-xl m-0 p-0",
-            tab: "bg-background rounded-lg opacity-100 px-3 h-8 sticky top-0",
+            tabList: " w-max m-[3px] p-0 dark:bg-background",
+            base: "w-full bg-custom-secondary dark:bg-background border-0 rounded-xl m-0 p-0",
+            tab: "bg-background rounded-lg opacity-100 px-3 h-8 dark:bg-custom-secondary  ",
             tabContent:
-              "group-data-[selected=true]:text-primary-foreground text-sm 2xl:text-base text-foreground font-bold",
-            cursor: "bg-primary",
+              "group-data-[selected=true]:text-primary-foreground dark:group-data-[selected=true]:text-primary-foreground  text-sm 2xl:text-base text-foreground font-bold",
+            cursor: "bg-primary dark:bg-primary",
             panel: "m-0 p-0 h-full overflow-y-hidden",
           }}
         >
@@ -36,7 +36,7 @@ export default function Content() {
               <Contact />
             </TabContent>
           </Tab>
-        </Tabs>{" "}
+        </Tabs>
       </div>
     </>
   );
@@ -56,10 +56,16 @@ function TabTitle({ title }: { title: string }) {
 
 function TabContent({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-full overflow-y-scroll rounded-xl sm:bg-custom-secondary sm:p-2">
-      <div className="overflow-y-clip rounded-lg sm:bg-background sm:p-2">
-        {children}
-      </div>
+    <div className="h-full rounded-xl sm:bg-custom-secondary">
+      <ScrollShadow
+        size={100}
+        hideScrollBar
+        className="h-full overflow-y-scroll sm:p-2"
+      >
+        <div className="overflow-y-clip rounded-lg sm:bg-background sm:p-2">
+          {children}
+        </div>
+      </ScrollShadow>
     </div>
   );
 }

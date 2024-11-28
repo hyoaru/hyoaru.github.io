@@ -71,7 +71,7 @@ type ProjectCardDescriptionProps = {
 export const ProjectCard = ({ children, className }: ProjectCardProps) => (
   <div
     className={cn(
-      "group relative overflow-hidden rounded-xl border bg-background transition-all duration-200 ease-in-out hover:border-primary hover:bg-primary/5",
+      "group relative overflow-hidden rounded-xl border bg-background transition-all duration-200 ease-in-out hover:border-primary hover:bg-primary/5 dark:border-default",
       className,
     )}
   >
@@ -134,7 +134,7 @@ const ProjectCardContentTags = ({
   <div className={cn("flex flex-wrap items-center gap-1", className)}>
     {tags.map((tag, index) => (
       <div
-        className="rounded-lg border px-2 py-1"
+        className="rounded-lg border border-default px-2 py-1"
         key={`ProjectTag-${tag}-${index}`}
       >
         <p className="text-xs">{tag}</p>
