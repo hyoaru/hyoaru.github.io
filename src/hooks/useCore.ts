@@ -1,5 +1,5 @@
 import { coreService } from "@/services/core";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 export default function useCore() {
   const getTechnologies = () =>
@@ -26,10 +26,15 @@ export default function useCore() {
       queryKey: ["socials"],
     });
 
+  const downloadResumeMutation = useMutation({
+    mutationFn: coreService.downloadResume,
+  });
+
   return {
     getTechnologies,
     getProjects,
     getCertifications,
     getSocials,
+    downloadResumeMutation,
   };
 }
