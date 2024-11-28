@@ -1,6 +1,7 @@
 import {
   GithubBaseUserInformation,
   GithubContributionStats,
+  GithubEvent,
   GithubRecentCommit,
 } from "@/types/github";
 
@@ -31,7 +32,7 @@ export const githubService = {
   getRecentCommit: async (): Promise<GithubRecentCommit> => {
     const url = "https://api.github.com/users/hyoaru/events";
     return await axios
-      .get<GithubRecentCommit>(url)
+      .get<GithubEvent>(url)
       .then((response) => response.data)
       .then(
         (events) => events.filter((event) => event.type === "PushEvent")?.[0],

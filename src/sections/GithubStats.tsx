@@ -2,7 +2,7 @@ import ErrorTile from "@/components/shared/ErrorTile";
 import LoadingTile from "@/components/shared/LoadingTile";
 import { MetricCard } from "@/components/ui/MetricCard";
 import useGithub from "@/hooks/useGithub";
-import { Github, Hash } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function GithubStats() {
   return (
