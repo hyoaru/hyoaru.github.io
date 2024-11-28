@@ -28,7 +28,6 @@ export default function Main() {
               </div>
             </div>
             <Image
-              width={600}
               src={mainImageUrl}
               classNames={{
                 wrapper: "h-full w-full object-cover",
