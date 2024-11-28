@@ -6,7 +6,7 @@ export default function useLastFm() {
     useQuery({
       queryFn: lastFmService.getRecentTrack,
       queryKey: ["last_fm_recent_track"],
-      staleTime: 60 * 1000 * 30,
+      refetchInterval: 60 * 1000 * 1.5,
     });
 
   return {
