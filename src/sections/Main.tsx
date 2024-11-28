@@ -15,7 +15,7 @@ export default function Main() {
         <div className="order-last col-span-full sm:order-first sm:col-span-5 xl:col-span-5">
           <div className="relative h-full w-full">
             <div className="absolute inset-0 z-[11] flex items-end p-6 opacity-40 lg:p-4">
-              <div className="flex items-center gap-2 font-mono text-xs text-background lg:items-end lg:text-[10px] xl:text-xs">
+              <div className="flex items-center gap-2 font-mono text-xs text-background dark:text-foreground lg:items-end lg:text-[10px] xl:text-xs">
                 <FileImage className="size-6 lg:size-4 xl:size-6" />
                 <p>{"IMG_JIJI.PNG"}</p>
               </div>
