@@ -64,7 +64,7 @@ const ActivityTileBody = ({ children, className }: ActivityTileBodyProps) => (
 const ActivityTileIcon = ({ children, className }: ActivityTileIconProps) => (
   <div
     className={cn(
-      "hidden h-full w-full items-center justify-center rounded-lg border border-primary bg-primary/5 text-primary sm:col-span-4 sm:flex lg:col-span-4 lg:hidden xl:flex",
+      "hidden h-full w-full items-center justify-center rounded-lg border border-primary bg-primary/5 text-primary sm:col-span-3 sm:flex lg:col-span-3 lg:hidden xl:col-span-3 xl:flex",
       className,
     )}
   >
@@ -78,7 +78,7 @@ const ActivityTileContent = ({
 }: ActivityTileContentProps) => (
   <div
     className={cn(
-      "col-span-12 my-auto h-max w-full text-center sm:col-span-8 sm:text-start lg:col-span-full lg:text-center xl:col-span-8 xl:text-start",
+      "col-span-12 my-auto h-max w-full text-center sm:col-span-9 sm:text-start lg:col-span-full lg:text-center xl:col-span-9 xl:text-start",
       className,
     )}
   >
