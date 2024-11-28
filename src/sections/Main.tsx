@@ -3,7 +3,7 @@ import LastFmRecentTrackTitle from "@/components/last-fm/LastFmRecentTrackTile";
 import usePhilippineTime from "@/hooks/usePhilippineTime";
 import { coreService } from "@/services/core";
 import { Image } from "@nextui-org/image";
-import { FileImage } from "lucide-react";
+import { FileImage, Heart } from "lucide-react";
 
 export default function Main() {
   const mainImageUrl = coreService.getMainImageUrl();
@@ -14,6 +14,13 @@ export default function Main() {
       <div className="grid grid-cols-12 gap-6 lg:gap-4 2xl:gap-6">
         <div className="order-last col-span-full sm:order-first sm:col-span-5 xl:col-span-5">
           <div className="relative h-full w-full">
+            <Heart
+              fill="#f472b6"
+              className="peer absolute bottom-[2rem] right-[30%] z-[100] size-6 rounded-xl text-pink-400 opacity-0 hover:animate-pulse hover:opacity-100"
+            />
+            <div className="absolute top-0 z-[100] flex w-full justify-end p-3 text-sm text-pink-400 opacity-0 transition-all duration-300 ease-in-out peer-hover:opacity-100">
+              <p>{"Hey there, jiya :)"}</p>
+            </div>
             <div className="absolute inset-0 z-[11] flex items-end p-6 opacity-40 lg:p-4">
               <div className="flex items-center gap-2 font-mono text-xs text-background dark:text-foreground lg:items-end lg:text-[10px] xl:text-xs">
                 <FileImage className="size-6 lg:size-4 xl:size-6" />
