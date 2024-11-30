@@ -40,30 +40,42 @@ export default function Projects() {
     );
 
   return (
-    <div className="space-y-4">
-      {data?.map((project) => (
-        <ProjectCard key={`'ProjectCard-${project.title}`}>
-          <ProjectCard.Body>
-            <ProjectCard.Image imageUrl={project.image} />
-            <ProjectCard.Content>
-              <ProjectCard.ContentBody>
-                <ProjectCard.Title title={project.title} year={project.year} />
-                <div className="mb-4 space-y-4">
-                  <ProjectCard.Description>
-                    {project.description}
-                  </ProjectCard.Description>
-                  <ProjectCard.ContentTags tags={project.tags} />
-                </div>
-              </ProjectCard.ContentBody>
-              <ProjectCard.ContentFooter>
-                <ProjectCard.RepositoryButton url={project.repositoryURL} />
-                <ProjectCard.ProcessButton url={project.processURL} />
-                <ProjectCard.LiveButton url={project.liveURL} />
-              </ProjectCard.ContentFooter>
-            </ProjectCard.Content>
-          </ProjectCard.Body>
-        </ProjectCard>
-      ))}
-    </div>
+    <>
+      <div className="sticky top-0 z-20 flex w-full justify-end p-2">
+        <button className="group w-max rounded-lg border border-default bg-background px-3 py-1 font-mono text-sm uppercase opacity-80 transition-all duration-300 ease-in-out hover:scale-105">
+          <p className="">
+            {"Project count: "} {data?.length}
+          </p>
+        </button>
+      </div>
+      <div className="space-y-4">
+        {data?.map((project) => (
+          <ProjectCard key={`'ProjectCard-${project.title}`}>
+            <ProjectCard.Body>
+              <ProjectCard.Image imageUrl={project.image} />
+              <ProjectCard.Content>
+                <ProjectCard.ContentBody>
+                  <ProjectCard.Title
+                    title={project.title}
+                    year={project.year}
+                  />
+                  <div className="mb-4 space-y-4">
+                    <ProjectCard.Description>
+                      {project.description}
+                    </ProjectCard.Description>
+                    <ProjectCard.ContentTags tags={project.tags} />
+                  </div>
+                </ProjectCard.ContentBody>
+                <ProjectCard.ContentFooter>
+                  <ProjectCard.RepositoryButton url={project.repositoryURL} />
+                  <ProjectCard.ProcessButton url={project.processURL} />
+                  <ProjectCard.LiveButton url={project.liveURL} />
+                </ProjectCard.ContentFooter>
+              </ProjectCard.Content>
+            </ProjectCard.Body>
+          </ProjectCard>
+        ))}
+      </div>
+    </>
   );
 }
