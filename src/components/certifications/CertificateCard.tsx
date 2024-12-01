@@ -30,7 +30,7 @@ export default function CertificateCard({ certificate }: CertificateCardProps) {
 
         <Image
           width={1000}
-          src={certificate.imageOriginal}
+          src={certificate.imageShrinked}
           classNames={{
             wrapper: "h-full w-full object-cover ",
             img: "h-full w-full scale-105 object-cover object-center transition-all duration-300 ease-in-out group-hover:scale-110",
