@@ -7,7 +7,6 @@ import { FileImage, Heart } from "lucide-react";
 
 export default function Main() {
   const mainImageUrl = coreService.getMainImageUrl();
-  const phTime = usePhilippineTime();
 
   return (
     <div className="flex flex-col gap-12 rounded-xl bg-background p-6 lg:p-4 xl:gap-16 2xl:p-6">
@@ -42,7 +41,7 @@ export default function Main() {
               <p className="font-bold underline">EN</p>
               <p>FIL</p>
             </div>
-            <p>{phTime}</p>
+            <PHTime />
           </div>
           <div className="mt-auto hidden h-[68%] sm:block lg:hidden lg:h-[68%] xl:block">
             <div className="grid h-full grid-rows-2 gap-1">
@@ -68,4 +67,9 @@ export default function Main() {
       </div>
     </div>
   );
+}
+
+function PHTime() {
+  const phTime = usePhilippineTime();
+  return <p>{phTime}</p>;
 }

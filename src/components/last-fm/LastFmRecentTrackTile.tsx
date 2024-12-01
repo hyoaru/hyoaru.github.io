@@ -24,10 +24,10 @@ export default function LastFmRecentTrackTitle() {
   return (
     <>
       <ActivityTile
-        className={`relative border border-white bg-cover bg-center`}
+        className={`relative overflow-hidden border border-white bg-cover bg-center`}
         style={{ backgroundImage: `url(${data?.image_url})` }}
       >
-        <div className="absolute h-full w-full opacity-90 backdrop-blur-[12px]"></div>
+        <div className="absolute h-full w-full overflow-hidden rounded-xl opacity-90 backdrop-blur-[12px]"></div>
         <ActivityTile.Body>
           <ActivityTile.Icon className="z-[10] h-full overflow-hidden border-transparent object-cover">
             <img
