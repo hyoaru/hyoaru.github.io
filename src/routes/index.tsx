@@ -18,7 +18,7 @@ function Index() {
   return (
     <>
       <div className="bg-grid lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
-        <div className="block h-full w-full space-y-2 bg-custom-background p-2 sm:p-4 lg:flex lg:max-h-[1010px] lg:max-w-[1920px] lg:gap-4 lg:space-y-0 lg:rounded-xl">
+        <div className="block h-full w-full space-y-2 bg-custom-background p-2 sm:p-4 lg:flex lg:max-h-[1080px] lg:max-w-[1920px] lg:gap-4 lg:space-y-0 lg:rounded-xl">
           <ScrollShadow
             hideScrollBar
             size={100}
