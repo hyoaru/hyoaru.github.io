@@ -24,13 +24,15 @@ export default function Main() {
             <div className="absolute inset-0 z-[11] flex items-end p-6 lg:flex lg:p-5 xl:flex">
               <EmploymentStatus />
             </div>
-            <Image
-              src={mainImageUrl}
-              classNames={{
-                wrapper: "h-full w-full object-cover",
-                img: "h-full w-full object-cover",
-              }}
-            />
+            <div className="relative z-[0]">
+              <Image
+                src={mainImageUrl}
+                classNames={{
+                  wrapper: "h-full w-full object-cover",
+                  img: "h-full w-full object-cover",
+                }}
+              />
+            </div>
           </div>
         </div>
         <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 lg:col-span-6 xl:col-span-7">
