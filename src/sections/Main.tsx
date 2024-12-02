@@ -1,9 +1,10 @@
 import GithubRecentCommitTile from "@/components/github/GithubRecentCommitTile";
 import LastFmRecentTrackTitle from "@/components/last-fm/LastFmRecentTrackTile";
+import EmploymentStatus from "@/components/shared/EmploymentStatus";
 import usePhilippineTime from "@/hooks/usePhilippineTime";
 import { coreService } from "@/services/core";
 import { Image } from "@nextui-org/image";
-import { FileImage, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export default function Main() {
   const mainImageUrl = coreService.getMainImageUrl();
@@ -11,7 +12,7 @@ export default function Main() {
   return (
     <div className="flex flex-col gap-12 rounded-xl bg-background p-6 lg:p-4 xl:gap-16 2xl:p-6">
       <div className="grid grid-cols-12 gap-6 lg:gap-4 2xl:gap-6">
-        <div className="order-last col-span-full sm:order-first sm:col-span-5 xl:col-span-5">
+        <div className="order-last col-span-full sm:order-first sm:col-span-5 lg:col-span-6 xl:col-span-5">
           <div className="relative h-full w-full">
             <Heart
               fill="#f472b6"
@@ -20,11 +21,8 @@ export default function Main() {
             <div className="absolute top-0 z-[100] flex w-full justify-end p-3 text-sm text-pink-400 opacity-0 transition-all duration-300 ease-in-out peer-hover:opacity-100">
               <p>{"Hey there, jiya :)"}</p>
             </div>
-            <div className="absolute inset-0 z-[11] flex items-end p-6 opacity-40 lg:p-4">
-              <div className="flex items-center gap-2 font-mono text-xs text-background dark:text-foreground lg:items-end lg:text-[10px] xl:text-xs">
-                <FileImage className="size-6 lg:size-4 xl:size-6" />
-                <p>{"IMG_JIJI.PNG"}</p>
-              </div>
+            <div className="absolute inset-0 z-[11] flex items-end p-6 lg:flex lg:p-5 xl:flex">
+              <EmploymentStatus />
             </div>
             <Image
               src={mainImageUrl}
@@ -35,7 +33,7 @@ export default function Main() {
             />
           </div>
         </div>
-        <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 xl:col-span-7">
+        <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 lg:col-span-6 xl:col-span-7">
           <div className="rows-span-2 flex w-full justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
             <div className="flex gap-2 2xl:gap-4">
               <p className="font-bold underline">EN</p>
