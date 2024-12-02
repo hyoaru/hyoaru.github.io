@@ -36,9 +36,15 @@ export default function TechnologiesModalContent() {
           <ModalHeader className="flex flex-col gap-1">
             <p>Technologies</p>
             <p className="text-base font-normal">
-              {
-                "A list of languages and tecnologies that I work and used to work with"
-              }
+              <span>{"A total of "}</span>
+              <span className="p-1 text-xl font-bold text-primary">
+                {data?.length ?? "n"}
+              </span>
+              <span>
+                {
+                  " languages and technologies that I work and used to work with"
+                }
+              </span>
             </p>
           </ModalHeader>
           <ModalBody>
