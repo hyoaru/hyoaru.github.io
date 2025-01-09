@@ -1,5 +1,5 @@
 import { Project } from "@/types/core";
-import { Image, Button, cn } from "@nextui-org/react";
+import { Image, Button, cn, ScrollShadow } from "@nextui-org/react";
 import { Github, Globe, Settings2 } from "lucide-react";
 
 type ProjectCardProps = {
@@ -238,14 +238,13 @@ const ProjectCardDescription = ({
   children,
   classNames,
 }: ProjectCardDescriptionProps) => (
-  <div
-    className={cn(
-      "h-full overflow-y-scroll text-xs lg:max-h-[79px] 2xl:text-base",
-      classNames?.container,
-    )}
+  <ScrollShadow
+    hideScrollBar
+    size={50}
+    className={cn("h-full text-xs lg:max-h-[80px] 2xl:text-base")}
   >
     <p className={cn("", classNames?.description)}>{children}</p>
-  </div>
+  </ScrollShadow>
 );
 
 ProjectCard.ImageView = ProjectCardImageView;
