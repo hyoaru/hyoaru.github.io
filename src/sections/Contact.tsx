@@ -1,5 +1,12 @@
+import BookAMeetingModalContent from "@/components/shared/BookAMeetingModalContent";
 import useContact from "@/hooks/useContact";
-import { Input, Textarea, Button } from "@nextui-org/react";
+import {
+  Input,
+  Textarea,
+  Button,
+  Modal,
+  useDisclosure,
+} from "@nextui-org/react";
 import { ArrowDownLeft, MapPin, ArrowDownRight } from "lucide-react";
 import React, { useRef } from "react";
 import { toast } from "sonner";
@@ -8,6 +15,7 @@ export default function Contact() {
   const formData = useRef<Record<string, string>>({});
   const formRef = useRef<HTMLFormElement>(null);
   const { sendMessageMutation } = useContact();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   function onFieldsChange(event: React.ChangeEvent<HTMLInputElement>) {
     formData.current = {
@@ -58,7 +66,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="relative space-y-2 rounded-xl border p-6 px-8 dark:border-default">
-                <p className="text-5xl font-bold">Get in touch.</p>
+                <p className="text-4xl font-bold">Get in touch.</p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
                   Considering to be in contact with me regarding a project?
                   Perhaps collaboration? Or just about anything?
@@ -100,9 +108,18 @@ export default function Contact() {
           <div className="rounded-xl bg-background p-[3px] sm:p-0">
             <form onSubmit={onSubmit} ref={formRef}>
               <div className="space-y-4 rounded-xl border bg-background p-6 px-8 dark:border-default">
-                <p className="text-2xl font-bold text-primary dark:text-foreground">
-                  Send me a message!
-                </p>
+                <div className="flex flex-col items-start sm:flex-row sm:items-center">
+                  <p className="me-auto text-2xl font-bold text-primary dark:text-foreground">
+                    Send me a message!
+                  </p>
+                  <button
+                    className="text-xs uppercase text-primary/60 underline"
+                    type="button"
+                    onClick={onOpen}
+                  >
+                    Or book a meeting!
+                  </button>
+                </div>
                 <Input
                   type="email"
                   label="Email"
@@ -137,6 +154,10 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <Modal size={"5xl"} isOpen={isOpen} onOpenChange={onOpenChange}>
+        <BookAMeetingModalContent />
+      </Modal>
     </>
   );
 }
