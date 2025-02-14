@@ -5,21 +5,33 @@ import React, { useRef } from "react";
 import { toast } from "sonner";
 
 export default function Contact() {
-  const formData = useRef<any>({});
+  const formData = useRef<Record<string, string>>({});
   const formRef = useRef<HTMLFormElement>(null);
   const { sendMessageMutation } = useContact();
 
   function onFieldsChange(event: React.ChangeEvent<HTMLInputElement>) {
-    formData.current.value = {
-      ...formData.current.value,
+    formData.current = {
+      ...formData.current,
       [event.target.name]: event.target.value,
     };
   }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const data = formData.current;
+    if (
+      Object.values(data).length < 3 ||
+      Object.values(data).some((value) => value.trim() === "")
+    ) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
     await sendMessageMutation
-      .mutateAsync(formData.current.value)
+      .mutateAsync(
+        data as Parameters<typeof sendMessageMutation.mutateAsync>[0],
+      )
       .then(({ error }) => {
         if (!error) {
           toast.success("Message has been set successfuly!");
@@ -27,6 +39,7 @@ export default function Contact() {
           toast.error("An error has occured.");
         }
       });
+    formData.current = {};
     formRef.current?.reset();
   }
 
