@@ -5,7 +5,7 @@ import { toast } from "sonner";
 
 export default function Footer() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const emailAddress = "jjcabreraaaa@gmail.com";
+  const emailAddress = "hello@jadecabrera.com";
 
   function onCopy() {
     navigator.clipboard.writeText(emailAddress).then(() => {
