@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="bg-background rounded-0 relative flex items-center rounded-md p-[3px] text-sm sm:text-base lg:text-sm xl:text-base">
+      <div className="bg-background rounded-0 relative flex items-center rounded-lg p-[3px] text-sm sm:text-base lg:text-sm xl:text-base">
         <div className="me-auto flex items-center gap-1">
           <div className="p-1">
             <PersonStanding />

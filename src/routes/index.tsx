@@ -1,6 +1,7 @@
 import { ScrollShadow } from "@heroui/scroll-shadow";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "../components/partials/header";
+import { Main } from "../sections/main";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -16,7 +17,7 @@ function RouteComponent() {
           className="space-y-2 scroll-smooth rounded-md lg:w-5/12 lg:overflow-x-clip lg:overflow-y-auto 2xl:w-4/12"
         >
           <Header />
-          {/* <Main /> */}
+          <Main />
           {/* <Technologies /> */}
           {/* <div className="bg-background grid h-[5rem] grid-cols-2 gap-1 rounded-xl p-[3px] sm:hidden lg:grid xl:hidden"> */}
           {/*   <GithubRecentCommitTile /> */}
