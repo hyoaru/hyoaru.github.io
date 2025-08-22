@@ -18,7 +18,7 @@ export const Main = () => {
   const personalImage = optimizedImages[personalImageKey];
 
   return (
-    <div className="bg-background flex flex-col gap-12 rounded-lg p-6 lg:p-4 xl:gap-16 2xl:p-6">
+    <div className="bg-background flex flex-col gap-12 rounded-xl p-6 lg:p-4 xl:gap-16 2xl:p-6">
       <div className="grid grid-cols-12 gap-6 lg:gap-4 2xl:gap-6">
         <div className="order-last col-span-full sm:order-first sm:col-span-5 lg:col-span-6 xl:col-span-5">
           <div className="relative h-full w-full">
@@ -38,7 +38,7 @@ export const Main = () => {
           </div>
         </div>
         <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 lg:col-span-6 xl:col-span-7">
-          <div className="rows-span-2 flex w-full justify-between text-sm sm:text-base lg:text-sm">
+          <div className="rows-span-2 flex w-full justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
             <div className="flex gap-2 2xl:gap-4">
               <p className="font-bold underline">EN</p>
               <p>FIL</p>
@@ -53,7 +53,7 @@ export const Main = () => {
           </div>
         </div>
       </div>
-      <div className="mt-auto text-sm sm:text-base lg:text-sm">
+      <div className="mt-auto text-sm sm:text-base lg:text-sm 2xl:text-base">
         <p className="">
           A Philippines based 22 year old
           <span className="text-primary font-bold">

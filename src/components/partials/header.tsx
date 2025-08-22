@@ -10,12 +10,12 @@ export const Header = () => {
 
   return (
     <>
-      <div className="bg-background rounded-0 relative flex items-center rounded-lg p-[3px] text-sm sm:text-base lg:text-sm xl:text-base">
+      <div className="bg-background relative flex items-center rounded-xl p-[3px] text-sm sm:text-base lg:text-sm xl:text-base">
         <div className="me-auto flex items-center gap-1">
           <div className="p-1">
             <PersonStanding />
           </div>
-          <p className="me-auto text-sm font-bold">Cabrera, Jen Jade</p>
+          <p className="me-auto font-bold">Cabrera, Jen Jade</p>
         </div>
 
         <div className="flex gap-1">
@@ -35,7 +35,7 @@ export const Header = () => {
             onPress={onOpen}
             size="sm"
             className={cn(
-              "bg-custom-secondary hidden rounded-sm text-base font-bold sm:block 2xl:text-sm",
+              "bg-custom-secondary hidden rounded-lg text-sm font-bold sm:flex sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
             )}
           >
             View resume

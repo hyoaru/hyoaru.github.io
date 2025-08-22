@@ -9,7 +9,7 @@ export const ThemeToggle = forwardRef((props, ref) => {
     isIconOnly: true,
     size: "sm",
     onPress: toggleTheme,
-    className: "bg-custom-secondary text-primary rounded-sm",
+    className: "bg-custom-secondary text-primary rounded-lg",
   };
 
   const heroButton = useButton({ ref, ...{ ...props, ...propsOverrides } });

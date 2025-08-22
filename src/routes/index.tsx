@@ -14,7 +14,7 @@ function RouteComponent() {
         <ScrollShadow
           hideScrollBar
           size={100}
-          className="space-y-2 scroll-smooth rounded-md lg:w-5/12 lg:overflow-x-clip lg:overflow-y-auto 2xl:w-4/12"
+          className="space-y-2 scroll-smooth rounded-xl lg:w-5/12 lg:overflow-x-clip lg:overflow-y-auto 2xl:w-4/12"
         >
           <Header />
           <Main />
