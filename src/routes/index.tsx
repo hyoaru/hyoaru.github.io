@@ -2,6 +2,11 @@ import { ScrollShadow } from "@heroui/scroll-shadow";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "../components/partials/header";
 import { Main } from "../sections/main";
+import Technologies from "@/sections/technologies";
+import { GithubRecentCommitTile } from "@/components/features/github/recent-commit-tile";
+import { LastFmRecentTrackTile } from "@/components/features/last-fm/recent-track-tile";
+import { GithubStats } from "@/sections/github-stats";
+import { GithubActivityCalendar } from "@/sections/github-activity-calendar";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -18,13 +23,13 @@ function RouteComponent() {
         >
           <Header />
           <Main />
-          {/* <Technologies /> */}
-          {/* <div className="bg-background grid h-[5rem] grid-cols-2 gap-1 rounded-xl p-[3px] sm:hidden lg:grid xl:hidden"> */}
-          {/*   <GithubRecentCommitTile /> */}
-          {/*   <LastFmRecentTrackTile /> */}
-          {/* </div> */}
-          {/* <GithubStats /> */}
-          {/* <GithubActivityCalendar /> */}
+          <Technologies />
+          <div className="bg-background grid h-[5rem] grid-cols-2 gap-1 rounded-xl p-[3px] sm:hidden lg:grid xl:hidden">
+            <GithubRecentCommitTile />
+            <LastFmRecentTrackTile />
+          </div>
+          <GithubStats />
+          <GithubActivityCalendar />
           {/* <div className="hidden lg:block"> */}
           {/*   <Footer /> */}
           {/* </div> */}

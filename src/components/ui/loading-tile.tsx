@@ -1,12 +1,16 @@
-import { Spinner, Skeleton } from "@heroui/react";
+import { Spinner, Skeleton, cn } from "@heroui/react";
 
-export const LoadingTile = () => {
+type LoadingTileProps = {
+  className?: string;
+};
+
+export const LoadingTile = ({ className }: LoadingTileProps) => {
   return (
     <div className="relative h-full w-full">
       <div className="absolute inset-0 z-[100] flex items-center justify-center">
         <Spinner />
       </div>
-      <Skeleton className="h-full w-full rounded-lg" />
+      <Skeleton className={cn("h-full w-full rounded-lg", className)} />
     </div>
   );
 };
