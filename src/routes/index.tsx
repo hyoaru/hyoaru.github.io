@@ -7,6 +7,7 @@ import { GithubRecentCommitTile } from "@/components/features/github/recent-comm
 import { LastFmRecentTrackTile } from "@/components/features/last-fm/recent-track-tile";
 import { GithubStats } from "@/sections/github-stats";
 import { GithubActivityCalendar } from "@/sections/github-activity-calendar";
+import { Footer } from "@/components/partials/footer";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -30,9 +31,9 @@ function RouteComponent() {
           </div>
           <GithubStats />
           <GithubActivityCalendar />
-          {/* <div className="hidden lg:block"> */}
-          {/*   <Footer /> */}
-          {/* </div> */}
+          <div className="hidden lg:block">
+            <Footer />
+          </div>
         </ScrollShadow>
 
         <div className="scroll-smooth rounded-xl lg:w-7/12 lg:overflow-x-clip lg:overflow-y-auto 2xl:w-8/12">

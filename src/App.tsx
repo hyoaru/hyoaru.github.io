@@ -1,4 +1,4 @@
-import { HeroUIProvider } from "@heroui/react";
+import { HeroUIProvider, ToastProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { useState } from "react";
@@ -39,6 +39,7 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} context={{ queryClient }} />
         </QueryClientProvider>
+        <ToastProvider />
       </HeroUIProvider>
     </ThemeProvider>
   );

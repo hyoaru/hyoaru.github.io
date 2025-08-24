@@ -41,7 +41,7 @@ export default function Technologies() {
         </div>
       </div>
 
-      <Modal size="2xl" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <TechnologiesModalContent />
       </Modal>
     </>
