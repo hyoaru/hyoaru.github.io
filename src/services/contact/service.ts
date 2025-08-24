@@ -10,15 +10,13 @@ export class ContactService implements IContactService {
     params: Parameters<IContactService["sendMessage"]>[0],
   ): ReturnType<IContactService["sendMessage"]> {
     const url = "https://formsubmit.co/ajax/hello@jadecabrera.com";
-    return axios
-      .post(url, {
-        "Content-Type": "application/json",
-        body: JSON.stringify({
-          name: params.name,
-          email: params.email,
-          message: params.message,
-        }),
-      })
-      .then((response) => response.data);
+    return axios.post(url, {
+      "Content-Type": "application/json",
+      body: JSON.stringify({
+        name: params.name,
+        email: params.email,
+        message: params.message,
+      }),
+    });
   }
 }

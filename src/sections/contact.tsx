@@ -1,30 +1,30 @@
 import { useContact } from "@/hooks/use-contact";
 import { Input, Textarea, Button, addToast } from "@heroui/react";
 import { ArrowDownRight, ArrowDownLeft, MapPin } from "lucide-react";
-import { useRef } from "react";
+import { useForm, type AnyFieldApi } from "@tanstack/react-form";
+import { contactFormSchema as formSchema } from "@/constants/form-schemas/contact";
+import { useCallback } from "react";
 
 export const Contact = () => {
-  const formData = useRef<any>({});
-  const formRef = useRef<HTMLFormElement>(null);
   const { sendMessageMutation } = useContact();
 
-  function onFieldsChange(event: React.ChangeEvent<HTMLInputElement>) {
-    formData.current.value = {
-      ...formData.current.value,
-      [event.target.name]: event.target.value,
-    };
-  }
-
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    await sendMessageMutation
-      .mutateAsync(formData.current.value)
-      .then(({ error }) => {
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validators: {
+      onChange: formSchema,
+    },
+    onSubmit: async ({ value }) => {
+      await sendMessageMutation.mutateAsync(value).then(({ error }) => {
         if (!error) {
           addToast({
             title: "Message has been set successfuly!",
             color: "success",
           });
+          form.reset();
         } else {
           addToast({
             title: "An error has occured.",
@@ -32,8 +32,22 @@ export const Contact = () => {
           });
         }
       });
-    formRef.current?.reset();
-  }
+    },
+  });
+
+  const getFieldError = useCallback((field: AnyFieldApi) => {
+    const { isTouched, isValid, errors } = field.state.meta;
+    const isInvalid = isTouched && !isValid;
+
+    const errorMessage = isInvalid
+      ? errors
+          ?.map((e) => e?.message)
+          .filter(Boolean)
+          .join(", ")
+      : "";
+
+    return { isInvalid, errorMessage };
+  }, []);
 
   return (
     <>
@@ -90,40 +104,90 @@ export const Contact = () => {
             </div>
           </div>
           <div className="bg-background rounded-xl p-[3px] sm:p-0">
-            <form onSubmit={onSubmit} ref={formRef}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                form.handleSubmit();
+              }}
+            >
               <div className="bg-background border-default space-y-4 rounded-xl border p-6 px-8">
                 <p className="text-primary dark:text-foreground text-2xl font-bold">
                   Send me a message!
                 </p>
-                <Input
-                  type="email"
-                  label="Email"
+                <form.Field
                   name="email"
-                  onChange={onFieldsChange}
-                  isRequired
+                  children={(field) => {
+                    const { isInvalid, errorMessage } = getFieldError(field);
+
+                    return (
+                      <Input
+                        id={field.name}
+                        name={field.name}
+                        label={field.name}
+                        value={field.state.value}
+                        onBlur={field.handleBlur}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        isInvalid={isInvalid}
+                        errorMessage={errorMessage}
+                        classNames={{ label: "capitalize" }}
+                      />
+                    );
+                  }}
                 />
-                <Input
-                  type="text"
-                  label="Name"
+                <form.Field
                   name="name"
-                  onChange={onFieldsChange}
-                  isRequired
+                  children={(field) => {
+                    const { isInvalid, errorMessage } = getFieldError(field);
+
+                    return (
+                      <Input
+                        id={field.name}
+                        name={field.name}
+                        label={field.name}
+                        value={field.state.value}
+                        onBlur={field.handleBlur}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        isInvalid={isInvalid}
+                        errorMessage={errorMessage}
+                        classNames={{ label: "capitalize" }}
+                      />
+                    );
+                  }}
                 />
-                <Textarea
-                  label="Message"
+                <form.Field
                   name="message"
-                  onChange={onFieldsChange}
-                  isRequired
+                  children={(field) => {
+                    const { isInvalid, errorMessage } = getFieldError(field);
+
+                    return (
+                      <Textarea
+                        id={field.name}
+                        name={field.name}
+                        label={field.name}
+                        value={field.state.value}
+                        onBlur={field.handleBlur}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                        isInvalid={isInvalid}
+                        errorMessage={errorMessage}
+                        classNames={{ label: "capitalize" }}
+                      />
+                    );
+                  }}
                 />
-                <div className="flex justify-end">
-                  <Button
-                    color="primary"
-                    type="submit"
-                    isLoading={sendMessageMutation.isPending}
-                  >
-                    Send message
-                  </Button>
-                </div>
+                <form.Subscribe
+                  selector={(state) => [state.canSubmit, state.isSubmitting]}
+                  children={([canSubmit, isSubmitting]) => (
+                    <Button
+                      color="primary"
+                      type="submit"
+                      isDisabled={!canSubmit}
+                      isLoading={isSubmitting}
+                    >
+                      {isSubmitting ? "" : "Submit"}
+                    </Button>
+                  )}
+                />
               </div>
             </form>
           </div>
