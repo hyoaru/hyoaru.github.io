@@ -2,8 +2,8 @@ import { Button, Modal, useDisclosure } from "@heroui/react";
 import { cn } from "@heroui/theme";
 import { FileUser, PersonStanding } from "lucide-react";
 import { useThemeContext } from "../../context/theme-context";
-import { ThemeToggle } from "../common/theme-toggle";
 import { ResumeViewModalContent } from "../common/resume-view-modal-content";
+import { ThemeToggle } from "../common/theme-toggle";
 
 export const Header = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
