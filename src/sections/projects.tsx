@@ -2,6 +2,7 @@ import { ProjectCard } from "@/components/features/projects/project-card";
 import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
+import { Button } from "@heroui/react";
 
 const optimizedImages: Record<string, string> = import.meta.glob(
   "../assets/portfolio-resources/assets/images/projects/*.png",
@@ -47,11 +48,14 @@ export const Projects = () => {
   return (
     <>
       <div className="sticky top-0 z-20 flex w-full justify-end p-2">
-        <button className="group border-default bg-background w-max rounded-lg border px-3 py-1 font-mono text-sm uppercase opacity-80 transition-all duration-300 ease-in-out hover:scale-105">
+        <Button
+          isDisabled
+          className="group border-default bg-background w-max rounded-lg border px-3 py-1 font-mono text-sm uppercase opacity-80 transition-all duration-300 ease-in-out hover:scale-105"
+        >
           <p className="">
             {"Project count: "} {projects.data?.length}
           </p>
-        </button>
+        </Button>
       </div>
       <div className="space-y-4">
         {projects.data?.map((project) => {
