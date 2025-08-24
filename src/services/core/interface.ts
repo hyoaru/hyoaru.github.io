@@ -6,5 +6,5 @@ export interface ICoreService {
   getCertifications(): Certification[];
   getResumeUrl(): string;
   getSocials(): Social[];
-  downloadResume(): void;
+  downloadResume(): Promise<void>;
 }

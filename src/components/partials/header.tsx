@@ -3,6 +3,7 @@ import { cn } from "@heroui/theme";
 import { FileUser, PersonStanding } from "lucide-react";
 import { useThemeContext } from "../../context/theme-context";
 import { ThemeToggle } from "../common/theme-toggle";
+import { ResumeViewModalContent } from "../common/resume-view-modal-content";
 
 export const Header = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -44,8 +45,7 @@ export const Header = () => {
         </div>
       </div>
       <Modal size="5xl" isOpen={isOpen} onOpenChange={onOpenChange}>
-        <></>
-        {/* <ResumeViewModalContent /> */}
+        <ResumeViewModalContent />
       </Modal>
     </>
   );

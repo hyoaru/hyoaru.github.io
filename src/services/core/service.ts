@@ -3,6 +3,8 @@ import type { ICoreService } from "./interface";
 import technologies from "@/assets/portfolio-resources/data/technologies.json";
 import socials from "@/assets/portfolio-resources/data/socials.json";
 import type { Social, Technology } from "./types";
+import resume from "@/assets/portfolio-resources/assets/documents/resume.pdf";
+import JsFileDownloader from "js-file-downloader";
 
 export class CoreService implements ICoreService {
   constructor() {
@@ -21,8 +23,18 @@ export class CoreService implements ICoreService {
     return socials as Social[];
   }
 
+  getResumeUrl(): ReturnType<ICoreService["getResumeUrl"]> {
+    return resume;
+  }
+
+  async downloadResume(): ReturnType<ICoreService["downloadResume"]> {
+    return await new JsFileDownloader({
+      url: resume,
+      filename: "RESUME_CABRERA-JENJADE.pdf",
+      method: "GET",
+    });
+  }
+
   getProjects(): ReturnType<ICoreService["getProjects"]> {}
   getCertifications(): ReturnType<ICoreService["getCertifications"]> {}
-  getResumeUrl(): ReturnType<ICoreService["getResumeUrl"]> {}
-  downloadResume(): ReturnType<ICoreService["downloadResume"]> {}
 }
