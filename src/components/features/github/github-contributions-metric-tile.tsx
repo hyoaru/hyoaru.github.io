@@ -1,14 +1,14 @@
 import { MetricCard } from "@/components/ui/metric-card";
 import useGithub from "@/hooks/use-github";
-import { ErrorMetricTile } from "./error-metric-tile";
-import { LoadingMetricTile } from "./loading-metric-tile";
+import { GithubErrorMetricTile } from "./github-error-metric-tile";
+import { GithubLoadingMetricTile } from "./github-loading-metric-tile";
 
-export const ContributionsMetricTile = () => {
+export const GithubContributionsMetricTile = () => {
   const { queryContributionStats } = useGithub();
   const { data, isLoading, error } = queryContributionStats();
 
-  if (isLoading) return <LoadingMetricTile />;
-  if (error) return <ErrorMetricTile />;
+  if (isLoading) return <GithubLoadingMetricTile />;
+  if (error) return <GithubErrorMetricTile />;
 
   return (
     <MetricCard>

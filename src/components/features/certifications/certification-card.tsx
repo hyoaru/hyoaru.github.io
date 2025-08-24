@@ -10,7 +10,7 @@ import {
 } from "@heroui/react";
 import { Eye } from "lucide-react";
 
-type CertificateCardProps = {
+type CertificationCardProps = {
   title: string;
   image: string;
   issuer: string;
@@ -18,7 +18,7 @@ type CertificateCardProps = {
   tags: string[];
 };
 
-export default function CertificateCard(props: CertificateCardProps) {
+export const CertificationCard = (props: CertificationCardProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -85,4 +85,4 @@ export default function CertificateCard(props: CertificateCardProps) {
       </Modal>
     </>
   );
-}
+};

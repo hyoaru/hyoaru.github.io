@@ -2,8 +2,8 @@ import { Image } from "@heroui/react";
 import { Heart } from "lucide-react";
 import { PhilippineTime } from "../components/common/philippine-time";
 import { EmploymentStatus } from "@/components/common/employment-status";
-import { GithubRecentCommitTile } from "@/components/features/github/recent-commit-tile";
-import { LastFmRecentTrackTile } from "@/components/features/last-fm/recent-track-tile";
+import { GithubRecentCommitTile } from "@/components/features/github/github-recent-commit-tile";
+import { LastFmRecentTrackTile } from "@/components/features/last-fm/lastfm-recent-track-tile";
 
 const optimizedImages: Record<string, string> = import.meta.glob(
   "../assets/portfolio-resources/assets/images/*.jpg",

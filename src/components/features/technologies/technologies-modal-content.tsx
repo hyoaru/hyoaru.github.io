@@ -9,7 +9,7 @@ import {
 } from "@heroui/react";
 import { TechnologyBadge } from "./technology-badge";
 
-export default function TechnologiesModalContent() {
+export const TechnologiesModalContent = () => {
   const { queryTechnologies } = useCore();
   const technologies = queryTechnologies();
 
@@ -54,4 +54,4 @@ export default function TechnologiesModalContent() {
       )}
     </ModalContent>
   );
-}
+};

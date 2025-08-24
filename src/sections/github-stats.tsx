@@ -1,5 +1,5 @@
-import { ContributionsMetricTile } from "@/components/features/github/contributions-metric-tile";
-import { RepositoriesMetricTile } from "@/components/features/github/repositories-metric-tile";
+import { GithubContributionsMetricTile } from "@/components/features/github/github-contributions-metric-tile";
+import { GithubRepositoriesMetricTile } from "@/components/features/github/github-repositories-metric-tile";
 import { Github } from "lucide-react";
 
 export const GithubStats = () => {
@@ -10,8 +10,8 @@ export const GithubStats = () => {
       </div>
       <div className="col-span-full sm:col-span-10 lg:col-span-full 2xl:col-span-10">
         <div className="grid h-full grid-cols-2 gap-1">
-          <RepositoriesMetricTile />
-          <ContributionsMetricTile />
+          <GithubRepositoriesMetricTile />
+          <GithubContributionsMetricTile />
         </div>
       </div>
     </div>

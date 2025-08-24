@@ -1,5 +1,5 @@
-import CertificateCard from "@/components/features/certifications/card";
-import { CertificateListModalContent } from "@/components/features/certifications/list-modal-content";
+import { CertificationCard } from "@/components/features/certifications/certification-card";
+import { CertificateListModalContent } from "@/components/features/certifications/certification-list-modal-content";
 import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
@@ -69,7 +69,7 @@ export default function Certifications() {
           const image = optimizedImages[imageKey];
 
           return (
-            <CertificateCard
+            <CertificationCard
               key={`CertificateCard-${certificate.title}`}
               {...certificate}
               image={image}

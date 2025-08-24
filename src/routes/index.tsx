@@ -1,5 +1,5 @@
-import { GithubRecentCommitTile } from "@/components/features/github/recent-commit-tile";
-import { LastFmRecentTrackTile } from "@/components/features/last-fm/recent-track-tile";
+import { GithubRecentCommitTile } from "@/components/features/github/github-recent-commit-tile";
+import { LastFmRecentTrackTile } from "@/components/features/last-fm/lastfm-recent-track-tile";
 import { Footer } from "@/components/partials/footer";
 import { GithubActivityCalendar } from "@/sections/github-activity-calendar";
 import { GithubStats } from "@/sections/github-stats";

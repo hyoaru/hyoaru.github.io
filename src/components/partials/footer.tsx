@@ -1,6 +1,6 @@
+import { SocialsModalContent } from "@/components/features/socials/socials-modal-content";
 import { addToast, Button, Modal, useDisclosure } from "@heroui/react";
 import { Clipboard } from "lucide-react";
-import { SocialsModalContent } from "../features/socials/modal-content";
 
 export const Footer = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();

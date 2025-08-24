@@ -1,4 +1,4 @@
-import TechnologiesModalContent from "@/components/features/technologies/technologies-modal-content";
+import { TechnologiesModalContent } from "@/components/features/technologies/technologies-modal-content";
 import { TechnologyBadge } from "@/components/features/technologies/technology-badge";
 import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
