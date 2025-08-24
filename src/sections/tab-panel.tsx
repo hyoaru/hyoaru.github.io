@@ -10,8 +10,8 @@ export const TabPanel = () => {
           aria-label="Options"
           classNames={{
             tabList: " w-max m-[3px] p-0 dark:bg-background",
-            base: "w-full bg-custom-secondary dark:bg-background border-0 rounded-xl m-0 p-0",
-            tab: "bg-background rounded-lg opacity-100 px-3 h-8 dark:bg-custom-secondary  ",
+            base: "w-full bg-custom-secondary dark:bg-background border-0 rounded-xl m-0 p-0 mb-2",
+            tab: "bg-background rounded-lg opacity-100 px-3 h-8 dark:bg-custom-secondary",
             tabContent:
               "group-data-[selected=true]:text-primary-foreground dark:group-data-[selected=true]:text-primary-foreground  text-sm 2xl:text-base text-foreground font-bold",
             cursor: "bg-primary dark:bg-primary",
