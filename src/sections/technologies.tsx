@@ -15,7 +15,7 @@ export default function Technologies() {
   if (technologies.isLoading)
     return (
       <div className="bg-background h-[3rem] rounded-xl p-[3px]">
-        <LoadingTile />
+        <LoadingTile spinnerSize="sm" />
       </div>
     );
 

@@ -7,16 +7,16 @@ type ErrorTileProps = {
 
 export const ErrorTile = ({ className }: ErrorTileProps) => {
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full overflow-hidden rounded-lg">
+      <Skeleton className="absolute inset-0 z-[1]" />
       <div
         className={cn(
-          "bg-danger/5 border-danger flex h-full w-full items-center justify-center rounded-lg border",
+          "bg-danger/5 relative z-[2] flex h-full w-full items-center justify-center",
           className,
         )}
       >
         <TriangleAlert className="text-danger" />
       </div>
-      <Skeleton className="h-full w-full rounded-lg" />
     </div>
   );
 };

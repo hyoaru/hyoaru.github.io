@@ -18,13 +18,13 @@ export default function Certifications() {
   if (certifications.isLoading)
     return (
       <>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {Array(10)
             .fill(0)
             .map((_, index) => (
               <LoadingTile
                 key={`CertificationCardLoadingComponent-${index}`}
-                className="h-[400px] rounded-xl"
+                className="h-[400px] rounded-xl lg:h-[300px] xl:h-[380px]"
               />
             ))}
         </div>
@@ -34,13 +34,13 @@ export default function Certifications() {
   if (certifications.error)
     return (
       <>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {Array(10)
             .fill(0)
             .map((_, index) => (
               <ErrorTile
                 key={`CertificationCardErrorComponent-${index}`}
-                className="h-[400px] rounded-xl"
+                className="h-[400px] rounded-xl lg:h-[300px] xl:h-[380px]"
               />
             ))}
         </div>
