@@ -1,11 +1,11 @@
-import type { ICoreService } from "./interface";
-// import certifications from "@/assets/portfolio-resources/data/certifications.json";
-import projects from "@/assets/portfolio-resources/data/projects.json";
-import technologies from "@/assets/portfolio-resources/data/technologies.json";
-import socials from "@/assets/portfolio-resources/data/socials.json";
-import type { Project, Social, Technology } from "./types";
 import resume from "@/assets/portfolio-resources/assets/documents/resume.pdf";
+import certifications from "@/assets/portfolio-resources/data/certifications.json";
+import projects from "@/assets/portfolio-resources/data/projects.json";
+import socials from "@/assets/portfolio-resources/data/socials.json";
+import technologies from "@/assets/portfolio-resources/data/technologies.json";
 import JsFileDownloader from "js-file-downloader";
+import type { ICoreService } from "./interface";
+import type { Certification, Project, Social, Technology } from "./types";
 
 export class CoreService implements ICoreService {
   constructor() {
@@ -16,11 +16,11 @@ export class CoreService implements ICoreService {
     this.getSocials = this.getSocials.bind(this);
   }
 
-  getTechnologies(): ReturnType<ICoreService["getTechnologies"]> {
+  async getTechnologies(): ReturnType<ICoreService["getTechnologies"]> {
     return technologies as Technology[];
   }
 
-  getSocials(): ReturnType<ICoreService["getSocials"]> {
+  async getSocials(): ReturnType<ICoreService["getSocials"]> {
     return socials as Social[];
   }
 
@@ -39,5 +39,8 @@ export class CoreService implements ICoreService {
   async getProjects(): ReturnType<ICoreService["getProjects"]> {
     return projects as Project[];
   }
-  getCertifications(): ReturnType<ICoreService["getCertifications"]> {}
+
+  async getCertifications(): ReturnType<ICoreService["getCertifications"]> {
+    return certifications as Certification[];
+  }
 }

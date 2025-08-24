@@ -11,9 +11,10 @@ export type Project = {
 
 export type Certification = {
   title: string;
+  image: string;
+  issuer: string;
+  issuedAt: string;
   tags: string[];
-  imageShrinked: string;
-  imageOriginal: string;
 };
 
 export type FieldInterest = {

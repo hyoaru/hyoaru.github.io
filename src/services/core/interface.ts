@@ -1,10 +1,10 @@
 import type { Certification, Project, Social, Technology } from "./types";
 
 export interface ICoreService {
-  getTechnologies(): Technology[];
+  getTechnologies(): Promise<Technology[]>;
   getProjects(): Promise<Project[]>;
-  getCertifications(): Certification[];
+  getCertifications(): Promise<Certification[]>;
   getResumeUrl(): string;
-  getSocials(): Social[];
+  getSocials(): Promise<Social[]>;
   downloadResume(): Promise<void>;
 }
