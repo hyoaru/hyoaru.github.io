@@ -1,7 +1,7 @@
 import { Button, Modal, useDisclosure } from "@heroui/react";
 import { cn } from "@heroui/theme";
 import { FileUser, PersonStanding } from "lucide-react";
-import { useThemeContext } from "../../context/theme-context";
+import { useThemeContext } from "@/context/theme-context";
 import { ResumeViewModalContent } from "../common/resume-view-modal-content";
 import { ThemeToggle } from "../common/theme-toggle";
 
@@ -22,9 +22,10 @@ export const Header = () => {
         <div className="flex gap-1">
           <Button
             onPress={onOpen}
+            size="sm"
             isIconOnly
             className={cn(
-              "flex h-8 rounded-lg text-sm font-bold sm:hidden 2xl:gap-4 2xl:text-base",
+              "rounded-lg sm:hidden",
               theme === "light"
                 ? "bg-custom-secondary"
                 : "bg-primary text-primary-foreground",
