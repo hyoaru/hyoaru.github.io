@@ -1,8 +1,9 @@
 import type { ICoreService } from "./interface";
 // import certifications from "@/assets/portfolio-resources/data/certifications.json";
+import projects from "@/assets/portfolio-resources/data/projects.json";
 import technologies from "@/assets/portfolio-resources/data/technologies.json";
 import socials from "@/assets/portfolio-resources/data/socials.json";
-import type { Social, Technology } from "./types";
+import type { Project, Social, Technology } from "./types";
 import resume from "@/assets/portfolio-resources/assets/documents/resume.pdf";
 import JsFileDownloader from "js-file-downloader";
 
@@ -35,6 +36,8 @@ export class CoreService implements ICoreService {
     });
   }
 
-  getProjects(): ReturnType<ICoreService["getProjects"]> {}
+  async getProjects(): ReturnType<ICoreService["getProjects"]> {
+    return projects as Project[];
+  }
   getCertifications(): ReturnType<ICoreService["getCertifications"]> {}
 }

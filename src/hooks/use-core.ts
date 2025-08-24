@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { CoreService } from "@/services/core";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 export const useCore = () => {
   const coreService = new CoreService();
@@ -7,9 +8,21 @@ export const useCore = () => {
   const socials = coreService.getSocials();
   const resumeUrl = coreService.getResumeUrl();
 
+  const queryProjects = () =>
+    useQuery({
+      queryFn: coreService.getProjects,
+      queryKey: ["projects"],
+    });
+
   const downloadResumeMutation = useMutation({
     mutationFn: coreService.downloadResume,
   });
 
-  return { technologies, socials, resumeUrl, downloadResumeMutation };
+  return {
+    queryProjects,
+    technologies,
+    socials,
+    resumeUrl,
+    downloadResumeMutation,
+  };
 };
