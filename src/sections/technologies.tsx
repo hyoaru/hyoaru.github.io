@@ -1,13 +1,30 @@
 import TechnologiesModalContent from "@/components/features/technologies/technologies-modal-content";
 import { TechnologyBadge } from "@/components/features/technologies/technology-badge";
+import { ErrorTile } from "@/components/ui/error-tile";
+import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
-import { useDisclosure, Tooltip, Modal } from "@heroui/react";
+import { Modal, Tooltip, useDisclosure } from "@heroui/react";
 import { CornerLeftUp, Forward } from "lucide-react";
 import Marquee from "react-fast-marquee";
 
 export default function Technologies() {
-  const { technologies } = useCore();
+  const { queryTechnologies } = useCore();
+  const technologies = queryTechnologies();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  if (technologies.isLoading)
+    return (
+      <div className="bg-background h-[3rem] rounded-xl p-[3px]">
+        <LoadingTile />
+      </div>
+    );
+
+  if (technologies.error)
+    return (
+      <div className="bg-background h-[3rem] rounded-xl p-[3px]">
+        <ErrorTile />
+      </div>
+    );
 
   return (
     <>
@@ -29,7 +46,7 @@ export default function Technologies() {
         </div>
         <div className="bg-background h-max rounded-xl p-[3px]">
           <Marquee>
-            {technologies?.map((technology) => (
+            {technologies.data?.map((technology) => (
               <TechnologyBadge
                 className="mx-[3px] h-[2.6rem]"
                 key={`TechnologyBadge-${technology.name}`}

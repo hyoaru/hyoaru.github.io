@@ -10,7 +10,8 @@ import {
 import { TechnologyBadge } from "./technology-badge";
 
 export default function TechnologiesModalContent() {
-  const { technologies } = useCore();
+  const { queryTechnologies } = useCore();
+  const technologies = queryTechnologies();
 
   return (
     <ModalContent>
@@ -21,7 +22,7 @@ export default function TechnologiesModalContent() {
             <p className="text-base font-normal">
               <span>{"A total of "}</span>
               <span className="text-primary p-1 text-xl font-bold">
-                {technologies.length}
+                {technologies.data?.length}
               </span>
               <span>
                 {
@@ -33,7 +34,7 @@ export default function TechnologiesModalContent() {
           <ModalBody>
             <ScrollShadow size={100} className="max-h-[400px]">
               <div className="flex flex-wrap gap-2">
-                {technologies.map((technology) => (
+                {technologies.data?.map((technology) => (
                   <TechnologyBadge
                     className="h-[2.6rem]"
                     key={`TechnologyBadge-${technology.name}`}

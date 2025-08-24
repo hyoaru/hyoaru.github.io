@@ -4,9 +4,19 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 
 export const useCore = () => {
   const coreService = new CoreService();
-  const technologies = coreService.getTechnologies();
-  const socials = coreService.getSocials();
   const resumeUrl = coreService.getResumeUrl();
+
+  const querySocials = () =>
+    useQuery({
+      queryFn: coreService.getSocials,
+      queryKey: ["socials"],
+    });
+
+  const queryTechnologies = () =>
+    useQuery({
+      queryFn: coreService.getTechnologies,
+      queryKey: ["technologies"],
+    });
 
   const queryProjects = () =>
     useQuery({
@@ -19,10 +29,10 @@ export const useCore = () => {
   });
 
   return {
-    queryProjects,
-    technologies,
-    socials,
     resumeUrl,
+    queryProjects,
+    queryTechnologies,
+    querySocials,
     downloadResumeMutation,
   };
 };

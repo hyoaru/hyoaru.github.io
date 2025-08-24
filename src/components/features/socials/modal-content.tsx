@@ -1,14 +1,31 @@
+import { ErrorTile } from "@/components/ui/error-tile";
+import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
 import {
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Button,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
 } from "@heroui/react";
 
 export const SocialsModalContent = () => {
-  const { socials } = useCore();
+  const { querySocials } = useCore();
+  const socials = querySocials();
+
+  if (socials.isLoading)
+    return (
+      <ModalContent className="p-1">
+        <LoadingTile className="h-[500px]" />
+      </ModalContent>
+    );
+
+  if (socials.error)
+    return (
+      <ModalContent className="p-1">
+        <ErrorTile className="h-[500px]" />
+      </ModalContent>
+    );
 
   return (
     <ModalContent>
@@ -19,7 +36,7 @@ export const SocialsModalContent = () => {
           </ModalHeader>
           <ModalBody>
             <div className="flex flex-wrap gap-2">
-              {socials.map((social, index) => (
+              {socials.data?.map((social, index) => (
                 <a
                   href={social.link}
                   target="_blank"
