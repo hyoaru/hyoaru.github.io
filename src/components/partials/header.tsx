@@ -1,13 +1,11 @@
 import { Button, Modal, useDisclosure } from "@heroui/react";
 import { cn } from "@heroui/theme";
-import { FileUser, PersonStanding } from "lucide-react";
-import { useThemeContext } from "@/context/theme-context";
+import { PersonStanding } from "lucide-react";
 import { ResumeViewModalContent } from "../common/resume-view-modal-content";
 import { ThemeToggle } from "../common/theme-toggle";
 
 export const Header = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const { theme } = useThemeContext();
 
   return (
     <>
@@ -23,21 +21,8 @@ export const Header = () => {
           <Button
             onPress={onOpen}
             size="sm"
-            isIconOnly
             className={cn(
-              "rounded-lg sm:hidden",
-              theme === "light"
-                ? "bg-custom-secondary"
-                : "bg-primary text-primary-foreground",
-            )}
-          >
-            <FileUser />
-          </Button>
-          <Button
-            onPress={onOpen}
-            size="sm"
-            className={cn(
-              "bg-custom-secondary hidden rounded-lg text-sm font-bold sm:flex sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
+              "bg-custom-secondary rounded-lg text-sm font-bold sm:flex sm:text-base lg:text-sm 2xl:gap-4 2xl:text-base",
             )}
           >
             View resume
