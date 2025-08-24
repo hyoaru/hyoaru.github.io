@@ -1,6 +1,7 @@
 import { ScrollShadow, Tab, Tabs } from "@heroui/react";
 import { ChevronRight } from "lucide-react";
 import Certifications from "./certifications";
+import { Contact } from "./contact";
 import { Projects } from "./projects";
 
 export const TabPanel = () => {
@@ -29,11 +30,11 @@ export const TabPanel = () => {
               <Certifications />
             </TabContent>
           </Tab>
-          {/* <Tab key="contact" title={<TabTitle title="Contact" />}> */}
-          {/*   <TabContent> */}
-          {/*     <Contact /> */}
-          {/*   </TabContent> */}
-          {/* </Tab> */}
+          <Tab key="contact" title={<TabTitle title="Contact" />}>
+            <TabContent>
+              <Contact />
+            </TabContent>
+          </Tab>
         </Tabs>
       </div>
     </>
