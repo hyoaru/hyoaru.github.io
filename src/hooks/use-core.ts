@@ -24,6 +24,12 @@ export const useCore = () => {
       queryKey: ["projects"],
     });
 
+  const queryExperiences = () =>
+    useQuery({
+      queryFn: coreService.getExperiences,
+      queryKey: ["experiences"],
+    });
+
   const queryCertifications = () =>
     useQuery({
       queryFn: coreService.getCertifications,
@@ -38,6 +44,7 @@ export const useCore = () => {
     resumeUrl,
     queryProjects,
     queryTechnologies,
+    queryExperiences,
     querySocials,
     queryCertifications,
     downloadResumeMutation,

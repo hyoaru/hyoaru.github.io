@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import Certifications from "./certifications";
 import { Contact } from "./contact";
 import { Projects } from "./projects";
+import { Experiences } from "./experiences";
 
 export const TabPanel = () => {
   return (
@@ -20,6 +21,11 @@ export const TabPanel = () => {
             panel: "m-0 p-0 h-full overflow-y-hidden",
           }}
         >
+          <Tab key="experiences" title={<TabTitle title="Work Experience" />}>
+            <TabContent>
+              <Experiences />
+            </TabContent>
+          </Tab>
           <Tab key="projects" title={<TabTitle title="Projects" />}>
             <TabContent>
               <Projects />

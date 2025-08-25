@@ -28,9 +28,9 @@ export const GithubRecentCommitTile = () => {
 
   return (
     <>
-      <ActivityTile className="border-primary border">
+      <ActivityTile className="border-default bg-primary/5 border">
         <ActivityTile.Body>
-          <ActivityTile.Icon>
+          <ActivityTile.Icon className="border-default bg-primary/5 text-primary">
             <Github className="size-10 lg:size-6 xl:size-8" />
           </ActivityTile.Icon>
           <ActivityTile.Content>

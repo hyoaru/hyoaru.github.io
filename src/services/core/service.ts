@@ -1,11 +1,18 @@
 import resume from "@/assets/portfolio-resources/assets/documents/resume.pdf";
+import experiences from "@/assets/portfolio-resources/data/experiences.json";
 import certifications from "@/assets/portfolio-resources/data/certifications.json";
 import projects from "@/assets/portfolio-resources/data/projects.json";
 import socials from "@/assets/portfolio-resources/data/socials.json";
 import technologies from "@/assets/portfolio-resources/data/technologies.json";
 import JsFileDownloader from "js-file-downloader";
 import type { ICoreService } from "./interface";
-import type { Certification, Project, Social, Technology } from "./types";
+import type {
+  Certification,
+  Experience,
+  Project,
+  Social,
+  Technology,
+} from "./types";
 
 export class CoreService implements ICoreService {
   constructor() {
@@ -38,6 +45,10 @@ export class CoreService implements ICoreService {
 
   async getProjects(): ReturnType<ICoreService["getProjects"]> {
     return projects as Project[];
+  }
+
+  async getExperiences(): ReturnType<ICoreService["getExperiences"]> {
+    return experiences as Experience[];
   }
 
   async getCertifications(): ReturnType<ICoreService["getCertifications"]> {

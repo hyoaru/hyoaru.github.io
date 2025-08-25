@@ -34,3 +34,15 @@ export type Technology = {
   logo: string;
   category: string;
 };
+
+export type Experience = {
+  company: string;
+  position: string;
+  country?: string;
+  modality: string;
+  type: string;
+  startedAt: string;
+  endedAt: string | null;
+  technologies: string[];
+  highlights: string[];
+};
