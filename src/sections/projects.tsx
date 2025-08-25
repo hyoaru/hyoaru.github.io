@@ -75,8 +75,10 @@ export const Projects = () => {
                       title={project.title}
                       year={project.year}
                     />
-                    <div className="mb-4 space-y-4">
-                      <ProjectCard.Description>
+                    <div className="mb-4 flex flex-col gap-2">
+                      <ProjectCard.Description
+                        classNames={{ container: "flex-grow" }}
+                      >
                         {project.description}
                       </ProjectCard.Description>
                       <ProjectCard.ContentTags tags={project.tags} />

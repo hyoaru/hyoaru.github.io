@@ -72,7 +72,7 @@ type ProjectCardDescriptionProps = {
 export const ProjectCard = ({ children, className }: ProjectCardProps) => (
   <div
     className={cn(
-      "group bg-background hover:border-primary hover:bg-primary/5 border-default relative overflow-hidden rounded-xl border transition-all duration-200 ease-in-out",
+      "group bg-background hover:border-primary hover:bg-primary/5 border-default relative h-full overflow-hidden rounded-xl border transition-all duration-200 ease-in-out sm:h-[350px]",
       className,
     )}
   >
@@ -104,7 +104,27 @@ const ProjectCardImageView = ({
 );
 
 const ProjectCardBody = ({ children, className }: ProjectCardBodyProps) => (
-  <div className={cn("grid grid-cols-12", className)}>{children}</div>
+  <div
+    className={cn("grid h-full w-full grid-cols-12 overflow-hidden", className)}
+  >
+    {children}
+  </div>
+);
+
+const ProjectCardImage = ({ imageUrl }: ProjectCardImageProps) => (
+  <div
+    className={cn(
+      "relative col-span-12 h-full w-full overflow-hidden sm:col-span-6",
+    )}
+  >
+    <Image
+      radius="none"
+      isBlurred
+      src={imageUrl}
+      removeWrapper
+      className="h-full w-full object-cover"
+    />
+  </div>
 );
 
 const ProjectCardContent = ({
@@ -125,23 +145,48 @@ const ProjectCardContentBody = ({
   children,
   className,
 }: ProjectCardContentBodyProps) => (
-  <div className={cn("", className)}>{children}</div>
+  <div className={cn("h-full", className)}>{children}</div>
+);
+
+const ProjectCardTitle = ({
+  title,
+  year,
+  className,
+}: ProjectCardTitleProps) => (
+  <p className={cn("mb-2 text-sm font-bold 2xl:text-base", className)}>
+    {title} {"･"} {year}
+  </p>
+);
+
+const ProjectCardDescription = ({
+  children,
+  classNames,
+}: ProjectCardDescriptionProps) => (
+  <ScrollShadow
+    hideScrollBar
+    size={50}
+    className={cn("max-h-[120px] text-xs lg:max-h-[150px] 2xl:text-base")}
+  >
+    <p className={cn("", classNames?.description)}>{children}</p>
+  </ScrollShadow>
 );
 
 const ProjectCardContentTags = ({
   tags,
   className,
 }: ProjectCardContentTagsProps) => (
-  <div className={cn("flex flex-wrap items-center gap-1", className)}>
-    {tags.map((tag, index) => (
-      <div
-        className="border-default rounded-lg border px-2 py-1"
-        key={`ProjectTag-${tag}-${index}`}
-      >
-        <p className="text-xs">{tag}</p>
-      </div>
-    ))}
-  </div>
+  <ScrollShadow size={30} className="max-h-[45px]">
+    <div className={cn("flex flex-wrap items-center gap-1", className)}>
+      {tags.map((tag, index) => (
+        <div
+          className="border-default rounded-lg border px-2 py-1"
+          key={`ProjectTag-${tag}-${index}`}
+        >
+          <p className="text-xs">{tag}</p>
+        </div>
+      ))}
+    </div>
+  </ScrollShadow>
 );
 
 const ProjectCardContentFooter = ({
@@ -209,44 +254,6 @@ const ProjectCardLiveButton = ({
     </a>
   );
 };
-
-const ProjectCardImage = ({ imageUrl }: ProjectCardImageProps) => (
-  <div className={cn("relative col-span-12 sm:col-span-6")}>
-    <div className="group-hover:bg-primary/5 absolute inset-0 z-[15] flex transition-all duration-300 ease-in-out"></div>
-    <Image
-      radius={"none"}
-      src={imageUrl}
-      isBlurred
-      classNames={{
-        wrapper: "object-cover w-full sm:h-full sm:w-fit",
-        img: "w-full sm:h-full sm:w-fit object-cover",
-      }}
-    />
-  </div>
-);
-
-const ProjectCardTitle = ({
-  title,
-  year,
-  className,
-}: ProjectCardTitleProps) => (
-  <p className={cn("mb-2 text-sm font-bold 2xl:text-base", className)}>
-    {title} {"･"} {year}
-  </p>
-);
-
-const ProjectCardDescription = ({
-  children,
-  classNames,
-}: ProjectCardDescriptionProps) => (
-  <ScrollShadow
-    hideScrollBar
-    size={50}
-    className={cn("h-full text-xs lg:max-h-[80px] 2xl:text-base")}
-  >
-    <p className={cn("", classNames?.description)}>{children}</p>
-  </ScrollShadow>
-);
 
 ProjectCard.ImageView = ProjectCardImageView;
 ProjectCard.Body = ProjectCardBody;

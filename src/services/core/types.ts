@@ -32,4 +32,5 @@ export type Social = {
 export type Technology = {
   name: string;
   logo: string;
+  category: string;
 };
