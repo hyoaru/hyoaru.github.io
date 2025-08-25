@@ -38,12 +38,12 @@ export const Main = () => {
           </div>
         </div>
         <div className="order-first col-span-full flex flex-col sm:order-last sm:col-span-7 lg:col-span-6 xl:col-span-7">
-          <div className="rows-span-2 flex w-full justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
-            <div className="flex gap-2 2xl:gap-4">
-              <p className="font-bold underline">EN</p>
-              <p>FIL</p>
-            </div>
+          <div className="rows-span-2 flex w-full items-center justify-between text-sm sm:text-base lg:text-sm 2xl:text-base">
             <PhilippineTime />
+            <Image
+              radius="none"
+              src="https://api.visitorbadge.io/api/visitors?path=github.com%2Fhyoaru&label=visitors&labelColor=%23006fee&countColor=%23eeeeee&style=flat-square&labelStyle=upper"
+            />
           </div>
           <div className="mt-auto hidden h-[68%] sm:block lg:hidden lg:h-[68%] xl:block">
             <div className="grid h-full grid-rows-2 gap-1">
