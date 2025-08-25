@@ -38,7 +38,8 @@ export type Technology = {
 export type Experience = {
   company: string;
   position: string;
-  country?: string;
+  summary: string;
+  country: string;
   modality: string;
   type: string;
   startedAt: string;

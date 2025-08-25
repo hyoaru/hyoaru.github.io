@@ -1,7 +1,8 @@
 import { ExperienceCard } from "@/components/features/experiences/experience-card";
 import { useCore } from "@/hooks/use-core";
-import { ArrowUpLeft } from "lucide-react";
+import { ArrowUpLeft, Calendar, MapPin } from "lucide-react";
 import { TimeUtilities } from "@/utilities/time";
+import { Chip, ScrollShadow } from "@heroui/react";
 
 export const Experiences = () => {
   const { queryExperiences } = useCore();
@@ -23,8 +24,10 @@ export const Experiences = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {experiences.data?.map((experience) => {
+            {experiences.data?.map((experience, index) => {
               const isMostRecent = experience === experiences.data?.[0];
+
+              const experienceIndex = experiences?.data?.length - index;
 
               const parsedStartDate = TimeUtilities.parseMonthYearDate(
                 experience.startedAt,
@@ -35,12 +38,15 @@ export const Experiences = () => {
                 : "Present";
 
               return (
-                <ExperienceCard isMostRecent={isMostRecent}>
-                  {!isMostRecent && (
-                    <ExperienceCard.OverflowIcon>
-                      <ArrowUpLeft size={30} />
-                    </ExperienceCard.OverflowIcon>
-                  )}
+                <ExperienceCard key={`${index}-${experience.position}`}>
+                  <ExperienceCard.OverflowIndex
+                    classNames={{
+                      overlay: `${isMostRecent && "animate-ping border-primary"}`,
+                      text: `${isMostRecent && "bg-primary text-primary-foreground"}`,
+                    }}
+                  >
+                    {experienceIndex}
+                  </ExperienceCard.OverflowIndex>
                   <ExperienceCard.Body>
                     <ExperienceCard.Content>
                       <ExperienceCard.ContentHeader>
@@ -48,20 +54,23 @@ export const Experiences = () => {
                           {experience.position}
                         </ExperienceCard.Position>
                         <ExperienceCard.ContentSubHeader>
-                          <ExperienceCard.Company>
-                            {experience.company}
-                          </ExperienceCard.Company>
-                          <ExperienceCard.Location>
-                            {experience.country ?? experience.modality}
-                          </ExperienceCard.Location>
+                          <ExperienceCard.Date>
+                            {parsedStartDate} - {parsedEndDate}
+                          </ExperienceCard.Date>
+                          <ExperienceCard.CompanyModality>
+                            {experience.company} {"•"} {experience.modality}
+                          </ExperienceCard.CompanyModality>
                         </ExperienceCard.ContentSubHeader>
                       </ExperienceCard.ContentHeader>
                       <ExperienceCard.ContentBody>
-                        <ExperienceCard.Date>
-                          {parsedStartDate} - {parsedEndDate}
-                        </ExperienceCard.Date>
+                        <ExperienceCard.Summary>
+                          {experience.summary}
+                        </ExperienceCard.Summary>
                         <ExperienceCard.Highlights
                           highlights={experience.highlights}
+                        />
+                        <ExperienceCard.Technologies
+                          technologies={experience.technologies}
                         />
                       </ExperienceCard.ContentBody>
                     </ExperienceCard.Content>
