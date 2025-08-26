@@ -61,13 +61,13 @@ function TabTitle({ title }: { title: string }) {
 
 function TabContent({ children }: { children: React.ReactNode }) {
   return (
-    <div className="sm:bg-custom-secondary h-full rounded-xl">
+    <div className="bg-custom-secondary h-full rounded-xl">
       <ScrollShadow
         size={100}
         hideScrollBar
-        className="h-full overflow-y-scroll sm:p-2"
+        className="h-full overflow-y-scroll p-2"
       >
-        <div className="sm:bg-background overflow-y-clip rounded-lg sm:p-2">
+        <div className="bg-background overflow-y-clip rounded-lg p-2">
           {children}
         </div>
       </ScrollShadow>

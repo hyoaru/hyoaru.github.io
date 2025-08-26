@@ -40,20 +40,20 @@ export const Experiences = () => {
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="p-[3px] sm:p-0">
-              <div className="space-y-2 rounded-xl p-6 px-8">
-                <p className="text-5xl font-bold">
+              <div className="space-y-2 rounded-xl p-8 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
+                <p className="text-4xl font-bold 2xl:text-5xl">
                   {experiences.isLoading
                     ? "Calculating years of experience..."
                     : `${toOrdinal(experiences.data!.length)} role—${experienceDuration} years of experience.`}
                 </p>
-                <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
+                <p className="text-sm sm:text-base xl:text-sm 2xl:text-lg">
                   A journey shaped by continuous learning, adapting to
                   challenges, and building expertise with every role.
                 </p>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">
             {experiences.data?.map((experience, index) => {
               const isMostRecent = experience === experiences.data?.[0];
 
@@ -69,7 +69,7 @@ export const Experiences = () => {
 
               return (
                 <ExperienceCard
-                  className={`${isMostRecent ? "bg-primary/5" : "opacity-60 hover:opacity-80"}`}
+                  className={`${isMostRecent ? "bg-primary/5" : "hover:opacity-80 2xl:opacity-60"}`}
                   key={`${index}-${experience.position}`}
                 >
                   <ExperienceCard.OverflowIndex

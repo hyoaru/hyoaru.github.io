@@ -98,7 +98,7 @@ const ExperienceCardOverflowIndex = (
 );
 
 const ExperienceCardBody = (props: ExperienceCardBodyProps) => (
-  <div className="rounded-xl p-6 px-8 text-xs sm:text-base xl:text-sm 2xl:text-base">
+  <div className="rounded-xl p-8 px-6 text-xs sm:text-base md:p-6 md:px-8 lg:p-5 lg:px-7 xl:text-sm 2xl:p-6 2xl:px-8 2xl:text-base">
     {props.children}
   </div>
 );
@@ -112,7 +112,7 @@ const ExperienceCardContentHeader = (
 ) => <div className="space-y-2">{props.children}</div>;
 
 const ExperienceCardPosition = (props: ExperienceCardPositionProps) => (
-  <p className="text-xl font-bold">{props.children}</p>
+  <p className="text-base font-bold xl:text-lg 2xl:text-xl">{props.children}</p>
 );
 
 const ExperienceCardContentSubHeader = (

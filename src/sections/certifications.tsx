@@ -18,7 +18,7 @@ export default function Certifications() {
   if (certifications.isLoading)
     return (
       <>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {Array(10)
             .fill(0)
             .map((_, index) => (
@@ -34,7 +34,7 @@ export default function Certifications() {
   if (certifications.error)
     return (
       <>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {Array(10)
             .fill(0)
             .map((_, index) => (
@@ -60,7 +60,7 @@ export default function Certifications() {
           <p className="hidden group-hover:block">View certificate list</p>
         </Button>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
         {certifications.data?.map((certificate) => {
           const imageKey = Object.keys(optimizedImages).find((key) =>
             key.includes(certificate.image),
