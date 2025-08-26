@@ -1,12 +1,30 @@
 import { ExperienceCard } from "@/components/features/experiences/experience-card";
 import { useCore } from "@/hooks/use-core";
-import { ArrowUpLeft, Calendar, MapPin } from "lucide-react";
 import { TimeUtilities } from "@/utilities/time";
-import { Chip, ScrollShadow } from "@heroui/react";
+import dayjs from "dayjs";
+import { useMemo } from "react";
 
 export const Experiences = () => {
   const { queryExperiences } = useCore();
   const experiences = queryExperiences();
+
+  const experienceDuration = useMemo(() => {
+    if (!experiences?.data) return 0;
+
+    const now = dayjs();
+
+    const totalMonths = experiences.data.reduce((acc, exp) => {
+      const start = dayjs(exp.startedAt);
+      const end = exp.endedAt ? dayjs(exp.endedAt) : now;
+
+      const months = Math.max(end.diff(start, "month"), 0);
+
+      return acc + months;
+    }, 0);
+
+    const years = (totalMonths / 12).toFixed(1);
+    return years;
+  }, [experiences?.data]);
 
   return (
     <>
@@ -15,7 +33,11 @@ export const Experiences = () => {
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="sticky top-0 p-[3px] sm:p-0">
               <div className="space-y-2 rounded-xl p-6 px-8">
-                <p className="text-5xl font-bold">Work experience.</p>
+                <p className="text-5xl font-bold">
+                  {experiences.isLoading
+                    ? "Calculating years of experience..."
+                    : `Exactly ${experienceDuration} years of experience.`}
+                </p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
                   A timeline of my professional journey, showcasing key roles,
                   projects, and the technologies that shaped my growth.

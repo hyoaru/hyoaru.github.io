@@ -21,7 +21,7 @@ export const TabPanel = () => {
             panel: "m-0 p-0 h-full overflow-y-hidden",
           }}
         >
-          <Tab key="experiences" title={<TabTitle title="Work Experience" />}>
+          <Tab key="experiences" title={<TabTitle title="Career Snapshot" />}>
             <TabContent>
               <Experiences />
             </TabContent>
