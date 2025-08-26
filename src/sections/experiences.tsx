@@ -2,7 +2,7 @@ import { ExperienceCard } from "@/components/features/experiences/experience-car
 import { useCore } from "@/hooks/use-core";
 import { TimeUtilities } from "@/utilities/time";
 import dayjs from "dayjs";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 export const Experiences = () => {
   const { queryExperiences } = useCore();
@@ -26,21 +26,29 @@ export const Experiences = () => {
     return years;
   }, [experiences?.data]);
 
+  const toOrdinal = useCallback((number: number) => {
+    const s = ["th", "st", "nd", "rd"];
+    const v = number % 100;
+    const ordinal = number + (s[(v - 20) % 10] || s[v] || s[0]);
+
+    return ordinal;
+  }, []);
+
   return (
     <>
       <div className="" id="ContactSection">
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
-            <div className="sticky top-0 p-[3px] sm:p-0">
+            <div className="p-[3px] sm:p-0">
               <div className="space-y-2 rounded-xl p-6 px-8">
                 <p className="text-5xl font-bold">
                   {experiences.isLoading
                     ? "Calculating years of experience..."
-                    : `Exactly ${experienceDuration} years of experience.`}
+                    : `${toOrdinal(experiences.data!.length)} role—${experienceDuration} years of experience.`}
                 </p>
-                <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
-                  A timeline of my professional journey, showcasing key roles,
-                  projects, and the technologies that shaped my growth.
+                <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
+                  A journey shaped by continuous learning, adapting to
+                  challenges, and building expertise with every role.
                 </p>
               </div>
             </div>
@@ -60,14 +68,17 @@ export const Experiences = () => {
                 : "Present";
 
               return (
-                <ExperienceCard key={`${index}-${experience.position}`}>
+                <ExperienceCard
+                  className={`${!isMostRecent && "opacity-60 hover:opacity-80"}`}
+                  key={`${index}-${experience.position}`}
+                >
                   <ExperienceCard.OverflowIndex
                     classNames={{
                       overlay: `${isMostRecent && "animate-ping border-primary"}`,
                       text: `${isMostRecent && "bg-primary text-primary-foreground"}`,
                     }}
                   >
-                    {experienceIndex}
+                    {toOrdinal(experienceIndex)}
                   </ExperienceCard.OverflowIndex>
                   <ExperienceCard.Body>
                     <ExperienceCard.Content>

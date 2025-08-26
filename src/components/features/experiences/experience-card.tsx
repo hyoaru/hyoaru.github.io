@@ -1,9 +1,10 @@
 import { Chip, ScrollShadow } from "@heroui/react";
 import { cn } from "@heroui/theme";
-import { Calendar, MapPin } from "lucide-react";
+import { Award, Calendar, MapPin, TrendingUp } from "lucide-react";
 
 type ExperienceCardProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 type ExperienceCardOverflowIndexProps = {
@@ -64,6 +65,7 @@ export const ExperienceCard = (props: ExperienceCardProps) => (
   <div
     className={cn(
       "border-default hover:border-primary hover:bg-primary/5 relative rounded-xl border p-[3px] transition-all duration-200 ease-in-out sm:p-0",
+      props.className,
     )}
   >
     {props.children}
@@ -85,7 +87,7 @@ const ExperienceCardOverflowIndex = (
       ></div>
       <p
         className={cn(
-          "bg-default-300 text-primary flex h-10 w-10 items-center justify-center overflow-hidden rounded-full font-bold",
+          "bg-default-300 text-primary flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-sm font-bold",
           props.classNames?.text,
         )}
       >
@@ -143,7 +145,10 @@ const ExperienceCardSummary = (props: ExperienceCardSummaryProps) => (
 
 const ExperienceCardHighlights = (props: ExperienceCardHighlightsProps) => (
   <div className="space-y-1">
-    <p className="text-sm font-bold">Key Achievements</p>
+    <div className="flex items-center gap-2">
+      <Award size={20} />
+      <p className="text-sm font-bold">Key Achievements</p>
+    </div>
     <ScrollShadow size={50} className="max-h-[100px]">
       <ul className="list-disc ps-4 text-sm">
         {props.highlights.map((highlight) => (
@@ -155,8 +160,11 @@ const ExperienceCardHighlights = (props: ExperienceCardHighlightsProps) => (
 );
 
 const ExperienceCardTechnologies = (props: ExperienceCardTechnologiesProps) => (
-  <div className="space-y-1">
-    <p className="text-sm font-bold">Technologies</p>
+  <div className="space-y-2">
+    <div className="flex items-center gap-2">
+      <TrendingUp size={20} />
+      <p className="text-sm font-bold">Technologies</p>
+    </div>
     <ScrollShadow size={50} className="max-h-[80px]">
       <div className="flex flex-wrap gap-1">
         {props.technologies.map((technology, index) => (
