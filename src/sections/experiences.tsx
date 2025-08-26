@@ -69,7 +69,7 @@ export const Experiences = () => {
 
               return (
                 <ExperienceCard
-                  className={`${!isMostRecent && "opacity-60 hover:opacity-80"}`}
+                  className={`${isMostRecent ? "bg-primary/5" : "opacity-60 hover:opacity-80"}`}
                   key={`${index}-${experience.position}`}
                 >
                   <ExperienceCard.OverflowIndex
