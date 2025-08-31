@@ -24,7 +24,7 @@ export const LastFmRecentTrackTile = () => {
   return (
     <>
       <ActivityTile
-        className={`relative overflow-hidden border border-white bg-cover bg-center`}
+        className={`border-default relative overflow-hidden border bg-cover bg-center`}
         style={{ backgroundImage: `url(${data?.image_url})` }}
       >
         <div className="absolute h-full w-full overflow-hidden rounded-xl opacity-90 backdrop-blur-[12px]"></div>
