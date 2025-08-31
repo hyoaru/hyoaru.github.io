@@ -52,6 +52,7 @@ export default function Certifications() {
       <div className="sticky top-0 z-20 flex w-full justify-end p-2">
         <Button
           onPress={onOpen}
+          size="sm"
           className="group border-default bg-background w-max rounded-lg border px-3 py-1 font-mono text-sm uppercase opacity-80"
         >
           <p className="block group-hover:hidden">

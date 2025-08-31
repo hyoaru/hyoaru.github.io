@@ -40,13 +40,13 @@ export const Experiences = () => {
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="p-[3px] sm:p-0">
-              <div className="space-y-2 rounded-xl p-8 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
-                <p className="text-4xl font-bold 2xl:text-5xl">
+              <div className="space-y-2 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
+                <p className="text-3xl font-bold sm:text-4xl 2xl:text-5xl">
                   {experiences.isLoading
                     ? "Calculating years of experience..."
                     : `${toOrdinal(experiences.data!.length)} role—${experienceDuration} years of experience.`}
                 </p>
-                <p className="text-sm sm:text-base xl:text-sm 2xl:text-lg">
+                <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
                   A journey shaped by continuous learning, adapting to
                   challenges, and building expertise with every role.
                 </p>
@@ -74,8 +74,8 @@ export const Experiences = () => {
                 >
                   <ExperienceCard.OverflowIndex
                     classNames={{
-                      overlay: `${isMostRecent && "animate-ping border-primary"}`,
-                      text: `${isMostRecent && "bg-primary text-primary-foreground"}`,
+                      overlay: `${isMostRecent && "animate-ping border-primary dark:border-foreground"}`,
+                      text: `${isMostRecent && "bg-primary text-primary-foreground dark:text-primary"}`,
                     }}
                   >
                     {toOrdinal(experienceIndex)}

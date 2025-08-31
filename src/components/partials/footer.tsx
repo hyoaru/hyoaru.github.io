@@ -22,7 +22,7 @@ export const Footer = () => {
           <Button
             size="sm"
             onPress={onCopy}
-            className="bg-custom-secondary text-primary border-default flex w-max items-center gap-1 rounded-lg border text-sm"
+            className="bg-custom-secondary text-primary border-default flex w-max items-center gap-1 rounded-lg border text-sm dark:border-none"
           >
             <p className="text-foreground">{emailAddress}</p>
             <Clipboard className="h-[1rem] w-[1rem]" />

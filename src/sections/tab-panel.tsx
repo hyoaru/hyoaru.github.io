@@ -8,7 +8,7 @@ import { Experiences } from "./experiences";
 export const TabPanel = () => {
   return (
     <>
-      <div className="flex h-[90vh] flex-col space-y-2 overflow-y-scroll lg:h-full">
+      <div className="flex h-max flex-col space-y-2 overflow-y-scroll">
         <Tabs
           aria-label="Options"
           classNames={{
@@ -62,12 +62,8 @@ function TabTitle({ title }: { title: string }) {
 function TabContent({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-custom-secondary h-full rounded-xl">
-      <ScrollShadow
-        size={100}
-        hideScrollBar
-        className="h-full overflow-y-scroll p-2"
-      >
-        <div className="bg-background overflow-y-clip rounded-lg p-2">
+      <ScrollShadow size={100} className="h-full overflow-y-scroll p-2">
+        <div className="bg-background overflow-x-hidden overflow-y-clip rounded-lg p-2">
           {children}
         </div>
       </ScrollShadow>

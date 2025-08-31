@@ -33,7 +33,11 @@ export const Main = () => {
               <EmploymentStatus />
             </div>
             <div className="relative z-[0]">
-              <Image src={personalImage} />
+              <Image
+                src={personalImage}
+                className="h-[50%] w-full object-cover"
+                removeWrapper
+              />
             </div>
           </div>
         </div>
@@ -53,7 +57,7 @@ export const Main = () => {
           </div>
         </div>
       </div>
-      <div className="mt-auto text-sm sm:text-base lg:text-sm 2xl:text-base">
+      <div className="mt-auto text-xs sm:text-base lg:text-sm 2xl:text-base">
         <p className="">
           A Philippines based 22 year old
           <span className="text-primary font-bold">

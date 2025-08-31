@@ -1,6 +1,6 @@
 import { useContact } from "@/hooks/use-contact";
 import { Input, Textarea, Button, addToast } from "@heroui/react";
-import { ArrowDownRight, ArrowDownLeft, MapPin } from "lucide-react";
+import { ArrowDownLeft, MapPin } from "lucide-react";
 import { useForm, type AnyFieldApi } from "@tanstack/react-form";
 import { contactFormSchema as formSchema } from "@/constants/form-schemas/contact";
 import { useCallback } from "react";
@@ -55,17 +55,11 @@ export const Contact = () => {
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="relative p-[3px] sm:p-0">
-              <div className="absolute bottom-[-10px] left-2 z-20">
-                <div className="relative">
-                  <div className="border-primary dark:border-foreground absolute inset-0 flex h-full w-full animate-ping rounded-full border"></div>
-                  <div className="border-primary bg-background text-primary rounded-full border">
-                    <ArrowDownRight size={30} className="" />
-                  </div>
-                </div>
-              </div>
-              <div className="border-default relative space-y-2 rounded-xl border p-6 px-8">
-                <p className="text-5xl font-bold">Get in touch.</p>
-                <p className="text-xs sm:text-base xl:text-sm 2xl:text-base">
+              <div className="border-default relative space-y-2 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
+                <p className="text-3xl font-bold sm:text-4xl 2xl:text-5xl">
+                  Get in touch.
+                </p>
+                <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
                   Considering to be in contact with me regarding a project?
                   Perhaps collaboration? Or just about anything?
                 </p>
@@ -83,17 +77,18 @@ export const Contact = () => {
               </div>
             </div>
             <div className="bg-background border-default space-y-4 rounded-xl border p-6 px-8 text-xs sm:text-base xl:text-sm 2xl:text-base">
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <p className="">
-                  With hands-on freelancing experience across multiple projects,
-                  I have honed my skills in delivering tailored solutions that
-                  meet client needs. While I don't have formal job experience
-                  yet, Im confident that I have the skills to take on any
-                  challenging job that matches my interest.
+                  With proven freelancing and professional experience across
+                  diverse projects, I’ve consistently delivered tailored
+                  solutions that exceed expectations. Having grown from
+                  independent work into formal roles, I bring adaptability,
+                  technical expertise, and the drive to excel in challenging
+                  opportunities that align with my interests and strengths.
                 </p>
                 <p className="">
-                  Sincerely, a broke ass tea-powered programmer badly in need of
-                  money.
+                  Sincerely, a tea-powered programmer fueled by curiosity and
+                  continuous growth.
                 </p>
               </div>
 
@@ -112,7 +107,7 @@ export const Contact = () => {
               }}
             >
               <div className="bg-background border-default space-y-4 rounded-xl border p-6 px-8">
-                <p className="text-primary dark:text-foreground text-2xl font-bold">
+                <p className="text-primary dark:text-foreground text-2xl font-bold sm:text-3xl 2xl:text-4xl">
                   Send me a message!
                 </p>
                 <form.Field
@@ -123,6 +118,7 @@ export const Contact = () => {
                     return (
                       <Input
                         id={field.name}
+                        size="sm"
                         name={field.name}
                         label={field.name}
                         value={field.state.value}
@@ -143,6 +139,7 @@ export const Contact = () => {
                     return (
                       <Input
                         id={field.name}
+                        size="sm"
                         name={field.name}
                         label={field.name}
                         value={field.state.value}
@@ -163,6 +160,7 @@ export const Contact = () => {
                     return (
                       <Textarea
                         id={field.name}
+                        size="sm"
                         name={field.name}
                         label={field.name}
                         value={field.state.value}

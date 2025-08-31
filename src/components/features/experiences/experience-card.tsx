@@ -76,18 +76,18 @@ const ExperienceCardOverflowIndex = (
   props: ExperienceCardOverflowIndexProps,
 ) => (
   <div
-    className={cn("absolute top-[-10px] -right-2 z-20", props.classNames?.base)}
+    className={cn("absolute top-[-10px] right-2 z-20", props.classNames?.base)}
   >
     <div className={cn("relative", props.classNames?.wrapper)}>
       <div
         className={cn(
-          "border-custom-secondary dark:border-foreground absolute inset-0 flex h-full w-full rounded-full border",
+          "border-custom-secondary dark:border-background absolute inset-0 flex h-full w-full rounded-full border",
           props.classNames?.overlay,
         )}
       ></div>
       <p
         className={cn(
-          "bg-default-300 text-primary flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-sm font-bold",
+          "bg-default-300 dark:bg-custom-secondary text-primary flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-sm font-bold",
           props.classNames?.text,
         )}
       >
@@ -98,7 +98,7 @@ const ExperienceCardOverflowIndex = (
 );
 
 const ExperienceCardBody = (props: ExperienceCardBodyProps) => (
-  <div className="rounded-xl p-8 px-6 text-xs sm:text-base md:p-6 md:px-8 lg:p-5 lg:px-7 xl:text-sm 2xl:p-6 2xl:px-8 2xl:text-base">
+  <div className="rounded-xl p-4 px-6 text-xs sm:text-base md:p-6 md:px-8 lg:p-5 lg:px-7 xl:text-sm 2xl:p-6 2xl:px-8 2xl:text-base">
     {props.children}
   </div>
 );
@@ -122,7 +122,7 @@ const ExperienceCardContentSubHeader = (
 const ExperienceCardDate = (props: ExperienceCardDateProps) => (
   <div className="text-foreground/50 flex items-center gap-2">
     <Calendar size={20} />
-    <p className="text-sm">{props.children}</p>
+    <p className="text-xs sm:text-sm">{props.children}</p>
   </div>
 );
 
@@ -131,7 +131,7 @@ const ExperienceCardCompanyModality = (
 ) => (
   <div className="text-primary flex items-center gap-2">
     <MapPin size={20} />
-    <p className="text-sm font-bold">{props.children}</p>
+    <p className="text-xs font-bold sm:text-sm">{props.children}</p>
   </div>
 );
 
@@ -140,7 +140,7 @@ const ExperienceCardContentBody = (props: ExperienceCardContentBodyProps) => (
 );
 
 const ExperienceCardSummary = (props: ExperienceCardSummaryProps) => (
-  <p className="text-foreground/50 text-sm">{props.children}</p>
+  <p className="text-foreground/50 text-xs sm:text-sm">{props.children}</p>
 );
 
 const ExperienceCardHighlights = (props: ExperienceCardHighlightsProps) => (
@@ -150,7 +150,7 @@ const ExperienceCardHighlights = (props: ExperienceCardHighlightsProps) => (
       <p className="text-sm font-bold">Key Achievements</p>
     </div>
     <ScrollShadow size={50} className="max-h-[100px]">
-      <ul className="list-disc ps-4 text-sm">
+      <ul className="list-disc ps-4 text-xs sm:text-sm">
         {props.highlights.map((highlight) => (
           <li key={highlight}>{highlight}</li>
         ))}
@@ -171,7 +171,7 @@ const ExperienceCardTechnologies = (props: ExperienceCardTechnologiesProps) => (
           <Chip
             size="sm"
             radius="sm"
-            className="bg-custom-secondary"
+            className="bg-custom-secondary text-xs sm:text-sm"
             key={`${index}-${technology}`}
           >
             {technology}
