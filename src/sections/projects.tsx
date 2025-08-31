@@ -3,6 +3,7 @@ import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
 import { Button } from "@heroui/react";
+import { useMemo } from "react";
 
 const optimizedImages: Record<string, string> = import.meta.glob(
   "../assets/portfolio-resources/assets/images/projects/*.png",
@@ -11,9 +12,10 @@ const optimizedImages: Record<string, string> = import.meta.glob(
 
 export const Projects = () => {
   const { queryProjects } = useCore();
-  const projects = queryProjects();
+  const { data: _data, isLoading, error } = queryProjects();
+  const data = useMemo(() => _data, [_data]);
 
-  if (projects.isLoading)
+  if (isLoading)
     return (
       <>
         <div className="space-y-4">
@@ -29,7 +31,7 @@ export const Projects = () => {
       </>
     );
 
-  if (projects.error)
+  if (error)
     return (
       <>
         <div className="space-y-4">
@@ -54,12 +56,12 @@ export const Projects = () => {
           className="group border-default bg-background w-max rounded-lg border px-3 py-1 font-mono text-sm uppercase opacity-80 transition-all duration-300 ease-in-out hover:scale-105"
         >
           <p className="">
-            {"Project count: "} {projects.data?.length}
+            {"Project count: "} {data?.length}
           </p>
         </Button>
       </div>
       <div className="space-y-4">
-        {projects.data?.map((project) => {
+        {data?.map((project) => {
           const imageKey = Object.keys(optimizedImages).find((key) =>
             key.includes(project.image),
           )!;

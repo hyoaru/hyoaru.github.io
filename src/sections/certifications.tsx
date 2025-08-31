@@ -4,6 +4,7 @@ import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
 import { Button, Modal, useDisclosure } from "@heroui/react";
+import { useMemo } from "react";
 
 const optimizedImages: Record<string, string> = import.meta.glob(
   "../assets/portfolio-resources/assets/images/certifications/*.jpg",
@@ -12,10 +13,11 @@ const optimizedImages: Record<string, string> = import.meta.glob(
 
 export default function Certifications() {
   const { queryCertifications } = useCore();
-  const certifications = queryCertifications();
+  const { data: _data, isLoading, error } = queryCertifications();
+  const data = useMemo(() => _data, [_data]);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  if (certifications.isLoading)
+  if (isLoading)
     return (
       <>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -31,7 +33,7 @@ export default function Certifications() {
       </>
     );
 
-  if (certifications.error)
+  if (error)
     return (
       <>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -56,13 +58,13 @@ export default function Certifications() {
           className="group border-default bg-background w-max rounded-lg border px-3 py-1 font-mono text-sm uppercase opacity-80"
         >
           <p className="block group-hover:hidden">
-            {"Certificate count: "} {certifications.data?.length}
+            {"Certificate count: "} {data?.length}
           </p>
           <p className="hidden group-hover:block">View certificate list</p>
         </Button>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-        {certifications.data?.map((certificate) => {
+        {data?.map((certificate) => {
           const imageKey = Object.keys(optimizedImages).find((key) =>
             key.includes(certificate.image),
           )!;

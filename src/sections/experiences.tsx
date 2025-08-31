@@ -6,14 +6,15 @@ import { useCallback, useMemo } from "react";
 
 export const Experiences = () => {
   const { queryExperiences } = useCore();
-  const experiences = queryExperiences();
+  const { data: _data, isLoading } = queryExperiences();
+
+  const data = useMemo(() => _data, [_data]);
 
   const experienceDuration = useMemo(() => {
-    if (!experiences?.data) return 0;
-
+    if (data) return 0;
     const now = dayjs();
 
-    const totalMonths = experiences.data.reduce((acc, exp) => {
+    const totalMonths = data!.reduce((acc, exp) => {
       const start = dayjs(exp.startedAt);
       const end = exp.endedAt ? dayjs(exp.endedAt) : now;
 
@@ -24,7 +25,7 @@ export const Experiences = () => {
 
     const years = (totalMonths / 12).toFixed(1);
     return years;
-  }, [experiences?.data]);
+  }, [data]);
 
   const toOrdinal = useCallback((number: number) => {
     const s = ["th", "st", "nd", "rd"];
@@ -42,9 +43,9 @@ export const Experiences = () => {
             <div className="p-[3px] sm:p-0">
               <div className="space-y-2 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
                 <p className="text-3xl font-bold sm:text-4xl 2xl:text-5xl">
-                  {experiences.isLoading
+                  {isLoading
                     ? "Calculating years of experience..."
-                    : `${toOrdinal(experiences.data!.length)} role—${experienceDuration} years of experience.`}
+                    : `${toOrdinal(data!.length)} role—${experienceDuration} years of experience.`}
                 </p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
                   A journey shaped by continuous learning, adapting to
@@ -54,10 +55,10 @@ export const Experiences = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2">
-            {experiences.data?.map((experience, index) => {
-              const isMostRecent = experience === experiences.data?.[0];
+            {data?.map((experience, index) => {
+              const isMostRecent = experience === data?.[0];
 
-              const experienceIndex = experiences?.data?.length - index;
+              const experienceIndex = data?.length - index;
 
               const parsedStartDate = TimeUtilities.parseMonthYearDate(
                 experience.startedAt,

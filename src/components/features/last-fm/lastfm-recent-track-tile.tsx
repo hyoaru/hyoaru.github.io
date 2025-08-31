@@ -2,10 +2,13 @@ import { ActivityTile } from "@/components/ui/activity-tile";
 import { ErrorTile } from "@/components/ui/error-tile";
 import { LoadingTile } from "@/components/ui/loading-tile";
 import { useLastFm } from "@/hooks/use-lastfm";
+import { useMemo } from "react";
 
 export const LastFmRecentTrackTile = () => {
   const { queryRecentTrack } = useLastFm();
-  const { data, isLoading, error } = queryRecentTrack();
+  const { data: _data, isLoading, error } = queryRecentTrack();
+
+  const data = useMemo(() => _data, [_data]);
 
   if (isLoading)
     return (

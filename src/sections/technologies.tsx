@@ -5,21 +5,23 @@ import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
 import { Modal, Tooltip, useDisclosure } from "@heroui/react";
 import { CornerLeftUp, Forward } from "lucide-react";
+import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
 
 export default function Technologies() {
   const { queryTechnologies } = useCore();
-  const technologies = queryTechnologies();
+  const { data: _data, isLoading, error } = queryTechnologies();
+  const data = useMemo(() => _data, [_data]);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  if (technologies.isLoading)
+  if (isLoading)
     return (
       <div className="bg-background h-[3rem] rounded-xl p-[3px]">
         <LoadingTile spinnerSize="sm" />
       </div>
     );
 
-  if (technologies.error)
+  if (error)
     return (
       <div className="bg-background h-[3rem] rounded-xl p-[3px]">
         <ErrorTile />
@@ -46,7 +48,7 @@ export default function Technologies() {
         </div>
         <div className="bg-background h-max rounded-xl p-[3px]">
           <Marquee>
-            {technologies.data?.map((technology) => (
+            {data?.map((technology) => (
               <TechnologyBadge
                 className="mx-[3px] h-[2.6rem]"
                 key={`TechnologyBadge-${technology.name}`}
