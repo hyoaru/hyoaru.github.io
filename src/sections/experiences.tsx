@@ -1,4 +1,6 @@
 import { ExperienceCard } from "@/components/features/experiences/experience-card";
+import { ErrorTile } from "@/components/ui/error-tile";
+import { LoadingTile } from "@/components/ui/loading-tile";
 import { useCore } from "@/hooks/use-core";
 import { TimeUtilities } from "@/utilities/time";
 import dayjs from "dayjs";
@@ -6,15 +8,15 @@ import { useCallback, useMemo } from "react";
 
 export const Experiences = () => {
   const { queryExperiences } = useCore();
-  const { data: _data, isLoading } = queryExperiences();
+  const { data: _data, isLoading, error } = queryExperiences();
 
   const data = useMemo(() => _data, [_data]);
 
   const experienceDuration = useMemo(() => {
-    if (data) return 0;
+    if (!data) return 0;
     const now = dayjs();
 
-    const totalMonths = data!.reduce((acc, exp) => {
+    const totalMonths = data.reduce((acc, exp) => {
       const start = dayjs(exp.startedAt);
       const end = exp.endedAt ? dayjs(exp.endedAt) : now;
 
@@ -34,6 +36,38 @@ export const Experiences = () => {
 
     return ordinal;
   }, []);
+
+  if (isLoading)
+    return (
+      <>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          {Array(10)
+            .fill(0)
+            .map((_, index) => (
+              <LoadingTile
+                key={`ExperienceCardLoadingComponent-${index}`}
+                className="h-[400px] rounded-xl lg:h-[300px] xl:h-[380px]"
+              />
+            ))}
+        </div>
+      </>
+    );
+
+  if (error)
+    return (
+      <>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          {Array(10)
+            .fill(0)
+            .map((_, index) => (
+              <ErrorTile
+                key={`ExperienceCardErrorComponent-${index}`}
+                className="h-[400px] rounded-xl lg:h-[300px] xl:h-[380px]"
+              />
+            ))}
+        </div>
+      </>
+    );
 
   return (
     <>
