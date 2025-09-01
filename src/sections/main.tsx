@@ -59,18 +59,19 @@ export const Main = () => {
       </div>
       <div className="mt-auto text-xs sm:text-base lg:text-sm 2xl:text-base">
         <p className="">
-          A Philippines based 22 year old
+          A Philippines-based 22-year-old
           <span className="text-primary font-bold">
             {
-              " multi-disciplinary engineer spanning from Fullstack, DevOps, and Data Science."
+              " multi-disciplinary engineer in Fullstack Development, DevOps, Quality Engineering, and Data Science."
             }{" "}
           </span>
-          Over the past few years, I’ve been blending creativity with technology
-          to craft impactful digital experiences. From building dynamic websites
-          and intuitive apps to designing compelling layouts and diving deep
-          into data science, I thrive at the intersection of innovation and
-          problem-solving. Bringing fresh perspectives and a passion for
-          transforming ideas into meaningful solutions.
+          Over the past few years, I’ve been building scalable applications,
+          automating complex workflows, and transforming raw data into
+          actionable insights. My work spans from developing web platforms and
+          intuitive apps to architecting reliable systems and crafting
+          data-driven solutions. I thrive at the intersection of code, systems,
+          and intelligence — bringing fresh perspectives and a drive to turn
+          ideas into impactful, meaningful solutions.
         </p>
       </div>
     </div>
