@@ -35,7 +35,7 @@ export const Footer = () => {
         >
           <p className="hidden sm:block">Connect with me</p>
           <p className="block sm:hidden">Connect</p>
-          <div className="bg-success size-3 animate-pulse rounded-full"></div>
+          <div className="bg-success size-3 rounded-full"></div>
         </Button>
       </div>
 

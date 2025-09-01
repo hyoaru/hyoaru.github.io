@@ -8,7 +8,7 @@ import { Experiences } from "./experiences";
 export const TabPanel = () => {
   return (
     <>
-      <div className="flex h-max flex-col space-y-2 overflow-y-scroll">
+      <div className="flex h-[85vh] flex-col space-y-2 overflow-y-scroll lg:h-full">
         <Tabs
           aria-label="Options"
           classNames={{
