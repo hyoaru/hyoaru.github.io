@@ -62,7 +62,7 @@ export const Main = () => {
           A Philippines based 22 year old
           <span className="text-primary font-bold">
             {
-              " multi-disciplinary creative and a data scientist in the making."
+              " multi-disciplinary engineer spanning from Fullstack, DevOps, and Data Science."
             }{" "}
           </span>
           Over the past few years, I’ve been blending creativity with technology
