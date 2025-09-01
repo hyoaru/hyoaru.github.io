@@ -1,4 +1,4 @@
 [submodule "src/assets/portfolio-resources"]
 	path = src/assets/portfolio-resources
 	url = git@github.com:hyoaru/portfolio-resources.git
-	branch = chore/restructure-codebase
+	branch = master
