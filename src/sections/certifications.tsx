@@ -8,7 +8,7 @@ import { useMemo } from "react";
 
 const optimizedImages: Record<string, string> = import.meta.glob(
   "../assets/portfolio-resources/assets/images/certifications/*.jpg",
-  { eager: true, import: "default", query: "?format=webp&meta" },
+  { eager: true, import: "default", query: "?format=webp&meta&quality=1" },
 );
 
 export default function Certifications() {
