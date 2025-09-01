@@ -55,8 +55,8 @@ export const Contact = () => {
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="relative p-[3px] sm:p-0">
-              <div className="border-default relative space-y-2 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
-                <p className="text-3xl font-bold sm:text-4xl 2xl:text-5xl">
+              <div className="border-default relative space-y-1 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
+                <p className="text-3xl font-bold sm:text-4xl 2xl:text-[2.8rem]">
                   Get in touch.
                 </p>
                 <p className="text-xs sm:text-base xl:text-sm 2xl:text-lg">
@@ -107,85 +107,87 @@ export const Contact = () => {
               }}
             >
               <div className="bg-background border-default space-y-4 rounded-xl border p-6 px-8">
-                <p className="text-primary dark:text-foreground text-2xl font-bold sm:text-3xl 2xl:text-4xl">
+                <p className="text-primary dark:text-foreground text-lg font-bold sm:text-xl 2xl:text-2xl">
                   Send me a message!
                 </p>
-                <form.Field
-                  name="email"
-                  children={(field) => {
-                    const { isInvalid, errorMessage } = getFieldError(field);
+                <div className="space-y-3">
+                  <form.Field
+                    name="email"
+                    children={(field) => {
+                      const { isInvalid, errorMessage } = getFieldError(field);
 
-                    return (
-                      <Input
-                        id={field.name}
-                        size="sm"
-                        name={field.name}
-                        label={field.name}
-                        value={field.state.value}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        isInvalid={isInvalid}
-                        errorMessage={errorMessage}
-                        classNames={{ label: "capitalize" }}
-                      />
-                    );
-                  }}
-                />
-                <form.Field
-                  name="name"
-                  children={(field) => {
-                    const { isInvalid, errorMessage } = getFieldError(field);
+                      return (
+                        <Input
+                          id={field.name}
+                          size="sm"
+                          name={field.name}
+                          label={field.name}
+                          value={field.state.value}
+                          onBlur={field.handleBlur}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          isInvalid={isInvalid}
+                          errorMessage={errorMessage}
+                          classNames={{ label: "capitalize" }}
+                        />
+                      );
+                    }}
+                  />
+                  <form.Field
+                    name="name"
+                    children={(field) => {
+                      const { isInvalid, errorMessage } = getFieldError(field);
 
-                    return (
-                      <Input
-                        id={field.name}
-                        size="sm"
-                        name={field.name}
-                        label={field.name}
-                        value={field.state.value}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        isInvalid={isInvalid}
-                        errorMessage={errorMessage}
-                        classNames={{ label: "capitalize" }}
-                      />
-                    );
-                  }}
-                />
-                <form.Field
-                  name="message"
-                  children={(field) => {
-                    const { isInvalid, errorMessage } = getFieldError(field);
+                      return (
+                        <Input
+                          id={field.name}
+                          size="sm"
+                          name={field.name}
+                          label={field.name}
+                          value={field.state.value}
+                          onBlur={field.handleBlur}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          isInvalid={isInvalid}
+                          errorMessage={errorMessage}
+                          classNames={{ label: "capitalize" }}
+                        />
+                      );
+                    }}
+                  />
+                  <form.Field
+                    name="message"
+                    children={(field) => {
+                      const { isInvalid, errorMessage } = getFieldError(field);
 
-                    return (
-                      <Textarea
-                        id={field.name}
-                        size="sm"
-                        name={field.name}
-                        label={field.name}
-                        value={field.state.value}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        isInvalid={isInvalid}
-                        errorMessage={errorMessage}
-                        classNames={{ label: "capitalize" }}
-                      />
-                    );
-                  }}
-                />
-                <form.Subscribe
-                  selector={(state) => [state.canSubmit, state.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
-                    <Button
-                      color="primary"
-                      type="submit"
-                      isDisabled={!canSubmit}
-                      isLoading={isSubmitting}
-                    >
-                      {isSubmitting ? "" : "Submit"}
-                    </Button>
-                  )}
-                />
+                      return (
+                        <Textarea
+                          id={field.name}
+                          size="sm"
+                          name={field.name}
+                          label={field.name}
+                          value={field.state.value}
+                          onBlur={field.handleBlur}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                          isInvalid={isInvalid}
+                          errorMessage={errorMessage}
+                          classNames={{ label: "capitalize" }}
+                        />
+                      );
+                    }}
+                  />
+                  <form.Subscribe
+                    selector={(state) => [state.canSubmit, state.isSubmitting]}
+                    children={([canSubmit, isSubmitting]) => (
+                      <Button
+                        color="primary"
+                        type="submit"
+                        isDisabled={!canSubmit}
+                        isLoading={isSubmitting}
+                      >
+                        {isSubmitting ? "" : "Submit"}
+                      </Button>
+                    )}
+                  />
+                </div>
               </div>
             </form>
           </div>

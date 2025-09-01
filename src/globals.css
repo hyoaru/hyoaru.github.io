@@ -50,3 +50,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+html {
+  font-size: 15px;
+}

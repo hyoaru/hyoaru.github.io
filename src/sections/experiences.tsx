@@ -75,8 +75,8 @@ export const Experiences = () => {
         <div className="grid gap-2 sm:gap-4">
           <div className="bg-background space-y-2 rounded-xl sm:space-y-4">
             <div className="p-[3px] sm:p-0">
-              <div className="space-y-2 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
-                <p className="text-3xl font-bold sm:text-4xl 2xl:text-5xl">
+              <div className="space-y-1 rounded-xl p-4 px-6 md:p-6 md:px-8 lg:p-5 lg:px-7 2xl:p-6 2xl:px-8">
+                <p className="text-3xl font-bold sm:text-4xl 2xl:text-[2.8rem]">
                   {isLoading
                     ? "Calculating years of experience..."
                     : `${toOrdinal(data!.length)} role—${experienceDuration} years of experience.`}
