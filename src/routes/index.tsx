@@ -1,3 +1,4 @@
+import { RecentExperienceTile } from "@/components/features/experiences/recent-experience-tile";
 import { GithubRecentCommitTile } from "@/components/features/github/github-recent-commit-tile";
 import { LastFmRecentTrackTile } from "@/components/features/last-fm/lastfm-recent-track-tile";
 import { Footer } from "@/components/partials/footer";
@@ -25,6 +26,7 @@ function RouteComponent() {
         >
           <Header />
           <Main />
+          <RecentExperienceTile />
           <Technologies />
           <div className="bg-background grid h-[5rem] grid-cols-2 gap-1 rounded-xl p-[3px] sm:hidden lg:grid xl:hidden">
             <GithubRecentCommitTile />
