@@ -55,6 +55,17 @@
   background-size: 24px 24px;
 }
 
+.bg-dots {
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(
+    oklch(var(--custom-foreground) / 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
