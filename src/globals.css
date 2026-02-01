@@ -51,6 +51,16 @@
   scrollbar-width: none;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   font-size: 15px;
+}
+
+body {
+  font-family: var(--font-geist);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
