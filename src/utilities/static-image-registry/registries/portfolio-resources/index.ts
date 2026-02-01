@@ -1,0 +1,1 @@
+export { PortfolioResourcesStaticImageRegistry } from "./registry";
