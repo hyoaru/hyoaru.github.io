@@ -8,8 +8,8 @@ export const Header = () => {
     <>
       <div className="bg-background flex items-center gap-1 rounded-xl p-1">
         <PersonStanding className="ps-1" />
-        <p className="me-auto text-sm font-bold">Cabrera, Jen Jade</p>
-        <Button size="sm" className="rounded-lg text-sm">
+        <p className="me-auto font-bold">Cabrera, Jen Jade</p>
+        <Button size="sm" className="rounded-lg font-bold">
           <Ripple />
           <ArrowUpRight />
           Resume
