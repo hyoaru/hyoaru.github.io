@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+@import "m3-ripple/ripple.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -13,27 +14,35 @@
 
 @layer base {
   :root {
-    --custom-background: 0 0% 90%;
-    --custom-foreground: 0 0% 0%;
-    --custom-secondary: 0 0% 95%;
-    --custom-secondary-foreground: 0 0% 0%;
+    --background: var(--white);
+    --foreground: var(--black);
+    --accent: 58% 0.158 258;
+    --custom-background: 92.2% 0 0;
+    --custom-foreground: 0% 0 0;
+    --custom-secondary: 96.1% 0 0;
+    --custom-secondary-foreground: 0% 0 0;
   }
 
   .dark {
-    --custom-background: 240 5% 15.9%;
-    --custom-foreground: 0 0% 98%;
-    --custom-secondary: 240 6% 10%;
-    --custom-secondary-foreground: 0 0% 0%;
+    --background: var(--black);
+    --foreground: var(--white);
+    --custom-background: 23.4% 0.012 256.4;
+    --custom-foreground: 98.4% 0 0;
+    --custom-secondary: 17.5% 0.014 256.4;
+    --custom-secondary-foreground: 98.4% 0 0;
   }
 }
 
 @theme {
   --font-geist: Geist, sans-serif;
 
-  --color-custom-background: hsl(var(--custom-background));
-  --color-custom-background-foreground: hsl(var(--custom-foreground));
-  --color-custom-secondary: hsl(var(--custom-secondary));
-  --color-custom-secondary-foreground: hsl(var(--custom-secondary-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-custom-background: oklch(var(--custom-background));
+  --color-custom-background-foreground: oklch(var(--custom-foreground));
+  --color-custom-secondary: oklch(var(--custom-secondary));
+  --color-custom-secondary-foreground: oklch(
+    var(--custom-secondary-foreground)
+  );
 }
 
 .bg-grid {
@@ -41,8 +50,8 @@
   height: 100%;
   width: 100%;
   background-image:
-    linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.5 0 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.5 0 0 / 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -57,6 +66,7 @@
 
 html {
   font-size: 15px;
+  background-color: oklch(var(--custom-background));
 }
 
 body {
