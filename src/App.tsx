@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
+import { ThemeProvider } from "next-themes";
 import { useState } from "react";
+import { routeTree } from "./routeTree.gen";
 
 const router = createRouter({
   routeTree: routeTree,
@@ -31,8 +32,10 @@ export default function App() {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} context={{ queryClient }} />
-    </QueryClientProvider>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} context={{ queryClient }} />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
