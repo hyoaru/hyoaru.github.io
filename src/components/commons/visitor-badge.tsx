@@ -1,21 +1,26 @@
+import { cn } from "@heroui/styles";
 import { forwardRef } from "react";
 
 export const VisitorBadge = forwardRef<
   HTMLImageElement,
   React.ComponentPropsWithoutRef<"img">
->((props, ref) => {
-  const baseUrl = "https://api.visitorbadge.io/api/visitors";
-
+>(({ className, ...props }, ref) => {
   const params = new URLSearchParams({
     path: "github.com/hyoaru",
-    label: "visitors",
-    labelColor: "#ffffff",
+    labelColor: "#2F6DE6",
     countColor: "#eeeeee",
     style: "flat-square",
     labelStyle: "upper",
   });
 
-  const fullUrl = `${baseUrl}?${params.toString()}`;
+  const fullUrl = `https://api.visitorbadge.io/api/visitors?${params.toString()}`;
 
-  return <img ref={ref} {...props} src={fullUrl} alt="Visitor Badge" />;
+  return (
+    <img
+      ref={ref}
+      src={fullUrl}
+      className={cn("h-[20px] rounded-none", className)}
+      {...props}
+    />
+  );
 });

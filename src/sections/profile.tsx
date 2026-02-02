@@ -24,7 +24,7 @@ export const Profile = () => {
               <Clock className="text-accent h-[1em] w-[1em]" />
             </div>
             <PhilippineTime className="me-auto text-sm" />
-            <VisitorBadge />
+            <VisitorBadge className="" />
           </div>
         </div>
       </div>
