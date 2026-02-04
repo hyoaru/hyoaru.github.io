@@ -1,0 +1,1 @@
+export { StaticPortfolioRepository } from "./static";

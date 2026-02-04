@@ -9,6 +9,8 @@ export default defineConfig({
     tanstackRouter({
       target: "react",
       autoCodeSplitting: true,
+      routesDirectory: "./src/core/router/routes",
+      generatedRouteTree: "./src/core/router/routeTree.gen.ts",
     }),
     react({
       babel: {

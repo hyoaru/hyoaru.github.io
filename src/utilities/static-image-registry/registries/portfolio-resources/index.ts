@@ -1,1 +1,0 @@
-export { PortfolioResourcesStaticImageRegistry } from "./registry";
