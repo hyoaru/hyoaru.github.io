@@ -12,11 +12,11 @@ export class HttpGithubClient implements GithubClient {
   private readonly api: AxiosInstance;
   private readonly statsApi: AxiosInstance;
 
-  constructor() {
-    this.api = axios.create({ baseURL: "https://api.github.com" });
-    this.statsApi = axios.create({
-      baseURL: "https://github-contributions-api.jogruber.de/v4",
-    });
+  constructor(api?: AxiosInstance, statsApi?: AxiosInstance) {
+    this.api = api ?? axios.create({ baseURL: "https://api.github.com" });
+    this.statsApi = statsApi ?? axios.create({
+        baseURL: "https://github-contributions-api.jogruber.de/v4",
+      });
   }
 
   private async request<T>(execute: () => Promise<T>): Promise<T> {
