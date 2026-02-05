@@ -2,6 +2,7 @@ import { AsyncBoundary, PhilippineTime, VisitorBadge } from "@/shared";
 import { Clock } from "lucide-react";
 import { PersonalImage } from "./personal-image";
 import { GithubRecentCommitTile } from "@/features/github";
+import { LastFmRecentTrackTile } from "@/features/last-fm";
 
 export const Profile = () => {
   return (
@@ -24,6 +25,9 @@ export const Profile = () => {
           <div className="flex h-[70%] shrink-0 flex-col gap-1">
             <AsyncBoundary>
               <GithubRecentCommitTile />
+            </AsyncBoundary>
+            <AsyncBoundary>
+              <LastFmRecentTrackTile />
             </AsyncBoundary>
           </div>
         </div>
