@@ -5,8 +5,13 @@ import { GithubRecentCommitTile } from "@/features/github";
 import { LastFmRecentTrackTile } from "@/features/last-fm";
 
 export const Profile = () => {
+  const age = Math.floor(
+    (new Date().getTime() - new Date("2002-08-31").getTime()) /
+      (1000 * 60 * 60 * 24 * 365),
+  );
+
   return (
-    <div className="bg-background bg-dots rounded-xl p-5">
+    <div className="bg-background bg-dots h-fit gap-2.5 rounded-xl p-5">
       <div className="flex w-full gap-5">
         <div className="aspect-square w-[40%] shrink-0 overflow-hidden rounded-lg">
           <AsyncBoundary>
@@ -32,6 +37,22 @@ export const Profile = () => {
           </div>
         </div>
       </div>
+      <div className="h-12"></div>
+      <p className="leading-5">
+        A Philippines-based {age}-year-old
+        <span className="text-accent font-bold">
+          {
+            " multi-disciplinary engineer in Fullstack Development, DevOps, Quality Engineering, and Data Science."
+          }{" "}
+        </span>
+        Over the past few years, I’ve been building scalable applications,
+        automating complex workflows, and transforming raw data into actionable
+        insights. My work spans from developing web platforms and intuitive apps
+        to architecting reliable systems and crafting data-driven solutions. I
+        thrive at the intersection of code, systems, and intelligence — bringing
+        fresh perspectives and a drive to turn ideas into impactful, meaningful
+        solutions.
+      </p>
     </div>
   );
 };
