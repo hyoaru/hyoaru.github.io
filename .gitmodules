@@ -1,4 +1,3 @@
 [submodule "src/shared/repositories/portfolio/implementations/static/data-source"]
 	path = src/shared/repositories/portfolio/implementations/static/data-source
 	url = git@main:hyoaru/portfolio-resources.git
-	branch = master
