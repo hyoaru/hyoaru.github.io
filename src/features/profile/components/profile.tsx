@@ -1,6 +1,7 @@
 import { AsyncBoundary, PhilippineTime, VisitorBadge } from "@/shared";
 import { Clock } from "lucide-react";
 import { PersonalImage } from "./personal-image";
+import { GithubRecentCommitTile } from "@/features/github";
 
 export const Profile = () => {
   return (
@@ -16,11 +17,15 @@ export const Profile = () => {
             <div className="text-xl">
               <Clock className="text-accent h-[1em] w-[1em]" />
             </div>
-            <PhilippineTime className="me-auto text-sm" />
+            <PhilippineTime className="me-auto" />
             <VisitorBadge className="" />
           </div>
           <div className="h-full"></div>
-          <div className="h-[70%] shrink-0 bg-gray-100"></div>
+          <div className="flex h-[70%] shrink-0 flex-col gap-1">
+            <AsyncBoundary>
+              <GithubRecentCommitTile />
+            </AsyncBoundary>
+          </div>
         </div>
       </div>
     </div>
