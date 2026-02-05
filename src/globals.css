@@ -60,10 +60,10 @@
   height: 100%;
   width: 100%;
   background-image: radial-gradient(
-    oklch(var(--custom-foreground) / 0.18) 1px,
+    oklch(var(--custom-foreground) / 0.12) 1px,
     transparent 1px
   );
-  background-size: 24px 24px;
+  background-size: 16px 16px;
 }
 
 * {
