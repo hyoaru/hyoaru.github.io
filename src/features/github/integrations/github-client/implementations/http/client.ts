@@ -1,12 +1,12 @@
 import axios, { type AxiosInstance } from "axios";
-import type { ContributionStatsDTO, EventDTO, UserInformationDTO } from "./dto";
 import type {
   ContributionStats,
   RecentCommit,
   UserInformation,
-} from "./entities";
-import { GithubApiError, GithubNoRecentPushError } from "./errors";
-import type { GithubClient } from "./interface";
+} from "../../entities";
+import { GithubApiError, GithubNoRecentPushError } from "../../errors";
+import type { GithubClient } from "../../interface";
+import type { ContributionStatsDTO, EventDTO, UserInformationDTO } from "./dto";
 
 export class HttpGithubClient implements GithubClient {
   private readonly api: AxiosInstance;

@@ -1,4 +1,4 @@
-import { HttpGithubClient } from "./http";
+import { HttpGithubClient } from "./implementations/http";
 
 export * from "./entities";
 export * from "./errors";
