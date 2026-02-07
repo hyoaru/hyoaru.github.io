@@ -11,7 +11,7 @@ export class ProfileService {
     this.profileRepository = profileRepository ?? new StaticProfileRepository();
   }
 
-  async execute<T>(operation: ProfileServiceOperation<T>): Promise<T> {
+  public async execute<T>(operation: ProfileServiceOperation<T>): Promise<T> {
     return await operation.execute(this);
   }
 }
