@@ -23,7 +23,7 @@ const ActivityTileIcon = ({
 }: React.ComponentPropsWithoutRef<"div">) => (
   <div
     className={cn(
-      "border-default bg-custom-secondary/60 text-foreground flex h-full w-[22%] items-center justify-center rounded-md border",
+      "border-default bg-custom-secondary/60 text-foreground flex h-full w-20 items-center justify-center rounded-md border",
       className,
     )}
     {...rest}
