@@ -1,1 +1,2 @@
-export { Profile } from "./profile";
+export * from "./profile";
+export * from "./recent-job";
