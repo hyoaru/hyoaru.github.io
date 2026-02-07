@@ -1,0 +1,3 @@
+[submodule "src/shared/data-sources/portfolio-resources"]
+	path = src/shared/data-sources/portfolio-resources
+	url = git@main:hyoaru/portfolio-resources.git
