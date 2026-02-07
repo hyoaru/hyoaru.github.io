@@ -15,21 +15,21 @@
 @layer base {
   :root {
     /* Custom */
-    --custom-background: 0.9247 0.0013 106.43;
+    --custom-background: oklch(0.9247 0.0013 106.43);
     /* Overrides */
     --background: 1 0 0;
     --foreground: 0 0 0;
-    --accent: 0.5648 0.1948 261.92;
-    --default: 0.9612 0 0;
+    --accent: oklch(0.5648 0.1948 261.92);
+    --default: oklch(0.9612 0 0);
   }
 
   .dark {
     /* Custom */
-    --custom-background: 0.1408 0.0059 285.89;
+    --custom-background: oklch(0.1408 0.0059 285.89);
     /* Overrides */
     --background: 0 0 0;
     --foreground: 1 0 0;
-    --default: 0.1677 0.0059 285.89;
+    --default: oklch(0.1677 0.0059 285.89);
   }
 }
 
@@ -37,12 +37,10 @@
   /* Overrides */
   --color-background: oklch(var(--background));
   --color-foreground: oklch(var(--foreground));
-  --color-accent: oklch(var(--accent));
-  --color-default: oklch(var(--default));
 
   /* Custom */
   --font-geist: Geist, sans-serif;
-  --color-custom-background: oklch(var(--custom-background));
+  --color-custom-background: var(--custom-background);
 
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
@@ -65,7 +63,7 @@
   }
 }
 
-.bg-grid {
+.pattern-grid {
   inset: 0;
   background-image:
     linear-gradient(
@@ -81,7 +79,7 @@
   background-size: 24px 24px;
 }
 
-.bg-dots {
+.pattern-dots {
   inset: 0;
   background-image: radial-gradient(
     oklch(var(--foreground) / 0.12) 1px,

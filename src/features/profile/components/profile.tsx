@@ -11,7 +11,7 @@ export const Profile = () => {
   );
 
   return (
-    <div className="bg-background bg-dots h-fit gap-2.5 rounded-xl p-5">
+    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl p-5">
       <div className="flex w-full gap-5">
         <div className="aspect-square w-[40%] shrink-0 overflow-hidden rounded-lg">
           <AsyncBoundary>

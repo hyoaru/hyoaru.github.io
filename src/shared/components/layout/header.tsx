@@ -1,7 +1,7 @@
-import { ThemeToggle } from "@/shared";
 import { Button } from "@heroui/react";
 import { ArrowUpRight, PersonStanding } from "lucide-react";
 import { Ripple } from "m3-ripple";
+import { ThemeToggle } from "../ui";
 
 export const Header = () => {
   return (
@@ -12,7 +12,7 @@ export const Header = () => {
         <Button size="sm" className="rounded-lg">
           <Ripple />
           <ArrowUpRight />
-          Resume
+          View Resume
         </Button>
         <div className="flex gap-1">
           <ThemeToggle />

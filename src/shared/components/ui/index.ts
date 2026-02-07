@@ -7,3 +7,4 @@ export * from "./theme-toggle";
 export * from "./visitor-badge";
 export * from "./marquee";
 export * from "./metric-card";
+export * from "./filler";
