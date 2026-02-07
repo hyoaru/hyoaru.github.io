@@ -3,18 +3,19 @@ import type {
   ContributionStats,
   RecentCommit,
   UserInformation,
-} from "../../entities";
-import { GithubApiError, GithubNoRecentPushError } from "../../errors";
-import type { GithubClient } from "../../interface";
+} from "./entities";
+import { GithubApiError, GithubNoRecentPushError } from "./errors";
 import type { ContributionStatsDTO, EventDTO, UserInformationDTO } from "./dto";
 
-export class HttpGithubClient implements GithubClient {
+export class HttpGithubClient {
   private readonly api: AxiosInstance;
   private readonly statsApi: AxiosInstance;
 
   constructor(api?: AxiosInstance, statsApi?: AxiosInstance) {
     this.api = api ?? axios.create({ baseURL: "https://api.github.com" });
-    this.statsApi = statsApi ?? axios.create({
+    this.statsApi =
+      statsApi ??
+      axios.create({
         baseURL: "https://github-contributions-api.jogruber.de/v4",
       });
   }
@@ -26,7 +27,10 @@ export class HttpGithubClient implements GithubClient {
       if (axios.isAxiosError(error)) {
         throw new GithubApiError(error.response?.status ?? 500, error.message);
       }
-      throw error;
+
+      const message =
+        error instanceof Error ? error.message : "Unknown logic error";
+      throw new GithubApiError(500, `Internal Error: ${message}`);
     }
   }
 

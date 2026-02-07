@@ -1,6 +1,9 @@
 export class GithubApiError extends Error {
   public status: number;
-  constructor(status: number, message: string = "GitHub API request failed") {
+  constructor(
+    status: number,
+    message: string = "GithubHub API request failed",
+  ) {
     super(message);
     this.status = status;
     this.name = "GithubApiError";

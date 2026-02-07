@@ -4,8 +4,8 @@ import type {
   UserInformation,
 } from "./entities";
 
-export interface GithubClient {
+export interface GitRepository {
   getRecentCommit(username: string): Promise<RecentCommit>;
-  getUserInformation(username: string): Promise<UserInformation>;
   getContributionStats(username: string): Promise<ContributionStats>;
+  getUserInformation(username: string): Promise<UserInformation>;
 }

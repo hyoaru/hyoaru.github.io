@@ -2,10 +2,10 @@ import { ActivityTile } from "@/shared";
 import { Datetime } from "@/shared/utilities";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Github } from "lucide-react";
-import { githubApi } from "../api";
+import { gitApi } from "../api";
 
-export const GithubRecentCommitTile = () => {
-  const { data } = useSuspenseQuery(githubApi.query.recentCommit());
+export const GitRecentCommitTile = () => {
+  const { data } = useSuspenseQuery(gitApi.query.recentCommit());
 
   return (
     <>
