@@ -1,1 +1,1 @@
-export { GitRecentCommitTile } from "./recent-commit-tile";
+export * from "./recent-commit-tile";

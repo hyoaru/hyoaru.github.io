@@ -4,8 +4,8 @@ import type { GitServiceOperation } from "./operations/interface";
 export class GitService {
   gitRepository: GitRepository;
 
-  public constructor(profileRepository?: GitRepository) {
-    this.gitRepository = profileRepository ?? new GithubGitRepository();
+  public constructor(gitRepository?: GitRepository) {
+    this.gitRepository = gitRepository ?? new GithubGitRepository();
   }
 
   public async execute<T>(operation: GitServiceOperation<T>): Promise<T> {
