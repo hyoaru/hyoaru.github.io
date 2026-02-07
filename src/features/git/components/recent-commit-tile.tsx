@@ -17,9 +17,7 @@ export const RecentCommitTile = () => {
           <ActivityTile.ContentHeader>
             {"Github ･ recent commit"}
           </ActivityTile.ContentHeader>
-          <ActivityTile.ContentBody>
-            {data.username}/{data.repository}
-          </ActivityTile.ContentBody>
+          <ActivityTile.ContentBody>{data.repository}</ActivityTile.ContentBody>
           <ActivityTile.ContentFooter>
             {Datetime.format(data.created_at)}
           </ActivityTile.ContentFooter>

@@ -2,7 +2,11 @@ import type { AxiosInstance } from "axios";
 import axios from "axios";
 import type { RecentlyListenedTracksDTO } from "./dto";
 import type { RecentlyListenedTrack } from "./entities";
-import { LastFmApiError, LastFmNoRecentTracksError } from "./errors";
+import {
+  HttpLastFmClientError,
+  HttpLastFmClientNoRecentTrackError,
+  HttpLastFmClientRequestError,
+} from "./errors";
 
 export class HttpLastFmClient {
   private readonly api: AxiosInstance;
@@ -25,10 +29,21 @@ export class HttpLastFmClient {
     try {
       return await execute();
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        throw new LastFmApiError(error.response?.status ?? 500, error.message);
+      if (error instanceof HttpLastFmClientError) {
+        throw error;
       }
-      throw error;
+
+      if (axios.isAxiosError(error)) {
+        throw new HttpLastFmClientRequestError(error.response?.status ?? 500, {
+          cause: error,
+        });
+      }
+
+      const message = error instanceof Error ? error.message : String(error);
+      throw new HttpLastFmClientError(
+        `Internal Integration Error: ${message}`,
+        { cause: error },
+      );
     }
   }
 
@@ -43,9 +58,8 @@ export class HttpLastFmClient {
         },
       });
 
-      if (!data.recenttracks?.track?.length) {
-        throw new LastFmNoRecentTracksError(username);
-      }
+      if (!data.recenttracks?.track?.length)
+        throw new HttpLastFmClientNoRecentTrackError(username);
 
       const recentTrack = data.recenttracks.track[0];
       const trackImages = recentTrack.image?.filter((image) =>

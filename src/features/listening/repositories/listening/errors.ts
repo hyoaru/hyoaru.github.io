@@ -1,9 +1,18 @@
-export class NoRecentTrackError extends Error {
-  username: string;
+export class ListeningRepositoryError extends Error {
+  constructor(message: string, options?: ErrorOptions) {
+    super(message, options);
+    this.name = "ListeningRepositoryError";
+    Object.setPrototypeOf(this, ListeningRepositoryError.prototype);
+  }
+}
 
-  constructor(username: string) {
-    super(`No recently listened track found for user '${username}'`);
-    this.name = "NoRecentTrackError";
-    this.username = username;
+export class ListeningRepositoryNoRecentTrackError extends ListeningRepositoryError {
+  constructor(username: string, options?: ErrorOptions) {
+    super(`No recently listened track found for user: ${username}`, options);
+    this.name = "ListeningRepositoryNoRecentTrackError";
+    Object.setPrototypeOf(
+      this,
+      ListeningRepositoryNoRecentTrackError.prototype,
+    );
   }
 }

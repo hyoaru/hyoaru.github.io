@@ -1,20 +1,26 @@
-export class GithubApiError extends Error {
-  public status: number;
-  constructor(
-    status: number,
-    message: string = "GithubHub API request failed",
-  ) {
-    super(message);
-    this.status = status;
-    this.name = "GithubApiError";
-    Object.setPrototypeOf(this, GithubApiError.prototype);
+export class HttpGithubClientError extends Error {
+  constructor(message: string, options?: ErrorOptions) {
+    super(message, options);
+    this.name = "HttpGithubClientBaseError";
+    Object.setPrototypeOf(this, HttpGithubClientError.prototype);
   }
 }
 
-export class GithubNoRecentPushError extends Error {
-  constructor(username: string) {
-    super(`No recent push events found for user: ${username}`);
-    this.name = "NoRecentPushError";
-    Object.setPrototypeOf(this, GithubNoRecentPushError.prototype);
+export class HttpGithubClientRequestError extends HttpGithubClientError {
+  public status: number;
+
+  constructor(status: number, options?: ErrorOptions) {
+    super(`Github HTTP Client Failure (${status})`, options);
+    this.name = "HttpGithubClientRequestError";
+    this.status = status;
+    Object.setPrototypeOf(this, HttpGithubClientRequestError.prototype);
+  }
+}
+
+export class HttpGithubClientNoRecentPushError extends HttpGithubClientError {
+  constructor(username: string, options?: ErrorOptions) {
+    super(`No recent push events found for user: ${username}`, options);
+    this.name = "HttpGithubClientNoRecentPushError";
+    Object.setPrototypeOf(this, HttpGithubClientNoRecentPushError.prototype);
   }
 }

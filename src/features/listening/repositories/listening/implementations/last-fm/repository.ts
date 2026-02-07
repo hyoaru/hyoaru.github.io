@@ -1,6 +1,12 @@
-import { HttpLastFmClient } from "@/features/listening/integrations/http-last-fm-client/client";
+import {
+  HttpLastFmClient,
+  HttpLastFmClientNoRecentTrackError,
+} from "@/features/listening/integrations/http-last-fm-client";
 import type { RecentlyListenedTrack } from "../../entities";
-import { NoRecentTrackError } from "../../errors";
+import {
+  ListeningRepositoryError,
+  ListeningRepositoryNoRecentTrackError,
+} from "../../errors";
 import type { ListeningRepository } from "../../interface";
 
 export class LastFmListeningRepository implements ListeningRepository {
@@ -15,8 +21,16 @@ export class LastFmListeningRepository implements ListeningRepository {
   ): Promise<RecentlyListenedTrack> {
     try {
       return await this.lastFmClient.getRecentTrack(username);
-    } catch {
-      throw new NoRecentTrackError(username);
+    } catch (error) {
+      if (error instanceof HttpLastFmClientNoRecentTrackError)
+        throw new ListeningRepositoryNoRecentTrackError(username, {
+          cause: error,
+        });
+
+      throw new ListeningRepositoryError(
+        `Failed to retrieve recent track for ${username}`,
+        { cause: error },
+      );
     }
   }
 }

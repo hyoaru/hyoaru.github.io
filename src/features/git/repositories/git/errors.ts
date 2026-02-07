@@ -1,29 +1,40 @@
-export class RecentCommitNotFoundError extends Error {
-  username: string;
-
-  constructor(username: string) {
-    super(`No recent commit found for ${username}.`);
-    this.name = "RecentCommitNotFoundError";
-    this.username = username;
+export class GitRepositoryError extends Error {
+  constructor(message: string, options?: ErrorOptions) {
+    super(message, options);
+    this.name = "GitRepositoryBaseError";
+    Object.setPrototypeOf(this, GitRepositoryError.prototype);
   }
 }
 
-export class ContributionStatsUnavailableError extends Error {
-  username: string;
-
-  constructor(username: string) {
-    super(`Contribution stats unavailable for ${username}.`);
-    this.name = "ContributionStatsUnavailableError";
-    this.username = username;
+export class GitRepositoryRecentCommitNotFoundError extends GitRepositoryError {
+  constructor(username: string, options?: ErrorOptions) {
+    super(`No recent commit found for ${username}.`, options);
+    this.name = "GitRepositoryRecentCommitNotFoundError";
+    Object.setPrototypeOf(
+      this,
+      GitRepositoryRecentCommitNotFoundError.prototype,
+    );
   }
 }
 
-export class UserInformationNotFoundError extends Error {
-  username: string;
+export class GitRepositoryContributionStatsUnavailableError extends GitRepositoryError {
+  constructor(username: string, options?: ErrorOptions) {
+    super(`Contribution stats unavailable for ${username}.`, options);
+    this.name = "GitRepositoryContributionStatsUnavailableError";
+    Object.setPrototypeOf(
+      this,
+      GitRepositoryContributionStatsUnavailableError.prototype,
+    );
+  }
+}
 
-  constructor(username: string) {
-    super(`User information not found for ${username}.`);
+export class GitRepositoryUserInformationNotFoundError extends GitRepositoryError {
+  constructor(username: string, options?: ErrorOptions) {
+    super(`User information not found for ${username}.`, options);
     this.name = "UserInformationNotFoundError";
-    this.username = username;
+    Object.setPrototypeOf(
+      this,
+      GitRepositoryUserInformationNotFoundError.prototype,
+    );
   }
 }
