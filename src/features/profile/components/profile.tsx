@@ -1,4 +1,4 @@
-import { RecentCommitTile } from "@/features/git";
+import { GitRecentCommitTile } from "@/features/git";
 import { RecentTrackTile } from "@/features/listening";
 import { AsyncBoundary, PhilippineTime, VisitorBadge } from "@/shared";
 import { Clock } from "lucide-react";
@@ -29,7 +29,7 @@ export const Profile = () => {
           <div className="h-full"></div>
           <div className="flex h-[70%] shrink-0 flex-col gap-1">
             <AsyncBoundary>
-              <RecentCommitTile />
+              <GitRecentCommitTile />
             </AsyncBoundary>
             <AsyncBoundary>
               <RecentTrackTile />

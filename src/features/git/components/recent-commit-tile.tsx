@@ -4,7 +4,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { Github } from "lucide-react";
 import { gitApi } from "../api";
 
-export const RecentCommitTile = () => {
+export const GitRecentCommitTile = () => {
   const { data } = useSuspenseQuery(gitApi.query.recentCommit());
 
   return (

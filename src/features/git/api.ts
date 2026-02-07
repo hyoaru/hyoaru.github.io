@@ -16,7 +16,7 @@ export const gitApi = {
         staleTime: 60 * 1000 * 5, // 5 minutes
       }),
 
-    contributionStatus: (username: string = "hyoaru") =>
+    contributionStats: (username: string = "hyoaru") =>
       queryOptions({
         queryKey: [...gitApi.baseKey, "contribution-stats"],
         queryFn: () => gitService.execute(new GetContributionStats(username)),
