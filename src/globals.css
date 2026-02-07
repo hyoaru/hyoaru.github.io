@@ -25,11 +25,11 @@
 
   .dark {
     /* Custom */
-    --custom-background: 0.278 0.0055 286.04;
+    --custom-background: oklch(0.1408 0.0059 285.89);
     /* Overrides */
     --background: 0 0 0;
     --foreground: 1 0 0;
-    --default: 0.2103 0.0059 285.89;
+    --default: 0.1677 0.0059 285.89;
   }
 }
 
