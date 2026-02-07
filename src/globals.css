@@ -14,35 +14,34 @@
 
 @layer base {
   :root {
-    --background: var(--white);
-    --foreground: var(--black);
-    --accent: 58% 0.158 258;
-    --custom-background: 92.2% 0 0;
-    --custom-foreground: 0% 0 0;
-    --custom-secondary: 94% 0 0;
-    --custom-secondary-foreground: 0% 0 0;
+    /* Custom */
+    --custom-background: 0.9247 0.0013 106.43;
+    /* Overrides */
+    --background: 1 0 0;
+    --foreground: 0 0 0;
+    --accent: 0.5648 0.1948 261.92;
+    --default: 0.9612 0 0;
   }
 
   .dark {
-    --background: var(--black);
-    --foreground: var(--white);
-    --custom-background: 23.4% 0.012 256.4;
-    --custom-foreground: 98.4% 0 0;
-    --custom-secondary: 17.5% 0.014 256.4;
-    --custom-secondary-foreground: 98.4% 0 0;
+    /* Custom */
+    --custom-background: 0.278 0.0055 286.04;
+    /* Overrides */
+    --background: 0 0 0;
+    --foreground: 1 0 0;
+    --default: 0.2103 0.0059 285.89;
   }
 }
 
 @theme {
+  /* Custom */
   --font-geist: Geist, sans-serif;
-
-  --color-accent: oklch(var(--accent));
   --color-custom-background: oklch(var(--custom-background));
-  --color-custom-background-foreground: oklch(var(--custom-foreground));
-  --color-custom-secondary: oklch(var(--custom-secondary));
-  --color-custom-secondary-foreground: oklch(
-    var(--custom-secondary-foreground)
-  );
+  /* Overrides */
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-accent: oklch(var(--accent));
+  --color-default: oklch(var(--default));
 }
 
 .bg-grid {
@@ -50,8 +49,16 @@
   height: 100%;
   width: 100%;
   background-image:
-    linear-gradient(to right, oklch(0.5 0 0 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.5 0 0 / 0.05) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      oklch(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      oklch(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    );
   background-size: 24px 24px;
 }
 
@@ -60,7 +67,7 @@
   height: 100%;
   width: 100%;
   background-image: radial-gradient(
-    oklch(var(--custom-foreground) / 0.12) 1px,
+    oklch(var(--foreground) / 0.12) 1px,
     transparent 1px
   );
   background-size: 16px 16px;
