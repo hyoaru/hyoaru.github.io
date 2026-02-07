@@ -12,7 +12,7 @@ export const LastFmRecentTrackTile = () => {
         style={{ backgroundImage: `url(${data?.image_url})` }}
       >
         <div className="absolute h-full w-full overflow-hidden rounded-xl opacity-90 backdrop-blur-[12px]"></div>
-        <ActivityTile.Icon className="z-[10] h-full overflow-hidden border-transparent">
+        <ActivityTile.Icon className="z-[10] h-full overflow-hidden border-none">
           <img
             src={data?.image_url}
             className="h-full w-full object-cover object-center"
