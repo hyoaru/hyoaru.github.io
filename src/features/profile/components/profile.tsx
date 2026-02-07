@@ -1,8 +1,8 @@
+import { RecentCommitTile } from "@/features/git";
+import { RecentTrackTile } from "@/features/listening";
 import { AsyncBoundary, PhilippineTime, VisitorBadge } from "@/shared";
 import { Clock } from "lucide-react";
 import { PersonalImage } from "./personal-image";
-import { GitRecentCommitTile } from "@/features/git";
-import { LastFmRecentTrackTile } from "@/features/last-fm";
 
 export const Profile = () => {
   const age = Math.floor(
@@ -29,10 +29,10 @@ export const Profile = () => {
           <div className="h-full"></div>
           <div className="flex h-[70%] shrink-0 flex-col gap-1">
             <AsyncBoundary>
-              <GitRecentCommitTile />
+              <RecentCommitTile />
             </AsyncBoundary>
             <AsyncBoundary>
-              <LastFmRecentTrackTile />
+              <RecentTrackTile />
             </AsyncBoundary>
           </div>
         </div>
