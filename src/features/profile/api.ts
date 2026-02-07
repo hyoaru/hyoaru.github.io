@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query";
 import { GetPersonalImageUrl, profileService } from "./service";
 
 export const profileApi = {
-  baseKey: ["portfolio"] as const,
+  baseKey: ["profile"] as const,
   query: {
     personalImageUrl: () =>
       queryOptions({

@@ -1,7 +1,10 @@
+import type { Technology } from "./entities";
 import {
   StaticPortfolioResourcesClientError,
   StaticPortfolioResourcesClientFileNotFoundError,
 } from "./errors";
+
+import technologies from "@/shared/data-sources/portfolio-resources/data/technologies.json";
 
 const images = import.meta.glob(
   "../../data-sources/portfolio-resources/assets/images/*.jpg",
@@ -38,6 +41,12 @@ export class StaticPortfolioResourcesClient {
         throw new StaticPortfolioResourcesClientFileNotFoundError(filename);
 
       return Promise.resolve(images[key] as string);
+    });
+  }
+
+  public async getTechnologies(): Promise<Technology[]> {
+    return this.request<Technology[]>(async () => {
+      return Promise.resolve(technologies);
     });
   }
 }

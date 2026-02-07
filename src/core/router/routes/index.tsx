@@ -1,5 +1,6 @@
 import { Header } from "@/core";
 import { Profile, RecentJob } from "@/features/profile";
+import { Technologies } from "@/features/technologies";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -14,6 +15,7 @@ function RouteComponent() {
           <Header />
           <Profile />
           <RecentJob />
+          <Technologies />
         </div>
         <div className="h-fit w-full"></div>
       </div>
