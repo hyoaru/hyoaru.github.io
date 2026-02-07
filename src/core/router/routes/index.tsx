@@ -1,5 +1,5 @@
 import { Header } from "@/core";
-import { GitStats } from "@/features/git";
+import { GitActivity, GitStats } from "@/features/git";
 import { Profile, RecentJob } from "@/features/profile";
 import { Technologies } from "@/features/technologies";
 import { createFileRoute } from "@tanstack/react-router";
@@ -18,6 +18,7 @@ function RouteComponent() {
           <RecentJob />
           <Technologies />
           <GitStats />
+          <GitActivity />
         </div>
         <div className="h-fit w-full"></div>
       </div>

@@ -19,7 +19,10 @@ export const LoadingTile = ({ classNames }: LoadingTileProps) => {
         )}
       />
       <Skeleton
-        className={cn("bg-accent/5 h-full w-full", classNames?.skeleton)}
+        className={cn(
+          "bg-accent/[8%] h-full w-full rounded-lg",
+          classNames?.skeleton,
+        )}
       />
     </div>
   );

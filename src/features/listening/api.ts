@@ -6,7 +6,7 @@ export const listeningApi = {
   query: {
     recentCommit: (username: string = "hyoaru") =>
       queryOptions({
-        queryKey: [...listeningApi.baseKey, "recent-push"],
+        queryKey: [...listeningApi.baseKey, "recent-track"],
         queryFn: () => listeningService.execute(new GetRecentTrack(username)),
         staleTime: 60 * 1000 * 2, // 2 minutes
       }),
