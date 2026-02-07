@@ -7,3 +7,13 @@ export class LastFmApiError extends Error {
     Object.setPrototypeOf(this, LastFmApiError.prototype);
   }
 }
+
+export class LastFmNoRecentTracksError extends Error {
+  username: string;
+
+  constructor(username: string) {
+    super(`No recent tracks found for user "${username}".`);
+    this.name = "LastFmNoRecentTracksError";
+    this.username = username;
+  }
+}

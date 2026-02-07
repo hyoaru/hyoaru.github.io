@@ -1,11 +1,10 @@
 import type { AxiosInstance } from "axios";
 import axios from "axios";
-import type { RecentlyListenedTrack } from "../../entities";
-import { LastFmApiError } from "../../errors";
-import type { LastFmClient } from "../../interface";
 import type { RecentlyListenedTracksDTO } from "./dto";
+import type { RecentlyListenedTrack } from "./entities";
+import { LastFmApiError, LastFmNoRecentTracksError } from "./errors";
 
-export class HttpLastFmClient implements LastFmClient {
+export class HttpLastFmClient {
   private readonly api: AxiosInstance;
   private readonly apiKey: string;
 
@@ -43,6 +42,10 @@ export class HttpLastFmClient implements LastFmClient {
           user: username,
         },
       });
+
+      if (!data.recenttracks?.track?.length) {
+        throw new LastFmNoRecentTracksError(username);
+      }
 
       const recentTrack = data.recenttracks.track[0];
       const trackImages = recentTrack.image?.filter((image) =>

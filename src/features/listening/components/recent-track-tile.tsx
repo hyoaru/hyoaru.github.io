@@ -1,9 +1,9 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { lastFmApi } from "../api";
 import { ActivityTile } from "@/shared";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { listeningApi } from "../api";
 
-export const LastFmRecentTrackTile = () => {
-  const { data } = useSuspenseQuery(lastFmApi.query.recentCommit());
+export const RecentTrackTile = () => {
+  const { data } = useSuspenseQuery(listeningApi.query.recentCommit());
 
   return (
     <>
