@@ -6,7 +6,7 @@ import { ThemeToggle } from "../ui";
 export const Header = () => {
   return (
     <>
-      <div className="bg-background flex items-center gap-1 rounded-xl p-1">
+      <div className="bg-background flex w-full items-center gap-1 rounded-xl p-1">
         <PersonStanding className="ps-1" />
         <p className="me-auto font-bold">Cabrera, Jen Jade</p>
         <Button size="sm" className="rounded-lg">
