@@ -1,12 +1,6 @@
+import { CareerCard } from "@/features/career";
 import { Tabs } from "@heroui/react";
-import {
-  Activity,
-  Award,
-  Calendar,
-  ChevronRight,
-  ChevronsDown,
-  MapPin,
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Ripple } from "m3-ripple";
 
 export const MainPanel = () => {
@@ -44,7 +38,7 @@ export const MainPanel = () => {
         className="bg-default h-full rounded-xl p-1"
         id="career-snapshot"
       >
-        <div className="bg-background pattern-dots h-full gap-2.5 rounded-lg p-5">
+        <div className="bg-background pattern-dots h-full space-y-2.5 rounded-lg p-5">
           <p className="pb-2.5 text-xl">
             Thriving at the intersection of code, systems, and
             intelligence—integrating{" "}
@@ -56,70 +50,59 @@ export const MainPanel = () => {
             into a unified framework for high-performance,{" "}
             <span className="text-accent font-bold">architected systems</span>.
           </p>
-          <div className="bg-default/40 border-custom-background relative overflow-hidden rounded-lg border p-5 pb-7">
-            <div className="bg-accent text-background absolute -right-1.5 -bottom-1.5 rounded-xl p-1.5">
-              <ChevronsDown className="relative right-0.5 bottom-0.5" />
-            </div>
-            <div className="space-y-2.5">
-              <p className="text-lg font-bold">[04]::Solutions Architect II</p>
-              <div className="">
-                <div className="text-muted flex items-center gap-2.5 text-sm">
-                  <Calendar className="h-[1.2em] w-[1.2em]" />
-                  April 2025 - Present
-                </div>
-                <div className="text-accent flex items-center gap-2.5 text-sm font-bold">
-                  <MapPin className="h-[1.2em] w-[1.2em]" />
+          <CareerCard>
+            <CareerCard.NextIndicator />
+            <CareerCard.Content>
+              <CareerCard.Title>[04]::Solutions Architect II</CareerCard.Title>
+              <CareerCard.ContentHeader>
+                <CareerCard.Date>April 2025 - Present</CareerCard.Date>
+                <CareerCard.Location>
                   Philippine Digital Asset Exchange (PDAX) • On-site
-                </div>
-              </div>
-              <div className="space-y-2.5">
-                <p className="text-sm">
+                </CareerCard.Location>
+              </CareerCard.ContentHeader>
+              <CareerCard.ContentBody>
+                <CareerCard.Description>
                   Architected serverless, event-driven security ecosystems to
                   automate infrastructure findings and operationalized squad
                   ownership. Focused on bridging the gap between cloud-scale
                   security ingestion and real-world developer remediation.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2.5 text-sm font-bold">
-                    <Award className="h-[1.2em] w-[1.2em]" />
-                    Key Achievements
-                  </div>
-                  <ul className="text-muted list-disc ps-8 text-sm">
-                    <li>
+                </CareerCard.Description>
+                <CareerCard.KeyAchievements>
+                  <CareerCard.KeyAchievementsHeader />
+                  <CareerCard.KeyAchievementsList>
+                    <CareerCard.KeyAchievementsListItem>
                       Architected serverless, event-driven security ecosystems
                       to automate infrastructure findings and operationalized
                       squad ownership. Focused on bridging the gap between
                       cloud-scale security ingestion and real-world developer
                       remediation.{" "}
-                    </li>
-                    <li>
+                    </CareerCard.KeyAchievementsListItem>
+                    <CareerCard.KeyAchievementsListItem>
                       Architected serverless, event-driven security ecosystems
                       to automate infrastructure findings and operationalized
                       squad ownership. Focused on bridging the gap between
                       cloud-scale security ingestion and real-world developer
                       remediation.{" "}
-                    </li>
-                  </ul>
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex items-center gap-2.5 text-sm font-bold">
-                      <Activity className="h-[1.2em] w-[1.2em]" />
-                      Technologies
-                    </div>
-                    <div className="bg-custom-background h-full rounded-sm px-1 py-0.5 text-[0.6rem]">
+                    </CareerCard.KeyAchievementsListItem>
+                  </CareerCard.KeyAchievementsList>
+                </CareerCard.KeyAchievements>
+                <CareerCard.Technologies>
+                  <CareerCard.TechnologiesHeader />
+                  <CareerCard.TechnologiesList>
+                    <CareerCard.TechnologyChip>
                       Amazon Web Services
-                    </div>
-
-                    <div className="bg-custom-background h-full rounded-sm px-1 py-0.5 text-[0.6rem]">
+                    </CareerCard.TechnologyChip>
+                    <CareerCard.TechnologyChip>
                       AWS EC2
-                    </div>
-                    <div className="bg-custom-background h-full rounded-sm px-1 py-0.5 text-[0.6rem]">
+                    </CareerCard.TechnologyChip>
+                    <CareerCard.TechnologyChip>
                       Containerization
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </CareerCard.TechnologyChip>
+                  </CareerCard.TechnologiesList>
+                </CareerCard.Technologies>
+              </CareerCard.ContentBody>
+            </CareerCard.Content>
+          </CareerCard>
         </div>
       </Tabs.Panel>
       <Tabs.Panel className="pt-4" id="analytics">
