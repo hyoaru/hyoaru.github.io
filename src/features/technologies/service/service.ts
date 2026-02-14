@@ -5,10 +5,10 @@ import {
 import type { TechnologyServiceOperation } from "./operations/interface";
 
 export class TechnologyService {
-  profileRepository: TechnologyRepository;
+  technologyRepository: TechnologyRepository;
 
   public constructor(profileRepository?: TechnologyRepository) {
-    this.profileRepository =
+    this.technologyRepository =
       profileRepository ?? new StaticTechnologyRepository();
   }
 

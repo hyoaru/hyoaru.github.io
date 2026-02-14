@@ -6,6 +6,6 @@ export class GetTechnologies implements TechnologyServiceOperation<
   Technology[]
 > {
   public async execute(service: TechnologyService): Promise<Technology[]> {
-    return await service.profileRepository.getTechnologies();
+    return await service.technologyRepository.getTechnologies();
   }
 }
