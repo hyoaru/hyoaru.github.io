@@ -2,11 +2,20 @@ import { Tabs } from "@heroui/react";
 import { ChevronRight } from "lucide-react";
 import { Ripple } from "m3-ripple";
 import { CareerPanel } from "./career-panel";
+import { CertificationPanel } from "./certification-panel";
 
 export const TabbedPanel = () => {
   const tabs = [
-    { id: "career", label: "Career Snapshot", panel: CareerPanel },
-    // { id: "certifications", label: " Certifications" },
+    {
+      id: "career",
+      label: "Career Snapshot",
+      panel: CareerPanel,
+    },
+    {
+      id: "certifications",
+      label: " Certifications",
+      panel: CertificationPanel,
+    },
     // { id: "blogs", label: "War Journal" },
     // { id: "projects", label: "Side Quests" },
     // { id: "contact", label: "Get in Touch" },
