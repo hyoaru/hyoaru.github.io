@@ -1,10 +1,11 @@
-import type { Technology } from "./entities";
+import type { CareerExperience, Technology } from "./types";
 import {
   StaticPortfolioResourcesClientError,
   StaticPortfolioResourcesClientFileNotFoundError,
 } from "./errors";
 
 import technologies from "@/shared/data-sources/portfolio-resources/data/technologies.json";
+import experiences from "@/shared/data-sources/portfolio-resources/data/experiences.json";
 
 const images = import.meta.glob(
   "../../data-sources/portfolio-resources/assets/images/*.jpg",
@@ -47,6 +48,12 @@ export class StaticPortfolioResourcesClient {
   public async getTechnologies(): Promise<Technology[]> {
     return this.request<Technology[]>(async () => {
       return Promise.resolve(technologies);
+    });
+  }
+
+  public async getExperiences(): Promise<CareerExperience[]> {
+    return this.request<CareerExperience[]>(async () => {
+      return Promise.resolve(experiences);
     });
   }
 }
