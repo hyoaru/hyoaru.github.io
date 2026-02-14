@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { Ripple } from "m3-ripple";
 import { CareerPanel } from "./career-panel";
 import { CertificationPanel } from "./certification-panel";
+import { AsyncBoundary } from "../ui";
 
 export const TabbedPanel = () => {
   const tabs = [
@@ -50,7 +51,9 @@ export const TabbedPanel = () => {
           id={tab.id}
         >
           <div className="bg-background pattern-dots h-full rounded-lg p-5">
-            <tab.panel />
+            <AsyncBoundary>
+              <tab.panel />
+            </AsyncBoundary>
           </div>
         </Tabs.Panel>
       ))}
