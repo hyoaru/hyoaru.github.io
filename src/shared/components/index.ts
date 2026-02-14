@@ -1,3 +1,3 @@
 export * from "./ui";
 export * from "./layout";
-export * from "./main-panel";
+export * from "./tabbed-panel/tabbed-panel";

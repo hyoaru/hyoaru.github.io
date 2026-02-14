@@ -1,7 +1,7 @@
 import { GitActivity, GitStats } from "@/features/git";
 import { Profile, RecentJob } from "@/features/profile";
 import { Technologies } from "@/features/technologies";
-import { Filler, Footer, Header, MainPanel } from "@/shared";
+import { Filler, Footer, Header, TabbedPanel } from "@/shared";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -24,7 +24,7 @@ function RouteComponent() {
             <Filler className="h-14" />
             <Footer />
           </ScrollShadow>
-          <MainPanel />
+          <TabbedPanel />
         </div>
       </div>
     </div>
