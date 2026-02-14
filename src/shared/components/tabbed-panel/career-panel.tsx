@@ -24,7 +24,8 @@ export const CareerPanel = () => {
 
       <ScrollShadow hideScrollBar className="h-full min-h-0">
         <div className="flex flex-grow flex-col gap-y-2.5">
-          {experiences.map((experience, index) => {
+          {experiences.reverse().map((experience, index) => {
+            index = experiences.length - 1 - index;
             const startedAt = Datetime.extractMonthYear(experience.startedAt);
 
             const endedAt = experience.endedAt
