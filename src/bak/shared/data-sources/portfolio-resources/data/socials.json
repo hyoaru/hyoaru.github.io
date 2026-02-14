@@ -1,0 +1,57 @@
+[
+  {
+    "name": "github",
+    "icon": "github",
+    "label": "hyoaru",
+    "link": "https://github.com/hyoaru"
+  },
+
+  {
+    "name": "facebook",
+    "icon": "facebook",
+    "label": "jjcabreraaaa",
+    "link": "https://facebook.com/jjcabreraaaa"
+  },
+
+  {
+    "name": "linkedin",
+    "icon": "linksys",
+    "label": "jjcabreraaaa",
+    "link": "https://www.linkedin.com/in/jjcabreraaaa/"
+  },
+
+  {
+    "name": "spotify",
+    "icon": "spotify",
+    "label": "jade",
+    "link": "https://open.spotify.com/user/12180365121"
+  },
+
+  {
+    "name": "last.fm",
+    "icon": "lastdotfm",
+    "label": "haru",
+    "link": "https://last.fm/user/hyoaru"
+  },
+
+  {
+    "name": "discord",
+    "icon": "discord",
+    "label": "@hyoaru",
+    "link": null
+  },
+
+  {
+    "name": "instagram",
+    "icon": "instagram",
+    "label": "jij1nxed",
+    "link": "https://www.instagram.com/jij1nxed/"
+  },
+
+  {
+    "name": "x",
+    "icon": "x",
+    "label": "jij1nsomnia",
+    "link": "https://x.com/jij1nsomnia"
+  }
+]
