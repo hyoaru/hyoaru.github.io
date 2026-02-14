@@ -255,7 +255,7 @@ const CareerCardTechnologiesList = ({
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => {
   return (
-    <div className={cn("flex gap-1 ps-8", className)} {...rest}>
+    <div className={cn("flex flex-wrap gap-1 ps-8", className)} {...rest}>
       {children}
     </div>
   );
