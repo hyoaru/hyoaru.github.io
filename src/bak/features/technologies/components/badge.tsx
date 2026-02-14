@@ -3,13 +3,13 @@ import { cn } from "@heroui/styles";
 type TechnologyBadgeProps = {
   className?: string;
   name: string;
-  simpleIcon: string;
+  simpleIconUrl: string;
 };
 
 export const TechnologyBadge = ({
   className,
   name,
-  simpleIcon,
+  simpleIconUrl,
 }: TechnologyBadgeProps) => (
   <div
     className={cn(
@@ -17,11 +17,7 @@ export const TechnologyBadge = ({
       className,
     )}
   >
-    <img
-      width={14}
-      height={14}
-      src={`https://cdn.simpleicons.org/${simpleIcon}/000000/0070f0`}
-    />
+    <img width={14} height={14} src={`${simpleIconUrl}/000000/0070f0`} />
     {name}
   </div>
 );

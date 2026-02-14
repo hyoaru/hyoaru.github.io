@@ -1,8 +1,8 @@
 import {
   TechnologyRepositoryError,
   type TechnologyRepository,
-} from "@/features/identity/application/ports/technology-repository";
-import type { Technology } from "@/features/identity/domain/entities";
+} from "@/features/identity/application/ports";
+import { Technology } from "@/features/identity/domain/entities";
 import technologies from "@/shared/assets/portfolio-resources/data/technologies.json";
 
 export class StaticTechnologyRepository implements TechnologyRepository {
@@ -24,10 +24,13 @@ export class StaticTechnologyRepository implements TechnologyRepository {
   public async getTechnologies(): Promise<Technology[]> {
     return this.request<Technology[]>(async () => {
       return Promise.resolve(
-        technologies.map((t) => ({
-          name: t.name,
-          logoUrl: t.logo_url,
-        })),
+        technologies.map(
+          (t) =>
+            new Technology({
+              name: t.name,
+              logoUrl: `https://cdn.simpleicons.org/${t.simple_icon_key}`,
+            }),
+        ),
       );
     });
   }

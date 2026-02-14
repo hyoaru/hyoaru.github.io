@@ -19,7 +19,7 @@ export default function TechnologyMarquee() {
         <TechnologyBadge
           key={`TechnologyBadge-${technology.name}`}
           name={technology.name}
-          simpleIcon={technology.logo}
+          simpleIconUrl={technology.logo}
         />
       ))}
     </Marquee>

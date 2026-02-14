@@ -3,11 +3,11 @@ import {
   ProfileRepositoryError,
   ProfileRepositoryResourceNotFoundError,
 } from "@/features/identity/application/ports";
-import type { Experience } from "@/features/identity/domain/entities";
+import { Experience } from "@/features/identity/domain/entities";
 import experiences from "@/shared/assets/portfolio-resources/data/experiences.json";
 
 const images = import.meta.glob(
-  "src/app/assets/portfolio-resources/assets/images/*.jpg",
+  "src/shared/assets/portfolio-resources/assets/images/*.jpg",
   {
     eager: true,
     import: "default",
@@ -45,11 +45,11 @@ export class StaticProfileRepository implements ProfileRepository {
       return Promise.resolve(
         experiences.map((e) => {
           const { started_at, ended_at, ...rest } = e;
-          return {
+          return new Experience({
             startedAt: started_at,
             endedAt: ended_at,
             ...rest,
-          };
+          });
         }),
       );
     });
