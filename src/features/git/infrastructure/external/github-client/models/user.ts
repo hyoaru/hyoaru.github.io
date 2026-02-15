@@ -1,4 +1,4 @@
-export type GithubUser = {
+export interface GithubUser {
   username: string;
   publicRepositories: number;
   company?: string;
@@ -6,4 +6,4 @@ export type GithubUser = {
   hireable?: boolean;
   createdAt: string;
   updatedAt: string;
-};
+}

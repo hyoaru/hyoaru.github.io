@@ -1,4 +1,4 @@
-import type { GithubEvent } from "../types";
+import type { GithubEvent } from "../models";
 
 export interface GithubEventsResponse {
   events: GithubEvent[];

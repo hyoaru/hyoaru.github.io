@@ -1,4 +1,4 @@
-import type { GithubUser } from "../types";
+import type { GithubUser } from "../models";
 
 export interface GithubUserResponse {
   user: GithubUser;

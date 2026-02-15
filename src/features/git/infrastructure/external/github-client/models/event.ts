@@ -1,9 +1,9 @@
-import type { GithubActor, GithubRepository } from "../types";
+import type { GithubActor, GithubRepository } from "../models";
 
-export type GithubEvent = {
+export interface GithubEvent {
   id: string;
   type: string;
   actor: GithubActor;
   repository: GithubRepository;
   createdAt: string;
-};
+}

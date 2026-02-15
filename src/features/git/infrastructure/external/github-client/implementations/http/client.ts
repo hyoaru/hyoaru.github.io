@@ -42,25 +42,27 @@ export class HttpGithubClient implements GithubClient {
     request: GithubEventsRequest,
   ): Promise<GithubEventsResponse> {
     return await this.request(async () => {
-      const { data: events } = await this.api.get<HttpGithubEvent[]>(
+      const { data } = await this.api.get<HttpGithubEvent[]>(
         `/users/${request.username}/events`,
       );
 
-      return events.map((event) => ({
-        id: event["id"],
-        type: event["type"],
+      const events = data.map((event) => ({
+        id: event.id,
+        type: event.type,
         actor: {
-          id: event["actor"]["id"],
-          username: event["actor"]["login"],
-          avatarUrl: event["actor"]["avatar_url"],
+          id: event.actor.id,
+          username: event.actor.login,
+          avatarUrl: event.actor.avatar_url,
         },
         repository: {
-          id: event["repo"]["id"],
-          name: event["repo"]["name"],
-          url: event["repo"]["url"],
+          id: event.repo.id,
+          name: event.repo.name,
+          url: event.repo.url,
         },
-        createdAt: event["created_at"],
+        createdAt: event.created_at,
       }));
+
+      return { events };
     });
   }
 
@@ -72,15 +74,17 @@ export class HttpGithubClient implements GithubClient {
         `/users/${request.username}`,
       );
 
-      return {
-        username: data["login"],
-        publicRepositories: data["public_repos"],
-        company: data["company"],
-        location: data["location"],
-        hireable: data["hireable"],
-        createdAt: data["created_at"],
-        updatedAt: data["updated_at"],
+      const user = {
+        username: data.login,
+        publicRepositories: data.public_repos,
+        company: data.company,
+        location: data.location,
+        hireable: data.hireable,
+        createdAt: data.created_at,
+        updatedAt: data.updated_at,
       };
+
+      return { user };
     });
   }
 }
