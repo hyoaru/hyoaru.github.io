@@ -1,6 +1,10 @@
 import { GitRecentCommitTile } from "@/features/git";
 import { RecentTrackTile } from "@/features/listening";
-import { AsyncBoundary, PhilippineTime, VisitorBadge } from "@/shared";
+import {
+  AsyncBoundary,
+  PhilippineTime,
+  VisitorBadge,
+} from "@/shared/components";
 import { Clock } from "lucide-react";
 import { PersonalImage } from "./personal-image";
 

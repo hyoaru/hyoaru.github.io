@@ -7,15 +7,13 @@ export const PersonalImage = forwardRef<
   HTMLImageElement,
   React.ComponentPropsWithoutRef<"img">
 >(({ className, ...props }, ref) => {
-  const { data: personalImage } = useSuspenseQuery(
-    identityApi.query.personalImageUrl(),
-  );
+  const { data } = useSuspenseQuery(identityApi.query.personalImageUrl());
 
   return (
     <img
       ref={ref}
       className={cn("object-cover", className)}
-      src={personalImage}
+      src={data.imageUrl}
       {...props}
     />
   );
