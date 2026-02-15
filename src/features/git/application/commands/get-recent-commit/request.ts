@@ -1,7 +1,3 @@
-export class GetRecentCommitRequest {
+export interface GetRecentCommitRequest {
   readonly username: string;
-
-  public constructor(init: GetRecentCommitRequest) {
-    this.username = init.username;
-  }
 }

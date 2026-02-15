@@ -1,9 +1,5 @@
 import type { GitCommit } from "@/features/git/domain/entities";
 
-export class GetRecentCommitResponse {
+export interface GetRecentCommitResponse {
   recentCommit: GitCommit;
-
-  public constructor(init: GetRecentCommitResponse) {
-    this.recentCommit = init.recentCommit;
-  }
 }

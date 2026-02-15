@@ -1,7 +1,3 @@
-export class GetContributionsRequest {
+export interface GetContributionsRequest {
   username: string;
-
-  public constructor(init: GetContributionsRequest) {
-    this.username = init.username;
-  }
 }
