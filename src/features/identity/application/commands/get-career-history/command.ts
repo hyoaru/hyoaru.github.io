@@ -1,4 +1,4 @@
-import type { Command } from "@/core/application/commands";
+import type { Command } from "@/shared/application/commands";
 import type { Experience } from "@/features/identity/domain/entities";
 import type { ProfileRepository } from "../../ports";
 

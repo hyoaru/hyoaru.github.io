@@ -1,4 +1,4 @@
-import type { Command } from "@/core/application/commands";
+import type { Command } from "@/shared/application/commands";
 import type { GitContributionRepository } from "../../ports";
 import type { GetContributionsRequest } from "./request";
 import type { GetContributionsResponse } from "./response";

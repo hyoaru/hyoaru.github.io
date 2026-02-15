@@ -1,4 +1,4 @@
-import type { Command } from "@/core/application/commands";
+import type { Command } from "@/shared/application/commands";
 import type { Middleware } from "../middlewares";
 
 export class CommandBus {
@@ -13,8 +13,7 @@ export class CommandBus {
 
     for (const middleware of [...this.middlewares].reverse()) {
       const next = handler;
-      handler = () =>
-        (middleware as Middleware<T>).handle(command, next);
+      handler = () => (middleware as Middleware<T>).handle(command, next);
     }
 
     return handler();

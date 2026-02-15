@@ -1,4 +1,4 @@
-import { logger } from "@/core/infrastructure/logger";
+import { logger } from "@/shared/infrastructure/logger";
 import { type ProfileRepository } from "@/features/identity/application/ports";
 import type { Experience } from "@/features/identity/domain/entities";
 

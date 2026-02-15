@@ -1,4 +1,4 @@
-import { logger } from "@/core/infrastructure/logger";
+import { logger } from "@/shared/infrastructure/logger";
 import type { TechnologyRepository } from "@/features/identity/application/ports/technology-repository";
 import type { Technology } from "@/features/identity/domain/entities";
 

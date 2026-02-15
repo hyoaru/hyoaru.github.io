@@ -1,4 +1,4 @@
-import type { Command } from "@/core/application/commands";
+import type { Command } from "@/shared/application/commands";
 import type { Technology } from "@/features/identity/domain/entities";
 import type { TechnologyRepository } from "../../ports";
 

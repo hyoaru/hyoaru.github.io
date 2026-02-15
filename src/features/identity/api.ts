@@ -1,4 +1,4 @@
-import { commandBus } from "@/core/infrastructure/command-bus";
+import { commandBus } from "@/shared/infrastructure/command-bus";
 import { queryOptions } from "@tanstack/react-query";
 import { GetCareerHistory, GetPersonalImageUrl } from "./application/commands";
 import {

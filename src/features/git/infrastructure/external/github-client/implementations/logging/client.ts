@@ -1,4 +1,4 @@
-import { logger } from "@/core/infrastructure/logger";
+import { logger } from "@/shared/infrastructure/logger";
 import type {
   GithubEventsRequest,
   GithubEventsResponse,
