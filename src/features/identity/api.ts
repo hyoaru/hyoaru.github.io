@@ -17,7 +17,7 @@ export const identityApi = {
       queryOptions({
         queryKey: [...identityApi.baseKey, "personal-image"],
         queryFn: () =>
-          commandBus.dispatch(new GetPersonalImageUrl(profileRepository)),
+          commandBus.dispatch(new GetPersonalImageUrl({ profileRepository })),
         staleTime: Infinity,
       }),
 
@@ -25,7 +25,7 @@ export const identityApi = {
       queryOptions({
         queryKey: [...identityApi.baseKey, "career-history"],
         queryFn: () =>
-          commandBus.dispatch(new GetCareerHistory(profileRepository)),
+          commandBus.dispatch(new GetCareerHistory({ profileRepository })),
         staleTime: Infinity,
       }),
   },

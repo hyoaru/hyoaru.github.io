@@ -3,9 +3,9 @@ import type { TechnologyRepository } from "../../ports";
 import type { GetTechnologiesResponse } from "./response";
 
 export class GetTechnologies implements Command<GetTechnologiesResponse> {
-  private technologyRepository: TechnologyRepository;
+  readonly technologyRepository: TechnologyRepository;
 
-  public constructor(init: GetTechnologies) {
+  public constructor(init: { technologyRepository: TechnologyRepository }) {
     this.technologyRepository = init.technologyRepository;
   }
 

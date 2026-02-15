@@ -3,9 +3,9 @@ import type { ProfileRepository } from "../../ports";
 import type { GetCareerHistoryResponse } from "./response";
 
 export class GetCareerHistory implements Command<GetCareerHistoryResponse> {
-  private profileRepository: ProfileRepository;
+  readonly profileRepository: ProfileRepository;
 
-  public constructor(init: GetCareerHistory) {
+  public constructor(init: { profileRepository: ProfileRepository }) {
     this.profileRepository = init.profileRepository;
   }
 

@@ -3,9 +3,9 @@ import type { ProfileRepository } from "../../ports";
 import type { GetPersonalImageUrlResponse } from "./response";
 
 export class GetPersonalImageUrl implements Command<GetPersonalImageUrlResponse> {
-  private profileRepository: ProfileRepository;
+  readonly profileRepository: ProfileRepository;
 
-  public constructor(init: GetPersonalImageUrl) {
+  public constructor(init: { profileRepository: ProfileRepository }) {
     this.profileRepository = init.profileRepository;
   }
 

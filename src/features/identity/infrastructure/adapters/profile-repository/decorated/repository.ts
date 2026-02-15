@@ -1,35 +1,19 @@
-import { logger } from "@/shared/infrastructure/logger";
 import { type ProfileRepository } from "@/features/identity/application/ports";
 import type { Experience } from "@/features/identity/domain/entities";
+import { LoggingProfileRepository } from "../logging";
 
 export class DecoratedProfileRepository implements ProfileRepository {
   private inner: ProfileRepository;
 
   public constructor(inner: ProfileRepository) {
-    this.inner = inner;
+    this.inner = new LoggingProfileRepository(inner);
   }
 
   public async getPersonalImageUrl(): Promise<string> {
-    try {
-      logger.info("Getting personal image url");
-      const result = await this.inner.getPersonalImageUrl();
-      logger.info(`Successfully got personal image url: ${result}`);
-      return result;
-    } catch (error) {
-      logger.error("Failed to get personal image url", { error });
-      throw error;
-    }
+    return await this.inner.getPersonalImageUrl();
   }
 
   public async getCareerHistory(): Promise<Experience[]> {
-    try {
-      logger.info("Getting career history");
-      const result = await this.inner.getCareerHistory();
-      logger.info(`Successfully got career history: ${result.length} items`);
-      return result;
-    } catch (error) {
-      logger.error("Failed to get career history", { error });
-      throw error;
-    }
+    return await this.inner.getCareerHistory();
   }
 }

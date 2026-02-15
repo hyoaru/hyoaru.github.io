@@ -1,2 +1,3 @@
-export * from "./static";
 export * from "./decorated";
+export * from "./logging";
+export * from "./static";
