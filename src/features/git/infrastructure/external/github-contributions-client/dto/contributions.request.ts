@@ -1,3 +1,3 @@
-export type GithubContributionsRequest = {
+export interface GithubContributionsRequest {
   username: string;
-};
+}

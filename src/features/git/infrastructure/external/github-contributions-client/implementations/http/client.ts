@@ -8,14 +8,14 @@ import {
   GithubContributionsClientRequestError,
 } from "../../errors";
 import type { GithubContributionsClient } from "../../interface";
-import type { HttpGithubContribution } from "./schemas";
+import type { HttpGithubContributions } from "./schemas";
 
 export class HttpGithubContributionsClient implements GithubContributionsClient {
   private readonly api: AxiosInstance;
 
   public constructor(api?: AxiosInstance) {
     this.api =
-      api ??
+      api ||
       axios.create({
         baseURL: "https://github-contributions-api.jogruber.de/v4",
       });
@@ -50,11 +50,11 @@ export class HttpGithubContributionsClient implements GithubContributionsClient 
     request: GithubContributionsRequest,
   ): Promise<GithubContributionsResponse> {
     return await this.request(async () => {
-      const response = await this.api.get<HttpGithubContribution>(
+      const response = await this.api.get<HttpGithubContributions>(
         `/${request.username}`,
       );
 
-      return response.data.contributions;
+      return { contributions: response.data.contributions };
     });
   }
 }

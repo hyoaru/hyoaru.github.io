@@ -1,3 +1,5 @@
 import type { GithubContribution } from "../types";
 
-export type GithubContributionsResponse = GithubContribution[];
+export interface GithubContributionsResponse {
+  contributions: GithubContribution[];
+}
