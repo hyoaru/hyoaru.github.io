@@ -1,8 +1,3 @@
-import type { GithubActor, GithubRepository } from "../types";
+import type { GithubEvent } from "../types";
 
-export type GithubEventsResponse = {
-  type: string;
-  actor: GithubActor;
-  repository: GithubRepository;
-  createdAt: string;
-};
+export type GithubEventsResponse = GithubEvent[];

@@ -7,6 +7,7 @@ import type {
 } from "../../dto";
 import { GithubClientError, GithubClientRequestError } from "../../errors";
 import type { GithubClient } from "../../interface";
+import type { HttpGithubEvent, HttpGithubUser } from "./schemas";
 
 export class HttpGithubClient implements GithubClient {
   private readonly api: AxiosInstance;
@@ -41,22 +42,25 @@ export class HttpGithubClient implements GithubClient {
     request: GithubEventsRequest,
   ): Promise<GithubEventsResponse> {
     return await this.request(async () => {
-      const { data } = await this.api.get(`/users/${request.username}/events`);
+      const { data: events } = await this.api.get<HttpGithubEvent[]>(
+        `/users/${request.username}/events`,
+      );
 
-      return {
-        type: data["type"],
+      return events.map((event) => ({
+        id: event["id"],
+        type: event["type"],
         actor: {
-          id: data["actor"]["id"],
-          username: data["actor"]["login"],
-          avatarUrl: data["actor"]["avatar_url"],
+          id: event["actor"]["id"],
+          username: event["actor"]["login"],
+          avatarUrl: event["actor"]["avatar_url"],
         },
         repository: {
-          id: data["repo"]["id"],
-          name: data["repo"]["name"],
-          url: data["repo"]["url"],
+          id: event["repo"]["id"],
+          name: event["repo"]["name"],
+          url: event["repo"]["url"],
         },
-        createdAt: data["created_at"],
-      };
+        createdAt: event["created_at"],
+      }));
     });
   }
 
@@ -64,7 +68,9 @@ export class HttpGithubClient implements GithubClient {
     request: GithubUserRequest,
   ): Promise<GithubUserResponse> {
     return await this.request(async () => {
-      const { data } = await this.api.get(`/users/${request.username}`);
+      const { data } = await this.api.get<HttpGithubUser>(
+        `/users/${request.username}`,
+      );
 
       return {
         username: data["login"],

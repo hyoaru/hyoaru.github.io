@@ -1,2 +1,2 @@
 export * from "./error";
-export * from "./resource-found-error";
+export * from "./no-recent-commit-error";
