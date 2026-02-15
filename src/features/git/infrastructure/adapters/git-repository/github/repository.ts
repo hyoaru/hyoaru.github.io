@@ -12,7 +12,7 @@ export class GithubGitRepository implements GitRepository {
     this.githubClient = githubClient;
   }
 
-  public async getUserInformation(username: string): Promise<GitUser> {
+  public async getUser(username: string): Promise<GitUser> {
     const response = await this.githubClient.getUser({ username });
     return new GitUser({ ...response.user });
   }

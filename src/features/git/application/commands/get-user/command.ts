@@ -15,10 +15,7 @@ export class GetUser implements Command<GetUserResponse> {
     this.gitRepository = init.gitRepository;
   }
   public async execute(): Promise<GetUserResponse> {
-    const user = await this.gitRepository.getRecentCommit(
-      this.request.username,
-    );
-
+    const user = await this.gitRepository.getUser(this.request.username);
     return { user };
   }
 }

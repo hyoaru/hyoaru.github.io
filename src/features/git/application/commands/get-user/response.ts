@@ -1,5 +1,5 @@
-import type { GitCommit } from "@/features/git/domain/entities";
+import type { GitUser } from "@/features/git/domain/entities";
 
 export interface GetUserResponse {
-  user: GitCommit;
+  user: GitUser;
 }

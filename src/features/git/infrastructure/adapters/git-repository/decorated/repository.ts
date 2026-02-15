@@ -12,7 +12,7 @@ export class DecoratedGitRepository implements GitRepository {
   public async getRecentCommit(username: string): Promise<GitCommit> {
     return this.inner.getRecentCommit(username);
   }
-  public async getUserInformation(username: string): Promise<GitUser> {
-    return this.inner.getUserInformation(username);
+  public async getUser(username: string): Promise<GitUser> {
+    return this.inner.getUser(username);
   }
 }

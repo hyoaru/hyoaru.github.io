@@ -9,10 +9,10 @@ export class GetContributions implements Command<GetContributionsResponse> {
 
   public constructor(init: {
     request: GetContributionsRequest;
-    gitContibutionRepository: GitContributionRepository;
+    gitContributionRepository: GitContributionRepository;
   }) {
     this.request = init.request;
-    this.gitContibutionRepository = init.gitContibutionRepository;
+    this.gitContibutionRepository = init.gitContributionRepository;
   }
 
   public async execute() {
@@ -20,6 +20,11 @@ export class GetContributions implements Command<GetContributionsResponse> {
       this.request.username,
     );
 
-    return { contributions };
+    const total = contributions.reduce(
+      (sum, contribution) => sum + contribution.count,
+      0,
+    );
+
+    return { total, contributions };
   }
 }
