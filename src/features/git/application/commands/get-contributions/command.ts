@@ -7,7 +7,10 @@ export class GetContributions implements Command<GetContributionsResponse> {
   readonly request: GetContributionsRequest;
   readonly gitContibutionRepository: GitContributionRepository;
 
-  public constructor(init: GetContributions) {
+  public constructor(init: {
+    request: GetContributionsRequest;
+    gitContibutionRepository: GitContributionRepository;
+  }) {
     this.request = init.request;
     this.gitContibutionRepository = init.gitContibutionRepository;
   }

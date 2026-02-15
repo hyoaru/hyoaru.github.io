@@ -7,7 +7,10 @@ export class GetUser implements Command<GetUserResponse> {
   readonly request: GetUserRequest;
   readonly gitRepository: GitRepository;
 
-  public constructor(init: GetUser) {
+  public constructor(init: {
+    request: GetUserRequest;
+    gitRepository: GitRepository;
+  }) {
     this.request = init.request;
     this.gitRepository = init.gitRepository;
   }

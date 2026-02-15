@@ -7,7 +7,10 @@ export class GetRecentCommit implements Command<GetRecentCommitResponse> {
   readonly request: GetRecentCommitRequest;
   readonly gitRepository: GitRepository;
 
-  public constructor(init: GetRecentCommit) {
+  public constructor(init: {
+    request: GetRecentCommitRequest;
+    gitRepository: GitRepository;
+  }) {
     this.request = init.request;
     this.gitRepository = init.gitRepository;
   }
