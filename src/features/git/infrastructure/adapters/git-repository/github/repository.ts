@@ -1,7 +1,7 @@
 import {
   GitRepositoryNoRecentCommitError,
   type GitRepository,
-} from "@/features/git/application/ports/git-repository";
+} from "@/features/git/application/ports";
 import { GitCommit, GitUser } from "@/features/git/domain/entities";
 import type { GithubClient } from "../../../external";
 
@@ -13,13 +13,16 @@ export class GithubGitRepository implements GitRepository {
   }
 
   public async getUserInformation(username: string): Promise<GitUser> {
-    const user = await this.githubClient.getUser({ username });
-    return new GitUser({ ...user });
+    const response = await this.githubClient.getUser({ username });
+    return new GitUser({ ...response.user });
   }
 
   public async getRecentCommit(username: string): Promise<GitCommit> {
-    const events = await this.githubClient.getEvents({ username });
-    const recentPushEvent = events.find((event) => event.type === "PushEvent");
+    const response = await this.githubClient.getEvents({ username });
+    const recentPushEvent = response.events.find(
+      (event) => event.type === "PushEvent",
+    );
+
     if (!recentPushEvent) throw new GitRepositoryNoRecentCommitError(username);
 
     return new GitCommit({

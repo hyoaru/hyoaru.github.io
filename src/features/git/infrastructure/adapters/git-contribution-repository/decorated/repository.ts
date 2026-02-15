@@ -1,18 +1,15 @@
-import type { GitRepository } from "@/features/git/application/ports";
-import type { GitCommit, GitUser } from "@/features/git/domain/entities";
-import { LoggingGitRepository } from "../logging";
+import type { GitContributionRepository } from "@/features/git/application/ports";
+import type { GitContribution } from "@/features/git/domain/value-objects";
+import { LoggingGitContributionRepository } from "../logging";
 
-export class DecoratedGitRepository implements GitRepository {
-  private inner: GitRepository;
+export class DecoratedGitContributionRepository implements GitContributionRepository {
+  private inner: GitContributionRepository;
 
-  public constructor(inner: GitRepository) {
-    this.inner = new LoggingGitRepository(inner);
+  public constructor(inner: GitContributionRepository) {
+    this.inner = new LoggingGitContributionRepository(inner);
   }
 
-  public async getRecentCommit(username: string): Promise<GitCommit> {
-    return this.inner.getRecentCommit(username);
-  }
-  public async getUserInformation(username: string): Promise<GitUser> {
-    return this.inner.getUserInformation(username);
+  public async getContributions(username: string): Promise<GitContribution[]> {
+    return await this.inner.getContributions(username);
   }
 }
