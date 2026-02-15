@@ -1,5 +1,5 @@
 export * from "./errors";
 export * from "./implementations";
-export * from "./types";
+export * from "./models";
 export * from "./dto";
 export * from "./interface";
