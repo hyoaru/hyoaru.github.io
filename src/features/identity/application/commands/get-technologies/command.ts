@@ -1,15 +1,16 @@
 import type { Command } from "@/shared/application/commands";
-import type { Technology } from "@/features/identity/domain/entities";
 import type { TechnologyRepository } from "../../ports";
+import type { GetTechnologiesResponse } from "./response";
 
-export class GetTechnologies implements Command<Technology[]> {
+export class GetTechnologies implements Command<GetTechnologiesResponse> {
   private technologyRepository: TechnologyRepository;
 
-  public constructor(technologyRepository: TechnologyRepository) {
-    this.technologyRepository = technologyRepository;
+  public constructor(init: GetTechnologies) {
+    this.technologyRepository = init.technologyRepository;
   }
 
   public async execute() {
-    return await this.technologyRepository.getTechnologies();
+    const technologies = await this.technologyRepository.getTechnologies();
+    return { technologies };
   }
 }

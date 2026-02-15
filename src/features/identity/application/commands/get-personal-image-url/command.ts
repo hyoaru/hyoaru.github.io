@@ -1,14 +1,16 @@
 import type { Command } from "@/shared/application/commands";
 import type { ProfileRepository } from "../../ports";
+import type { GetPersonalImageUrlResponse } from "./response";
 
-export class GetPersonalImageUrl implements Command<string> {
+export class GetPersonalImageUrl implements Command<GetPersonalImageUrlResponse> {
   private profileRepository: ProfileRepository;
 
-  public constructor(profileRepository: ProfileRepository) {
-    this.profileRepository = profileRepository;
+  public constructor(init: GetPersonalImageUrl) {
+    this.profileRepository = init.profileRepository;
   }
 
   public async execute() {
-    return await this.profileRepository.getPersonalImageUrl();
+    const imageUrl = await this.profileRepository.getPersonalImageUrl();
+    return { imageUrl };
   }
 }
