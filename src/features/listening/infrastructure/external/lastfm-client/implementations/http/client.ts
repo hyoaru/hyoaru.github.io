@@ -10,13 +10,10 @@ export class HttpLastfmClient implements LastfmClient {
   readonly configuration: Configuration;
   readonly api: AxiosInstance;
 
-  public constructor(init: {
-    configuration?: Configuration;
-    api?: AxiosInstance;
-  }) {
-    this.configuration = init.configuration || new Configuration();
+  public constructor(configuration?: Configuration, api?: AxiosInstance) {
+    this.configuration = configuration || new Configuration();
     this.api =
-      init.api ||
+      api ||
       axios.create({
         baseURL: "https://ws.audioscrobbler.com/2.0",
         params: {
