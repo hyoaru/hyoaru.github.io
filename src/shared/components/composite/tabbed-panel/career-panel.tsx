@@ -1,10 +1,10 @@
-import { careerApi, CareerCard } from "@/features/career";
-import { Datetime } from "@/shared/utilities";
+import { Datetime } from "@/bak/shared";
+import { CareerCard, identityApi } from "@/features/identity";
 import { ScrollShadow } from "@heroui/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
 export const CareerPanel = () => {
-  const { data: experiences } = useSuspenseQuery(careerApi.query.experiences());
+  const { data } = useSuspenseQuery(identityApi.query.careerHistory());
 
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
@@ -24,8 +24,8 @@ export const CareerPanel = () => {
 
       <ScrollShadow hideScrollBar className="h-full min-h-0">
         <div className="flex flex-grow flex-col gap-y-2.5">
-          {experiences.reverse().map((experience, index) => {
-            index = experiences.length - 1 - index;
+          {data.careerHistory.reverse().map((experience, index) => {
+            index = data.careerHistory.length - 1 - index;
             const startedAt = Datetime.extractMonthYear(experience.startedAt);
 
             const endedAt = experience.endedAt

@@ -1,4 +1,4 @@
-import { logger } from "@/core/infrastructure/logger";
+import { logger } from "@/shared/infrastructure/logger";
 import type { GitRepository } from "@/features/git/application/ports";
 import type { GitCommit, GitUser } from "@/features/git/domain/entities";
 

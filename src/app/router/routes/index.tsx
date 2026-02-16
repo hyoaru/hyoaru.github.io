@@ -1,7 +1,6 @@
-import { Profile } from "@/bak/features/profile";
 import { GitActivity, GitStats } from "@/features/git";
 import { RecentJob, Technologies } from "@/features/identity";
-import { Filler, Footer, TabbedPanel } from "@/shared/components";
+import { Filler, Footer, Profile, TabbedPanel } from "@/shared/components";
 import { Header, ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 

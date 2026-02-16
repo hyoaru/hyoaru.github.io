@@ -1,8 +1,3 @@
-import { careerApi, CareerCard } from "@/features/career";
-import { Datetime } from "@/shared/utilities";
-import { ScrollShadow } from "@heroui/react";
-import { useSuspenseQuery } from "@tanstack/react-query";
-
 export const CertificationPanel = () => {
   // const { data: experiences } = useSuspenseQuery(careerApi.query.experiences());
 

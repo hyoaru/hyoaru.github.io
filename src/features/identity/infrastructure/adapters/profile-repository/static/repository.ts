@@ -7,7 +7,7 @@ import { Experience } from "@/features/identity/domain/entities";
 import experiences from "@/shared/assets/portfolio-resources/data/experiences.json";
 
 const images = import.meta.glob(
-  "src/shared/assets/portfolio-resources/assets/images/*.jpg",
+  "/src/shared/assets/portfolio-resources/assets/images/*.jpg",
   {
     eager: true,
     import: "default",
