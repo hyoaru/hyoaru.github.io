@@ -12,7 +12,7 @@ export const PersonalImage = forwardRef<
   return (
     <img
       ref={ref}
-      className={cn("object-cover", className)}
+      className={cn("h-full w-full object-cover", className)}
       src={data.imageUrl}
       {...props}
     />

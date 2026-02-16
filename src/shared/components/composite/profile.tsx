@@ -22,8 +22,8 @@ export const Profile = () => {
             <PersonalImage />
           </AsyncBoundary>
         </div>
-        <div className="flex flex-1 flex-col">
-          <div className="flex items-center gap-2.5">
+        <div className="flex w-full min-w-0 flex-col">
+          <div className="flex flex-wrap items-center gap-2.5">
             <div className="text-xl">
               <Clock className="text-accent h-[1em] w-[1em]" />
             </div>
