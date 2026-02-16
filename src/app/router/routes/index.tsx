@@ -1,7 +1,13 @@
 import { GitActivity, GitStats } from "@/features/git";
 import { RecentJob, Technologies } from "@/features/identity";
-import { Filler, Footer, Profile, TabbedPanel } from "@/shared/components";
-import { Header, ScrollShadow } from "@heroui/react";
+import {
+  Filler,
+  Footer,
+  Header,
+  Profile,
+  TabbedPanel,
+} from "@/shared/components";
+import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
