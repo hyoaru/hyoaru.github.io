@@ -1,4 +1,5 @@
 import {
+  GitRepositoryError,
   GitRepositoryNoRecentCommitError,
   type GitRepository,
 } from "@/features/git/application/ports";
@@ -12,24 +13,44 @@ export class GithubGitRepository implements GitRepository {
     this.githubClient = githubClient;
   }
 
+  private async request<T>(execute: () => Promise<T>): Promise<T> {
+    try {
+      return await execute();
+    } catch (error) {
+      if (error instanceof GitRepositoryError) {
+        throw error;
+      }
+
+      const message = error instanceof Error ? error.message : String(error);
+      throw new GitRepositoryError(`An error has occured: ${message}`, {
+        cause: error,
+      });
+    }
+  }
+
   public async getUser(username: string): Promise<GitUser> {
-    const response = await this.githubClient.getUser({ username });
-    return new GitUser({ ...response.user });
+    return await this.request(async () => {
+      const response = await this.githubClient.getUser({ username });
+      return new GitUser({ ...response.user });
+    });
   }
 
   public async getRecentCommit(username: string): Promise<GitCommit> {
-    const response = await this.githubClient.getEvents({ username });
-    const recentPushEvent = response.events.find(
-      (event) => event.type === "PushEvent",
-    );
+    return this.request(async () => {
+      const response = await this.githubClient.getEvents({ username });
+      const recentPushEvent = response.events.find(
+        (event) => event.type === "PushEvent",
+      );
 
-    if (!recentPushEvent) throw new GitRepositoryNoRecentCommitError(username);
+      if (!recentPushEvent)
+        throw new GitRepositoryNoRecentCommitError(username);
 
-    return new GitCommit({
-      id: recentPushEvent.id,
-      username: recentPushEvent.actor.username,
-      createdAt: recentPushEvent.createdAt,
-      repository: recentPushEvent.repository.name,
+      return new GitCommit({
+        id: recentPushEvent.id,
+        username: recentPushEvent.actor.username,
+        createdAt: recentPushEvent.createdAt,
+        repository: recentPushEvent.repository.name,
+      });
     });
   }
 }
