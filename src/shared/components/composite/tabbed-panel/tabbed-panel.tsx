@@ -27,7 +27,7 @@ export const TabbedPanel = () => {
       <Tabs.ListContainer className="bg-default h-fit shrink-0 rounded-xl">
         <Tabs.List
           aria-label="Options"
-          className="*:data-[selected=true]:text-background *:text-foreground w-max gap-1 rounded-xl *:w-max"
+          className="*:data-[selected=true]:dark:text-foreground *:data-[selected=true]:text-background *:text-foreground w-max gap-1 rounded-xl *:w-max"
         >
           {tabs.map((tab) => (
             <Tabs.Tab

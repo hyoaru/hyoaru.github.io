@@ -69,7 +69,7 @@ const CareerCardNextIndicator = ({
   return (
     <div
       className={cn(
-        "bg-accent text-background absolute -right-1.5 -bottom-1.5 rounded-xl p-1.5",
+        "bg-accent dark:text-foreground text-background absolute -right-1.5 -bottom-1.5 rounded-xl p-1.5",
         classNames?.container,
       )}
     >
