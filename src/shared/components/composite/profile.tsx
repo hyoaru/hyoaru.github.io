@@ -1,4 +1,5 @@
 import { GitRecentCommitTile } from "@/features/git";
+import { PersonalImage } from "@/features/identity";
 import { RecentTrackTile } from "@/features/listening";
 import {
   AsyncBoundary,
@@ -6,7 +7,6 @@ import {
   VisitorBadge,
 } from "@/shared/components";
 import { Clock } from "lucide-react";
-import { PersonalImage } from "./personal-image";
 
 export const Profile = () => {
   const age = Math.floor(
