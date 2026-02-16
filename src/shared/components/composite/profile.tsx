@@ -1,11 +1,8 @@
 import { GitRecentCommitTile } from "@/features/git";
 import { PersonalImage } from "@/features/identity";
 import { RecentTrackTile } from "@/features/listening";
-import {
-  AsyncBoundary,
-  PhilippineTime,
-  VisitorBadge,
-} from "@/shared/components";
+import { VisitorBadge } from "@/features/visitor/components";
+import { AsyncBoundary, PhilippineTime } from "@/shared/components";
 import { Clock } from "lucide-react";
 
 export const Profile = () => {
@@ -15,11 +12,11 @@ export const Profile = () => {
   );
 
   return (
-    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl p-5">
+    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl sm:p-5">
       <div className="flex w-full gap-5">
-        <div className="aspect-square w-[40%] shrink-0 overflow-hidden rounded-lg">
+        <div className="w-full shrink-0 overflow-hidden rounded-lg sm:w-[40%]">
           <AsyncBoundary>
-            <PersonalImage />
+            <PersonalImage className="aspect-[4/3.4] object-top" />
           </AsyncBoundary>
         </div>
         <div className="flex w-full min-w-0 flex-col">
