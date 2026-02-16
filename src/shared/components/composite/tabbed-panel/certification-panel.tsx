@@ -1,5 +1,9 @@
+import { CertificationCard, identityApi } from "@/features/identity";
+import { ScrollShadow } from "@heroui/react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+
 export const CertificationPanel = () => {
-  // const { data: experiences } = useSuspenseQuery(careerApi.query.experiences());
+  const { data } = useSuspenseQuery(identityApi.query.certifications());
 
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
@@ -8,7 +12,7 @@ export const CertificationPanel = () => {
           A collection of milestones and certifications from my{" "}
           <span className="text-accent font-bold">academic</span> and{" "}
           <span className="text-accent font-bold">professional</span>{" "}
-          path—showcasing the
+          path—showcasing the{" "}
           <span className="text-accent font-bold">
             reflections of my dedication to continuous
           </span>{" "}
@@ -17,66 +21,18 @@ export const CertificationPanel = () => {
         </p>
       </div>
 
-      {/* <ScrollShadow hideScrollBar className="h-full min-h-0"> */}
-      {/*   <div className="flex flex-grow flex-col gap-y-2.5"> */}
-      {/*     {experiences.reverse().map((experience, index) => { */}
-      {/*       index = experiences.length - 1 - index; */}
-      {/*       const startedAt = Datetime.extractMonthYear(experience.startedAt); */}
-      {/**/}
-      {/*       const endedAt = experience.endedAt */}
-      {/*         ? Datetime.extractMonthYear(experience.endedAt) */}
-      {/*         : "Present"; */}
-      {/**/}
-      {/*       return ( */}
-      {/*         <CareerCard key={`${index}-${experience.title}`}> */}
-      {/*           <CareerCard.NextIndicator /> */}
-      {/*           <CareerCard.Content> */}
-      {/*             <CareerCard.Title> */}
-      {/*               [0{index + 1}]::{experience.title} */}
-      {/*             </CareerCard.Title> */}
-      {/*             <CareerCard.ContentHeader> */}
-      {/*               <CareerCard.Date> */}
-      {/*                 {startedAt} - {endedAt} */}
-      {/*               </CareerCard.Date> */}
-      {/*               <CareerCard.Location> */}
-      {/*                 {experience.organization} */}
-      {/*               </CareerCard.Location> */}
-      {/*             </CareerCard.ContentHeader> */}
-      {/*             <CareerCard.ContentBody> */}
-      {/*               <CareerCard.Description> */}
-      {/*                 {experience.summary} */}
-      {/*               </CareerCard.Description> */}
-      {/*               <CareerCard.KeyAchievements> */}
-      {/*                 <CareerCard.KeyAchievementsHeader /> */}
-      {/*                 <CareerCard.KeyAchievementsList> */}
-      {/*                   {experience.highlights.map((highlight) => ( */}
-      {/*                     <CareerCard.KeyAchievementsListItem */}
-      {/*                       key={`${experience.title}-${highlight}`} */}
-      {/*                     > */}
-      {/*                       {highlight} */}
-      {/*                     </CareerCard.KeyAchievementsListItem> */}
-      {/*                   ))} */}
-      {/*                 </CareerCard.KeyAchievementsList> */}
-      {/*               </CareerCard.KeyAchievements> */}
-      {/*               <CareerCard.Technologies> */}
-      {/*                 <CareerCard.TechnologiesHeader /> */}
-      {/*                 <CareerCard.TechnologiesList> */}
-      {/*                   {experience.technologies.map((technology) => ( */}
-      {/*                     <CareerCard.TechnologyChip */}
-      {/*                       key={`${experience.title}-${technology}`} */}
-      {/*                     > */}
-      {/*                       {technology} */}
-      {/*                     </CareerCard.TechnologyChip> */}
-      {/*                   ))} */}
-      {/*                 </CareerCard.TechnologiesList> */}
-      {/*               </CareerCard.Technologies> */}
-      {/*             </CareerCard.ContentBody> */}
-      {/*           </CareerCard.Content> */}
-      {/*         </CareerCard> */}
-      {/*       ); */}
-      {/*     })} */}
-      {/*   </div> */}
-      {/* </ScrollShadow> */}
+      <ScrollShadow hideScrollBar className="h-full min-h-0">
+        <div className="grid grow grid-cols-2 gap-2.5">
+          {data.certifications.map((certification) => {
+            return (
+              <CertificationCard
+                key={`certification-${certification.title}`}
+                {...certification}
+              />
+            );
+          })}
+        </div>
+      </ScrollShadow>
     </div>
   );
 };

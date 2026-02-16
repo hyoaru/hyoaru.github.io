@@ -3,11 +3,12 @@ import {
   ProfileRepositoryError,
   ProfileRepositoryResourceNotFoundError,
 } from "@/features/identity/application/ports";
-import { Experience } from "@/features/identity/domain/entities";
+import { Certification, Experience } from "@/features/identity/domain/entities";
+import certifications from "@/shared/assets/portfolio-resources/data/certifications.json";
 import experiences from "@/shared/assets/portfolio-resources/data/experiences.json";
 
 const images = import.meta.glob(
-  "/src/shared/assets/portfolio-resources/assets/images/*.jpg",
+  "/src/shared/assets/portfolio-resources/assets/images/**/*.jpg",
   {
     eager: true,
     import: "default",
@@ -52,6 +53,22 @@ export class StaticProfileRepository implements ProfileRepository {
           });
         }),
       );
+    });
+  }
+
+  public async getCertifications(): Promise<Certification[]> {
+    console.log(images);
+    return await this.request(async () => {
+      return certifications.map((c) => {
+        const { issued_at, image, ...rest } = c;
+        const key = Object.keys(images).find((k) => k.includes(image));
+
+        return new Certification({
+          issuedAt: issued_at,
+          imageUrl: key ? (images[key] as string) : undefined,
+          ...rest,
+        });
+      });
     });
   }
 }

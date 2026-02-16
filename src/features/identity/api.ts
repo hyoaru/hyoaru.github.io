@@ -2,6 +2,7 @@ import { commandBus } from "@/shared/infrastructure/command-bus";
 import { queryOptions } from "@tanstack/react-query";
 import {
   GetCareerHistory,
+  GetCertifications,
   GetPersonalImageUrl,
   GetTechnologies,
 } from "./application/commands";
@@ -29,7 +30,6 @@ export const identityApi = {
           commandBus.dispatch(new GetPersonalImageUrl({ profileRepository })),
         staleTime: Infinity,
       }),
-
     careerHistory: () =>
       queryOptions({
         queryKey: [...identityApi.baseKey, "career-history"],
@@ -42,6 +42,13 @@ export const identityApi = {
         queryKey: [...identityApi.baseKey, "technologies"],
         queryFn: () =>
           commandBus.dispatch(new GetTechnologies({ technologyRepository })),
+        staleTime: Infinity,
+      }),
+    certifications: () =>
+      queryOptions({
+        queryKey: [...identityApi.baseKey, "certifications"],
+        queryFn: () =>
+          commandBus.dispatch(new GetCertifications({ profileRepository })),
         staleTime: Infinity,
       }),
   },
