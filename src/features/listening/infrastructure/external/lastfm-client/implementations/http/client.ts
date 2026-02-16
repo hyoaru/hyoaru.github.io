@@ -59,7 +59,7 @@ export class HttpLastfmClient implements LastfmClient {
 
       const imageSizes = ["small", "medium", "large"];
 
-      const recentTracks = data.recenttracks.map((track) => {
+      const recentTracks = data.recenttracks.track.map((track) => {
         const trackImages = track.image?.filter((image) =>
           imageSizes.includes(image?.size),
         );

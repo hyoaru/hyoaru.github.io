@@ -3,16 +3,27 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { ActivityCalendar } from "react-activity-calendar";
 import { gitApi } from "../api";
+import { TimestampToMonthYear } from "@/shared/infrastructure/formatters";
 
 export const GitActivityCalendar = () => {
   const { data } = useSuspenseQuery(gitApi.query.contributions());
 
   const { theme } = useTheme();
 
-  const [dates] = useState(() => ({
-    now: Date.now(),
-    startDate: new Date(Date.now(), 0, 1).getTime(),
-  }));
+  const [dates] = useState(() => {
+    const now = Date.now();
+    const oneYearAgo = new Date(now);
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+
+    return {
+      now,
+      startDate: oneYearAgo.getTime(),
+    };
+  });
+
+  const startDateFormatted = new TimestampToMonthYear(
+    new Date(dates.startDate),
+  ).format();
 
   const filteredContributions = data.contributions
     .map((c) => ({ ...c, timestamp: new Date(c.date).getTime() }))
@@ -36,7 +47,7 @@ export const GitActivityCalendar = () => {
           showTotalCount={false}
         />
         <div className="absolute bottom-4 block text-[10px]">
-          Github contributions from 2022 - Present
+          Git contributions from {startDateFormatted} - Present
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
-import { Datetime } from "@/bak/shared";
 import { CareerCard, identityApi } from "@/features/identity";
+import { TimestampToMonthYear } from "@/shared/infrastructure/formatters";
 import { ScrollShadow } from "@heroui/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
@@ -26,10 +26,12 @@ export const CareerPanel = () => {
         <div className="flex flex-grow flex-col gap-y-2.5">
           {data.careerHistory.reverse().map((experience, index) => {
             index = data.careerHistory.length - 1 - index;
-            const startedAt = Datetime.extractMonthYear(experience.startedAt);
+            const startedAt = new TimestampToMonthYear(
+              experience.startedAt,
+            ).format();
 
             const endedAt = experience.endedAt
-              ? Datetime.extractMonthYear(experience.endedAt)
+              ? new TimestampToMonthYear(experience.endedAt).format()
               : "Present";
 
             return (

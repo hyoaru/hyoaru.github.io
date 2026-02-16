@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 
 export class TimestampToMonthYear {
-  ts: string;
+  ts: string | Date;
 
-  public constructor(ts: string) {
+  public constructor(ts: string | Date) {
     this.ts = ts;
   }
 
