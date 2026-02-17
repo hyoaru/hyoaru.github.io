@@ -20,7 +20,7 @@ export const ProfileMobile = () => {
                 <div className="flex h-full w-24 shrink-0 items-center justify-center">
                   <PersonStanding className="size-8" />
                 </div>
-                <p className="text-2xs font-medium">
+                <p className="text-2xs xs:text-xs font-medium">
                   A Philippines-based {age}-year-old multi-disciplinary engineer
                   in Fullstack Development, DevOps, Quality Engineering, and
                   Data Science

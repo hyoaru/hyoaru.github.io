@@ -9,7 +9,10 @@ export const VisitorBadge = ({
   const { data } = useSuspenseQuery(visitorApi.query.count());
 
   return (
-    <p className={cn("space-x-1 font-mono text-xs", className)} {...rest}>
+    <p
+      className={cn("xs:text-sm space-x-1 font-mono text-xs", className)}
+      {...rest}
+    >
       <span className="text-foreground/60">VISITORS</span>
       <span className="bg-default rounded-sm p-0.5">
         {data.count.toLocaleString()}

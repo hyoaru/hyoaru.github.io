@@ -6,7 +6,7 @@ export const RecentJob = () => {
       <div className="flex h-full w-24 shrink-0 items-center justify-center rounded-lg sm:w-26">
         <Building2 className="size-8" />
       </div>
-      <div className="sm:bg-default flex h-full w-full flex-col justify-center gap-0 rounded-lg leading-none font-medium sm:px-6 sm:px-8">
+      <div className="sm:bg-default flex h-full w-full flex-col justify-center gap-0 rounded-lg leading-none font-medium sm:px-8">
         <p className="text-accent xs:text-sm text-xs font-bold sm:text-base">
           Senior Associate Solutions Architect
         </p>
