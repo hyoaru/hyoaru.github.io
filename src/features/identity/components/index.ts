@@ -5,4 +5,4 @@ export * from "./career-card";
 export * from "./certification-card";
 export * from "./resume-modal";
 export * from "./socials-modal";
-export * from "./technology-modal";
+export * from "./technologies-modal";

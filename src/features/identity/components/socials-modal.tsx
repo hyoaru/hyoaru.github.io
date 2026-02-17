@@ -51,8 +51,8 @@ export const SocialsModal = (props: ModalBackdropProps) => {
             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
               <CircleCheck className="size-5" />
             </Modal.Icon>
-            <Modal.Heading className="mb-2">
-              Connnect with me on these channels
+            <Modal.Heading className="mb-4 text-xl">
+              Connect with me on these channels
             </Modal.Heading>
           </Modal.Header>
           <Modal.Body>

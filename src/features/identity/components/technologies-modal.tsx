@@ -10,12 +10,12 @@ import { CircleCheck } from "lucide-react";
 import { identityApi } from "../api";
 import { TechnologyBadge } from "./technology-badge";
 
-const TechnologyContent = () => {
+const TechnologiesContent = () => {
   const { data } = useSuspenseQuery(identityApi.query.technologies());
   return (
     <>
       <Modal.Body>
-        <p className="py-4 text-base font-medium">
+        <p className="pt-2 pb-4 text-base font-medium">
           <span>{"A total of "}</span>
           <span className="text-accent p-1 font-bold">
             {data.technologies.length}
@@ -48,7 +48,7 @@ const TechnologyContent = () => {
   );
 };
 
-export const TechnologyModal = (props: ModalBackdropProps) => {
+export const TechnologiesModal = (props: ModalBackdropProps) => {
   return (
     <Modal.Backdrop {...props}>
       <Modal.Container>
@@ -59,10 +59,13 @@ export const TechnologyModal = (props: ModalBackdropProps) => {
             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
               <CircleCheck className="size-5" />
             </Modal.Icon>
+            <Modal.Heading className="mb-4 text-2xl">
+              {"Languages & Technologies"}
+            </Modal.Heading>
           </Modal.Header>
-          <div className="my-4 flex min-h-[20vh] flex-col">
+          <div className="flex min-h-[20vh] flex-col">
             <AsyncBoundary>
-              <TechnologyContent />
+              <TechnologiesContent />
             </AsyncBoundary>
           </div>
         </Modal.Dialog>

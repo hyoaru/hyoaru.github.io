@@ -72,7 +72,7 @@ export const ResumeModal = (props: ModalBackdropProps) => {
             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
               <FileUser className="size-5" />
             </Modal.Icon>
-            <Modal.Heading className="mb-4">
+            <Modal.Heading className="mb-4 text-2xl">
               RESUME_CABRERA-JENJADE.PDF
             </Modal.Heading>
           </Modal.Header>

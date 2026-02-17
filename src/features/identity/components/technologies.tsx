@@ -3,7 +3,7 @@ import { Button, useOverlayState } from "@heroui/react";
 import { ArrowUpRight } from "lucide-react";
 import { Ripple } from "m3-ripple";
 import TechnologyMarquee from "./technology-marquee";
-import { TechnologyModal } from "./technology-modal";
+import { TechnologiesModal } from "./technologies-modal";
 
 export const Technologies = () => {
   const modal = useOverlayState();
@@ -30,7 +30,7 @@ export const Technologies = () => {
           </AsyncBoundary>
         </div>
       </div>
-      <TechnologyModal isOpen={modal.isOpen} onOpenChange={modal.setOpen} />
+      <TechnologiesModal isOpen={modal.isOpen} onOpenChange={modal.setOpen} />
     </>
   );
 };
