@@ -33,6 +33,11 @@
   }
 }
 
+@theme {
+  --text-2xs: 0.65rem;
+  --breakpoint-xs: 26.5rem;
+}
+
 @theme inline {
   /* Overrides */
   --color-background: oklch(var(--background));

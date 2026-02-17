@@ -50,7 +50,7 @@ const ActivityTileContentHeader = ({
   className,
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
-  <p className={cn("truncate text-[0.65rem]", className)} {...rest}>
+  <p className={cn("text-2xs truncate", className)} {...rest}>
     {children}
   </p>
 );
@@ -70,7 +70,7 @@ const ActivityTileContentFooter = ({
   className,
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
-  <p className={cn("truncate text-[0.65rem]", className)} {...rest}>
+  <p className={cn("text-2xs truncate", className)} {...rest}>
     {children}
   </p>
 );

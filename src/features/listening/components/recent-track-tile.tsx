@@ -2,7 +2,6 @@ import { ActivityTile } from "@/shared/components";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { listeningApi } from "../api";
 import { cn } from "@heroui/styles";
-import { Github } from "lucide-react";
 
 const slots = {
   content: {
