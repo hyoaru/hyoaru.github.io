@@ -27,7 +27,9 @@ function RouteComponent() {
             <Profile />
             <RecentJob />
             <Technologies />
-            <GitStats />
+            <div className="hidden sm:block">
+              <GitStats />
+            </div>
             <GitActivity />
             <Filler className="h-14" />
             <Footer />

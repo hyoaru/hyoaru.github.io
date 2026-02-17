@@ -8,7 +8,14 @@ export const GitRepositoriesMetricTile = () => {
   return (
     <MetricCard>
       <MetricCard.Body>
-        <MetricCard.Label>Repositories</MetricCard.Label>
+        <MetricCard.Label
+          classNames={{
+            base: "text-xs sm:text-base",
+            icon: "size-4 sm:size-5",
+          }}
+        >
+          Repositories
+        </MetricCard.Label>
         <MetricCard.Value>
           {data.user.publicRepositories.toLocaleString()}
         </MetricCard.Value>

@@ -5,7 +5,7 @@ import { GitActivityCalendar } from "./activity-calendar";
 export const GitActivity = () => {
   return (
     <div
-      className={`bg-background flex h-46 items-center overflow-x-scroll overflow-y-hidden rounded-xl p-1`}
+      className={`sm:bg-background flex items-center overflow-x-scroll overflow-y-hidden rounded-xl sm:h-46 sm:p-1`}
     >
       <ScrollShadow
         orientation="horizontal"

@@ -1,4 +1,4 @@
-import { GitRecentCommitTile } from "@/features/git";
+import { GitRecentCommitTile, GitStats } from "@/features/git";
 import { PersonalImage } from "@/features/identity";
 import { ListeningRecentTrackTile } from "@/features/listening";
 import { AsyncBoundary } from "@/shared/components";
@@ -38,6 +38,7 @@ export const ProfileMobile = () => {
             <ListeningRecentTrackTile variant="compact" />
           </AsyncBoundary>
         </div>
+        <GitStats />
       </div>
     </>
   );

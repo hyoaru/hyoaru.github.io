@@ -37,7 +37,7 @@ export const GitActivityCalendar = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-max items-center rounded-lg p-3">
+      <div className="relative flex h-full w-max items-center rounded-lg sm:p-3">
         <ActivityCalendar
           data={filteredContributions}
           theme={customTheme}
@@ -46,7 +46,7 @@ export const GitActivityCalendar = () => {
           blockSize={10}
           showTotalCount={false}
         />
-        <div className="absolute bottom-4 block text-[10px]">
+        <div className="text-2xs absolute bottom-0 block sm:bottom-4">
           Git contributions from {startDateFormatted} - Present
         </div>
       </div>

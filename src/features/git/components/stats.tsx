@@ -5,8 +5,8 @@ import { GitRepositoriesMetricTile } from "./repositories-metric-tile";
 
 export const GitStats = () => {
   return (
-    <div className="bg-background flex h-24 items-center gap-1 rounded-xl p-1">
-      <div className="flex h-full w-26 shrink-0 items-center justify-center rounded-lg">
+    <div className="bg-background flex h-20 items-center gap-1 rounded-xl sm:h-24 sm:p-1">
+      <div className="hidden h-full w-26 shrink-0 items-center justify-center rounded-lg sm:flex">
         <GitGraph className="size-8" />
       </div>
       <div className="flex h-full w-full items-center gap-1">

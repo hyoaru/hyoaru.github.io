@@ -8,7 +8,14 @@ export const GitContributionsMetricTile = () => {
   return (
     <MetricCard>
       <MetricCard.Body>
-        <MetricCard.Label>Contributions</MetricCard.Label>
+        <MetricCard.Label
+          classNames={{
+            base: "text-xs sm:text-base",
+            icon: "size-4 sm:size-5",
+          }}
+        >
+          Contributions
+        </MetricCard.Label>
         <MetricCard.Value>{data.total.toLocaleString()}</MetricCard.Value>
       </MetricCard.Body>
     </MetricCard>
