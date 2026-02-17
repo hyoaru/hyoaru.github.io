@@ -1,8 +1,8 @@
+import { ResumeModal } from "@/features/identity";
 import { Button, useOverlayState } from "@heroui/react";
 import { ArrowUpRight, PersonStanding } from "lucide-react";
 import { Ripple } from "m3-ripple";
 import { AsyncBoundary, ThemeToggle } from "../../ui";
-import { ResumeModal } from "@/features/identity";
 
 export const HeaderDesktop = () => {
   const modal = useOverlayState();
