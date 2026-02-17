@@ -2,6 +2,7 @@ import { GitActivity, GitStats } from "@/features/git";
 import { RecentJob, Technologies } from "@/features/identity";
 import {
   Filler,
+  FloatingActionBar,
   Footer,
   Header,
   Profile,
@@ -21,8 +22,9 @@ function RouteComponent() {
         <div className="flex h-full w-full flex-col gap-5 lg:flex-row">
           <ScrollShadow
             hideScrollBar
-            className="w-full shrink-0 space-y-2.5 p-2 lg:w-[40%] lg:p-0"
+            className="relative w-full shrink-0 space-y-2.5 p-2 lg:w-[40%] lg:p-0"
           >
+            <FloatingActionBar />
             <Header />
             <Profile />
             <RecentJob />
