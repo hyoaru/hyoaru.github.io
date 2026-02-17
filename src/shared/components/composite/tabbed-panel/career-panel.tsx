@@ -5,6 +5,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 
 export const CareerPanel = () => {
   const { data } = useSuspenseQuery(identityApi.query.careerHistory());
+  const careerHistory = [...data.careerHistory].reverse();
 
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
@@ -24,7 +25,7 @@ export const CareerPanel = () => {
 
       <ScrollShadow hideScrollBar className="h-full min-h-0 lg:pb-0">
         <div className="flex flex-grow flex-col gap-y-2.5">
-          {data.careerHistory.reverse().map((experience, index) => {
+          {careerHistory.map((experience, index) => {
             index = data.careerHistory.length - 1 - index;
             const startedAt = new TimestampToMonthYear(
               experience.startedAt,
