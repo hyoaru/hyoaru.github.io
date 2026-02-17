@@ -1,9 +1,9 @@
 import { Button } from "@heroui/react";
 import { ArrowUpRight, PersonStanding } from "lucide-react";
 import { Ripple } from "m3-ripple";
-import { ThemeToggle } from "../ui";
+import { ThemeToggle } from "../../ui";
 
-export const Header = () => {
+export const HeaderDesktop = () => {
   return (
     <>
       <div className="bg-background flex w-full items-center gap-1 rounded-xl sm:p-1">

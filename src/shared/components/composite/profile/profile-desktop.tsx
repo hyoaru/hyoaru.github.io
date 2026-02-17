@@ -1,26 +1,26 @@
 import { GitRecentCommitTile } from "@/features/git";
 import { PersonalImage } from "@/features/identity";
 import { RecentTrackTile } from "@/features/listening";
-import { VisitorBadge } from "@/features/visitor/components";
+import { VisitorBadge } from "@/features/visitor";
 import { AsyncBoundary, PhilippineTime } from "@/shared/components";
 import { Clock } from "lucide-react";
 
-export const Profile = () => {
+export const ProfileDesktop = () => {
   const age = Math.floor(
     (new Date().getTime() - new Date("2002-08-31").getTime()) /
       (1000 * 60 * 60 * 24 * 365),
   );
 
   return (
-    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl sm:p-5">
+    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl p-5">
       <div className="flex w-full gap-5">
-        <div className="w-full shrink-0 overflow-hidden rounded-lg sm:w-[40%]">
+        <div className="w-[40%] shrink-0 overflow-hidden rounded-lg">
           <AsyncBoundary>
-            <PersonalImage className="aspect-[4/3.4] object-top" />
+            <PersonalImage className="aspect-square" />
           </AsyncBoundary>
         </div>
-        <div className="flex w-full min-w-0 flex-col">
-          <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex min-w-0 flex-col">
+          <div className="flex items-center gap-2.5">
             <div className="text-xl">
               <Clock className="text-accent h-[1em] w-[1em]" />
             </div>
