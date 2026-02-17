@@ -57,7 +57,6 @@ export class StaticProfileRepository implements ProfileRepository {
   }
 
   public async getCertifications(): Promise<Certification[]> {
-    console.log(images);
     return await this.request(async () => {
       return certifications.map((c) => {
         const { issued_at, image, ...rest } = c;

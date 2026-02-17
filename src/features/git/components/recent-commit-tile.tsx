@@ -42,7 +42,7 @@ export const GitRecentCommitTile = ({
           <ActivityTile.ContentHeader>
             {"Github ･ recent commit"}
           </ActivityTile.ContentHeader>
-          <ActivityTile.ContentBody>
+          <ActivityTile.ContentBody className="text-center sm:text-start">
             {data.recentCommit.repository}
           </ActivityTile.ContentBody>
           <ActivityTile.ContentFooter>

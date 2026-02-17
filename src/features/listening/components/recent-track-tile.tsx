@@ -49,7 +49,7 @@ export const ListeningRecentTrackTile = ({
           <ActivityTile.ContentHeader>
             {"Last.fm ･ listened to"}
           </ActivityTile.ContentHeader>
-          <ActivityTile.ContentBody>
+          <ActivityTile.ContentBody className="text-center sm:text-start">
             {data?.track.title}
           </ActivityTile.ContentBody>
           <ActivityTile.ContentFooter>

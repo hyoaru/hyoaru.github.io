@@ -98,7 +98,7 @@ const CareerCardTitle = ({
   ...rest
 }: React.ComponentPropsWithoutRef<"p">) => {
   return (
-    <p className={cn("text-lg font-bold", className)} {...rest}>
+    <p className={cn("text-sm font-bold sm:text-lg", className)} {...rest}>
       {children}
     </p>
   );
@@ -120,7 +120,7 @@ const CareerCardDate = ({ children, classNames }: CareerCardDateProps) => {
   return (
     <div
       className={cn(
-        "text-muted flex items-center gap-2.5 text-sm",
+        "text-muted flex items-center gap-2.5 text-xs sm:text-sm",
         classNames?.container,
       )}
     >
@@ -137,7 +137,7 @@ const CareerCardLocation = ({
   return (
     <div
       className={cn(
-        "text-accent flex items-center gap-2.5 text-sm font-bold",
+        "text-accent flex items-center gap-2.5 text-xs font-bold sm:text-sm",
         classNames?.container,
       )}
     >
@@ -165,7 +165,7 @@ const CareerCardDescription = ({
   ...rest
 }: React.ComponentPropsWithoutRef<"p">) => {
   return (
-    <p className={cn("text-sm", className)} {...rest}>
+    <p className={cn("text-xs sm:text-sm", className)} {...rest}>
       {children}
     </p>
   );
@@ -189,7 +189,7 @@ const CareerCardKeyAchievementsHeader = ({
   return (
     <div
       className={cn(
-        "flex items-center gap-2.5 text-sm font-bold",
+        "flex items-center gap-2.5 text-xs font-bold sm:text-sm",
         classNames?.container,
       )}
     >
@@ -206,7 +206,7 @@ const CareerCardKeyAchievementsList = ({
 }: React.ComponentPropsWithoutRef<"ul">) => {
   return (
     <ul
-      className={cn("text-muted list-disc ps-8 text-sm", className)}
+      className={cn("text-muted list-disc ps-8 text-xs sm:text-sm", className)}
       {...rest}
     >
       {children}
@@ -239,7 +239,7 @@ const CareerCardTechnologiesHeader = ({
   return (
     <div
       className={cn(
-        "flex items-center gap-2.5 text-sm font-bold",
+        "flex items-center gap-2.5 text-xs font-bold sm:text-sm",
         classNames?.container,
       )}
     >
@@ -269,7 +269,7 @@ const CareerCardTechnologyChip = ({
   return (
     <div
       className={cn(
-        "bg-custom-background h-full rounded-sm px-1 py-0.5 text-[0.6rem]",
+        "bg-custom-background text-2xs h-full rounded-sm px-1 py-0.5",
         className,
       )}
       {...rest}

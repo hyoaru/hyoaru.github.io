@@ -6,7 +6,7 @@ import { ThemeToggle } from "../../ui";
 export const HeaderDesktop = () => {
   return (
     <>
-      <div className="lg:bg-background flex w-full items-center gap-1 rounded-xl lg:p-1">
+      <div className="lg:bg-background flex w-full items-center gap-1 rounded-xl sm:mb-4 lg:mb-0 lg:p-1">
         <div className="me-auto flex items-center gap-1">
           <PersonStanding className="" />
           <p className="font-bold">Cabrera, Jen Jade</p>

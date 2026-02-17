@@ -2,7 +2,7 @@ import { Building2 } from "lucide-react";
 
 export const RecentJob = () => {
   return (
-    <div className="sm:bg-background flex h-16 items-center justify-start gap-1 rounded-xl sm:h-20 sm:p-1">
+    <div className="sm:bg-background flex h-16 items-center justify-start gap-1 rounded-xl sm:h-24 sm:p-1">
       <div className="flex h-full w-24 shrink-0 items-center justify-center rounded-lg sm:w-26">
         <Building2 className="size-8" />
       </div>

@@ -47,7 +47,7 @@ export const ProfileDesktop = () => {
           </div>
         </div>
       </div>
-      <div className="h-8 lg:h-12"></div>
+      <div className="h-8 sm:h-10 lg:h-12"></div>
       <p className="leading-5">
         A Philippines-based {age}-year-old
         <span className="text-accent font-bold">

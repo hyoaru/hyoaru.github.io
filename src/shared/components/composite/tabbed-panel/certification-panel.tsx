@@ -8,7 +8,7 @@ export const CertificationPanel = () => {
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
       <div className="h-fit shrink-0">
-        <p className="pb-2.5 text-xl">
+        <p className="pb-2.5 lg:text-xl">
           A collection of milestones and certifications from my{" "}
           <span className="text-accent font-bold">academic</span> and{" "}
           <span className="text-accent font-bold">professional</span>{" "}
@@ -22,7 +22,7 @@ export const CertificationPanel = () => {
       </div>
 
       <ScrollShadow hideScrollBar className="h-full min-h-0">
-        <div className="grid grow grid-cols-2 gap-2.5">
+        <div className="grid grow grid-cols-1 gap-2.5 sm:grid-cols-2">
           {data.certifications.map((certification) => {
             return (
               <CertificationCard

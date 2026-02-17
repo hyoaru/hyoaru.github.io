@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <div className="pattern-dots absolute flex h-full w-full items-center justify-center">
-      <div className="lg:bg-custom-background mx-auto h-full max-h-[1080px] w-full max-w-[1920px] rounded-xl bg-transparent p-2 sm:p-2">
+      <div className="lg:bg-custom-background mx-auto h-full max-h-[1080px] w-full max-w-[1920px] rounded-xl bg-transparent p-2 sm:p-4">
         <div className="flex h-full w-full flex-col gap-5 lg:flex-row">
           <ScrollShadow
             hideScrollBar
@@ -31,8 +31,12 @@ function RouteComponent() {
               <GitStats />
             </div>
             <GitActivity />
-            <Filler className="h-14" />
-            <Footer />
+            <div className="hidden lg:block">
+              <Filler className="h-14" />
+            </div>
+            <div className="hidden lg:block">
+              <Footer />
+            </div>
           </ScrollShadow>
           <TabbedPanel />
         </div>

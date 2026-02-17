@@ -31,9 +31,9 @@ export const TabbedPanel = () => {
         >
           {tabs.map((tab) => (
             <Tabs.Tab
-              key={`tab-{tab.id}`}
+              key={`tab-${tab.id}`}
               id={tab.id}
-              className="bg-background button--sm button rounded-lg"
+              className="bg-background button--sm button rounded-lg text-xs sm:text-sm"
             >
               <Ripple />
               <ChevronRight />
@@ -46,11 +46,11 @@ export const TabbedPanel = () => {
 
       {tabs.map((tab) => (
         <Tabs.Panel
-          className="bg-default h-full min-h-0 rounded-xl p-1"
+          className="sm:bg-default h-[calc(100vh-8vh)] min-h-0 rounded-xl p-1 lg:h-full"
           key={`panel-${tab.id}`}
           id={tab.id}
         >
-          <div className="bg-background pattern-dots h-full rounded-lg p-5">
+          <div className="bg-background pattern-dots h-full rounded-lg p-1 sm:p-5">
             <AsyncBoundary>
               <tab.panel />
             </AsyncBoundary>

@@ -9,7 +9,7 @@ export const CareerPanel = () => {
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
       <div className="h-fit shrink-0">
-        <p className="pb-2.5 text-xl">
+        <p className="pb-2.5 sm:text-xl">
           Thriving at the intersection of code, systems, and
           intelligence—integrating{" "}
           <span className="text-accent font-bold">fullstack engineering</span>,
@@ -22,7 +22,7 @@ export const CareerPanel = () => {
         </p>
       </div>
 
-      <ScrollShadow hideScrollBar className="h-full min-h-0">
+      <ScrollShadow hideScrollBar className="h-full min-h-0 pb-10 lg:pb-0">
         <div className="flex flex-grow flex-col gap-y-2.5">
           {data.careerHistory.reverse().map((experience, index) => {
             index = data.careerHistory.length - 1 - index;

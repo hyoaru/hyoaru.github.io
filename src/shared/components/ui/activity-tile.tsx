@@ -60,7 +60,7 @@ const ActivityTileContentBody = ({
   className,
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
-  <p className={cn("truncate text-xs font-bold", className)} {...rest}>
+  <p className={cn("w-[80%] truncate text-xs font-bold", className)} {...rest}>
     {children}
   </p>
 );
