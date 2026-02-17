@@ -6,6 +6,7 @@ import {
 import { Certification, Experience } from "@/features/identity/domain/entities";
 import certifications from "@/shared/assets/portfolio-resources/data/certifications.json";
 import experiences from "@/shared/assets/portfolio-resources/data/experiences.json";
+import resume from "@/shared/assets/portfolio-resources/assets/documents/resume.pdf";
 
 const images = import.meta.glob(
   "/src/shared/assets/portfolio-resources/assets/images/**/*.jpg",
@@ -68,6 +69,12 @@ export class StaticProfileRepository implements ProfileRepository {
           ...rest,
         });
       });
+    });
+  }
+
+  public async getResume(): Promise<string> {
+    return await this.request(async () => {
+      return resume;
     });
   }
 }

@@ -7,4 +7,5 @@ export interface ProfileRepository {
   getPersonalImageUrl(): Promise<string>;
   getCareerHistory(): Promise<Experience[]>;
   getCertifications(): Promise<Certification[]>;
+  getResume(): Promise<string>;
 }

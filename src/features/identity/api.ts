@@ -4,6 +4,7 @@ import {
   GetCareerHistory,
   GetCertifications,
   GetPersonalImageUrl,
+  GetResume,
   GetTechnologies,
 } from "./application/commands";
 import {
@@ -49,6 +50,13 @@ export const identityApi = {
         queryKey: [...identityApi.baseKey, "certifications"],
         queryFn: () =>
           commandBus.dispatch(new GetCertifications({ profileRepository })),
+        staleTime: Infinity,
+      }),
+    resume: () =>
+      queryOptions({
+        queryKey: [...identityApi.baseKey, "resume"],
+        queryFn: () =>
+          commandBus.dispatch(new GetResume({ profileRepository })),
         staleTime: Infinity,
       }),
   },

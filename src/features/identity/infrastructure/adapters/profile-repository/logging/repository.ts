@@ -47,4 +47,16 @@ export class LoggingProfileRepository implements ProfileRepository {
       throw error;
     }
   }
+
+  public async getResume(): Promise<string> {
+    try {
+      logger.info("Getting resume");
+      const result = await this.inner.getResume();
+      logger.info("Successfully got resume");
+      return result;
+    } catch (error) {
+      logger.error("Failed to get resume");
+      throw error;
+    }
+  }
 }

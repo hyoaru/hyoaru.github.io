@@ -59,7 +59,7 @@ export const CertificationCard = (props: CertificationCardProps) => {
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button className="rounded-xl" slot="close">
+              <Button className="rounded-lg" slot="close">
                 Close
               </Button>
             </Modal.Footer>
