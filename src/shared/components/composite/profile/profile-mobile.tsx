@@ -16,7 +16,7 @@ export const ProfileMobile = () => {
         <div className="aspect-[4/3] overflow-hidden rounded-lg">
           <AsyncBoundary>
             <div className="relative">
-              <div className="text-background absolute bottom-0 flex h-[20%] w-full items-center gap-1 pe-4 pb-10">
+              <div className="text-background dark:text-foreground absolute bottom-0 flex h-[20%] w-full items-center gap-1 pe-4 pb-10">
                 <div className="flex h-full w-24 shrink-0 items-center justify-center">
                   <PersonStanding className="size-8" />
                 </div>

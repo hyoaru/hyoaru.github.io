@@ -22,7 +22,7 @@ export const CareerPanel = () => {
         </p>
       </div>
 
-      <ScrollShadow hideScrollBar className="h-full min-h-0 pb-10 lg:pb-0">
+      <ScrollShadow hideScrollBar className="h-full min-h-0 lg:pb-0">
         <div className="flex flex-grow flex-col gap-y-2.5">
           {data.careerHistory.reverse().map((experience, index) => {
             index = data.careerHistory.length - 1 - index;

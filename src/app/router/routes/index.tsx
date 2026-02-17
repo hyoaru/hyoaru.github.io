@@ -22,7 +22,7 @@ function RouteComponent() {
         <div className="flex h-full w-full flex-col gap-5 lg:flex-row">
           <ScrollShadow
             hideScrollBar
-            className="relative w-full shrink-0 space-y-2.5 p-2 lg:w-[40%] lg:p-0"
+            className="relative w-full shrink-0 space-y-2.5 p-2 sm:p-0 lg:w-[40%]"
           >
             <FloatingActionBar />
             <Header />
@@ -41,6 +41,9 @@ function RouteComponent() {
             </div>
           </ScrollShadow>
           <TabbedPanel />
+          <div className="lg:hidden">
+            <Filler className="h-8 shrink-0" />
+          </div>
         </div>
       </div>
     </div>
