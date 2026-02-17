@@ -14,18 +14,27 @@ export const ProfileDesktop = () => {
   return (
     <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl p-5">
       <div className="flex w-full gap-5">
-        <div className="w-[40%] shrink-0 overflow-hidden rounded-lg">
+        <div className="aspect-square w-[40%] shrink-0 overflow-hidden rounded-lg">
           <AsyncBoundary>
-            <PersonalImage className="aspect-square" />
+            <PersonalImage />
           </AsyncBoundary>
         </div>
-        <div className="flex min-w-0 flex-col">
+        <div className="flex w-full min-w-0 flex-col">
           <div className="flex items-center gap-2.5">
-            <div className="text-xl">
-              <Clock className="text-accent h-[1em] w-[1em]" />
+            <div className="me-auto flex shrink-0 items-center gap-2.5">
+              <div className="text-xl">
+                <Clock className="text-accent h-[1em] w-[1em]" />
+              </div>
+              <PhilippineTime />
             </div>
-            <PhilippineTime className="me-auto" />
-            <VisitorBadge className="" />
+            <AsyncBoundary
+              classNames={{
+                suspense: { spinner: "hidden" },
+                errorBoundary: { icon: "hidden" },
+              }}
+            >
+              <VisitorBadge />
+            </AsyncBoundary>
           </div>
           <div className="h-full"></div>
           <div className="flex h-[70%] shrink-0 flex-col gap-1">

@@ -21,7 +21,10 @@ export const ErrorTile = ({ classNames }: ErrorTileProps) => {
       />
       <Skeleton
         animationType="pulse"
-        className={cn("bg-danger/10 h-full w-full", classNames?.skeleton)}
+        className={cn(
+          "bg-danger/10 h-full w-full rounded-lg",
+          classNames?.skeleton,
+        )}
       />
     </div>
   );

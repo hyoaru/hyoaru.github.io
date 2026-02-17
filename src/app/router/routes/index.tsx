@@ -17,11 +17,11 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   return (
     <div className="pattern-dots absolute flex h-full w-full items-center justify-center">
-      <div className="md:bg-custom-background mx-auto h-full max-h-[1080px] w-full max-w-[1920px] rounded-xl bg-transparent p-4 md:p-5">
+      <div className="md:bg-custom-background mx-auto h-full max-h-[1080px] w-full max-w-[1920px] rounded-xl bg-transparent p-2 md:p-5">
         <div className="flex h-full w-full flex-col gap-5 lg:flex-row">
           <ScrollShadow
             hideScrollBar
-            className="w-full shrink-0 space-y-2.5 lg:w-[40%]"
+            className="w-full shrink-0 space-y-2.5 p-2 lg:w-[40%] lg:p-0"
           >
             <Header />
             <Profile />

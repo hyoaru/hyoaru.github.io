@@ -16,9 +16,7 @@ export const AsyncBoundary = ({ classNames, children }: AsyncBoundaryProps) => {
     <ErrorBoundary
       fallback={<ErrorTile classNames={classNames?.errorBoundary} />}
     >
-      <Suspense
-        fallback={<LoadingTile classNames={classNames?.errorBoundary} />}
-      >
+      <Suspense fallback={<LoadingTile classNames={classNames?.suspense} />}>
         {children}
       </Suspense>
     </ErrorBoundary>
