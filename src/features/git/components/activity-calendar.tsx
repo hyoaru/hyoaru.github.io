@@ -13,7 +13,7 @@ export const GitActivityCalendar = () => {
   const [dates] = useState(() => {
     const now = Date.now();
     const oneYearAgo = new Date(now);
-    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 2);
 
     return {
       now,

@@ -1,4 +1,6 @@
+import { GitRecentCommitTile } from "@/features/git";
 import { PersonalImage } from "@/features/identity";
+import { ListeningRecentTrackTile } from "@/features/listening";
 import { AsyncBoundary } from "@/shared/components";
 import { PersonStanding } from "lucide-react";
 
@@ -9,22 +11,34 @@ export const ProfileMobile = () => {
   );
 
   return (
-    <div className="aspect-[4/3] overflow-hidden rounded-lg">
-      <AsyncBoundary>
-        <div className="relative">
-          <div className="text-background absolute bottom-0 flex h-[20%] w-full items-center gap-4 p-4 pb-10">
-            <div className="flex h-full items-center justify-center">
-              <PersonStanding />
+    <>
+      <div className="space-y-2.5">
+        <div className="aspect-[4/3] overflow-hidden rounded-lg">
+          <AsyncBoundary>
+            <div className="relative">
+              <div className="text-background absolute bottom-0 flex h-[20%] w-full items-center gap-4 p-4 pb-10">
+                <div className="flex h-full items-center justify-center">
+                  <PersonStanding />
+                </div>
+                <p className="text-[0.65rem] font-medium">
+                  A Philippines-based {age}-year-old multi-disciplinary engineer
+                  in Fullstack Development, DevOps, Quality Engineering, and
+                  Data Science
+                </p>
+              </div>
+              <PersonalImage className="aspect-[4/3] object-[center_30%]" />
             </div>
-            <p className="text-[0.65rem] font-medium">
-              A Philippines-based {age}-year-old multi-disciplinary engineer in
-              Fullstack Development, DevOps, Quality Engineering, and Data
-              Science
-            </p>
-          </div>
-          <PersonalImage className="aspect-[4/3] object-[center_30%]" />
+          </AsyncBoundary>
         </div>
-      </AsyncBoundary>
-    </div>
+        <div className="flex h-22 gap-1">
+          <AsyncBoundary>
+            <GitRecentCommitTile variant="compact" />
+          </AsyncBoundary>
+          <AsyncBoundary>
+            <ListeningRecentTrackTile variant="compact" />
+          </AsyncBoundary>
+        </div>
+      </div>
+    </>
   );
 };

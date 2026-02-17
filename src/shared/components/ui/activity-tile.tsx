@@ -23,7 +23,7 @@ const ActivityTileIcon = ({
 }: React.ComponentPropsWithoutRef<"div">) => (
   <div
     className={cn(
-      "border-default bg-custom-secondary/60 text-foreground flex h-full w-20 items-center justify-center rounded-md border",
+      "border-default bg-custom-secondary/60 text-foreground flex aspect-square h-full items-center justify-center rounded-md border",
       className,
     )}
     {...rest}
@@ -38,7 +38,7 @@ const ActivityTileContent = ({
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
   <div
-    className={cn("flex flex-col items-start justify-center", className)}
+    className={cn("flex w-full flex-col items-start justify-center", className)}
     {...rest}
   >
     {children}
@@ -50,7 +50,7 @@ const ActivityTileContentHeader = ({
   className,
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
-  <p className={cn("truncate text-[0.67rem]", className)} {...rest}>
+  <p className={cn("truncate text-[0.65rem]", className)} {...rest}>
     {children}
   </p>
 );
@@ -70,7 +70,7 @@ const ActivityTileContentFooter = ({
   className,
   ...rest
 }: React.ComponentPropsWithoutRef<"div">) => (
-  <p className={cn("truncate text-[0.67rem]", className)} {...rest}>
+  <p className={cn("truncate text-[0.65rem]", className)} {...rest}>
     {children}
   </p>
 );

@@ -1,6 +1,6 @@
 import { GitRecentCommitTile } from "@/features/git";
 import { PersonalImage } from "@/features/identity";
-import { RecentTrackTile } from "@/features/listening";
+import { ListeningRecentTrackTile } from "@/features/listening";
 import { VisitorBadge } from "@/features/visitor";
 import { AsyncBoundary, PhilippineTime } from "@/shared/components";
 import { Clock } from "lucide-react";
@@ -12,7 +12,7 @@ export const ProfileDesktop = () => {
   );
 
   return (
-    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl p-5">
+    <div className="bg-background pattern-dots h-fit gap-2.5 rounded-xl lg:p-5">
       <div className="flex w-full gap-5">
         <div className="aspect-square w-[40%] shrink-0 overflow-hidden rounded-lg">
           <AsyncBoundary>
@@ -42,12 +42,12 @@ export const ProfileDesktop = () => {
               <GitRecentCommitTile />
             </AsyncBoundary>
             <AsyncBoundary>
-              <RecentTrackTile />
+              <ListeningRecentTrackTile />
             </AsyncBoundary>
           </div>
         </div>
       </div>
-      <div className="h-12"></div>
+      <div className="h-8 lg:h-12"></div>
       <p className="leading-5">
         A Philippines-based {age}-year-old
         <span className="text-accent font-bold">

@@ -4,10 +4,10 @@ import { HeaderMobile } from "./header-mobile";
 export const Header = () => {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden sm:block">
         <HeaderDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block sm:hidden">
         <HeaderMobile />
       </div>
     </>

@@ -6,9 +6,11 @@ import { ThemeToggle } from "../../ui";
 export const HeaderDesktop = () => {
   return (
     <>
-      <div className="bg-background flex w-full items-center gap-1 rounded-xl sm:p-1">
-        <PersonStanding className="" />
-        <p className="me-auto font-bold">Cabrera, Jen Jade</p>
+      <div className="lg:bg-background flex w-full items-center gap-1 rounded-xl lg:p-1">
+        <div className="me-auto flex items-center gap-1">
+          <PersonStanding className="" />
+          <p className="font-bold">Cabrera, Jen Jade</p>
+        </div>
         <Button size="sm" className="rounded-lg">
           <Ripple />
           <ArrowUpRight />

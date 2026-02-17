@@ -4,10 +4,10 @@ import { ProfileMobile } from "./profile-mobile";
 export const Profile = () => {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden sm:block">
         <ProfileDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block sm:hidden">
         <ProfileMobile />
       </div>
     </>
