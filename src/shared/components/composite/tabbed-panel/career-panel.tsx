@@ -40,7 +40,18 @@ export const CareerPanel = () => {
                 <CareerCard.NextIndicator />
                 <CareerCard.Content>
                   <CareerCard.Title>
-                    [0{index + 1}]::{experience.title}
+                    [
+                    {index == data.careerHistory.length - 1 ? (
+                      <>
+                        {" "}
+                        <span className="bg-success relative inline-block size-2 rounded-full align-middle">
+                          <span className="border-success absolute inset-0 m-auto animate-ping rounded-full border"></span>
+                        </span>{" "}
+                      </>
+                    ) : (
+                      <>0{index + 1}</>
+                    )}
+                    ]::{experience.title}
                   </CareerCard.Title>
                   <CareerCard.ContentHeader>
                     <CareerCard.Date>
