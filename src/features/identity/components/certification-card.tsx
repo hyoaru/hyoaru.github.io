@@ -23,7 +23,7 @@ export const CertificationCard = (props: CertificationCardProps) => {
         </div>
 
         <img
-          className="aspect-3/2 scale-105 object-cover"
+          className="aspect-3/2 w-full scale-105 object-cover"
           src={props.imageUrl}
         />
       </div>
