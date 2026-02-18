@@ -33,7 +33,7 @@ export const ContactPanel = () => {
     },
     onSubmit: async ({ value }) => {
       await sendMessageMutation
-        .mutateAsync(value.message)
+        .mutateAsync(`From: ${value.email}\nMessage: ${value.message}`)
         .then(() => {
           toast("Message has been set successfuly!", {
             variant: "success",
