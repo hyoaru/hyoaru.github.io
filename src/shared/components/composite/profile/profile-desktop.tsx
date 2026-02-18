@@ -59,7 +59,7 @@ export const ProfileDesktop = () => {
         automating complex workflows, and transforming raw data into actionable
         insights. My work spans from developing web platforms and intuitive apps
         to architecting reliable systems and crafting data-driven solutions. I
-        thrive at the intersection of code, systems, and intelligence — bringing
+        thrive at the intersection of code, systems, and intelligence—bringing
         fresh perspectives and a drive to turn ideas into impactful, meaningful
         solutions.
       </p>
