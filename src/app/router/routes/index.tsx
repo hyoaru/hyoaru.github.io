@@ -1,5 +1,5 @@
 import { GitActivity, GitStats } from "@/features/git";
-import { RecentJob, Technologies } from "@/features/identity";
+import { RecentExperience, Technologies } from "@/features/identity";
 import {
   Filler,
   FloatingActionBar,
@@ -27,7 +27,7 @@ function RouteComponent() {
             <FloatingActionBar />
             <Header />
             <Profile />
-            <RecentJob />
+            <RecentExperience />
             <Technologies />
             <div className="hidden sm:block">
               <GitStats />

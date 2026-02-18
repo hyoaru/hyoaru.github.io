@@ -58,7 +58,7 @@ export const CareerPanel = () => {
                       {startedAt} - {endedAt}
                     </CareerCard.Date>
                     <CareerCard.Location>
-                      {experience.organization}
+                      {experience.organization} · {experience.country}
                     </CareerCard.Location>
                   </CareerCard.ContentHeader>
                   <CareerCard.ContentBody>
