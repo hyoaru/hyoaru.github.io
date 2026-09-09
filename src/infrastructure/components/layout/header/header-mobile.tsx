@@ -1,0 +1,29 @@
+import { AsyncBoundary, VisitorBadge } from "../../ui";
+
+export const HeaderMobile = () => {
+  return (
+    <>
+      <div className="mb-4 flex items-center justify-between gap-2.5">
+        <div className="flex shrink-0 items-center gap-2">
+          <div className="bg-accent relative size-2.5 rounded-full">
+            <div className="border-accent absolute inset-0 m-0 animate-ping rounded-full border" />
+          </div>
+          <p className="xs:text-sm font-mono text-xs uppercase">
+            Cabrera, Jen Jade B.
+          </p>
+        </div>
+
+        <div className="flex w-full justify-end self-stretch">
+          <AsyncBoundary
+            classNames={{
+              base: "rounded-sm w-2/4",
+              icon: "hidden",
+            }}
+          >
+            <VisitorBadge />
+          </AsyncBoundary>
+        </div>
+      </div>
+    </>
+  );
+};

@@ -6,17 +6,16 @@ import { LoadingTile } from "./loading-tile";
 type AsyncBoundaryProps = {
   children: React.ReactNode;
   classNames?: {
-    errorBoundary?: ComponentProps<typeof ErrorTile>["classNames"];
-    suspense?: ComponentProps<typeof LoadingTile>["classNames"];
+    base?: ComponentProps<"div">["className"];
+    icon?: ComponentProps<"div">["className"];
+    skeleton?: ComponentProps<"div">["className"];
   };
 };
 
 export const AsyncBoundary = ({ classNames, children }: AsyncBoundaryProps) => {
   return (
-    <ErrorBoundary
-      fallback={<ErrorTile classNames={classNames?.errorBoundary} />}
-    >
-      <Suspense fallback={<LoadingTile classNames={classNames?.suspense} />}>
+    <ErrorBoundary fallback={<ErrorTile classNames={classNames} />}>
+      <Suspense fallback={<LoadingTile classNames={classNames} />}>
         {children}
       </Suspense>
     </ErrorBoundary>

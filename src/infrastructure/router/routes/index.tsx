@@ -10,7 +10,7 @@ function RouteComponent() {
   return (
     <>
       <div className="pattern-dots absolute flex h-full w-full items-center justify-center">
-        <div className="lg:bg-custom-background mx-auto h-full max-h-270 w-full max-w-[1920px] rounded-xl bg-transparent p-2 sm:p-4">
+        <div className="lg:bg-custom-background mx-auto h-full max-h-[1080px] w-full max-w-[1920px] rounded-xl bg-transparent p-2 sm:p-4">
           <div className="flex h-full w-full flex-col gap-5 lg:flex-row">
             <ScrollShadow
               hideScrollBar

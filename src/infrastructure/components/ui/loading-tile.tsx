@@ -4,7 +4,7 @@ import { cn } from "@heroui/styles";
 type LoadingTileProps = {
   classNames?: {
     base?: string;
-    spinner?: string;
+    icon?: string;
     skeleton?: string;
   };
 };
@@ -15,12 +15,12 @@ export const LoadingTile = ({ classNames }: LoadingTileProps) => {
       <Spinner
         className={cn(
           "text-accent absolute inset-0 m-auto size-8",
-          classNames?.spinner,
+          classNames?.icon,
         )}
       />
       <Skeleton
         className={cn(
-          "bg-accent/[8%] h-full w-full rounded-lg",
+          "bg-accent/8 h-full w-full rounded-lg",
           classNames?.skeleton,
         )}
       />
