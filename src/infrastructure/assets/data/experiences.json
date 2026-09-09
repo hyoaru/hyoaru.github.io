@@ -1,0 +1,213 @@
+[
+  {
+    "organization": "Development Academy of the Philippines (DAP)",
+    "title": "Data Scientist Pathway",
+    "summary": "Embarked on an intensive data science learning pathway that became the catalyst for continuous learning and professional growth. Completed 20+ certifications spanning data analytics, visualization, machine learning, and statistical analysis—marking the beginning of a journey as a perpetual learning machine.",
+    "country": "Philippines",
+    "started_at": "2021-01",
+    "ended_at": "2022-09",
+    "technologies": [
+      "Data Science",
+      "Data Analytics",
+      "Data Visualization",
+      "Python",
+      "R",
+      "SQL",
+      "PostgreSQL",
+      "Excel",
+      "Tableau",
+      "Pandas",
+      "Numpy",
+      "Matplotlib",
+      "Seaborn",
+      "Plotly",
+      "Sci-kit learn",
+      "Machine Learning",
+      "Statistical Analysis",
+      "Experimental Design"
+    ],
+    "highlights": [
+      "Earned 20+ certifications in data science, analytics, and visualization, establishing a comprehensive foundation in the field and igniting a passion for continuous learning.",
+      "Mastered the full data science lifecycle—from data management fundamentals and preparation through visualization, storytelling, statistical analysis, and machine learning.",
+      "Developed proficiency across multiple tools and languages including Python, R, SQL, Tableau, and Excel, with hands-on experience in Pandas, Numpy, Matplotlib, Seaborn, and Sci-kit learn.",
+      "Completed specialized microspecialization pathways in Data Visualization, Computing, and Methods & Algorithms, demonstrating deep expertise in each domain."
+    ]
+  },
+  {
+    "organization": "San Pablo Colleges",
+    "title": "BS Computer Science, Magna Cum Laude",
+    "summary": "Completed a Bachelor of Science in Computer Science degree with Magna Cum Laude distinction, demonstrating excellence in software engineering, data science, and full-stack development. Culminated in a thesis project, Anonalyze—an NLP-enhanced and ML-driven platform for sentiment analysis and insight extraction that transformed unstructured feedback into actionable intelligence using advanced machine learning techniques.",
+    "country": "Philippines",
+    "started_at": "2021-08",
+    "ended_at": "2025-06",
+    "technologies": [
+      "Computer Science",
+      "Software Engineering",
+      "Data Science",
+      "Machine Learning",
+      "Natural Language Processing (NLP)",
+      "Full-Stack Development",
+      "Typescript",
+      "PHP",
+      "Python",
+      "React",
+      "Laravel",
+      "Flask",
+      "Swagger",
+      "Scikit-learn",
+      "Nginx",
+      "Docker",
+      "Naive Bayes",
+      "Multinomial Classification",
+      "Term-Frequency Inverse Document Frequency (TF-IDF)",
+      "Rapid Automatic Keyword Extraction (RAKE)",
+      "LLM Integration",
+      "Reverse Proxy",
+      "Load Balancing",
+      "API-First Architecture",
+      "Cloudflare"
+    ],
+    "highlights": [
+      "Graduated Magna Cum Laude with a Bachelor of Science in Computer Science, demonstrating consistent academic excellence and technical proficiency throughout the program.",
+      "Developed Anonalyze as a thesis project—a comprehensive NLP and ML platform that transforms unstructured feedback into actionable insights through sentiment analysis, trend tracking, and automated insight extraction.",
+      "Architected a full-stack solution integrating React and TypeScript frontend, Laravel and Flask backends, with machine learning models using Naive Bayes, TF-IDF, and RAKE for sentiment classification and keyword extraction.",
+      "Implemented production-ready infrastructure using Docker containerization, Nginx reverse proxy, load balancing, and Cloudflare CDN, demonstrating end-to-end systems thinking and deployment capabilities."
+    ]
+  },
+  {
+    "organization": "Freelance",
+    "title": "Full Stack & Machine Learning Engineer",
+    "summary": "Engineered a legal document evaluation system utilizing Natural Language Processing (NLP) to automate the assessment of project proposals. Developed a high-precision retrieval and inference pipeline while managing the full-stack deployment and secure cloud infrastructure.",
+    "country": "Philippines",
+    "started_at": "2024-09",
+    "ended_at": "2024-12",
+    "technologies": [
+      "React",
+      "Flask",
+      "Python",
+      "Docker",
+      "Cloudflare Tunnels",
+      "Zero Trust",
+      "SBERT (Transformers)",
+      "GloVe",
+      "NLI",
+      "Cosine Similarity",
+      "Gunicorn",
+      "OpenAPI",
+      "PostgreSQL",
+      "Pandas",
+      "Scikit-Learn",
+      "Jupyter"
+    ],
+    "highlights": [
+      "Developed an end-to-end Legal Document Evaluation System using React and Flask-RESTX, automating the assessment of complex project proposals via a custom NLP pipeline.",
+      "Engineered a retrieval pipeline utilizing GloVe and SBERT (Sentence-BERT) embeddings to extract relevant legal clauses, validated through Natural Language Inference (NLI).",
+      "Deployed a secure, containerized infrastructure using Docker and Cloudflare Tunnels, providing encrypted, firewall-friendly Zero Trust access for remote evaluation.",
+      "Conducted Exploratory Data Analysis (EDA) using Jupyter and Seaborn to refine model parameters, successfully reducing false-positive document classifications."
+    ]
+  },
+  {
+    "organization": "Navigent",
+    "title": "Backend & AI Agent Workflow Engineer",
+    "summary": "Specialized in creating and deploying voice AI agents for business automation. Developed backend APIs and integrated various tools to manage complex conversational flows and data models, focusing on enhancing customer interaction.",
+    "country": "Taiwan",
+    "started_at": "2025-01",
+    "ended_at": "2025-02",
+    "technologies": [
+      "N8N",
+      "VAPI",
+      "NocoDB",
+      "FastAPI",
+      "PydanticAI",
+      "Pydantic",
+      "Python"
+    ],
+    "highlights": [
+      "Developed 2 voice AI agent for a restaurant business and a construction firm using N8N, VAPI, NocoDB, Twillio, FastAPI, PydanticAI, and OpenRouter ",
+      "Designed and implemented voice interaction flows using N8N and VAPI to handle customer inquiries and automate customer making a booking or an order via voice alone.",
+      "Build backend APIs with FastAPI and structured data models with PydanticAI for agent reasoning."
+    ]
+  },
+  {
+    "organization": "Philippine Digital Asset Exchange (PDAX)",
+    "title": "Software Quality Engineer Intern",
+    "summary": "Developed foundational CI/CD Proof of Concepts (PoCs) for hybrid test automation and AI-driven internal tools. Focused on establishing multi-tier gate systems and secure monorepo architectures to enhance code quality and deployment safety.",
+    "country": "Philippines",
+    "started_at": "2025-02",
+    "ended_at": "2025-04",
+    "technologies": [
+      "Jenkins",
+      "Docker",
+      "Sonarqube",
+      "Robot Framework",
+      "PydanticAI",
+      "FastAPI",
+      "React",
+      "Typescript",
+      "HashiCorp Vault",
+      "Python (UV)",
+      "Git"
+    ],
+    "highlights": [
+      "Developed a hybrid CI/CD PoC using Jenkins and SonarQube, automating smoke tests on PRs and full regression suites for Staging-to-Master deployments.",
+      "Architected a multi-tier CI gate system for test repositories, enforcing QA-led test selection and approval workflows across feature, develop, and master branches.",
+      "Built a monorepo PoC for backend test automation using Python (UV) and Robot Framework Requests, integrating HashiCorp Vault for centralized, secure secret management.",
+      "Built an AI agent implementation using FastAPI and PydanticAI (backend) with React (client) to demonstrate automated document/task evaluation capabilities."
+    ]
+  },
+  {
+    "organization": "Philippine Digital Asset Exchange (PDAX)",
+    "title": "Senior Associate Software Quality Engineer",
+    "summary": "Architected and engineered the organization’s foundational Quality Engineering platform, moving beyond traditional testing to build a scalable, observability-driven infrastructure. Established standardized automation and performance ecosystems to ensure high-concurrency system reliability.",
+    "country": "Philippines",
+    "started_at": "2025-04",
+    "ended_at": "2026-01",
+    "technologies": [
+      "Docker",
+      "Nginx",
+      "Jenkins",
+      "Hashicorp Vault",
+      "Grafana",
+      "Grafana Loki",
+      "InfluxDB",
+      "Grafana K6",
+      "Robot Framework",
+      "Appium",
+      "Browserstack",
+      "AWS EC2",
+      "Typescript"
+    ],
+    "highlights": [
+      "Architected the foundational QE platform using Docker, Nginx, Jenkins, Vault, and the Grafana stack (Loki/InfluxDB), reducing environment setup time by 70% for 6+ cross-functional squads.",
+      "Designed and built a secure automation ecosystem for backend and mobile (Robot Framework, Appium, BrowserStack) within a complex monorepo, utilizing Hashicorp Vault for 100% automated secret injection.",
+      "Engineered an on-demand, high-concurrency performance stack using Grafana K6 and InfluxDB to identify critical bottlenecks by simulating thousands of concurrent users.",
+      "Unified organization-wide automated reporting and observability by centralizing test execution data into real-time Grafana dashboards."
+    ]
+  },
+  {
+    "organization": "Philippine Digital Asset Exchange (PDAX)",
+    "title": "Senior Associate Solutions Architect",
+    "summary": "Architected and engineered a serverless, event-driven security ecosystem to automate the lifecycle of vulnerability findings. Focused on reducing remediation lag through Hexagonal Architecture and high-concurrency 'Fan-out' design patterns to bridge the gap between cloud security monitoring and engineering workflows.",
+    "country": "Philippines",
+    "started_at": "2026-01",
+    "ended_at": null,
+    "technologies": [
+      "Amazon Web Services (AWS)",
+      "AWS Lambda",
+      "AWS EventBridge",
+      "Amazon SQS",
+      "Amazon DynamoDB",
+      "Serverless Architecture",
+      "Event Driven Architecture",
+      "Hexagonal Architecture",
+      "Python",
+      "Docker"
+    ],
+    "highlights": [
+      "Reduced Mean Time to Remediation (MTTR) by 80% by architecting a serverless security ecosystem utilizing a 'Fan-out' pattern across multiple AWS Lambda functions.",
+      "Engineered an idempotent ingestion pipeline using DynamoDB and SQS to process thousands of monthly security findings without data duplication.",
+      "Implemented decoupled entry points via CLI and AWS EventBridge to support both automated real-time intake and manual bulk processing of Security Hub findings.",
+      "Automated real-time Jira auto-resolution and squad-based assignment by engineering dynamic ownership rules into the serverless workflow."
+    ]
+  }
+]
