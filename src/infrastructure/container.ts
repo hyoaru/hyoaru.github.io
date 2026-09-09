@@ -1,5 +1,6 @@
 import { GetCareerHistory } from "@/application/use-cases/get-career-history";
 import { GetCertifications } from "@/application/use-cases/get-certifications";
+import { GetTechnologies } from "@/application/use-cases/get-technologies";
 import { GetGitContributions } from "@/application/use-cases/get-git-contributions";
 import { GetGitRecentCommit } from "@/application/use-cases/get-git-recent-commit";
 import { GetGitUserInformation } from "@/application/use-cases/get-git-user-information";
@@ -43,6 +44,7 @@ const getRecentListeningTrack = new GetRecentListeningTrack({
 
 const getCareerHistory = new GetCareerHistory({ profileRepository });
 const getCertifications = new GetCertifications({ profileRepository });
+const getTechnologies = new GetTechnologies({ profileRepository });
 
 export const container = {
   git: {
@@ -56,5 +58,6 @@ export const container = {
   profile: {
     getCareerHistory,
     getCertifications,
+    getTechnologies,
   },
 };

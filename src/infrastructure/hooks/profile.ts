@@ -4,6 +4,9 @@ import type {
 import type {
   GetCertificationsResponse,
 } from "@/application/use-cases/get-certifications";
+import type {
+  GetTechnologiesResponse,
+} from "@/application/use-cases/get-technologies";
 import { queryOptions } from "@tanstack/react-query";
 import { container } from "../container";
 
@@ -22,6 +25,14 @@ export const useProfileActions = () => {
         queryKey: ["profile", "certifications"],
         queryFn: (): Promise<GetCertificationsResponse> => {
           return container.profile.getCertifications.execute();
+        },
+        staleTime: Infinity,
+      }),
+    getTechnologies: () =>
+      queryOptions({
+        queryKey: ["profile", "technologies"],
+        queryFn: (): Promise<GetTechnologiesResponse> => {
+          return container.profile.getTechnologies.execute();
         },
         staleTime: Infinity,
       }),

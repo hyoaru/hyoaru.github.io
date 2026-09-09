@@ -5,6 +5,7 @@ import {
 import { Certification, Experience } from "@/domain/entities";
 import certifications from "@/infrastructure/assets/data/certifications.json";
 import experiences from "@/infrastructure/assets/data/experiences.json";
+import technologies from "@/infrastructure/assets/data/technologies.json";
 
 const certificationImages = import.meta.glob(
   "/src/infrastructure/assets/images/certifications/*.jpg",
@@ -58,6 +59,21 @@ export class LocalProfileRepository implements ProfileRepository {
 
       const message = error instanceof Error ? error.message : String(error);
       throw new ProfileRepositoryError(`Get certifications error: ${message}`, {
+        cause: error,
+      });
+    }
+  }
+
+  public async getTechnologies(): Promise<string[]> {
+    try {
+      return technologies;
+    } catch (error) {
+      if (error instanceof ProfileRepositoryError) {
+        throw error;
+      }
+
+      const message = error instanceof Error ? error.message : String(error);
+      throw new ProfileRepositoryError(`Get technologies error: ${message}`, {
         cause: error,
       });
     }

@@ -16,4 +16,8 @@ export class DecoratedProfileRepository implements ProfileRepository {
   public async getCertifications(): Promise<Certification[]> {
     return this.inner.getCertifications();
   }
+
+  public async getTechnologies(): Promise<string[]> {
+    return this.inner.getTechnologies();
+  }
 }

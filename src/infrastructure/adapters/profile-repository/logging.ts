@@ -32,4 +32,16 @@ export class LoggingProfileRepository implements ProfileRepository {
       throw error;
     }
   }
+
+  public async getTechnologies(): Promise<string[]> {
+    try {
+      logger.debug(`Fetching technologies`);
+      const technologies = await this.inner.getTechnologies();
+      logger.info(`Successfully fetched technologies`);
+      return technologies;
+    } catch (error) {
+      logger.warn(`Error fetching technologies`);
+      throw error;
+    }
+  }
 }
