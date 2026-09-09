@@ -1,14 +1,14 @@
 import { GitActivity, GitStats } from "@/infrastructure/components/git";
-import { TabbedPanel } from "@/infrastructure/components/tabbed-panel";
-import { Filler } from "@/infrastructure/components/ui";
 import {
   Profile,
   RecentExperience,
   Technologies,
 } from "@/infrastructure/components/profile";
+import { TabbedPanel } from "@/infrastructure/components/tabbed-panel";
+import { Filler } from "@/infrastructure/components/ui";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Footer, Header } from "../../components/layout";
+import { FloatingActionBar, Footer, Header } from "../../components/layout";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -24,7 +24,7 @@ function RouteComponent() {
               hideScrollBar
               className="relative w-full shrink-0 space-y-2.5 p-2 sm:p-0 lg:w-[40%]"
             >
-              {/* <FloatingActionBar /> */}
+              <FloatingActionBar />
               <Header />
               <Profile />
               <RecentExperience />
@@ -41,9 +41,9 @@ function RouteComponent() {
               </div>
             </ScrollShadow>
             <TabbedPanel />
-            {/* <div className="lg:hidden"> */}
-            {/*   <Filler className="h-8 shrink-0" /> */}
-            {/* </div> */}
+            <div className="lg:hidden">
+              <Filler className="h-8 shrink-0" />
+            </div>
           </div>
         </div>
       </div>
