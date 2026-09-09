@@ -1,10 +1,8 @@
 import type {
-  GetGitContributionsRequest,
   GetGitContributionsResponse,
 } from "@/application/use-cases/get-git-contributions";
 import type { GetGitRecentCommitResponse } from "@/application/use-cases/get-git-recent-commit";
 import type {
-  GetGitUserInformationRequest,
   GetGitUserInformationResponse,
 } from "@/application/use-cases/get-git-user-information";
 import { queryOptions } from "@tanstack/react-query";
@@ -19,18 +17,18 @@ export const useGitActions = () => {
           return container.git.getRecentCommit.execute({ username: "hyoaru" });
         },
       }),
-    getUserInformation: (request: GetGitUserInformationRequest) =>
+    getUserInformation: () =>
       queryOptions({
-        queryKey: ["git", "user-information", request],
+        queryKey: ["git", "user-information"],
         queryFn: (): Promise<GetGitUserInformationResponse> => {
-          return container.git.getUserInformation.execute(request);
+          return container.git.getUserInformation.execute({ username: "hyoaru" });
         },
       }),
-    getContributions: (request: GetGitContributionsRequest) =>
+    getContributions: () =>
       queryOptions({
-        queryKey: ["git", "contributions", request],
+        queryKey: ["git", "contributions"],
         queryFn: (): Promise<GetGitContributionsResponse> => {
-          return container.git.getContributions.execute(request);
+          return container.git.getContributions.execute({ username: "hyoaru" });
         },
       }),
   };

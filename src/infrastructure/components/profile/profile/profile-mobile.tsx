@@ -1,5 +1,5 @@
 import { PersonStanding } from "lucide-react";
-import { GitRecentCommitTile } from "../../git";
+import { GitRecentCommitTile, GitStats } from "../../git";
 import { ListeningRecentTrackTile } from "../../listening";
 import { AsyncBoundary } from "../../ui";
 import { PersonalImage } from "../personal-image";
