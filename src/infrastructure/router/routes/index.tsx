@@ -1,8 +1,12 @@
-import { Profile, Technologies } from "@/infrastructure/components/profile";
+import { GitStats } from "@/infrastructure/components/git";
+import {
+  Profile,
+  RecentExperience,
+  Technologies,
+} from "@/infrastructure/components/profile";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "../../components/layout";
-import { RecentExperience } from "@/infrastructure/components/profile";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -23,9 +27,9 @@ function RouteComponent() {
               <Profile />
               <RecentExperience />
               <Technologies />
-              {/*   <div className="hidden sm:block"> */}
-              {/*     <GitStats /> */}
-              {/*   </div> */}
+              <div className="hidden sm:block">
+                <GitStats />
+              </div>
               {/*   <GitActivity /> */}
               {/*   <div className="hidden lg:block"> */}
               {/*     <Filler className="h-14" /> */}
