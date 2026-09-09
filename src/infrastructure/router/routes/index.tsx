@@ -1,4 +1,5 @@
 import { GitActivity, GitStats } from "@/infrastructure/components/git";
+import { Filler } from "@/infrastructure/components/ui";
 import {
   Profile,
   RecentExperience,
@@ -6,7 +7,7 @@ import {
 } from "@/infrastructure/components/profile";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "../../components/layout";
+import { Footer, Header } from "../../components/layout";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -31,12 +32,12 @@ function RouteComponent() {
                 <GitStats />
               </div>
               <GitActivity />
-              {/*   <div className="hidden lg:block"> */}
-              {/*     <Filler className="h-14" /> */}
-              {/*   </div> */}
-              {/*   <div className="hidden lg:block"> */}
-              {/*     <Footer /> */}
-              {/*   </div> */}
+              <div className="hidden lg:block">
+                <Filler className="h-14" />
+              </div>
+              <div className="hidden lg:block">
+                <Footer />
+              </div>
             </ScrollShadow>
             {/* <TabbedPanel /> */}
             {/* <div className="lg:hidden"> */}
