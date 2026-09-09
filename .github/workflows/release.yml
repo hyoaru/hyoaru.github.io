@@ -1,0 +1,142 @@
+name: Release
+
+on:
+  push:
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-southeast-1
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.setup.outputs.environment }}
+    steps:
+      - id: setup
+        run: echo "environment=staging" >> "$GITHUB_OUTPUT"
+
+  version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: hyoaru/actions/checkout@v1
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: hyoaru/actions/setup-node@v1
+        with:
+          node-version: 24
+
+      - name: Release
+        run: |
+          npx \
+            -p semantic-release \
+            -p @semantic-release/commit-analyzer \
+            -p @semantic-release/release-notes-generator \
+            -p @semantic-release/changelog \
+            -p @semantic-release/git \
+            semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get version
+        id: version
+        run: |
+          TAG=$(git tag --sort=-v:refname | head -n1)
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: [setup, version]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    environment:
+      name: ${{ needs.setup.outputs.environment }}
+    steps:
+      - name: Checkout
+        uses: hyoaru/actions/checkout@v1
+        with:
+          ref: ${{ needs.version.outputs.tag }}
+
+      - name: Setup node
+        uses: hyoaru/actions/setup-node@v1
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: hyoaru/actions/upload-artifact@v1
+        with:
+          name: build-${{ needs.version.outputs.tag }}
+          path: dist/
+          if-no-files-found: error
+
+  deploy:
+    needs: [setup, version, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    environment:
+      name: ${{ needs.setup.outputs.environment }}
+    steps:
+      - name: Download build artifact
+        uses: hyoaru/actions/download-artifact@v1
+        with:
+          name: build-${{ needs.version.outputs.tag }}
+          path: dist/
+
+      - name: Configure AWS credentials
+        uses: hyoaru/actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get configuration
+        run: |
+          CLIENT_ARTIFACT_S3_URI=$(aws ssm get-parameter \
+            --name "/portfolio/client-artifact-s3-uri" \
+            --query "Parameter.Value" \
+            --output text)
+          CLIENT_ARTIFACT_S3_URI_BASE=$(aws ssm get-parameter \
+            --name "/portfolio/client-artifact-s3-uri-base" \
+            --query "Parameter.Value" \
+            --output text)
+          CLOUDFRONT_DISTRIBUTION_ID=$(aws ssm get-parameter \
+            --name "/portfolio/cloudfront-distribution-id" \
+            --query "Parameter.Value" \
+            --output text)
+
+          echo "CLIENT_ARTIFACT_S3_URI=$CLIENT_ARTIFACT_S3_URI" >> "$GITHUB_ENV"
+          echo "CLIENT_ARTIFACT_S3_URI_BASE=$CLIENT_ARTIFACT_S3_URI_BASE" >> "$GITHUB_ENV"
+          echo "CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_DISTRIBUTION_ID" >> "$GITHUB_ENV"
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync dist/ "${{ env.CLIENT_ARTIFACT_S3_URI }}" --delete
+          aws s3 sync dist/ "${{ env.CLIENT_ARTIFACT_S3_URI_BASE }}/${{ needs.version.outputs.tag }}" --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ env.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
