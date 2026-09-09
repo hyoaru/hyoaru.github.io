@@ -4,8 +4,7 @@ import {
   RecentExperience,
   Technologies,
 } from "@/infrastructure/components/profile";
-import { TabbedPanel } from "@/infrastructure/components/tabbed-panel";
-import { Filler } from "@/infrastructure/components/ui";
+import { Filler, TabbedPanel } from "@/infrastructure/components/ui";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { FloatingActionBar, Footer, Header } from "../../components/layout";

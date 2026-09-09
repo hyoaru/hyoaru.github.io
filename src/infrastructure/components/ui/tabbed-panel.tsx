@@ -1,9 +1,9 @@
 import { Tabs } from "@heroui/react";
 import { ChevronRight } from "lucide-react";
 import { AsyncBoundary } from "../ui";
-import { CareerPanel } from "./career-panel";
-import { CertificationPanel } from "./certification-panel";
-import { ContactPanel } from "./contact-panel";
+import { CareerPanel } from "../profile/career-panel";
+import { CertificationPanel } from "../profile/certification-panel";
+import { ContactPanel } from "../profile/contact-panel";
 
 export const TabbedPanel = () => {
   const tabs = [

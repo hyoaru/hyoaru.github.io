@@ -6,3 +6,4 @@ export * from "./activity-tile";
 export * from "./metric-card";
 export * from "./marquee";
 export * from "./filler";
+export * from "./tabbed-panel";

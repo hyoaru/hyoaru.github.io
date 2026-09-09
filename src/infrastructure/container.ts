@@ -1,11 +1,11 @@
 import { GetCareerHistory } from "@/application/use-cases/get-career-history";
 import { GetCertifications } from "@/application/use-cases/get-certifications";
-import { GetTechnologies } from "@/application/use-cases/get-technologies";
-import { SendMessage } from "@/application/use-cases/send-message";
 import { GetGitContributions } from "@/application/use-cases/get-git-contributions";
 import { GetGitRecentCommit } from "@/application/use-cases/get-git-recent-commit";
 import { GetGitUserInformation } from "@/application/use-cases/get-git-user-information";
 import { GetRecentListeningTrack } from "@/application/use-cases/get-recent-listening-track";
+import { GetTechnologies } from "@/application/use-cases/get-technologies";
+import { SendMessage } from "@/application/use-cases/send-message";
 import {
   DecoratedGitRepository,
   GithubGitRepository,
@@ -14,16 +14,13 @@ import {
   DecoratedListeningRepository,
   LastfmListeningRepository,
 } from "./adapters/listening-repository";
-import {
-  DecoratedMessenger,
-  FormSubmitMessenger,
-} from "./adapters/messenger";
+import { DecoratedMessenger, FormSubmitMessenger } from "./adapters/messenger";
 import {
   DecoratedProfileRepository,
   LocalProfileRepository,
 } from "./adapters/profile-repository";
-import { HttpGithubClient } from "./external/github-client";
 import { HttpFormSubmitClient } from "./external/form-submit-client";
+import { HttpGithubClient } from "./external/github-client";
 import { HttpLastfmClient } from "./external/lastfm-client";
 
 const gitRepository = new DecoratedGitRepository(
