@@ -1,5 +1,4 @@
 import { useProfileActions } from "@/infrastructure/hooks/profile";
-import { TimestampToMonthYear } from "@/infrastructure/formatters";
 import { ScrollShadow } from "@heroui/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { CareerCard } from "./career-card";
@@ -29,12 +28,18 @@ export const CareerPanel = () => {
         <div className="flex flex-grow flex-col gap-y-2.5">
           {careerHistory.map((experience, index) => {
             index = data.length - 1 - index;
-            const startedAt = new TimestampToMonthYear(
+            const startedAt = new Date(
               experience.startedAt,
-            ).format();
+            ).toLocaleDateString("en-US", {
+              month: "long",
+              year: "numeric",
+            });
 
             const endedAt = experience.endedAt
-              ? new TimestampToMonthYear(experience.endedAt).format()
+              ? new Date(experience.endedAt).toLocaleDateString("en-US", {
+                  month: "long",
+                  year: "numeric",
+                })
               : "Present";
 
             return (

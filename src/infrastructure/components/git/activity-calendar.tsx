@@ -1,5 +1,4 @@
 import { useGitActions } from "@/infrastructure/hooks/git";
-import { TimestampToMonthYear } from "@/infrastructure/formatters";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { ActivityCalendar } from "react-activity-calendar";
@@ -22,9 +21,10 @@ export const GitActivityCalendar = () => {
     };
   });
 
-  const startDateFormatted = new TimestampToMonthYear(
-    new Date(dates.startDate),
-  ).format();
+  const startDateFormatted = new Date(dates.startDate).toLocaleDateString(
+    "en-US",
+    { month: "long", year: "numeric" },
+  );
 
   const filteredContributions = data.contributions
     .map((c) => ({ ...c, timestamp: new Date(c.date).getTime() }))
