@@ -1,4 +1,4 @@
-export class GitUser {
+interface GitUserProps {
   username: string;
   publicRepositories: number;
   company?: string;
@@ -6,8 +6,18 @@ export class GitUser {
   hireable?: boolean;
   createdAt: string;
   updatedAt: string;
+}
 
-  public constructor(init: GitUser) {
+export class GitUser {
+  public readonly username: string;
+  public readonly publicRepositories: number;
+  public readonly company?: string;
+  public readonly location?: string;
+  public readonly hireable?: boolean;
+  public readonly createdAt: string;
+  public readonly updatedAt: string;
+
+  public constructor(init: GitUserProps) {
     this.username = init.username;
     this.publicRepositories = init.publicRepositories;
     this.company = init.company;
