@@ -1,12 +1,6 @@
-import type {
-  GetCareerHistoryResponse,
-} from "@/application/use-cases/get-career-history";
-import type {
-  GetCertificationsResponse,
-} from "@/application/use-cases/get-certifications";
-import type {
-  GetTechnologiesResponse,
-} from "@/application/use-cases/get-technologies";
+import type { GetCareerHistoryResponse } from "@/application/use-cases/get-career-history";
+import type { GetCertificationsResponse } from "@/application/use-cases/get-certifications";
+import type { GetTechnologiesResponse } from "@/application/use-cases/get-technologies";
 import { queryOptions } from "@tanstack/react-query";
 import { container } from "../container";
 

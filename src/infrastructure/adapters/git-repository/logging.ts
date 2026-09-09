@@ -40,9 +40,7 @@ export class LoggingGitRepository implements GitRepository {
     try {
       logger.debug(`Fetching contributions for user: ${username}`);
       const contributions = await this.inner.getContributions(username);
-      logger.info(
-        `Successfully fetched contributions for user: ${username}`,
-      );
+      logger.info(`Successfully fetched contributions for user: ${username}`);
       return contributions;
     } catch (error) {
       logger.warn(`Error fetching contributions for user: ${username}`);

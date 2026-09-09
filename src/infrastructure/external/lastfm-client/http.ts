@@ -1,8 +1,5 @@
 import axios, { type AxiosInstance } from "axios";
-import type {
-  GetRecentTracksRequest,
-  GetRecentTracksResponse,
-} from "./dto";
+import type { GetRecentTracksRequest, GetRecentTracksResponse } from "./dto";
 import { LastfmClientError } from "./errors";
 import type { LastfmClient } from "./interface";
 

@@ -2,10 +2,7 @@ import type { ProfileRepository } from "@/application/ports/profile-repository";
 import type { UseCase } from "../interface";
 import type { GetTechnologiesResponse } from "./response";
 
-export class GetTechnologies implements UseCase<
-  void,
-  GetTechnologiesResponse
-> {
+export class GetTechnologies implements UseCase<void, GetTechnologiesResponse> {
   readonly profileRepository: ProfileRepository;
 
   public constructor(init: { profileRepository: ProfileRepository }) {

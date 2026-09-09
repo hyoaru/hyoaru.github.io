@@ -28,12 +28,13 @@ export const CareerPanel = () => {
         <div className="flex flex-grow flex-col gap-y-2.5">
           {careerHistory.map((experience, index) => {
             index = data.length - 1 - index;
-            const startedAt = new Date(
-              experience.startedAt,
-            ).toLocaleDateString("en-US", {
-              month: "long",
-              year: "numeric",
-            });
+            const startedAt = new Date(experience.startedAt).toLocaleDateString(
+              "en-US",
+              {
+                month: "long",
+                year: "numeric",
+              },
+            );
 
             const endedAt = experience.endedAt
               ? new Date(experience.endedAt).toLocaleDateString("en-US", {

@@ -1,7 +1,4 @@
-import {
-  type Messenger,
-  MessengerError,
-} from "@/application/ports/messenger";
+import { type Messenger, MessengerError } from "@/application/ports/messenger";
 import type { FormSubmitClient } from "@/infrastructure/external/form-submit-client";
 
 export class FormSubmitMessenger implements Messenger {

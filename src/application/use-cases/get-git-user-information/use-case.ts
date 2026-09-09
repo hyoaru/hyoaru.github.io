@@ -15,9 +15,7 @@ export class GetGitUserInformation implements UseCase<
   public async execute(
     request: GetGitUserInformationRequest,
   ): Promise<GetGitUserInformationResponse> {
-    const user = await this.gitRepository.getUserInformation(
-      request.username,
-    );
+    const user = await this.gitRepository.getUserInformation(request.username);
 
     return user;
   }

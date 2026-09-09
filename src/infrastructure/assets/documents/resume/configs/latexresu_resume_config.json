@@ -33,9 +33,7 @@
       "website": "",
       "startDate": "",
       "endDate": "",
-      "highlights": [
-        ""
-      ]
+      "highlights": [""]
     }
   ],
   "skills": [
@@ -128,13 +126,7 @@
     },
     {
       "name": "Google Data Analytics Capstone Case Study - 2023",
-      "keywords": [
-        "Python",
-        "R",
-        "Tidyverse",
-        "Pandas",
-        "Jupyter"
-      ],
+      "keywords": ["Python", "R", "Tidyverse", "Pandas", "Jupyter"],
       "description": "A case study on a fictional bike share company based on Chicago. Aiming to gain valuable insights into customer behavior and usage patterns.",
       "url": "https://github.com/hyoaru/google-data-analytics-capstone-case-study"
     },
@@ -183,45 +175,25 @@
     },
     {
       "name": "Expression Converter - 2023",
-      "keywords": [
-        "Java",
-        "Java Swing GUI",
-        "Data Structure",
-        "Stack"
-      ],
+      "keywords": ["Java", "Java Swing GUI", "Data Structure", "Stack"],
       "description": "A course requirement in data structures and algorithm: java application made with java swing designed to provide a user-friendly interface for converting expressions between infix, prefix, and postfix notations.",
       "url": "https://github.com/hyoaru/expression-converter"
     },
     {
       "name": "Anagram - 2023",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "Bootstrap"
-      ],
+      "keywords": ["HTML", "CSS", "Javascript", "Bootstrap"],
       "description": "A midterm course requirement for CS Professional Elective 1: web-based anagram game made using HTML, CSS, and vanilla JS.",
       "url": "https://github.com/hyoaru/anagram"
     },
     {
       "name": "Data Visualization: Prime Number Forest - 2023",
-      "keywords": [
-        "Python",
-        "Pandas",
-        "Numpy",
-        "Plotly",
-        "Github Pages"
-      ],
+      "keywords": ["Python", "Pandas", "Numpy", "Plotly", "Github Pages"],
       "description": "An interactive data visualization made with python, plotly, pandas, and numpy, of how prime numbers from 1 - 200 would look like if it was a forest.",
       "url": "https://github.com/hyoaru/prime-number-forest-3d"
     },
     {
       "name": "Old Portfolio - 2022",
-      "keywords": [
-        "React",
-        "Bootstrap",
-        "Github Pages"
-      ],
+      "keywords": ["React", "Bootstrap", "Github Pages"],
       "description": "My old personal portfolio that I made back when I was in my first year of college.",
       "url": "https://github.com/hyoaru/old-portfolio"
     },

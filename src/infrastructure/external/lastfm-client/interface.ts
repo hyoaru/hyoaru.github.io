@@ -1,7 +1,4 @@
-import type {
-  GetRecentTracksRequest,
-  GetRecentTracksResponse,
-} from "./dto";
+import type { GetRecentTracksRequest, GetRecentTracksResponse } from "./dto";
 
 export interface LastfmClient {
   getRecentTracks(

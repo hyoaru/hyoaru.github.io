@@ -1,5 +1,10 @@
 import { useProfileActions } from "@/infrastructure/hooks/profile";
-import { Button, Modal, ScrollShadow, type ModalBackdropProps } from "@heroui/react";
+import {
+  Button,
+  Modal,
+  ScrollShadow,
+  type ModalBackdropProps,
+} from "@heroui/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { CircleCheck } from "lucide-react";
 import { AsyncBoundary } from "../ui";

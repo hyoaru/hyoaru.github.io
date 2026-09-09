@@ -4,9 +4,7 @@ import { MetricCard } from "../ui";
 
 export const GitRepositoriesMetricTile = () => {
   const { getUserInformation } = useGitActions();
-  const { data } = useSuspenseQuery(
-    getUserInformation(),
-  );
+  const { data } = useSuspenseQuery(getUserInformation());
 
   return (
     <MetricCard>
