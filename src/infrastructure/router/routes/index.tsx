@@ -1,4 +1,4 @@
-import { GitStats } from "@/infrastructure/components/git";
+import { GitActivity, GitStats } from "@/infrastructure/components/git";
 import {
   Profile,
   RecentExperience,
@@ -30,7 +30,7 @@ function RouteComponent() {
               <div className="hidden sm:block">
                 <GitStats />
               </div>
-              {/*   <GitActivity /> */}
+              <GitActivity />
               {/*   <div className="hidden lg:block"> */}
               {/*     <Filler className="h-14" /> */}
               {/*   </div> */}
