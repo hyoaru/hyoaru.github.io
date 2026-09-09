@@ -1,15 +1,21 @@
-import * as React from 'react'
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { Toast } from "@heroui/react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   component: RootComponent,
-})
+});
 
 function RootComponent() {
   return (
-    <React.Fragment>
-      <div>Hello "__root"!</div>
-      <Outlet />
-    </React.Fragment>
-  )
+    <>
+      <div className="h-dvh">
+        <div className="flex h-full flex-col items-start justify-start">
+          <Outlet />
+        </div>
+      </div>
+      <Toast.Provider />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </>
+  );
 }

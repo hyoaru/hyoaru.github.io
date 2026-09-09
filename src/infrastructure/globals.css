@@ -3,4 +3,31 @@
 
 @theme {
   --font-sans: "Geist", sans-serif;
+  --text-2xs: 0.65rem;
+  --breakpoint-xs: 26.5rem;
+}
+
+.pattern-grid {
+  inset: 0;
+  background-image:
+    linear-gradient(
+      to right,
+      oklch(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      oklch(var(--foreground) / 0.06) 1px,
+      transparent 1px
+    );
+  background-size: 24px 24px;
+}
+
+.pattern-dots {
+  inset: 0;
+  background-image: radial-gradient(
+    oklch(var(--foreground) / 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
 }
