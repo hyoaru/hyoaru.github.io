@@ -95,10 +95,6 @@
   display: none;
 }
 
-html {
-  font-size: 15px;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
