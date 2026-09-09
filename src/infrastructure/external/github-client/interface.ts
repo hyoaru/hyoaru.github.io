@@ -15,7 +15,7 @@ export interface Event {
   type: string;
   actor: Actor;
   repository: Repository;
-  createdAt: string;
+  createdAt: Date;
 }
 
 export interface User {
@@ -24,7 +24,7 @@ export interface User {
   company?: string;
   location?: string;
   hireable?: boolean;
-  createdAt: string;
+  createdAt: Date;
   updatedAt: string;
 }
 

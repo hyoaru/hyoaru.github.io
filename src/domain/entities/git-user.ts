@@ -4,7 +4,7 @@ interface GitUserProps {
   company?: string;
   location?: string;
   hireable?: boolean;
-  createdAt: string;
+  createdAt: Date;
   updatedAt: string;
 }
 
@@ -14,7 +14,7 @@ export class GitUser {
   public readonly company?: string;
   public readonly location?: string;
   public readonly hireable?: boolean;
-  public readonly createdAt: string;
+  public readonly createdAt: Date;
   public readonly updatedAt: string;
 
   public constructor(init: GitUserProps) {

@@ -1,6 +1,7 @@
+import { Profile } from "@/infrastructure/components/profile";
+import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "../../components/layout";
-import { ScrollShadow } from "@heroui/react";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -18,7 +19,7 @@ function RouteComponent() {
             >
               {/* <FloatingActionBar /> */}
               <Header />
-              {/*   <Profile /> */}
+              <Profile />
               {/*   <RecentExperience /> */}
               {/*   <Technologies /> */}
               {/*   <div className="hidden sm:block"> */}

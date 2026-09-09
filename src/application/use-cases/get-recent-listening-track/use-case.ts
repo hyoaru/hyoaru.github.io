@@ -19,6 +19,6 @@ export class GetRecentListeningTrack implements UseCase<
       request.username,
     );
 
-    return { track };
+    return track;
   }
 }

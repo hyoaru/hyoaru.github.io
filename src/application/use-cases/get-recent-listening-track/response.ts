@@ -1,5 +1,3 @@
 import type { Track } from "@/domain/entities";
 
-export interface GetRecentListeningTrackResponse {
-  track: Track;
-}
+export interface GetRecentListeningTrackResponse extends Track {}

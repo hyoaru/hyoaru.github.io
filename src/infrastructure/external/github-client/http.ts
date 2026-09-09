@@ -61,7 +61,7 @@ export class HttpGithubClient implements GithubClient {
         name: event.repo.name,
         url: event.repo.url,
       },
-      createdAt: event.created_at,
+      createdAt: new Date(event.created_at),
     }));
 
     return events;
@@ -78,7 +78,7 @@ export class HttpGithubClient implements GithubClient {
       company: data.company,
       location: data.location,
       hireable: data.hireable,
-      createdAt: data.created_at,
+      createdAt: new Date(data.created_at),
       updatedAt: data.updated_at,
     };
   }
