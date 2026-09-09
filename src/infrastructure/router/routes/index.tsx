@@ -1,4 +1,4 @@
-import { Profile } from "@/infrastructure/components/profile";
+import { Profile, Technologies } from "@/infrastructure/components/profile";
 import { ScrollShadow } from "@heroui/react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "../../components/layout";
@@ -22,7 +22,7 @@ function RouteComponent() {
               <Header />
               <Profile />
               <RecentExperience />
-              {/*   <Technologies /> */}
+              <Technologies />
               {/*   <div className="hidden sm:block"> */}
               {/*     <GitStats /> */}
               {/*   </div> */}
