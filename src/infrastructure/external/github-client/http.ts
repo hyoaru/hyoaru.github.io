@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Event, GithubClient, User } from "./interface";
+import type { Contribution, Event, GithubClient, User } from "./interface";
 
 type HttpActor = {
   id: number;
@@ -29,6 +29,17 @@ export type HttpUser = {
   hireable?: boolean;
   created_at: string;
   updated_at: string;
+};
+
+type HttpContribution = {
+  date: string;
+  count: number;
+  level: number;
+};
+
+type HttpContributions = {
+  total: Record<string, number>;
+  contributions: HttpContribution[];
 };
 
 export class HttpGithubClient implements GithubClient {
@@ -70,5 +81,13 @@ export class HttpGithubClient implements GithubClient {
       createdAt: data.created_at,
       updatedAt: data.updated_at,
     };
+  }
+
+  public async getUserContributions(username: string): Promise<Contribution[]> {
+    const { data } = await axios.get<HttpContributions>(
+      `https://github-contributions-api.jogruber.de/v4/${username}`,
+    );
+
+    return data.contributions;
   }
 }

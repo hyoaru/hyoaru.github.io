@@ -28,7 +28,14 @@ export interface User {
   updatedAt: string;
 }
 
+export interface Contribution {
+  date: string;
+  count: number;
+  level: number;
+}
+
 export interface GithubClient {
   getUserEvents(username: string): Promise<Event[]>;
   getUserInformation(username: string): Promise<User>;
+  getUserContributions(username: string): Promise<Contribution[]>;
 }

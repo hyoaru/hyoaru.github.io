@@ -4,6 +4,7 @@ import {
   GitRepositoryNoRecentCommitError,
 } from "@/application/ports/git-repository";
 import { GitCommit, GitUser } from "@/domain/entities";
+import type { GitContribution } from "@/domain/value-objects";
 import type { GithubClient } from "@/infrastructure/external/github-client";
 
 export class GithubGitRepository implements GitRepository {
@@ -62,6 +63,21 @@ export class GithubGitRepository implements GitRepository {
 
       const message = error instanceof Error ? error.message : String(error);
       throw new GitRepositoryError(`Get recent commit error: ${message}`, {
+        cause: error,
+      });
+    }
+  }
+
+  public async getContributions(username: string): Promise<GitContribution[]> {
+    try {
+      return await this.githubClient.getUserContributions(username);
+    } catch (error) {
+      if (error instanceof GitRepositoryError) {
+        throw error;
+      }
+
+      const message = error instanceof Error ? error.message : String(error);
+      throw new GitRepositoryError(`Get contributions error: ${message}`, {
         cause: error,
       });
     }

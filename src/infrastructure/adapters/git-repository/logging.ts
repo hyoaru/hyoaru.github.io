@@ -1,5 +1,6 @@
 import type { GitRepository } from "@/application/ports/git-repository";
 import type { GitCommit, GitUser } from "@/domain/entities";
+import type { GitContribution } from "@/domain/value-objects";
 import { logger } from "@/infrastructure/logger";
 
 export class LoggingGitRepository implements GitRepository {
@@ -31,6 +32,20 @@ export class LoggingGitRepository implements GitRepository {
       return user;
     } catch (error) {
       logger.warn(`Error fetching user information for user: ${username}`);
+      throw error;
+    }
+  }
+
+  public async getContributions(username: string): Promise<GitContribution[]> {
+    try {
+      logger.debug(`Fetching contributions for user: ${username}`);
+      const contributions = await this.inner.getContributions(username);
+      logger.info(
+        `Successfully fetched contributions for user: ${username}`,
+      );
+      return contributions;
+    } catch (error) {
+      logger.warn(`Error fetching contributions for user: ${username}`);
       throw error;
     }
   }

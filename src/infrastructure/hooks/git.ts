@@ -1,4 +1,8 @@
 import type {
+  GetGitContributionsRequest,
+  GetGitContributionsResponse,
+} from "@/application/use-cases/get-git-contributions";
+import type {
   GetGitUserInformationRequest,
   GetGitUserInformationResponse,
 } from "@/application/use-cases/get-git-user-information";
@@ -23,6 +27,13 @@ export const useGitActions = () => {
         queryKey: ["git", "user-information", request],
         queryFn: (): Promise<GetGitUserInformationResponse> => {
           return container.git.getUserInformation.execute(request);
+        },
+      }),
+    getGitContributions: (request: GetGitContributionsRequest) =>
+      queryOptions({
+        queryKey: ["git", "contributions", request],
+        queryFn: (): Promise<GetGitContributionsResponse> => {
+          return container.git.getContributions.execute(request);
         },
       }),
   };

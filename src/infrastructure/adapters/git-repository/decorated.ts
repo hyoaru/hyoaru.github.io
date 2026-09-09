@@ -1,5 +1,6 @@
 import type { GitRepository } from "@/application/ports/git-repository";
 import type { GitCommit, GitUser } from "@/domain/entities";
+import type { GitContribution } from "@/domain/value-objects";
 import { LoggingGitRepository } from "./logging";
 
 export class DecoratedGitRepository implements GitRepository {
@@ -14,5 +15,8 @@ export class DecoratedGitRepository implements GitRepository {
   }
   public async getUserInformation(username: string): Promise<GitUser> {
     return this.inner.getUserInformation(username);
+  }
+  public async getContributions(username: string): Promise<GitContribution[]> {
+    return this.inner.getContributions(username);
   }
 }
