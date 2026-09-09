@@ -1,4 +1,5 @@
 import { GitActivity, GitStats } from "@/infrastructure/components/git";
+import { TabbedPanel } from "@/infrastructure/components/tabbed-panel";
 import { Filler } from "@/infrastructure/components/ui";
 import {
   Profile,
@@ -39,7 +40,7 @@ function RouteComponent() {
                 <Footer />
               </div>
             </ScrollShadow>
-            {/* <TabbedPanel /> */}
+            <TabbedPanel />
             {/* <div className="lg:hidden"> */}
             {/*   <Filler className="h-8 shrink-0" /> */}
             {/* </div> */}
