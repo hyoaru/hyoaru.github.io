@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { AsyncBoundary } from "../ui";
 import { CareerPanel } from "./career-panel";
 import { CertificationPanel } from "./certification-panel";
+import { ContactPanel } from "./contact-panel";
 
 export const TabbedPanel = () => {
   const tabs = [
@@ -15,6 +16,11 @@ export const TabbedPanel = () => {
       id: "certifications",
       label: "Certifications",
       panel: CertificationPanel,
+    },
+    {
+      id: "contact",
+      label: "Get in Touch",
+      panel: ContactPanel,
     },
   ];
 

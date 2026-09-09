@@ -1,6 +1,7 @@
 import { GetCareerHistory } from "@/application/use-cases/get-career-history";
 import { GetCertifications } from "@/application/use-cases/get-certifications";
 import { GetTechnologies } from "@/application/use-cases/get-technologies";
+import { SendMessage } from "@/application/use-cases/send-message";
 import { GetGitContributions } from "@/application/use-cases/get-git-contributions";
 import { GetGitRecentCommit } from "@/application/use-cases/get-git-recent-commit";
 import { GetGitUserInformation } from "@/application/use-cases/get-git-user-information";
@@ -14,10 +15,15 @@ import {
   LastfmListeningRepository,
 } from "./adapters/listening-repository";
 import {
+  DecoratedMessenger,
+  FormSubmitMessenger,
+} from "./adapters/messenger";
+import {
   DecoratedProfileRepository,
   LocalProfileRepository,
 } from "./adapters/profile-repository";
 import { HttpGithubClient } from "./external/github-client";
+import { HttpFormSubmitClient } from "./external/form-submit-client";
 import { HttpLastfmClient } from "./external/lastfm-client";
 
 const gitRepository = new DecoratedGitRepository(
@@ -34,6 +40,10 @@ const profileRepository = new DecoratedProfileRepository(
   new LocalProfileRepository(),
 );
 
+const messenger = new DecoratedMessenger(
+  new FormSubmitMessenger(new HttpFormSubmitClient()),
+);
+
 const getGitRecentCommit = new GetGitRecentCommit({ gitRepository });
 const getGitUserInformation = new GetGitUserInformation({ gitRepository });
 const getGitContributions = new GetGitContributions({ gitRepository });
@@ -45,6 +55,7 @@ const getRecentListeningTrack = new GetRecentListeningTrack({
 const getCareerHistory = new GetCareerHistory({ profileRepository });
 const getCertifications = new GetCertifications({ profileRepository });
 const getTechnologies = new GetTechnologies({ profileRepository });
+const sendMessage = new SendMessage({ messenger });
 
 export const container = {
   git: {
@@ -59,5 +70,8 @@ export const container = {
     getCareerHistory,
     getCertifications,
     getTechnologies,
+  },
+  contact: {
+    sendMessage,
   },
 };
