@@ -1,11 +1,11 @@
 import type { GitRepository } from "@/application/ports/git-repository";
 import type { UseCase } from "../interface";
-import type { GetRecentGitCommitRequest } from "./request";
-import type { GetRecentGitCommitResponse } from "./response";
+import type { GetGitRecentCommitRequest } from "./request";
+import type { GetGitRecentCommitResponse } from "./response";
 
-export class GetRecentGitCommit implements UseCase<
-  GetRecentGitCommitRequest,
-  GetRecentGitCommitResponse
+export class GetGitRecentCommit implements UseCase<
+  GetGitRecentCommitRequest,
+  GetGitRecentCommitResponse
 > {
   readonly gitRepository: GitRepository;
 
@@ -13,8 +13,8 @@ export class GetRecentGitCommit implements UseCase<
     this.gitRepository = init.gitRepository;
   }
   public async execute(
-    request: GetRecentGitCommitRequest,
-  ): Promise<GetRecentGitCommitResponse> {
+    request: GetGitRecentCommitRequest,
+  ): Promise<GetGitRecentCommitResponse> {
     const recentCommit = await this.gitRepository.getRecentCommit(
       request.username,
     );

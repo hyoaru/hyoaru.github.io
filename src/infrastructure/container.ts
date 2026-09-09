@@ -1,5 +1,5 @@
 import { GetGitUserInformation } from "@/application/use-cases/get-git-user-information";
-import { GetRecentGitCommit } from "@/application/use-cases/get-recent-git-commit";
+import { GetGitRecentCommit } from "@/application/use-cases/get-git-recent-commit";
 import {
   DecoratedGitRepository,
   GithubGitRepository,
@@ -10,12 +10,12 @@ const gitRepository = new DecoratedGitRepository(
   new GithubGitRepository(new HttpGithubClient()),
 );
 
-const getRecentGitCommit = new GetRecentGitCommit({ gitRepository });
+const getGitRecentCommit = new GetGitRecentCommit({ gitRepository });
 const getGitUserInformation = new GetGitUserInformation({ gitRepository });
 
 export const container = {
   git: {
-    getRecentCommit: getRecentGitCommit,
+    getRecentCommit: getGitRecentCommit,
     getUserInformation: getGitUserInformation,
   },
 };

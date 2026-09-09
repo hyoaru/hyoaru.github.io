@@ -3,18 +3,18 @@ import type {
   GetGitUserInformationResponse,
 } from "@/application/use-cases/get-git-user-information";
 import type {
-  GetRecentGitCommitRequest,
-  GetRecentGitCommitResponse,
-} from "@/application/use-cases/get-recent-git-commit";
+  GetGitRecentCommitRequest,
+  GetGitRecentCommitResponse,
+} from "@/application/use-cases/get-git-recent-commit";
 import { queryOptions } from "@tanstack/react-query";
 import { container } from "../container";
 
 export const useGitActions = () => {
   return {
-    getRecentCommit: (request: GetRecentGitCommitRequest) =>
+    getGitRecentCommit: (request: GetGitRecentCommitRequest) =>
       queryOptions({
         queryKey: ["git", "recent-commit", request],
-        queryFn: (): Promise<GetRecentGitCommitResponse> => {
+        queryFn: (): Promise<GetGitRecentCommitResponse> => {
           return container.git.getRecentCommit.execute(request);
         },
       }),
