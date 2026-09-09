@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Event, GithubClient, User } from "../interface";
+import type { Event, GithubClient, User } from "./interface";
 
 type HttpActor = {
   id: number;
