@@ -1,8 +1,8 @@
-import { GitRecentCommitTile, GitStats } from "@/features/git";
-import { PersonalImage } from "@/features/identity";
-import { ListeningRecentTrackTile } from "@/features/listening";
-import { AsyncBoundary } from "@/shared/components";
 import { PersonStanding } from "lucide-react";
+import { GitRecentCommitTile } from "../../git";
+import { ListeningRecentTrackTile } from "../../listening";
+import { AsyncBoundary } from "../../ui";
+import { PersonalImage } from "../personal-image";
 
 export const ProfileMobile = () => {
   const age = Math.floor(
@@ -13,7 +13,7 @@ export const ProfileMobile = () => {
   return (
     <>
       <div className="space-y-2.5">
-        <div className="aspect-[4/3] overflow-hidden rounded-lg">
+        <div className="aspect-4/3 overflow-hidden rounded-lg">
           <AsyncBoundary>
             <div className="relative">
               <div className="text-background dark:text-foreground absolute bottom-0 flex h-[20%] w-full items-center gap-1 pe-4 pb-10">
@@ -26,7 +26,7 @@ export const ProfileMobile = () => {
                   Data Science
                 </p>
               </div>
-              <PersonalImage className="aspect-[4/3] object-[center_30%]" />
+              <PersonalImage className="aspect-4/3 object-[center_30%]" />
             </div>
           </AsyncBoundary>
         </div>

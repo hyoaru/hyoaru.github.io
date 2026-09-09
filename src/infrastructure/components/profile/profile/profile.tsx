@@ -1,5 +1,5 @@
 import { ProfileDesktop } from "./profile-desktop";
-// import { ProfileMobile } from "./profile-mobile";
+import { ProfileMobile } from "./profile-mobile";
 
 export const Profile = () => {
   return (
@@ -7,7 +7,9 @@ export const Profile = () => {
       <div className="hidden sm:block">
         <ProfileDesktop />
       </div>
-      <div className="block sm:hidden">{/* <ProfileMobile /> */}</div>
+      <div className="block sm:hidden">
+        <ProfileMobile />
+      </div>
     </>
   );
 };
