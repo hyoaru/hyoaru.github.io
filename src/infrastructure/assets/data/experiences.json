@@ -187,10 +187,10 @@
   {
     "organization": "Philippine Digital Asset Exchange (PDAX)",
     "title": "Senior Associate Solutions Architect",
-    "summary": "Architected and engineered a serverless, event-driven security ecosystem to automate the lifecycle of vulnerability findings. Focused on reducing remediation lag through Hexagonal Architecture and high-concurrency 'Fan-out' design patterns to bridge the gap between cloud security monitoring and engineering workflows.",
+    "summary": "Hardened CI/CD pipelines against software supply chain attacks and standardized automated security and quality checks, while architecting a serverless, event-driven security ecosystem that bridges cloud security monitoring and engineering workflows to reduce remediation lag.",
     "country": "Philippines",
     "started_at": "2026-01",
-    "ended_at": null,
+    "ended_at": "2026-06",
     "technologies": [
       "Amazon Web Services (AWS)",
       "AWS Lambda",
@@ -200,14 +200,21 @@
       "Serverless Architecture",
       "Event Driven Architecture",
       "Hexagonal Architecture",
+      "GitHub Actions",
+      "Trivy",
+      "SonarQube",
+      "Pre-commit Hooks",
+      "CI/CD",
       "Python",
       "Docker"
     ],
     "highlights": [
-      "Reduced Mean Time to Remediation (MTTR) by 80% by architecting a serverless security ecosystem utilizing a 'Fan-out' pattern across multiple AWS Lambda functions.",
-      "Engineered an idempotent ingestion pipeline using DynamoDB and SQS to process thousands of monthly security findings without data duplication.",
-      "Implemented decoupled entry points via CLI and AWS EventBridge to support both automated real-time intake and manual bulk processing of Security Hub findings.",
-      "Automated real-time Jira auto-resolution and squad-based assignment by engineering dynamic ownership rules into the serverless workflow."
+      "Hardened GitHub Actions workflows against software supply chain attacks with pinned actions and least-privilege permissions.",
+      "Standardized CI/CD pipelines with Trivy dependency scanning, SonarQube, linting, and pre-commit hooks across GitHub Actions (CI) and AWS (CD).",
+      "Architected a serverless security ecosystem using a 'Fan-out' pattern across AWS Lambda functions to reduce mean time to remediation.",
+      "Engineered an idempotent ingestion pipeline with DynamoDB and SQS to process security findings without duplication.",
+      "Implemented decoupled CLI and EventBridge entry points for real-time and manual bulk Security Hub intake.",
+      "Automated Jira resolution and squad-based assignment through dynamic ownership rules in the serverless workflow."
     ]
   }
 ]
