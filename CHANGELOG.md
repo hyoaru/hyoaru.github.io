@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.1...v3.2.2) (2026-09-10)
+
+
+### Bug Fixes
+
+* react activity calendar issue with color scheme ([07b7728](https://github.com/hyoaru/hyoaru.github.io/commit/07b772837d2584e5b4dd5ce7def7da8ab8da3d2f))
+
 ## [3.2.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.0...v3.2.1) (2026-09-10)
 
 
