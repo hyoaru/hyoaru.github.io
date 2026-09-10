@@ -1,3 +1,10 @@
+## [3.3.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.1...v3.3.2) (2026-09-10)
+
+
+### Bug Fixes
+
+* project modal text kinda big on small screens ([5a5495f](https://github.com/hyoaru/hyoaru.github.io/commit/5a5495f7404121605de1d2087c0d43629d985357))
+
 ## [3.3.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.0...v3.3.1) (2026-09-10)
 
 
