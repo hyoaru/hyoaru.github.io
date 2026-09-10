@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.0...v3.2.1) (2026-09-10)
+
+
+### Performance Improvements
+
+* optimize images ([293f6cb](https://github.com/hyoaru/hyoaru.github.io/commit/293f6cb3f422ada2903f131c037cbb985a8a6e12))
+
 # [3.2.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.3...v3.2.0) (2026-09-10)
 
 
