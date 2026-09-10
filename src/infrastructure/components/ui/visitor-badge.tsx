@@ -22,7 +22,7 @@ export const VisitorBadge = ({
       if (match && match[1]) {
         const rawValue = match[1].trim();
         const numericValue = parseInt(rawValue.replace(/,/g, ""), 10);
-        return { numericValue };
+        return numericValue;
       } else {
         throw new Error("Unable to extract visitor count from response");
       }
