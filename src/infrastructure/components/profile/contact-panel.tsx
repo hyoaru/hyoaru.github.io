@@ -114,9 +114,8 @@ export const ContactPanel = () => {
                 Lets get in touch!
               </p>
               <div className="space-y-1">
-                <form.Field
-                  name="email"
-                  children={(field) => {
+                <form.Field name="email">
+                  {(field) => {
                     const { isInvalid, errorMessage } = getFieldError(field);
 
                     return (
@@ -139,10 +138,9 @@ export const ContactPanel = () => {
                       </>
                     );
                   }}
-                />
-                <form.Field
-                  name="name"
-                  children={(field) => {
+                </form.Field>
+                <form.Field name="name">
+                  {(field) => {
                     const { isInvalid, errorMessage } = getFieldError(field);
 
                     return (
@@ -165,10 +163,9 @@ export const ContactPanel = () => {
                       </>
                     );
                   }}
-                />
-                <form.Field
-                  name="message"
-                  children={(field) => {
+                </form.Field>
+                <form.Field name="message">
+                  {(field) => {
                     const { isInvalid, errorMessage } = getFieldError(field);
 
                     return (
@@ -191,10 +188,11 @@ export const ContactPanel = () => {
                       </>
                     );
                   }}
-                />
+                </form.Field>
                 <form.Subscribe
                   selector={(state) => [state.canSubmit, state.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
+                >
+                  {([canSubmit, isSubmitting]) => (
                     <Button
                       type="submit"
                       className="mt-4 rounded-lg"
@@ -215,7 +213,7 @@ export const ContactPanel = () => {
                       )}
                     </Button>
                   )}
-                />
+                </form.Subscribe>
               </div>
             </div>
           </form>

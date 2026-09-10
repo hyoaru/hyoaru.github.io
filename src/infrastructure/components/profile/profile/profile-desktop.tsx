@@ -1,10 +1,7 @@
-import { Tooltip } from "@heroui/react";
-import { Clock, Heart } from "lucide-react";
+import { Clock } from "lucide-react";
 import { GitRecentCommitTile } from "../../git";
 import { ListeningRecentTrackTile } from "../../listening";
 import { AsyncBoundary, PhilippineTime, VisitorBadge } from "../../ui";
-// @ts-expect-error
-import personalImage from "@/infrastructure/assets/images/personal-image.jpg?format=webp";
 import { PersonalImage } from "../personal-image";
 
 export const ProfileDesktop = () => {
