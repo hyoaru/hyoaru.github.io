@@ -8,8 +8,8 @@ export const GitActivityCalendar = () => {
   const { getContributions } = useGitActions();
   const { data } = useSuspenseQuery(getContributions());
 
-  const { theme } = useTheme();
-  const colorScheme = (theme ?? "dark") as "light" | "dark";
+  const { resolvedTheme } = useTheme();
+  const colorScheme = (resolvedTheme ?? "dark") as "light" | "dark";
 
   const [dates] = useState(() => {
     const now = Date.now();
