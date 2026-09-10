@@ -1,3 +1,11 @@
+# [3.3.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.2...v3.3.0) (2026-09-10)
+
+
+### Features
+
+* add itala ([ca36f6f](https://github.com/hyoaru/hyoaru.github.io/commit/ca36f6f45e98714cf464a09cafce560a4617b5d3))
+* projects section ([7c695c8](https://github.com/hyoaru/hyoaru.github.io/commit/7c695c872d191e6930e1ebdf3186dd7af6eb564a))
+
 ## [3.2.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.1...v3.2.2) (2026-09-10)
 
 
