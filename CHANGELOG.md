@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.2...v3.4.0) (2026-09-10)
+
+
+### Features
+
+* updated resume ([35481a0](https://github.com/hyoaru/hyoaru.github.io/commit/35481a0cd6056552834c41712bfbc4aa0a064cf4))
+
 ## [3.3.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.1...v3.3.2) (2026-09-10)
 
 
