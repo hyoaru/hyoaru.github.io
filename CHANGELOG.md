@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.1...v3.1.2) (2026-09-10)
+
+
+### Bug Fixes
+
+* visitor badge showing object Object ([1dbd301](https://github.com/hyoaru/hyoaru.github.io/commit/1dbd3014f2c776dbfdfda3d89797b895bdda3f6e))
+
 ## [3.1.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.0...v3.1.1) (2026-09-10)
 
 
