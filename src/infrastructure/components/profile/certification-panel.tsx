@@ -6,6 +6,7 @@ import { CertificationCard } from "./certification-card";
 export const CertificationPanel = () => {
   const { getCertifications } = useProfileActions();
   const { data } = useSuspenseQuery(getCertifications());
+  const certifications = [...data].reverse();
 
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">
@@ -25,7 +26,7 @@ export const CertificationPanel = () => {
 
       <ScrollShadow hideScrollBar className="h-full min-h-0">
         <div className="grid grow grid-cols-1 gap-2.5 sm:grid-cols-2">
-          {data.map((certification) => {
+          {certifications.map((certification) => {
             return (
               <CertificationCard
                 key={`certification-${certification.title}`}
