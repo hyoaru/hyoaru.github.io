@@ -3,3 +3,4 @@ export * from "./git-user";
 export * from "./track";
 export * from "./experience";
 export * from "./certification";
+export * from "./project";

@@ -1,0 +1,147 @@
+[
+  {
+    "title": "Anonalyze - An NLP-Enhanced and ML-Driven Platform for Sentiment and Insight Extraction",
+    "date": "2024-10",
+    "image": "anonalyze.jpg",
+    "description": "Anonalyze is a platform built to transform unstructured feedback into actionable insights using Natural Language Processing (NLP) and Machine Learning (ML). Originally developed as a thesis project, it empowers users to gather and analyze anonymous feedback, track sentiment trends, and unlock valuable insights from diverse audiences.",
+    "tags": [
+      "Typescript",
+      "PHP",
+      "Python",
+      "React",
+      "Laravel",
+      "Flask",
+      "Swagger",
+      "Scikit-learn",
+      "Nginx",
+      "Docker",
+      "Machine Learning",
+      "Naive Bayes",
+      "Multinomial Classification",
+      "Term-Frequency Inverse Document Frequency",
+      "Rapid Automatic Keyword Extraction",
+      "LLM Integration",
+      "Reverse Proxy",
+      "Load Balancing",
+      "API-First Architecture",
+      "Cloudflare"
+    ],
+    "repository_url": "https://github.com/hyoaru/anonalyze",
+    "live_url": "https://anonalyze.org"
+  },
+  {
+    "title": "Google Data Analytics Capstone Case Study",
+    "date": "2023-07",
+    "image": "google-data-analytics-capstone.jpg",
+    "description": "A comprehensive case study for a fictional Chicago-based bike share company, completed as part of the Google Data Analytics Capstone. The project involved data cleaning, transformation, and visualization using Python and R to uncover customer behavior and usage trends. The final analysis highlighted actionable insights that could guide business strategy, particularly in improving rider retention and operational efficiency.",
+    "tags": ["Python", "R", "Tidyverse", "Pandas", "Jupyter"],
+    "repository_url": "https://github.com/hyoaru/google-data-analytics-capstone-case-study",
+    "live_url": null
+  },
+  {
+    "title": "Philippine Poverty Area Estimates Web App Choropleth Visualization",
+    "date": "2023-04",
+    "image": "ph-poverty-area-estimates.jpg",
+    "description": "An interactive web application that visualizes poverty statistics in the Philippines across multiple years (2006, 2009, 2012, 2015) using a choropleth map. Developed with Streamlit and powered by Pandas, Numpy, Plotly, and Seaborn, the tool transforms raw survey data into an engaging and accessible format. It highlights regional disparities and provides policymakers, students, and researchers with an intuitive way to analyze socioeconomic trends.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Seaborn",
+      "Plotly",
+      "Jupyter",
+      "Streamlit"
+    ],
+    "repository_url": "https://github.com/hyoaru/philippine-poverty-area-estimates-choropleth/tree/master",
+    "live_url": "https://ph-poverty-area-estimates.streamlit.app"
+  },
+  {
+    "title": "SPARTA Capstone: Data Science and Machine Learning using Python",
+    "date": "2022-09",
+    "image": "sparta-data-science-and-machine-learning-using-python.jpg",
+    "description": "A peer-graded capstone project under the SPARTA program (Smarter Philippines through Data Analytics R&D, Training, and Adoption). The project applies machine learning techniques to real-world datasets, using Scikit-learn, XGBoost, and multiple classifiers to generate predictions and evaluate model performance. It highlights skills in feature engineering, model training, and performance evaluation.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Scikit-learn",
+      "Jupyter",
+      "Xgboost",
+      "K-Neighbours Classifier",
+      "Logistic Regression",
+      "Random Forest Classifier"
+    ],
+    "repository_url": "https://github.com/hyoaru/sparta-data-science-and-machine-learning-using-python",
+    "live_url": null
+  },
+  {
+    "title": "SPARTA: Representing Data and Feature Engineering",
+    "date": "2022-08",
+    "image": "sparta-representing-data-and-feature-engineering.jpg",
+    "description": "A peer-graded SPARTA project focused on feature engineering and representation of structured data. The assignment uses the Adult Income dataset and applies Scikit-learn models such as Logistic Regression, Random Forest, and SVM. It demonstrates preprocessing pipelines, handling categorical/numeric features, and evaluating classification results.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Scikit-learn",
+      "Jupyter",
+      "Logistic Regression",
+      "Random Forest Classifier",
+      "Support Vector Machines"
+    ],
+    "repository_url": "https://github.com/hyoaru/sparta-representing-data-and-feature-engineering",
+    "live_url": null
+  },
+  {
+    "title": "SPARTA: Supervised ML Binary Classification",
+    "date": "2022-07",
+    "image": "sparta-supervisedml-binary-classification.jpg",
+    "description": "A SPARTA peer-graded project focused on supervised machine learning for binary classification tasks. Using the Breast Cancer Wisconsin dataset, the project trains and compares Logistic Regression and Random Forest models, applying data preprocessing and evaluation metrics to assess prediction accuracy. It reflects foundational skills in implementing end-to-end supervised learning workflows.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Scikit-learn",
+      "Jupyter",
+      "Logistic Regression",
+      "Random Forest Classifier"
+    ],
+    "repository_url": "https://github.com/hyoaru/sparta-supervisedml-binary-classification",
+    "live_url": null
+  },
+  {
+    "title": "SPARTA: Unsupervised ML Clustering",
+    "date": "2022-08",
+    "image": "sparta-unsupervisedml-clustering.jpg",
+    "description": "A SPARTA project focused on unsupervised learning, applying clustering algorithms to the Iris plants dataset. The project explores KMeans, DBSCAN, and Agglomerative Clustering, visualizing the results to highlight natural groupings in the data. It demonstrates the application of unsupervised techniques for pattern discovery and comparative evaluation of clustering methods.",
+    "tags": [
+      "Python",
+      "Pandas",
+      "Numpy",
+      "Scikit-learn",
+      "Jupyter",
+      "KMeans Clutering",
+      "DBSCAN",
+      "Agglomerative Clustering"
+    ],
+    "repository_url": "https://github.com/hyoaru/sparta-unsupervisedml-clustering",
+    "live_url": null
+  },
+  {
+    "title": "Declutter",
+    "date": "2022-07",
+    "image": "declutter.jpg",
+    "description": "A minimalist web application designed to provide users with a clutter-free space to write and share their thoughts. Built with Flask and styled using Bootstrap, it integrates Supabase for database services and is deployed via Render. The project emphasizes clean UI, simplicity of interaction, and backend–frontend integration in Python web development.",
+    "tags": [
+      "Python",
+      "Flask",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Supabase",
+      "Render"
+    ],
+    "repository_url": "https://github.com/hyoaru/declutter",
+    "live_url": "https://declutter.onrender.com"
+  }
+]

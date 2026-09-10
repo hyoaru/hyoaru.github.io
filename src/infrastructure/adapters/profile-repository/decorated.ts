@@ -1,5 +1,5 @@
 import type { ProfileRepository } from "@/application/ports/profile-repository";
-import type { Certification, Experience } from "@/domain/entities";
+import type { Certification, Experience, Project } from "@/domain/entities";
 import { LoggingProfileRepository } from "./logging";
 
 export class DecoratedProfileRepository implements ProfileRepository {
@@ -15,6 +15,10 @@ export class DecoratedProfileRepository implements ProfileRepository {
 
   public async getCertifications(): Promise<Certification[]> {
     return this.inner.getCertifications();
+  }
+
+  public async getProjects(): Promise<Project[]> {
+    return this.inner.getProjects();
   }
 
   public async getTechnologies(): Promise<string[]> {

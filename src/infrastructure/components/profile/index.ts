@@ -10,4 +10,6 @@ export * from "./career-card";
 export * from "./career-panel";
 export * from "./certification-card";
 export * from "./certification-panel";
+export * from "./project-card";
+export * from "./project-panel";
 export * from "./contact-panel";

@@ -4,6 +4,7 @@ import { AsyncBoundary } from "../ui";
 import { CareerPanel } from "../profile/career-panel";
 import { CertificationPanel } from "../profile/certification-panel";
 import { ContactPanel } from "../profile/contact-panel";
+import { ProjectPanel } from "../profile/project-panel";
 
 export const TabbedPanel = () => {
   const tabs = [
@@ -16,6 +17,11 @@ export const TabbedPanel = () => {
       id: "certifications",
       label: "Certifications",
       panel: CertificationPanel,
+    },
+    {
+      id: "projects",
+      label: "Projects",
+      panel: ProjectPanel,
     },
     {
       id: "contact",

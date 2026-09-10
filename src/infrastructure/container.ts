@@ -3,6 +3,7 @@ import { GetCertifications } from "@/application/use-cases/get-certifications";
 import { GetGitContributions } from "@/application/use-cases/get-git-contributions";
 import { GetGitRecentCommit } from "@/application/use-cases/get-git-recent-commit";
 import { GetGitUserInformation } from "@/application/use-cases/get-git-user-information";
+import { GetProjects } from "@/application/use-cases/get-projects";
 import { GetRecentListeningTrack } from "@/application/use-cases/get-recent-listening-track";
 import { GetTechnologies } from "@/application/use-cases/get-technologies";
 import { SendMessage } from "@/application/use-cases/send-message";
@@ -51,6 +52,7 @@ const getRecentListeningTrack = new GetRecentListeningTrack({
 
 const getCareerHistory = new GetCareerHistory({ profileRepository });
 const getCertifications = new GetCertifications({ profileRepository });
+const getProjects = new GetProjects({ profileRepository });
 const getTechnologies = new GetTechnologies({ profileRepository });
 const sendMessage = new SendMessage({ messenger });
 
@@ -66,6 +68,7 @@ export const container = {
   profile: {
     getCareerHistory,
     getCertifications,
+    getProjects,
     getTechnologies,
   },
   contact: {
