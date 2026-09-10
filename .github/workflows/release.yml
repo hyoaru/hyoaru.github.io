@@ -27,6 +27,7 @@ jobs:
       contents: write
     outputs:
       tag: ${{ steps.version.outputs.tag }}
+      released: ${{ steps.version.outputs.released }}
     steps:
       - name: Checkout
         uses: hyoaru/actions/checkout@v1
@@ -37,6 +38,9 @@ jobs:
         uses: hyoaru/actions/setup-node@v1
         with:
           node-version: 24
+
+      - name: Get previous version
+        run: echo "PREVIOUS_TAG=$(git tag --sort=-v:refname | head -n1)" >> "$GITHUB_ENV"
 
       - name: Release
         run: |
@@ -56,9 +60,15 @@ jobs:
         run: |
           TAG=$(git tag --sort=-v:refname | head -n1)
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if [ -n "$TAG" ] && [ "$TAG" != "$PREVIOUS_TAG" ]; then
+            echo "released=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "released=false" >> "$GITHUB_OUTPUT"
+          fi
 
   build:
     needs: [setup, version]
+    if: needs.version.outputs.released == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -97,6 +107,7 @@ jobs:
 
   deploy:
     needs: [setup, version, build]
+    if: needs.version.outputs.released == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
