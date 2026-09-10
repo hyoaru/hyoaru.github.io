@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.0...v3.3.1) (2026-09-10)
+
+
+### Bug Fixes
+
+* itala image inconssistent witho thers ([76f20b4](https://github.com/hyoaru/hyoaru.github.io/commit/76f20b4200534f06363e14b29a1e04f6132e7e0d))
+
 # [3.3.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.2.2...v3.3.0) (2026-09-10)
 
 
