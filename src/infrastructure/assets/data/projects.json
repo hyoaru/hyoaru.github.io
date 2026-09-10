@@ -164,5 +164,35 @@
     ],
     "repository_url": null,
     "live_url": null
+  },
+  {
+    "title": "Itala Personal Finance Platform",
+    "date": "2026-09",
+    "image": "itala.jpg",
+    "description": "Itala is an end-to-end personal finance platform I designed and built from the ground up: a React 19 + TypeScript PWA frontend, a Go REST API on AWS Lambda behind API Gateway, event-driven Go workers for Cognito sign-up flows, and AWS CDK infrastructure-as-code that provisions the entire stack across staging and production. The ecosystem follows a clean (hexagonal) architecture with single-table DynamoDB storage, Cognito JWT authentication, idempotent transaction writes, and fully automated GitHub Actions pipelines using OIDC-based AWS deploys.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "PWA",
+      "Go",
+      "Chi",
+      "AWS Lambda",
+      "API Gateway",
+      "DynamoDB",
+      "Cognito",
+      "AWS CDK",
+      "CloudFront",
+      "Route 53",
+      "TanStack Query",
+      "TanStack Router",
+      "Zod",
+      "REST API",
+      "Serverless",
+      "GitHub Actions",
+      "Clean Architecture"
+    ],
+    "repository_url": "https://github.com/hyoaru/itala-pwa",
+    "live_url": "https://app.useitala.com"
   }
 ]
