@@ -1,3 +1,15 @@
+# [3.2.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.3...v3.2.0) (2026-09-10)
+
+
+### Bug Fixes
+
+* activity calendar error on theme hydration ([70e73f8](https://github.com/hyoaru/hyoaru.github.io/commit/70e73f8151fa60a87a2fb40258dee039d9070f09))
+
+
+### Features
+
+* add versioning on npm ([40878dd](https://github.com/hyoaru/hyoaru.github.io/commit/40878ddfb2cf2c11300ecbb3779f0fc713162d6f))
+
 ## [3.1.3](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.2...v3.1.3) (2026-09-10)
 
 
