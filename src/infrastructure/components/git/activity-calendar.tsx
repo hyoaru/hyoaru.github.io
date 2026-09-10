@@ -9,6 +9,7 @@ export const GitActivityCalendar = () => {
   const { data } = useSuspenseQuery(getContributions());
 
   const { theme } = useTheme();
+  const colorScheme = (theme ?? "dark") as "light" | "dark";
 
   const [dates] = useState(() => {
     const now = Date.now();
@@ -41,7 +42,7 @@ export const GitActivityCalendar = () => {
       <ActivityCalendar
         data={filteredContributions}
         theme={customTheme}
-        colorScheme={theme as "light" | "dark"}
+        colorScheme={colorScheme}
         fontSize={10}
         blockSize={10}
         showTotalCount={false}
