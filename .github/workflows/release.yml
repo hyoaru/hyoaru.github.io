@@ -80,6 +80,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Get configuration
+        run: |
+          echo "VITE_LAST_FM_API_KEY=${{ secrets.LAST_FM_API_KEY }}" >> "$GITHUB_ENV"
+
       - name: Build
         run: npm run build
 
