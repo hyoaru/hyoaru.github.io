@@ -12,6 +12,7 @@ const certificationImages = import.meta.glob(
   {
     eager: true,
     import: "default",
+    query: "?format=webp",
   },
 );
 
