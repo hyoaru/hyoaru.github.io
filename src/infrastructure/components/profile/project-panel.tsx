@@ -6,9 +6,7 @@ import { ProjectCard } from "./project-card";
 export const ProjectPanel = () => {
   const { getProjects } = useProfileActions();
   const { data } = useSuspenseQuery(getProjects());
-  const projects = [...data].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+  const projects = [...data].reverse();
 
   return (
     <div className="flex h-full min-h-0 flex-col space-y-2.5">

@@ -18,7 +18,7 @@ const certificationImages = import.meta.glob(
 );
 
 const projectImages = import.meta.glob(
-  "/src/infrastructure/assets/images/projects/*.jpg",
+  "/src/infrastructure/assets/images/projects/*.{jpg,jpeg}",
   {
     eager: true,
     import: "default",
@@ -82,7 +82,7 @@ export class LocalProfileRepository implements ProfileRepository {
         const key = Object.keys(projectImages).find((k) => k.includes(image));
 
         return new Project({
-          repositoryUrl: repository_url,
+          repositoryUrl: repository_url ?? undefined,
           liveUrl: live_url ?? undefined,
           imageUrl: key ? (projectImages[key] as string) : undefined,
           ...rest,
