@@ -1,3 +1,10 @@
+## [3.1.3](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.2...v3.1.3) (2026-09-10)
+
+
+### Bug Fixes
+
+* env var missing lastfm api key ([6f1fd23](https://github.com/hyoaru/hyoaru.github.io/commit/6f1fd2341aeaad4089962994160d6beb9b4f59be))
+
 ## [3.1.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.1.1...v3.1.2) (2026-09-10)
 
 
