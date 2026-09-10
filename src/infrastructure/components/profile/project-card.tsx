@@ -58,10 +58,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
               <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                 <FolderGit2 className="size-5" />
               </Modal.Icon>
-              <Modal.Heading className="text-2xl">{props.title}</Modal.Heading>
+              <Modal.Heading className="text-xl sm:text-2xl">
+                {props.title}
+              </Modal.Heading>
             </Modal.Header>
             <Modal.Body>
-              <p className="text-foreground text-sm">{props.description}</p>
+              <p className="text-foreground text-xs sm:text-sm">
+                {props.description}
+              </p>
               <img
                 className="mt-4 rounded-xl border object-cover"
                 src={props.imageUrl}
@@ -80,7 +84,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             </Modal.Body>
             <Modal.Footer>
               <div className="mr-auto flex flex-wrap items-center gap-1">
-                <Chip className="gap-2 rounded-lg border px-2 py-1 text-sm">
+                <Chip className="gap-2 rounded-lg border px-2 py-1 text-xs sm:text-sm">
                   <Calendar className="size-4" />
                   {formattedDate}
                 </Chip>
@@ -89,7 +93,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                     href={props.repositoryUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-default hover:text-accent-soft-foreground flex items-center gap-2 rounded-lg border px-2 py-1 text-sm transition-all duration-300 ease-in-out"
+                    className="bg-default hover:text-accent-soft-foreground flex items-center gap-2 rounded-lg border px-2 py-1 text-xs transition-all duration-300 ease-in-out sm:text-sm"
                   >
                     <Github className="size-4" />
                     Repository
@@ -100,7 +104,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                     href={props.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-default hover:text-accent-soft-foreground flex items-center gap-2 rounded-lg border px-2 py-1 text-sm transition-all duration-300 ease-in-out"
+                    className="bg-default hover:text-accent-soft-foreground flex items-center gap-2 rounded-lg border px-2 py-1 text-xs transition-all duration-300 ease-in-out sm:text-sm"
                   >
                     <ExternalLink className="size-4" />
                     Live
