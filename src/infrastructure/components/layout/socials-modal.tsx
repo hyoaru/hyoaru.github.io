@@ -40,7 +40,7 @@ export const SocialsModal = (props: ModalBackdropProps) => {
   return (
     <Modal.Backdrop {...props}>
       <Modal.Container>
-        <Modal.Dialog className="sm:max-w-[360px]">
+        <Modal.Dialog className="sm:max-w-sm">
           <Modal.CloseTrigger />
           <Modal.Header>
             <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
