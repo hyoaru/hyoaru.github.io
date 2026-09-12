@@ -10,7 +10,7 @@ const Experience = () => {
 
   return (
     <div className="sm:bg-background flex h-full items-center justify-start gap-1 rounded-xl sm:p-1">
-      <div className="flex h-full w-24 shrink-0 items-center justify-center rounded-lg sm:w-26">
+      <div className="flex h-full w-24 shrink-0 items-center justify-center rounded-lg sm:w-26 lg:hidden xl:flex">
         <Building2 className="size-8" />
       </div>
       <div className="sm:bg-default flex h-full w-full flex-col justify-center gap-0 rounded-lg leading-none font-medium sm:px-8">
