@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.4.0...v3.5.0) (2026-09-12)
+
+
+### Features
+
+* projects panel add search aprams og state manager ([fc09fc8](https://github.com/hyoaru/hyoaru.github.io/commit/fc09fc8e332197382718a1e586ce28ef365d6279))
+
 # [3.4.0](https://github.com/hyoaru/hyoaru.github.io/compare/v3.3.2...v3.4.0) (2026-09-10)
 
 
