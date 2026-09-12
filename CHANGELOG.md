@@ -1,3 +1,10 @@
+## [3.5.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.1...v3.5.2) (2026-09-12)
+
+
+### Bug Fixes
+
+* responsveness of recent exp and git stats ([3c54ae1](https://github.com/hyoaru/hyoaru.github.io/commit/3c54ae16e02ff23467ae7c42f98b7921d5530bdb))
+
 ## [3.5.1](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.0...v3.5.1) (2026-09-12)
 
 
