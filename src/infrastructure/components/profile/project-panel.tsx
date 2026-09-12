@@ -26,7 +26,7 @@ export const ProjectPanel = () => {
       </div>
 
       <ScrollShadow hideScrollBar className="h-full min-h-0">
-        <div className="grid grow grid-cols-1 gap-2.5 sm:grid-cols-2">
+        <div className="grid grow grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {projects.map((project) => {
             return (
               <ProjectCard key={`project-${project.title}`} {...project} />
