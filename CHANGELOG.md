@@ -1,3 +1,10 @@
+## [3.5.4](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.3...v3.5.4) (2026-09-12)
+
+
+### Bug Fixes
+
+* resume recent exp end date ([e0b6749](https://github.com/hyoaru/hyoaru.github.io/commit/e0b6749b06cdb7dbdf1218961c62ef728f0c0e6d))
+
 ## [3.5.3](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.2...v3.5.3) (2026-09-12)
 
 
