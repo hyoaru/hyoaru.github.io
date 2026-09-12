@@ -14,13 +14,12 @@ export const ProjectPanel = () => {
         <p className="pb-2.5 lg:text-xl">
           A collection of software projects from my{" "}
           <span className="text-accent font-bold">personal</span> and{" "}
-          <span className="text-accent font-bold">professional</span>{" "}
-          work over the years—spanning{" "}
+          <span className="text-accent font-bold">professional</span> work over
+          the years—spanning{" "}
           <span className="text-accent font-bold">fullstack engineering</span>,{" "}
-          <span className="text-accent font-bold">cloud-native systems</span>,
-          and{" "}
-          <span className="text-accent font-bold">developer tooling</span>—built
-          with a focus on{" "}
+          <span className="text-accent font-bold">cloud systems</span>, and{" "}
+          <span className="text-accent font-bold">data science</span>—built with
+          a focus on{" "}
           <span className="text-accent font-bold">clean architecture</span> and{" "}
           <span className="text-accent font-bold">maintainable code</span>.
         </p>
@@ -29,7 +28,9 @@ export const ProjectPanel = () => {
       <ScrollShadow hideScrollBar className="h-full min-h-0">
         <div className="grid grow grid-cols-1 gap-2.5 sm:grid-cols-2">
           {projects.map((project) => {
-            return <ProjectCard key={`project-${project.title}`} {...project} />;
+            return (
+              <ProjectCard key={`project-${project.title}`} {...project} />
+            );
           })}
         </div>
       </ScrollShadow>
