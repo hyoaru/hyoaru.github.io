@@ -1,3 +1,11 @@
+## [3.5.3](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.2...v3.5.3) (2026-09-12)
+
+
+### Bug Fixes
+
+* project panel desc ([2b6a398](https://github.com/hyoaru/hyoaru.github.io/commit/2b6a3981d48119ed96906c6a6943583b376f7543))
+* responsiveness over tablet screens ([559afda](https://github.com/hyoaru/hyoaru.github.io/commit/559afda74cec7ff18d065ea6b442552a47057263))
+
 ## [3.5.2](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.1...v3.5.2) (2026-09-12)
 
 
