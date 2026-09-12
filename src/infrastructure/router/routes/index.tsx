@@ -4,12 +4,21 @@ import {
   RecentExperience,
   Technologies,
 } from "@/infrastructure/components/profile";
-import { Filler, TabbedPanel } from "@/infrastructure/components/ui";
+import { Filler, TAB_IDS, TabbedPanel } from "@/infrastructure/components/ui";
 import { ScrollShadow } from "@heroui/react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, stripSearchParams } from "@tanstack/react-router";
+import { z } from "zod";
 import { FloatingActionBar, Footer, Header } from "../../components/layout";
 
+const tabSearchSchema = z.object({
+  tab: z.enum(TAB_IDS).catch(TAB_IDS[0]),
+});
+
 export const Route = createFileRoute("/")({
+  validateSearch: tabSearchSchema,
+  search: {
+    middlewares: [stripSearchParams({ tab: "career" })],
+  },
   component: RouteComponent,
 });
 

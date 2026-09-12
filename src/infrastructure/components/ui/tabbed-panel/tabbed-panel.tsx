@@ -1,13 +1,27 @@
 import { Tabs } from "@heroui/react";
+import { getRouteApi } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
-import { AsyncBoundary } from "../ui";
-import { CareerPanel } from "../profile/career-panel";
-import { CertificationPanel } from "../profile/certification-panel";
-import { ContactPanel } from "../profile/contact-panel";
-import { ProjectPanel } from "../profile/project-panel";
+import type { ComponentType } from "react";
+import { CareerPanel } from "../../profile/career-panel";
+import { CertificationPanel } from "../../profile/certification-panel";
+import { ContactPanel } from "../../profile/contact-panel";
+import { ProjectPanel } from "../../profile/project-panel";
+import { AsyncBoundary } from "../async-boundary";
+import type { TabId } from "./tabs";
+
+const routeApi = getRouteApi("/");
+
+type TabConfig = {
+  id: TabId;
+  label: string;
+  panel: ComponentType;
+};
 
 export const TabbedPanel = () => {
-  const tabs = [
+  const { tab } = routeApi.useSearch();
+  const navigate = routeApi.useNavigate();
+
+  const tabs: TabConfig[] = [
     {
       id: "career",
       label: "Career Snapshot",
@@ -31,7 +45,18 @@ export const TabbedPanel = () => {
   ];
 
   return (
-    <Tabs className="h-full w-full">
+    <Tabs
+      className="h-full w-full"
+      selectedKey={tab}
+      onSelectionChange={(key) => {
+        if (typeof key !== "string") return;
+
+        navigate({
+          search: (prev) => ({ ...prev, tab: key as TabId }),
+          replace: true,
+        });
+      }}
+    >
       <Tabs.ListContainer className="bg-default h-fit shrink-0 rounded-xl">
         <Tabs.List
           aria-label="Options"
@@ -53,7 +78,7 @@ export const TabbedPanel = () => {
 
       {tabs.map((tab) => (
         <Tabs.Panel
-          className="sm:bg-default h-[calc(100vh-8vh)] min-h-0 rounded-xl p-1 lg:h-full"
+          className="sm:bg-default h-[92vh] min-h-0 rounded-xl p-1 lg:h-full"
           key={`panel-${tab.id}`}
           id={tab.id}
         >
