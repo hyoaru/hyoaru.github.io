@@ -1,0 +1,62 @@
+name: Version
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      bumped: ${{ steps.version.outputs.bumped }}
+    steps:
+      - name: Checkout
+        uses: hyoaru/actions/checkout@v1
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: hyoaru/actions/setup-node@v1
+        with:
+          node-version: 24
+
+      - name: Get previous version
+        run: echo "PREVIOUS_TAG=$(git tag --sort=-v:refname | head -n1)" >> "$GITHUB_ENV"
+
+      - name: Semantic release
+        run: |
+          npx \
+            -p semantic-release \
+            -p @semantic-release/commit-analyzer \
+            -p @semantic-release/release-notes-generator \
+            -p @semantic-release/npm \
+            -p @semantic-release/changelog \
+            -p @semantic-release/git \
+            semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get version
+        id: version
+        run: |
+          TAG=$(git tag --sort=-v:refname | head -n1)
+          echo "version=$TAG" >> "$GITHUB_OUTPUT"
+          if [ -n "$TAG" ] && [ "$TAG" != "$PREVIOUS_TAG" ]; then
+            echo "bumped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "bumped=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  release:
+    needs: [version]
+    if: needs.version.outputs.bumped == 'true'
+    uses: ./.github/workflows/release.yml
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      version: ${{ needs.version.outputs.version }}
+    secrets: inherit

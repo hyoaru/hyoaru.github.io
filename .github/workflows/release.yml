@@ -1,8 +1,11 @@
 name: Release
 
 on:
-  push:
-    branches: [master]
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,54 +24,8 @@ jobs:
       - id: setup
         run: echo "environment=staging" >> "$GITHUB_OUTPUT"
 
-  version:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      tag: ${{ steps.version.outputs.tag }}
-      released: ${{ steps.version.outputs.released }}
-    steps:
-      - name: Checkout
-        uses: hyoaru/actions/checkout@v1
-        with:
-          fetch-depth: 0
-
-      - name: Setup node
-        uses: hyoaru/actions/setup-node@v1
-        with:
-          node-version: 24
-
-      - name: Get previous version
-        run: echo "PREVIOUS_TAG=$(git tag --sort=-v:refname | head -n1)" >> "$GITHUB_ENV"
-
-      - name: Release
-        run: |
-          npx \
-            -p semantic-release \
-            -p @semantic-release/commit-analyzer \
-            -p @semantic-release/release-notes-generator \
-            -p @semantic-release/npm \
-            -p @semantic-release/changelog \
-            -p @semantic-release/git \
-            semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get version
-        id: version
-        run: |
-          TAG=$(git tag --sort=-v:refname | head -n1)
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          if [ -n "$TAG" ] && [ "$TAG" != "$PREVIOUS_TAG" ]; then
-            echo "released=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "released=false" >> "$GITHUB_OUTPUT"
-          fi
-
   build:
-    needs: [setup, version]
-    if: needs.version.outputs.released == 'true'
+    needs: [setup]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -79,7 +36,7 @@ jobs:
       - name: Checkout
         uses: hyoaru/actions/checkout@v1
         with:
-          ref: ${{ needs.version.outputs.tag }}
+          ref: ${{ inputs.version }}
 
       - name: Setup node
         uses: hyoaru/actions/setup-node@v1
@@ -101,13 +58,12 @@ jobs:
       - name: Upload build artifact
         uses: hyoaru/actions/upload-artifact@v1
         with:
-          name: build-${{ needs.version.outputs.tag }}
+          name: build-${{ inputs.version }}
           path: dist/
           if-no-files-found: error
 
   deploy:
-    needs: [setup, version, build]
-    if: needs.version.outputs.released == 'true'
+    needs: [setup, build]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -118,7 +74,7 @@ jobs:
       - name: Download build artifact
         uses: hyoaru/actions/download-artifact@v1
         with:
-          name: build-${{ needs.version.outputs.tag }}
+          name: build-${{ inputs.version }}
           path: dist/
 
       - name: Configure AWS credentials
@@ -149,7 +105,7 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync dist/ "${{ env.CLIENT_ARTIFACT_S3_URI }}" --delete
-          aws s3 sync dist/ "${{ env.CLIENT_ARTIFACT_S3_URI_BASE }}/${{ needs.version.outputs.tag }}" --delete
+          aws s3 sync dist/ "${{ env.CLIENT_ARTIFACT_S3_URI_BASE }}/${{ inputs.version }}" --delete
 
       - name: Invalidate CloudFront
         run: |
