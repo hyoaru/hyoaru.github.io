@@ -1,3 +1,10 @@
+## [3.5.5](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.4...v3.5.5) (2026-09-23)
+
+
+### Bug Fixes
+
+* sep version from release ([2d839c9](https://github.com/hyoaru/hyoaru.github.io/commit/2d839c95368b95c84361be03562da78bb431d16a))
+
 ## [3.5.4](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.3...v3.5.4) (2026-09-12)
 
 
