@@ -1,3 +1,10 @@
+## [3.5.6](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.5...v3.5.6) (2026-11-25)
+
+
+### Bug Fixes
+
+* update resume ([ab4f7e7](https://github.com/hyoaru/hyoaru.github.io/commit/ab4f7e7320b83559ffc89cda2d376eb702aad5a8))
+
 ## [3.5.5](https://github.com/hyoaru/hyoaru.github.io/compare/v3.5.4...v3.5.5) (2026-09-23)
 
 
